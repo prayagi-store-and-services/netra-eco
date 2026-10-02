@@ -15,11 +15,11 @@ button{background:var(--accent);color:#04101c;border:0;border-radius:8px;padding
 <script>
 (function(){
 var APP=(new URLSearchParams(location.search).get("app")||"").replace(/[^a-z0-9-]/g,"").slice(0,40);
-var FBC={apiKey:"AIzaSyDNL57VMweccQ03REldP4TGr2R6l_U_vf4",authDomain:"netra-ai-jan.firebaseapp.com",projectId:"netra-ai-jan",storageBucket:"netra-ai-jan.firebasestorage.app",messagingSenderId:"101636656822",appId:"1:101636656822:web:01ce80ead0469509d86017"};
+var FS="https://firestore.googleapis.com/v1/projects/netra-ai-jan/databases/(default)/documents";
 function set(i,t){document.getElementById(i).textContent=t}
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
 function q(col){var body={structuredQuery:{from:[{collectionId:col}],where:{fieldFilter:{field:{fieldPath:"appId"},op:"EQUAL",value:{stringValue:APP}}},limit:100}};
- return fetch("https://firestore.googleapis.com/v1/projects/netra-ai-jan/databases/(default)/documents:runQuery?key="+FBC.apiKey,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(rows){return rows.filter(function(x){return x.document}).map(function(x){var f=x.document.fields||{},o={};Object.keys(f).forEach(function(k){var v=f[k];o[k]=v.stringValue!==undefined?v.stringValue:v.integerValue!==undefined?Number(v.integerValue):v.timestampValue});return o})})}
+ return fetch(FS+":runQuery",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(rows){return rows.filter(function(x){return x.document}).map(function(x){var f=x.document.fields||{},o={};Object.keys(f).forEach(function(k){var v=f[k];o[k]=v.stringValue!==undefined?v.stringValue:v.integerValue!==undefined?Number(v.integerValue):v.timestampValue});return o})})}
 function load(){Promise.all([q("netra_site_ratings"),q("netra_site_feedback")]).then(function(a){
  var rs=a[0],fs=a[1],box=document.getElementById("rlist");
  if(!rs.length&&!fs.length){set("rsum","No ratings or reviews yet.");box.innerHTML="";return}
@@ -32,12 +32,15 @@ var f=document.getElementById("fbform");
 f.addEventListener("submit",function(e){e.preventDefault();var m=document.getElementById("fmsg"),v=function(n){return f.querySelector("[name="+n+"]").value.trim()};
  var kind=v("kind"),msg=v("message");if(kind!=="Rating"&&!msg){m.textContent="Please write your message.";return}
  m.textContent="Sending...";
- var pub=import("https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js").then(function(A){return import("https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js").then(function(S){
-  var db=S.getFirestore(A.initializeApp(FBC,"app-"+Date.now()));
-  var d={appId:APP,device:v("device").slice(0,80),createdAt:S.serverTimestamp()};
-  if(v("name"))d.name=v("name").slice(0,60);if(v("place"))d.place=v("place").slice(0,80);
-  if(kind==="Rating"){d.stars=parseInt(v("stars"),10);d.mode=d.name?"name":"anonymous";d.clientId="web";d.reported=false;if(msg)d.comment=msg.slice(0,500);return S.addDoc(S.collection(db,"netra_site_ratings"),d)}
-  d.kind=kind;d.message=msg.slice(0,1000);d.clientId="web";return S.addDoc(S.collection(db,"netra_site_feedback"),d)})}).then(function(){return "ok"}).catch(function(){return "fail"});
+ function val(x){return typeof x==="number"?{integerValue:String(x)}:typeof x==="boolean"?{booleanValue:x}:{stringValue:String(x)}}
+ function put(col,d){var id=(self.crypto&&crypto.randomUUID?crypto.randomUUID():String(Math.random()).slice(2)+Date.now()).replace(/[^a-z0-9]/gi,"").slice(0,20),fields={};Object.keys(d).forEach(function(k){fields[k]=val(d[k])});
+  return fetch(FS+":commit",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({writes:[{update:{name:"projects/netra-ai-jan/databases/(default)/documents/"+col+"/"+id,fields:fields},updateTransforms:[{fieldPath:"createdAt",setToServerValue:"REQUEST_TIME"}]}]})}).then(function(r){if(!r.ok)throw 0;return "ok"})}
+ var d={appId:APP,device:v("device").slice(0,80)};
+ if(v("name"))d.name=v("name").slice(0,60);if(v("place"))d.place=v("place").slice(0,80);
+ var pub;
+ if(kind==="Rating"){d.stars=parseInt(v("stars"),10);d.mode=d.name?"name":"anonymous";d.clientId="web";d.reported=false;if(msg)d.comment=msg.slice(0,500);pub=put("netra_site_ratings",d)}
+ else{d.kind=kind;d.message=msg.slice(0,1000);d.clientId="web";pub=put("netra_site_feedback",d)}
+ pub=pub.catch(function(){return "fail"});
  pub.then(function(pr){var fd=new FormData(f);fd.set("app",APP);fd.set("_subject","[Netra] "+kind+" - "+APP);fd.set("_template","table");fd.set("_captcha","false");
   return fetch("https://formsubmit.co/ajax/prayagideepak@gmail.com",{method:"POST",headers:{Accept:"application/json"},body:fd}).then(function(r){return r.json()}).then(function(d){
    if(d.success==="true"||d.success===true){m.textContent=pr==="ok"?"Sent. Thank you!":"Sent to the developer. It could not be shown publicly right now.";f.reset();if(pr==="ok")load()}else m.textContent="Could not send right now. Please try again later."})}).catch(function(){m.textContent="Could not send right now. Please try again later."})})
