@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Netra ratings</title>
+<style>
+:root{--bg:#0b1220;--card2:#17233b;--line:#22314f;--text:#e8eefc;--mute:#9db0d0;--accent:#4fd1a5}
+*{box-sizing:border-box}body{margin:0;padding:8px;font-family:system-ui,Segoe UI,Roboto,sans-serif;background:transparent;color:var(--text);line-height:1.5}
+.sub{color:var(--mute)}form{display:grid;gap:8px;margin-top:10px}input,select,textarea{background:var(--card2);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:8px;font:inherit}
+button{background:var(--accent);color:#04101c;border:0;border-radius:8px;padding:9px 16px;font-weight:700;cursor:pointer}
+.rv{border-top:1px solid var(--line);padding:8px 0}.rv .dv{color:var(--mute);font-size:.8rem;margin-left:8px}.st{color:#fbbf24}
+</style></head><body>
+<div id="rsum" class="sub">Loading...</div><div id="rlist"></div>
+<form id="fbform"><select name="kind"><option>Rating</option><option>Suggestion</option><option>Complaint</option></select>
+<select name="stars"><option value="5">5 stars</option><option value="4">4 stars</option><option value="3">3 stars</option><option value="2">2 stars</option><option value="1">1 star</option></select>
+<input name="name" placeholder="Your name (optional)" maxlength="60"><input name="device" placeholder="Your phone, e.g. Samsung Galaxy A52" maxlength="80" required><input name="place" placeholder="Where are you? City or area (typed, optional)" maxlength="80">
+<textarea name="message" rows="3" placeholder="Your message" maxlength="500"></textarea><button type="submit">Send</button><div id="fmsg" class="sub"></div></form>
+<script>
+(function(){
+var APP=(new URLSearchParams(location.search).get("app")||"").replace(/[^a-z0-9-]/g,"").slice(0,40);
+var FBC={apiKey:"AIzaSyDNL57VMweccQ03REldP4TGr2R6l_U_vf4",authDomain:"netra-ai-jan.firebaseapp.com",projectId:"netra-ai-jan",storageBucket:"netra-ai-jan.firebasestorage.app",messagingSenderId:"101636656822",appId:"1:101636656822:web:01ce80ead0469509d86017"};
+function set(i,t){document.getElementById(i).textContent=t}
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function q(col){var body={structuredQuery:{from:[{collectionId:col}],where:{fieldFilter:{field:{fieldPath:"appId"},op:"EQUAL",value:{stringValue:APP}}},limit:100}};
+ return fetch("https://firestore.googleapis.com/v1/projects/netra-ai-jan/databases/(default)/documents:runQuery?key="+FBC.apiKey,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(rows){return rows.filter(function(x){return x.document}).map(function(x){var f=x.document.fields||{},o={};Object.keys(f).forEach(function(k){var v=f[k];o[k]=v.stringValue!==undefined?v.stringValue:v.integerValue!==undefined?Number(v.integerValue):v.timestampValue});return o})})}
+function load(){Promise.all([q("netra_site_ratings"),q("netra_site_feedback")]).then(function(a){
+ var rs=a[0],fs=a[1],box=document.getElementById("rlist");
+ if(!rs.length&&!fs.length){set("rsum","No ratings or reviews yet.");box.innerHTML="";return}
+ var t=0;rs.forEach(function(i){t+=i.stars});
+ set("rsum",rs.length?(t/rs.length).toFixed(1)+" out of 5 from "+rs.length+" rating"+(rs.length===1?"":"s")+".":"No ratings yet.");
+ box.innerHTML=rs.map(function(i){return "<div class='rv'><span class='st'>"+"\u2605".repeat(i.stars)+"\u2606".repeat(5-i.stars)+"</span> <b>"+esc(i.name||"Anonymous")+"</b><span class='dv'>"+esc(i.device)+(i.place?" - "+esc(i.place):"")+"</span>"+(i.comment?"<p>"+esc(i.comment)+"</p>":"")+"</div>"}).join("")+fs.map(function(i){return "<div class='rv'><b>"+esc(i.kind)+"</b><span class='dv'>"+esc(i.device||"")+(i.place?" - "+esc(i.place):"")+"</span><p>"+esc(i.message)+"</p></div>"}).join("")
+}).catch(function(){set("rsum","Ratings are unavailable right now.")})}
+if(!APP){set("rsum","Unavailable");document.getElementById("fbform").style.display="none"}else load();
+var f=document.getElementById("fbform");
+f.addEventListener("submit",function(e){e.preventDefault();var m=document.getElementById("fmsg"),v=function(n){return f.querySelector("[name="+n+"]").value.trim()};
+ var kind=v("kind"),msg=v("message");if(kind!=="Rating"&&!msg){m.textContent="Please write your message.";return}
+ m.textContent="Sending...";
+ var pub=import("https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js").then(function(A){return import("https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js").then(function(S){
+  var db=S.getFirestore(A.initializeApp(FBC,"app-"+Date.now()));
+  var d={appId:APP,device:v("device").slice(0,80),createdAt:S.serverTimestamp()};
+  if(v("name"))d.name=v("name").slice(0,60);if(v("place"))d.place=v("place").slice(0,80);
+  if(kind==="Rating"){d.stars=parseInt(v("stars"),10);d.mode=d.name?"name":"anonymous";d.clientId="web";d.reported=false;if(msg)d.comment=msg.slice(0,500);return S.addDoc(S.collection(db,"netra_site_ratings"),d)}
+  d.kind=kind;d.message=msg.slice(0,1000);d.clientId="web";return S.addDoc(S.collection(db,"netra_site_feedback"),d)})}).then(function(){return "ok"}).catch(function(){return "fail"});
+ pub.then(function(pr){var fd=new FormData(f);fd.set("app",APP);fd.set("_subject","[Netra] "+kind+" - "+APP);fd.set("_template","table");fd.set("_captcha","false");
+  return fetch("https://formsubmit.co/ajax/prayagideepak@gmail.com",{method:"POST",headers:{Accept:"application/json"},body:fd}).then(function(r){return r.json()}).then(function(d){
+   if(d.success==="true"||d.success===true){m.textContent=pr==="ok"?"Sent. Thank you!":"Sent to the developer. It could not be shown publicly right now.";f.reset();if(pr==="ok")load()}else m.textContent="Could not send right now. Please try again later."})}).catch(function(){m.textContent="Could not send right now. Please try again later."})})
+})();
+</script></body></html>

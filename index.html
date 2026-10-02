@@ -3,54 +3,101 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Netra Eco</title>
-<meta name="description" content="Netra Eco - the home of all Netra by Prayagi Team projects.">
+<title>Netra Eco - Netra by Prayagi Team</title>
+<meta name="description" content="Netra Eco - the home of all Netra by Prayagi Team apps. Developer: Deepak Kushwaha.">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
 <style>
-:root{--bg:#0b1220;--card:#131c2e;--ink:#e8eefc;--mute:#9db0d0;--acc:#4fd1a5;--line:#22304d}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
-header{padding:48px 20px 24px;text-align:center}h1{margin:0;font-size:2.2rem}
-.tag{color:var(--mute);margin-top:8px}
-nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:8px 16px 24px}
-nav a{color:var(--ink);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.9rem}
-nav a:hover{border-color:var(--acc)}
-main{max-width:860px;margin:0 auto;padding:0 16px 48px}
-section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin:16px 0}
-section h2{margin:0 0 4px}.type{color:var(--acc);font-size:.85rem;text-transform:uppercase;letter-spacing:.06em}
-dl{display:grid;grid-template-columns:110px 1fr;gap:6px 12px;margin:14px 0 0}dt{color:var(--mute)}dd{margin:0;word-break:break-all}
-a{color:var(--acc)}footer{text-align:center;color:var(--mute);padding:24px;font-size:.85rem}
+:root{--bg:#0b1220;--card:#121c30;--card2:#17233b;--line:#22314f;--text:#e8eefc;--mute:#9db0d0;--accent:#4fd1a5;--accent2:#e8eefc}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+a{color:var(--accent)}
+.top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;background:var(--card);border-bottom:1px solid var(--line)}
+.top img{width:40px;height:40px;border-radius:10px}.top b{font-size:1.1rem}.sp{flex:1}
+#liveclock{color:var(--mute);font-size:.85rem}
+.festbar{padding:10px 16px;text-align:center;background:var(--card2);border-bottom:1px solid var(--line)}.festbar[hidden]{display:none}
+nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:14px 16px}
+nav a{color:var(--text);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.9rem}nav a:hover{border-color:var(--accent)}
+main{max-width:900px;margin:0 auto;padding:0 16px 40px}
+.hero{text-align:center;padding:28px 0 8px}.hero img{width:96px;height:96px;border-radius:22px}.hero h1{margin:10px 0 2px}.sub{color:var(--mute)}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin:16px 0}
+h2{margin:0 0 8px}.type{color:var(--accent);font-size:.8rem;text-transform:uppercase;letter-spacing:.06em}
+.app{display:flex;gap:14px;align-items:flex-start}.app img{width:64px;height:64px;border-radius:14px;flex:none}
+dl{display:grid;grid-template-columns:120px 1fr;gap:5px 12px;margin:10px 0 0}dt{color:var(--mute)}dd{margin:0;word-break:break-word}
+.btn{display:inline-block;background:var(--accent);color:#04101c;font-weight:700;text-decoration:none;border-radius:10px;padding:8px 14px;margin:6px 8px 0 0}
+.btn.alt{background:transparent;color:var(--text);border:1px solid var(--line)}
+form{display:grid;gap:8px}input,textarea{background:var(--card2);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:9px;font:inherit}
+label{color:var(--mute);font-size:.85rem}button.go{background:var(--accent);color:#04101c;border:0;border-radius:8px;padding:10px 16px;font-weight:700;cursor:pointer}
+.rv{border-top:1px solid var(--line);padding:8px 0}.rv .dv{color:var(--mute);font-size:.8rem;margin-left:8px}.st{color:#fbbf24}
+footer{text-align:center;color:var(--mute);padding:24px 16px;font-size:.85rem}
 </style>
 </head>
 <body>
-<header><h1 id="family">Netra Eco</h1><div class="tag" id="tagline"></div></header>
+<div class="top"><img src="logo.svg" alt="Netra Eco logo"><b>Netra Eco</b><span class="sp"></span><span id="liveclock"></span></div>
+<div id="festbar" class="festbar" hidden></div>
+<div class="hero"><img src="logo.svg" alt="Netra Eco"><h1>Netra Eco</h1><div class="sub" id="tagline"></div><div class="sub">Developer: Deepak Kushwaha</div></div>
 <nav id="nav"></nav>
-<main id="list"></main>
-<footer>Netra by Prayagi Team. Values shown are read live from GitHub; if a value cannot be read it says "Unavailable".</footer>
+<main>
+<div id="apps"></div>
+<section id="ratings"><h2>Ratings, reviews and complaints - all apps</h2><div class="sub">Everything people send from any Netra app website or from inside an app shows up here, app by app. Only real submissions are shown.</div><div id="rall">Loading...</div></section>
+<section id="contact"><h2>Contact us</h2>
+<form id="cform"><label>Name</label><input name="name" required maxlength="80">
+<label>Email</label><input name="email" type="email" required maxlength="120">
+<label>WhatsApp number (required, with country code, e.g. +91 98765 43210)</label><input name="whatsapp" type="tel" required pattern="\+?[0-9 ()\-]{10,18}" maxlength="20" inputmode="tel">
+<label>Calling number (optional - leave empty if the same as WhatsApp)</label><input name="phone" type="tel" maxlength="20" inputmode="tel">
+<label>Message (optional)</label><textarea name="message" rows="3" maxlength="800"></textarea>
+<button class="go" type="submit">Send</button><div id="cmsg" class="sub"></div></form>
+<p class="sub">We cannot verify a WhatsApp number from a website, so the number you type is used as entered. Please double check it.</p></section>
+</main>
+<footer>Netra Eco - Netra by Prayagi Team. Developer: Deepak Kushwaha. Values shown are read live; if a value cannot be read it says "Unavailable".</footer>
 <script>
-const U='Unavailable';
-const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!==undefined)e.textContent=x;return e};
-function row(dl,k,v,href){dl.append(el('dt','',k));const dd=el('dd');if(href){const a=el('a','',v);a.href=href;a.rel='noopener';dd.append(a)}else dd.textContent=v;dl.append(dd)}
-async function gh(path){try{const r=await fetch('https://api.github.com/'+path);if(!r.ok)return null;return await r.json()}catch(e){return null}}
-fetch('projects.json',{cache:'no-store'}).then(r=>r.json()).then(async d=>{
- document.getElementById('family').textContent=d.family;
- document.getElementById('tagline').textContent=d.tagline;
- const nav=document.getElementById('nav'),list=document.getElementById('list');
- for(const p of d.projects){
-  const a=el('a','',p.name);a.href='#'+p.id;nav.append(a);
-  const s=el('section');s.id=p.id;
-  s.append(el('div','type',p.type),el('h2','',p.name),el('div','',p.summary));
-  const dl=el('dl');s.append(dl);list.append(s);
-  row(dl,'Code','github.com/'+p.repo,'https://github.com/'+p.repo);
-  if(p.site)row(dl,'Website',p.site,p.site);
-  row(dl,'Latest release',U);row(dl,'Last update',U);
-  const rel=await gh('repos/'+p.repo+'/releases/latest');
-  const info=await gh('repos/'+p.repo);
-  const rels=dl.querySelectorAll('dd');
-  const set=(label,val,href)=>{const dts=[...dl.querySelectorAll('dt')];const i=dts.findIndex(x=>x.textContent===label);const dd=dl.querySelectorAll('dd')[i];dd.textContent='';if(href){const a=el('a','',val);a.href=href;dd.append(a)}else dd.textContent=val};
-  if(rel&&rel.tag_name){set('Latest release',rel.tag_name,rel.html_url);const apk=(rel.assets||[]).find(x=>/\.apk$/i.test(x.name));if(apk)row(dl,'Download APK',apk.name,apk.browser_download_url)}
-  else set('Latest release','Not released yet');
-  if(info&&info.pushed_at)set('Last update',new Date(info.pushed_at).toLocaleDateString());
- }
+window.NETRA_SITE={repo:"prayagideepak-collab/netra-eco"};
+(function(){
+var U="Unavailable";
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!==undefined)e.textContent=x;return e}
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function gh(p){return fetch("https://api.github.com/"+p).then(function(r){return r.ok?r.json():null}).catch(function(){return null})}
+function when(s){try{return new Date(s).toLocaleString(undefined,{year:"numeric",month:"short",day:"numeric",hour:"numeric",minute:"2-digit"})}catch(e){return U}}
+var FBC={apiKey:"AIzaSyDNL57VMweccQ03REldP4TGr2R6l_U_vf4"};
+function fsq(col){return fetch("https://firestore.googleapis.com/v1/projects/netra-ai-jan/databases/(default)/documents:runQuery?key="+FBC.apiKey,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({structuredQuery:{from:[{collectionId:col}],limit:300}})}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(rows){return rows.filter(function(x){return x.document}).map(function(x){var f=x.document.fields||{},o={};Object.keys(f).forEach(function(k){var v=f[k];o[k]=v.stringValue!==undefined?v.stringValue:v.integerValue!==undefined?Number(v.integerValue):v.timestampValue});return o})})}
+fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){
+ document.getElementById("tagline").textContent=d.tagline;
+ var nav=document.getElementById("nav"),box=document.getElementById("apps");
+ d.projects.forEach(function(p){
+  var a=el("a","",p.name);a.href="#"+p.id;nav.appendChild(a);
+  var s=el("section");s.id=p.id;
+  var w=el("div","app"),im=el("img");im.src=p.icon;im.alt=p.name+" icon";w.appendChild(im);
+  var b=el("div");b.appendChild(el("div","type",p.type));b.appendChild(el("h2","",p.name));b.appendChild(el("div","",p.summary));
+  var dl=el("dl");b.appendChild(dl);
+  function row(k,v,h){dl.appendChild(el("dt","",k));var dd=el("dd");if(h){var l=el("a","",v);l.href=h;l.rel="noopener";dd.appendChild(l)}else dd.textContent=v;dl.appendChild(dd);return dd}
+  var rel=row("Latest release","Unavailable"),rt=row("Released","Unavailable"),sz=row("File size","Unavailable");
+  var act=el("div");var site=el("a","btn","Open "+p.name+" website");site.href=p.site;act.appendChild(site);
+  var code=el("a","btn alt","Code on GitHub");code.href="https://github.com/"+p.repo;act.appendChild(code);b.appendChild(act);
+  w.appendChild(b);s.appendChild(w);box.appendChild(s);
+  gh("repos/"+p.repo+"/releases/latest").then(function(x){
+   if(x&&x.tag_name){rel.textContent="";var l=el("a","",x.tag_name);l.href=x.html_url;rel.appendChild(l);rt.textContent=when(x.published_at);
+    var k=(x.assets||[]).find(function(y){return /\.apk$/i.test(y.name)});if(k){sz.textContent=(k.size/1048576).toFixed(1)+" MB";var dl2=el("a","btn","Download APK");dl2.href=k.browser_download_url;act.insertBefore(dl2,act.firstChild)}}
+   else rel.textContent="Not released yet"})});
+ var names={};d.projects.forEach(function(p){names[p.id]=p.name});
+ Promise.all([fsq("netra_site_ratings"),fsq("netra_site_feedback")]).then(function(a){
+  var by={};d.projects.forEach(function(p){by[p.id]={r:[],f:[]}});
+  a[0].forEach(function(i){var k=by[i.appId]?i.appId:"battery-sentinel";by[k].r.push(i)});
+  a[1].forEach(function(i){var k=by[i.appId]?i.appId:"battery-sentinel";by[k].f.push(i)});
+  var out=document.getElementById("rall");out.innerHTML="";
+  d.projects.forEach(function(p){var g=by[p.id],t=0;g.r.forEach(function(i){t+=i.stars});
+   var h=el("div");h.innerHTML="<h3>"+esc(p.name)+"</h3><div class='sub'>"+(g.r.length?(t/g.r.length).toFixed(1)+" out of 5 from "+g.r.length+" rating"+(g.r.length===1?"":"s"):"No ratings yet")+(g.f.length?" - "+g.f.length+" suggestion/complaint"+(g.f.length===1?"":"s"):"")+"</div>";
+   h.innerHTML+=g.r.slice(0,5).map(function(i){return "<div class='rv'><span class='st'>"+"\u2605".repeat(i.stars)+"\u2606".repeat(5-i.stars)+"</span> <b>"+esc(i.name||"Anonymous")+"</b><span class='dv'>"+esc(i.device)+(i.place?" - "+esc(i.place):"")+"</span>"+(i.comment?"<p>"+esc(i.comment)+"</p>":"")+"</div>"}).join("")+g.f.slice(0,5).map(function(i){return "<div class='rv'><b>"+esc(i.kind)+"</b><span class='dv'>"+esc(i.device||"")+(i.place?" - "+esc(i.place):"")+"</span><p>"+esc(i.message)+"</p></div>"}).join("");
+   out.appendChild(h)})
+ }).catch(function(){document.getElementById("rall").textContent="Ratings are unavailable right now."})
 });
+var f=document.getElementById("cform");
+f.addEventListener("submit",function(e){e.preventDefault();var m=document.getElementById("cmsg");
+ var wa=f.whatsapp.value.replace(/[^0-9+]/g,"");
+ if(wa.replace(/\D/g,"").length<10){m.textContent="Please enter a valid WhatsApp number.";return}
+ m.textContent="Sending...";
+ var fd=new FormData(f);fd.set("_subject","[Netra] Contact Us - "+f.name.value);fd.set("_template","table");fd.set("_captcha","false");
+ fetch("https://formsubmit.co/ajax/prayagideepak@gmail.com",{method:"POST",headers:{Accept:"application/json"},body:fd}).then(function(r){return r.json()}).then(function(d){
+  if(d.success==="true"||d.success===true){m.textContent="Sent. Thank you, we will contact you on WhatsApp.";f.reset()}else m.textContent="Could not send right now. Please try again later."}).catch(function(){m.textContent="Could not send right now. Please try again later."})});
+})();
 </script>
+<script src="netra-site.js"></script>
 </body>
 </html>
