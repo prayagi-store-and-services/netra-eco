@@ -73,7 +73,7 @@ fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).the
   w.appendChild(b);s.appendChild(w);box.appendChild(s);
   gh("repos/"+p.repo+"/releases/latest").then(function(x){
    if(x&&x.tag_name){rel.textContent="";var l=el("a","",x.tag_name);l.href=x.html_url;rel.appendChild(l);rt.textContent=when(x.published_at);
-    var k=(x.assets||[]).find(function(y){return /\.apk$/i.test(y.name)});if(k){sz.textContent=(k.size/1048576).toFixed(1)+" MB";var dl2=el("a","btn","Download APK");dl2.href=k.browser_download_url;act.insertBefore(dl2,act.firstChild)}}
+    var al=(x.assets||[]).filter(function(y){return /\.apk$/i.test(y.name)});var k=al.filter(function(y){return y.name!=="app-release.apk"})[0]||al[0];if(k){sz.textContent=(k.size/1048576).toFixed(1)+" MB";var dl2=el("a","btn","Download APK");dl2.href=k.browser_download_url;act.insertBefore(dl2,act.firstChild)}}
    else rel.textContent="Not released yet"})});
  var names={};d.projects.forEach(function(p){names[p.id]=p.name});
  Promise.all([fsq("netra_site_ratings"),fsq("netra_site_feedback")]).then(function(a){
