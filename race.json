@@ -4,7 +4,7 @@
  "trainName": "Train 04179",
  "trainArrival": "2026-10-04T04:34:00+05:30",
  "trainNote": "Arrival time is a tracker estimate and can change.",
- "updated": "4 Oct 2026, 12:35 AM IST",
+ "updated": "4 Oct 2026, 1:08 AM IST",
  "items": [
   {
    "name": "Travel Checking - SensorGuard 1.0.8",
@@ -27,8 +27,8 @@
    "state": "shipped"
   },
   {
-   "name": "Battery Sentinel: travel battery saver",
-   "state": "queued"
+   "name": "Battery Sentinel 1.1.18: Journey mode (manual travel battery saver)",
+   "state": "shipped"
   },
   {
    "name": "Netra Eco: live race bar (patch)",
