@@ -1,0 +1,320 @@
+{
+ "reviewed": "3 Oct 2026",
+ "note": "All dates are our own estimates and can change.",
+ "apps": [
+  {
+   "id": "bspn",
+   "name": "Battery Sentinel Pro Netra (BSPN)"
+  },
+  {
+   "id": "kbc",
+   "name": "KBC (TarkShastra)"
+  },
+  {
+   "id": "netra-hub",
+   "name": "Netra Hub (Netra Human Safety)"
+  },
+  {
+   "id": "prayagi-privacy",
+   "name": "Prayagi Privacy (SensorGuard)"
+  },
+  {
+   "id": "netra-player",
+   "name": "Netra Player (video and music)"
+  },
+  {
+   "id": "eco",
+   "name": "Netra Eco"
+  }
+ ],
+ "items": [
+  {
+   "apps": [
+    "bspn",
+    "kbc",
+    "netra-hub",
+    "prayagi-privacy"
+   ],
+   "title": "One voice, part 1: one speaker per topic",
+   "text": "Netra apps on the same phone recognise each other (same Netra signature only) and agree on who speaks. Each topic, like battery percent or temperature, is announced by one app only, never twice. All on the phone, offline, never between different phones.",
+   "status": "In progress",
+   "eta": "2026-10-06T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "bspn",
+    "kbc",
+    "netra-hub",
+    "prayagi-privacy"
+   ],
+   "title": "One voice, part 2: apps can ask each other for status",
+   "text": "An app can ask another Netra app on the same phone for information it lacks, such as battery or temperature state. Still offline and on the same phone only.",
+   "status": "Next portion",
+   "eta": "2026-10-09T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "kbc"
+   ],
+   "title": "Battery and temperature check before a game",
+   "text": "Before a KBC game starts it checks battery and temperature with the other Netra apps on the phone. If the phone is too hot the game can pause so it cools down. If no answer comes in 2 seconds, the game is not blocked.",
+   "status": "Planned",
+   "eta": "2026-10-10T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "bspn",
+    "kbc",
+    "netra-hub",
+    "prayagi-privacy"
+   ],
+   "title": "Festival open animations",
+   "text": "When the app opens on a festival or national day, a short skippable animation for that occasion plays (for example the national flag on Independence Day) instead of a plain banner. Works offline.",
+   "status": "In progress",
+   "eta": "2026-10-12T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "prayagi-privacy"
+   ],
+   "title": "Mic and camera switched off when the screen turns off, and where each app's data goes",
+   "text": "SensorGuard will cut microphone and camera access when the screen turns off, and will show per app where its data is going.",
+   "status": "Planned",
+   "eta": "2026-10-25T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "kbc"
+   ],
+   "title": "No repeated questions and camera indicator for fair play",
+   "text": "KBC will not repeat a question you already saw, and will show a clear camera-in-use indicator for the anti-cheat check.",
+   "status": "Planned",
+   "eta": "2026-10-25T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "bspn"
+   ],
+   "title": "Solar and inverter monitoring",
+   "text": "Solar generation, grid and battery status of your home system inside Battery Sentinel Pro Netra. The detailed spec is still being decided with the owner, so this estimate is rough.",
+   "status": "Planning (spec pending)",
+   "eta": "2026-12-15T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "netra-hub"
+   ],
+   "title": "Disaster alerts, part 1: weather orange alerts (India)",
+   "text": "Orange-or-higher weather alerts from IMD for your area, relayed only from the official source. The website checks the alert and pushes it only to people in the affected area, so the phone does not poll and battery is saved.",
+   "status": "First portion, being prioritised",
+   "eta": "2026-10-08T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "netra-hub"
+   ],
+   "title": "Disaster alerts, part 2: earthquakes within about 200 km",
+   "text": "Earthquake alerts from official feeds only (USGS, NDMA and equivalent agencies). We relay official warnings. We cannot predict earthquakes.",
+   "status": "Second portion",
+   "eta": "2026-10-11T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "netra-hub"
+   ],
+   "title": "Disaster alerts, part 3: full suite",
+   "text": "More hazards, other countries and states using each country's own government agency, and a public alert report (area name and number of people alerted, never anyone's location).",
+   "status": "Third portion",
+   "eta": "2026-11-30T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "netra-hub"
+   ],
+   "title": "H0: screen audit for a simpler app",
+   "text": "We review every screen of Netra Hub to plan the simpler layout. No behaviour change.",
+   "status": "Planned",
+   "eta": "2026-10-04T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "netra-hub"
+   ],
+   "title": "H1: simpler Netra Hub (v1.1.0)",
+   "text": "Fewer things per screen, plain labels, a fixed header (name, date, live clock, location, steps) and fixed footer with a scrolling middle, and a guided first-run setup.",
+   "status": "Planned",
+   "eta": "2026-10-06T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "netra-hub"
+   ],
+   "title": "H2: steps fix and daily step target (v1.2.0)",
+   "text": "Pedometer fix and an age-based daily step target, pending the owner's confirmation of the numbers.",
+   "status": "Planned (needs owner answers)",
+   "eta": "2026-10-07T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "netra-hub"
+   ],
+   "title": "H3: driving mode and family apps coordination (v1.3.0)",
+   "text": "Driving mode detection that tells the other Netra apps on the same phone to stop background work. Thermal protection always stays on. SensorGuard is not stopped. On the same phone, offline.",
+   "status": "Planned (needs owner answers)",
+   "eta": "2026-10-08T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "netra-hub"
+   ],
+   "title": "H4: emergency SMS, siren and parking (v1.4.0)",
+   "text": "Emergency SMS to your contacts, a siren with a Stop control, and automatic parking spot saving. Tested in simulation, not in real crashes.",
+   "status": "Planned (needs owner answers)",
+   "eta": "2026-10-09T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "netra-hub"
+   ],
+   "title": "H5: magnetic alerts and final polish (v1.5.0)",
+   "text": "Always-on magnetic alerts and the final polish. Target for the complete Netra Hub release.",
+   "status": "Planned",
+   "eta": "2026-10-10T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "netra-player"
+   ],
+   "title": "v1.0.0: basic video and music player",
+   "text": "Plays local video and music files with the Netra look. First version.",
+   "status": "Planned",
+   "eta": "2026-10-05T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "netra-player"
+   ],
+   "title": "v1.1.0: gesture controls",
+   "text": "Swipe for volume, brightness and seeking, double tap to skip.",
+   "status": "Planned",
+   "eta": "2026-10-07T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "netra-player"
+   ],
+   "title": "v1.2.0: subtitles",
+   "text": "Load and style subtitles.",
+   "status": "Planned",
+   "eta": "2026-10-09T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "netra-player"
+   ],
+   "title": "v1.3.0: play from a link with ad blocking",
+   "text": "Play from a web address, with ads that appear on pages or interrupt playback blocked. Adult and gambling content is always blocked using a known-domain list.",
+   "status": "Planned",
+   "eta": "2026-10-12T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "netra-player"
+   ],
+   "title": "v1.4.0: screen-off audio",
+   "text": "Screen off keeps the audio playing.",
+   "status": "Planned",
+   "eta": "2026-10-14T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "netra-player"
+   ],
+   "title": "v1.5.0: Stadium, 3D and Theater sound modes",
+   "text": "Sound effects, only on a device that supports stereo output.",
+   "status": "Planned",
+   "eta": "2026-10-16T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "netra-player"
+   ],
+   "title": "v1.6.0: more player features and complete release",
+   "text": "Remaining player features. Complete release deadline.",
+   "status": "Planned",
+   "eta": "2026-10-17T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "prayagi-privacy"
+   ],
+   "title": "S1: unknown-sources alert and security-patch age warning",
+   "text": "Warns when installs from unknown sources are allowed and when the device security patch is old. We do not patch the OS.",
+   "status": "Planned",
+   "eta": "2026-10-05T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "prayagi-privacy"
+   ],
+   "title": "S2: risky app permission check",
+   "text": "Lists installed apps with risky permission combinations. App-level protection only.",
+   "status": "Planned",
+   "eta": "2026-10-06T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "prayagi-privacy"
+   ],
+   "title": "S3: accessibility-service warning",
+   "text": "Shows enabled accessibility services and flags unusual ones.",
+   "status": "Planned",
+   "eta": "2026-10-07T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "prayagi-privacy"
+   ],
+   "title": "S4: clipboard snooping indicator",
+   "text": "Shows what Android reports about clipboard reads. Shows Unavailable where Android gives no signal.",
+   "status": "Planned",
+   "eta": "2026-10-08T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "prayagi-privacy"
+   ],
+   "title": "S5: overlay permission check",
+   "text": "Lists apps that are allowed to draw over other apps.",
+   "status": "Planned",
+   "eta": "2026-10-09T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "prayagi-privacy"
+   ],
+   "title": "S6: local VPN website blocking",
+   "text": "On-device website blocking through a local VPN. No outside VPN server, nothing leaves the phone for us. Blocks known domains with a list that updates daily.",
+   "status": "Planned",
+   "eta": "2026-10-12T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "prayagi-privacy"
+   ],
+   "title": "S7: local VPN ad blocker",
+   "text": "Ad blocking through the same local VPN. Adult and gambling domains are always blocked.",
+   "status": "Planned",
+   "eta": "2026-10-14T20:00:00+05:30"
+  },
+  {
+   "apps": [
+    "eco"
+   ],
+   "title": "Netra Eco: roadmap and next-release countdown inside the app",
+   "text": "The app shows this same roadmap with a live countdown.",
+   "status": "In progress",
+   "eta": "2026-10-03T21:30:00+05:30"
+  }
+ ]
+}
