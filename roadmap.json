@@ -315,6 +315,14 @@
    "text": "The app shows this same roadmap with a live countdown.",
    "status": "In progress",
    "eta": "2026-10-03T21:30:00+05:30"
+  },
+  {
+   "apps": [
+    "netra-player"
+   ],
+   "title": "Live audio translation (idea)",
+   "text": "While a video or audio plays in any language, you pick the language you want to hear and Netra Player speaks the translation in real time. This is a longer-term idea: we have not checked yet how well it can work on a phone, so no date is promised.",
+   "status": "Idea (no date yet)"
   }
  ]
 }

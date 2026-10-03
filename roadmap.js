@@ -17,15 +17,16 @@ function entry(it,appName){
  var tg=mk("div","display:inline-block;font-size:.78rem;font-weight:700;border:1px solid var(--accent,#F59E0B);color:var(--accent,#F59E0B);border-radius:999px;padding:1px 10px;margin-bottom:4px","Coming to: "+appName);d.appendChild(tg);
  var t=mk("div","",null);t.appendChild(mk("b","",it.title));t.appendChild(mk("span","color:var(--accent,#F59E0B);font-size:.85rem"," - "+it.status));d.appendChild(t);
  d.appendChild(mk("div","margin:4px 0;font-size:.92rem",it.text));
- var when;try{when=new Date(it.eta).toLocaleDateString(undefined,{day:"numeric",month:"short",year:"numeric"})}catch(_){when=it.eta}
- d.appendChild(mk("div","font-size:.85rem;color:var(--mute,#9db0d0)",(/^released/i.test(it.status)?"Released":"Estimated release: "+when+" (our estimate, can change)")));
- var c=mk("div","font-variant-numeric:tabular-nums;font-weight:700;margin-top:2px");d.appendChild(c);if(/^released/i.test(it.status)){c.textContent="Released"}else{cds.push([c,Date.parse(it.eta)])}
+ var when;if(!it.eta){when="no date yet"}else{try{when=new Date(it.eta).toLocaleDateString(undefined,{day:"numeric",month:"short",year:"numeric"})}catch(_){when=it.eta}}
+ d.appendChild(mk("div","font-size:.85rem;color:var(--mute,#9db0d0)",(/^released/i.test(it.status)?"Released":(it.eta?"Estimated release: "+when+" (our estimate, can change)":"Estimated release: no date yet (idea, no promise)"))));
+ var c=mk("div","font-variant-numeric:tabular-nums;font-weight:700;margin-top:2px");d.appendChild(c);if(/^released/i.test(it.status)){c.textContent="Released"}else if(it.eta){cds.push([c,Date.parse(it.eta)])}else{c.textContent="No date yet"}
  return d;
 }
 var sec=mk("section","background:var(--card,#121c30);border:1px solid var(--line,#22314f);border-radius:16px;padding:18px;margin:16px auto;max-width:860px;color:var(--text,#e8eefc)");sec.id="roadmap";
 sec.appendChild(mk("h2","margin:0 0 4px;font-size:1.15rem","Roadmap / Coming soon"));
 sec.appendChild(mk("p","margin:0 0 10px;color:var(--mute,#9db0d0);font-size:.85rem","What each app is getting next. Release dates are our own estimates, not promises, and can move. Reviewed "+REVIEWED+"."));
-function byEta(a,b){return Date.parse(a.eta)-Date.parse(b.eta)}
+function te(x){return x.eta?Date.parse(x.eta):Infinity}
+function byEta(a,b){var x=te(a),y=te(b);return x===y?0:(x<y?-1:1)}
 if(cur==="eco"){
  APPS.forEach(function(a){
   var mine=ITEMS.filter(function(i){return i.apps.indexOf(a.id)>=0}).sort(byEta);
