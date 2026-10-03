@@ -4,7 +4,7 @@
  "trainName": "Train 04179",
  "trainArrival": "2026-10-04T04:34:00+05:30",
  "trainNote": "Arrival time is a tracker estimate and can change.",
- "updated": "3 Oct 2026, 11:52 PM IST",
+ "updated": "4 Oct 2026, 12:35 AM IST",
  "items": [
   {
    "name": "Travel Checking - SensorGuard 1.0.8",
@@ -15,16 +15,16 @@
    "state": "shipped"
   },
   {
-   "name": "Netra Hub: live location share",
-   "state": "queued"
+   "name": "Netra Hub 1.0.8: location share (one-tap snapshot link, not live tracking)",
+   "state": "shipped"
   },
   {
-   "name": "Netra Hub: SOS shake",
-   "state": "queued"
+   "name": "Netra Hub 1.0.9: SOS shake",
+   "state": "shipped"
   },
   {
-   "name": "SensorGuard: permission watchdog",
-   "state": "queued"
+   "name": "SensorGuard 1.0.9: mic/camera watchdog (screen-off alerts)",
+   "state": "shipped"
   },
   {
    "name": "Battery Sentinel: travel battery saver",
