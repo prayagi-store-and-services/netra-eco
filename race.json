@@ -1,17 +1,39 @@
 {
- "title": "Race shuru ho gayi hai - Train 04179 vs Netra releases",
- "sub": "Jaipur pahunchne se pehle sab features.",
+ "title": "App vs Train - Train 04179 vs Netra releases",
+ "sub": "Race shuru ho gayi hai. Jaipur pahunchne se pehle sab features.",
  "trainName": "Train 04179",
  "trainArrival": "2026-10-04T04:34:00+05:30",
  "trainNote": "Arrival time is a tracker estimate and can change.",
  "updated": "3 Oct 2026, 11:35 PM IST",
  "items": [
-  {"name": "Travel Checking - SensorGuard 1.0.8", "state": "building"},
-  {"name": "Travel Checking - Netra Hub 1.0.7", "state": "building"},
-  {"name": "Netra Hub: live location share", "state": "queued"},
-  {"name": "Netra Hub: SOS shake", "state": "queued"},
-  {"name": "SensorGuard: permission watchdog", "state": "queued"},
-  {"name": "Battery Sentinel: travel battery saver", "state": "queued"},
-  {"name": "Netra Eco: live race bar (patch)", "state": "building"}
- ]
+  {
+   "name": "Travel Checking - SensorGuard 1.0.8",
+   "state": "building"
+  },
+  {
+   "name": "Travel Checking - Netra Hub 1.0.7",
+   "state": "building"
+  },
+  {
+   "name": "Netra Hub: live location share",
+   "state": "queued"
+  },
+  {
+   "name": "Netra Hub: SOS shake",
+   "state": "queued"
+  },
+  {
+   "name": "SensorGuard: permission watchdog",
+   "state": "queued"
+  },
+  {
+   "name": "Battery Sentinel: travel battery saver",
+   "state": "queued"
+  },
+  {
+   "name": "Netra Eco: live race bar (patch)",
+   "state": "building"
+  }
+ ],
+ "gift": "Bhai ki taraf se travelling gift"
 }
