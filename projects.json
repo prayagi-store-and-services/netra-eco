@@ -2,9 +2,54 @@
   "family": "Netra Eco",
   "tagline": "Ek parivaar, kai projects - Netra by Prayagi Team",
   "projects": [
-    {"id":"battery-sentinel","package":"com.aistudio.batterysentinel.ntra","latestJson":"https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/latest.json","name":"Battery Sentinel Pro Netra","type":"Battery and device health app","summary":"Truthful battery, charging and hardware monitoring for Android. Shows \"Unavailable\" when Android does not give a real value.","repo":"prayagi-store-and-services/-Battery-Sentinel-Pro-Netra","site":"https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/","icon":"https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/icon.svg"},
-    {"id":"kbc","package":"com.aistudio.reasoningquiz.tark","name":"KBC (TarkShastra)","type":"Game","summary":"An adaptive 17-question reasoning quiz game for Android.","repo":"prayagi-store-and-services/KBC","site":"https://prayagi-store-and-services.github.io/KBC/","icon":"https://prayagi-store-and-services.github.io/KBC/icon.svg"},
-    {"id":"netra-hub","package":"com.aistudio.netrasensorhub.kxmpzq","name":"Netra Hub (Netra Human Safety)","type":"Security application","summary":"Unified Android safety and emergency dashboard.","repo":"prayagi-store-and-services/netra-hub","site":"https://prayagi-store-and-services.github.io/netra-hub/","icon":"https://prayagi-store-and-services.github.io/netra-hub/icon.svg"},
-    {"id":"prayagi-privacy","package":"com.aistudio.sensorguard.prvsec","name":"Prayagi Privacy (SensorGuard)","type":"Privacy application","summary":"A dedicated privacy app for microphone and camera transparency.","repo":"prayagi-store-and-services/prayagi-Privacy-","site":"https://prayagi-store-and-services.github.io/prayagi-Privacy-/","icon":"https://prayagi-store-and-services.github.io/prayagi-Privacy-/icon.svg"}
+    {
+      "id": "battery-sentinel",
+      "package": "com.aistudio.batterysentinel.ntra",
+      "latestJson": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/latest.json",
+      "name": "Battery Sentinel Pro Netra",
+      "type": "Battery and device health app",
+      "summary": "Truthful battery, charging and hardware monitoring for Android. Shows \"Unavailable\" when Android does not give a real value.",
+      "repo": "prayagi-store-and-services/-Battery-Sentinel-Pro-Netra",
+      "site": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/",
+      "icon": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/icon.svg"
+    },
+    {
+      "id": "kbc",
+      "package": "com.aistudio.reasoningquiz.tark",
+      "name": "KBC (TarkShastra)",
+      "type": "Game",
+      "summary": "An adaptive 17-question reasoning quiz game for Android.",
+      "repo": "prayagi-store-and-services/KBC",
+      "site": "https://prayagi-store-and-services.github.io/KBC/",
+      "icon": "https://prayagi-store-and-services.github.io/KBC/icon.svg"
+    },
+    {
+      "id": "netra-hub",
+      "package": "com.aistudio.netrasensorhub.kxmpzq",
+      "name": "Netra Hub (Netra Human Safety)",
+      "type": "Security application",
+      "summary": "Unified Android safety and emergency dashboard.",
+      "repo": "prayagi-store-and-services/netra-hub",
+      "site": "https://prayagi-store-and-services.github.io/netra-hub/",
+      "icon": "https://prayagi-store-and-services.github.io/netra-hub/icon.svg"
+    },
+    {
+      "id": "prayagi-privacy",
+      "package": "com.aistudio.sensorguard.prvsec",
+      "name": "Prayagi Privacy (SensorGuard)",
+      "type": "Privacy application",
+      "summary": "A dedicated privacy app for microphone and camera transparency.",
+      "repo": "prayagi-store-and-services/prayagi-Privacy-",
+      "site": "https://prayagi-store-and-services.github.io/prayagi-Privacy-/",
+      "icon": "https://prayagi-store-and-services.github.io/prayagi-Privacy-/icon.svg"
+    },
+    {
+      "id": "netra-player",
+      "package": "com.prayagi.netraplayer",
+      "name": "Netra Player",
+      "type": "Video and MP3 player",
+      "summary": "A simple video and MP3 player for Android. Plays video and music files stored on your phone.",
+      "repo": "prayagi-store-and-services/netra-player"
+    }
   ]
 }
