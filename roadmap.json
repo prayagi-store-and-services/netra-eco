@@ -1,6 +1,6 @@
 {
  "reviewed": "4 Oct 2026",
- "note": "All dates are our own estimates and can change.",
+ "note": "All dates are our own estimates and can change. An item with a \"ships\" list disappears by itself once the latest published release of every listed app has reached that version (the Eco app checks this from the real release data).",
  "apps": [
   {
    "id": "bspn",
@@ -38,6 +38,28 @@
     "prayagi-privacy",
     "kbc",
     "netra-player"
+   ],
+   "ships": [
+    {
+     "app": "bspn",
+     "version": "1.2.3"
+    },
+    {
+     "app": "kbc",
+     "version": "1.1.1"
+    },
+    {
+     "app": "netra-hub",
+     "version": "1.1.1"
+    },
+    {
+     "app": "prayagi-privacy",
+     "version": "1.1.0"
+    },
+    {
+     "app": "netra-player",
+     "version": "1.1.1"
+    }
    ]
   },
   {
@@ -46,6 +68,12 @@
    "eta": "2026-10-04T18:30:00+05:30",
    "apps": [
     "bspn"
+   ],
+   "ships": [
+    {
+     "app": "bspn",
+     "version": "1.2.2"
+    }
    ]
   },
   {
@@ -54,6 +82,12 @@
    "eta": "2026-10-04T20:30:00+05:30",
    "apps": [
     "prayagi-privacy"
+   ],
+   "ships": [
+    {
+     "app": "prayagi-privacy",
+     "version": "1.1.0"
+    }
    ]
   },
   {
@@ -62,6 +96,12 @@
    "eta": "2026-10-05T12:00:00+05:30",
    "apps": [
     "kbc"
+   ],
+   "ships": [
+    {
+     "app": "kbc",
+     "version": "1.1.1"
+    }
    ]
   },
   {
@@ -78,6 +118,12 @@
    "eta": "2026-10-05T14:00:00+05:30",
    "apps": [
     "eco"
+   ],
+   "ships": [
+    {
+     "app": "eco",
+     "version": "1.2.0"
+    }
    ]
   },
   {
@@ -186,7 +232,13 @@
    "title": "H2: steps fix and daily step target (v1.2.0)",
    "text": "Pedometer fix and an age-based daily step target, pending the owner's confirmation of the numbers.",
    "status": "Planned (needs owner answers)",
-   "eta": "2026-10-08T20:00:00+05:30"
+   "eta": "2026-10-08T20:00:00+05:30",
+   "ships": [
+    {
+     "app": "netra-hub",
+     "version": "1.2.0"
+    }
+   ]
   },
   {
    "apps": [
@@ -195,7 +247,13 @@
    "title": "H3: driving mode and family apps coordination (v1.3.0)",
    "text": "Driving mode detection that tells the other Netra apps on the same phone to stop background work. Thermal protection always stays on. SensorGuard is not stopped. On the same phone, offline.",
    "status": "Planned (needs owner answers)",
-   "eta": "2026-10-09T20:00:00+05:30"
+   "eta": "2026-10-09T20:00:00+05:30",
+   "ships": [
+    {
+     "app": "netra-hub",
+     "version": "1.3.0"
+    }
+   ]
   },
   {
    "apps": [
@@ -204,7 +262,13 @@
    "title": "H4: emergency SMS, siren and parking (v1.4.0)",
    "text": "Emergency SMS to your contacts, a siren with a Stop control, and automatic parking spot saving. Tested in simulation, not in real crashes.",
    "status": "Planned (needs owner answers)",
-   "eta": "2026-10-10T20:00:00+05:30"
+   "eta": "2026-10-10T20:00:00+05:30",
+   "ships": [
+    {
+     "app": "netra-hub",
+     "version": "1.4.0"
+    }
+   ]
   },
   {
    "apps": [
@@ -213,7 +277,13 @@
    "title": "H5: magnetic alerts and final polish (v1.5.0)",
    "text": "Always-on magnetic alerts and the final polish. Target for the complete Netra Hub release.",
    "status": "Planned",
-   "eta": "2026-10-11T20:00:00+05:30"
+   "eta": "2026-10-11T20:00:00+05:30",
+   "ships": [
+    {
+     "app": "netra-hub",
+     "version": "1.5.0"
+    }
+   ]
   },
   {
    "apps": [
@@ -222,7 +292,13 @@
    "title": "v1.2.0: gesture controls",
    "text": "Swipe for volume, brightness and seeking, double tap to skip.",
    "status": "Planned",
-   "eta": "2026-10-09T20:00:00+05:30"
+   "eta": "2026-10-09T20:00:00+05:30",
+   "ships": [
+    {
+     "app": "netra-player",
+     "version": "1.2.0"
+    }
+   ]
   },
   {
    "apps": [
@@ -231,7 +307,13 @@
    "title": "v1.3.0: subtitles",
    "text": "Load and style subtitles.",
    "status": "Planned",
-   "eta": "2026-10-11T20:00:00+05:30"
+   "eta": "2026-10-11T20:00:00+05:30",
+   "ships": [
+    {
+     "app": "netra-player",
+     "version": "1.3.0"
+    }
+   ]
   },
   {
    "apps": [
@@ -240,7 +322,13 @@
    "title": "v1.4.0: play from a link with ad blocking",
    "text": "Play from a web address, with ads that appear on pages or interrupt playback blocked. Adult and gambling content is always blocked using a known-domain list.",
    "status": "Planned",
-   "eta": "2026-10-14T20:00:00+05:30"
+   "eta": "2026-10-14T20:00:00+05:30",
+   "ships": [
+    {
+     "app": "netra-player",
+     "version": "1.4.0"
+    }
+   ]
   },
   {
    "apps": [
@@ -249,7 +337,13 @@
    "title": "v1.5.0: screen-off audio",
    "text": "Screen off keeps the audio playing.",
    "status": "Planned",
-   "eta": "2026-10-16T20:00:00+05:30"
+   "eta": "2026-10-16T20:00:00+05:30",
+   "ships": [
+    {
+     "app": "netra-player",
+     "version": "1.5.0"
+    }
+   ]
   },
   {
    "apps": [
@@ -258,7 +352,13 @@
    "title": "v1.6.0: Stadium, 3D and Theater sound modes",
    "text": "Sound effects, only on a device that supports stereo output.",
    "status": "Planned",
-   "eta": "2026-10-18T20:00:00+05:30"
+   "eta": "2026-10-18T20:00:00+05:30",
+   "ships": [
+    {
+     "app": "netra-player",
+     "version": "1.6.0"
+    }
+   ]
   },
   {
    "apps": [
@@ -267,7 +367,13 @@
    "title": "v1.7.0: more player features and complete release",
    "text": "Remaining player features. Complete release deadline.",
    "status": "Planned",
-   "eta": "2026-10-19T20:00:00+05:30"
+   "eta": "2026-10-19T20:00:00+05:30",
+   "ships": [
+    {
+     "app": "netra-player",
+     "version": "1.7.0"
+    }
+   ]
   },
   {
    "apps": [
