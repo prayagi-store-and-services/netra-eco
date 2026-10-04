@@ -42,7 +42,10 @@ f.addEventListener("submit",function(e){e.preventDefault();var m=document.getEle
  else{d.kind=kind;d.message=msg.slice(0,1000);d.clientId="web";pub=put("netra_site_feedback",d)}
  pub=pub.catch(function(){return "fail"});
  pub.then(function(pr){var fd=new FormData(f);fd.set("app",APP);fd.set("_subject","[Netra] "+kind+" - "+APP);fd.set("_template","table");fd.set("_captcha","false");
-  return fetch("https://formsubmit.co/ajax/prayagideepak@gmail.com",{method:"POST",headers:{Accept:"application/json"},body:fd}).then(function(r){return r.json()}).then(function(d){
-   if(d.success==="true"||d.success===true){m.textContent=pr==="ok"?"Sent. Thank you!":"Sent to the developer. It could not be shown publicly right now.";f.reset();if(pr==="ok")load()}else m.textContent="Could not send right now. Please try again later."})}).catch(function(){m.textContent="Could not send right now. Please try again later."})})
+  return fetch("https://formsubmit.co/ajax/prayagideepak@gmail.com",{method:"POST",headers:{Accept:"application/json"},body:fd}).then(function(r){return r.json()}).then(function(d){return d.success==="true"||d.success===true}).catch(function(){return false}).then(function(mail){
+   if(pr==="ok"){m.textContent=mail?"Sent. Thank you!":"Saved and shown above. The email copy to the developer did not go through.";f.reset();load()}
+   else if(mail){m.textContent="Sent to the developer by email. It could not be saved to the public list right now.";f.reset()}
+   else m.textContent="Could not send: the public list refused the save and the email service is not accepting messages yet. Nothing was stored. Please try again later."})})
+})
 })();
 </script></body></html>
