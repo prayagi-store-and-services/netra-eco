@@ -77,12 +77,12 @@ fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).the
  d.projects.forEach(function(p){
   var a=el("a","",p.name);a.href="#"+p.id;nav.appendChild(a);
   var s=el("section");s.id=p.id;
-  var w=el("div","app"),im=el("img");im.src=p.icon;im.alt=p.name+" icon";w.appendChild(im);
+  var w=el("div","app");if(p.icon){var im=el("img");im.src=p.icon;im.alt=p.name+" icon";w.appendChild(im)}
   var b=el("div");b.appendChild(el("div","type",p.type));b.appendChild(el("h2","",p.name));b.appendChild(el("div","",p.summary));
   var dl=el("dl");b.appendChild(dl);
   function row(k,v,h){dl.appendChild(el("dt","",k));var dd=el("dd");if(h){var l=el("a","",v);l.href=h;l.rel="noopener";dd.appendChild(l)}else dd.textContent=v;dl.appendChild(dd);return dd}
   var rel=row("Latest release","Unavailable"),rt=row("Released","Unavailable"),sz=row("File size","Unavailable");
-  var act=el("div");var site=el("a","btn","Open "+p.name+" website");site.href=p.site;act.appendChild(site);
+  var act=el("div");if(p.site){var site=el("a","btn","Open "+p.name+" website");site.href=p.site;act.appendChild(site)}
   var code=el("a","btn alt","Code on GitHub");code.href="https://github.com/"+p.repo;act.appendChild(code);b.appendChild(act);
   w.appendChild(b);s.appendChild(w);box.appendChild(s);
   gh("repos/"+p.repo+"/releases/latest").then(function(x){
@@ -94,7 +94,7 @@ fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).the
   var AB="https://abacus.jasoncameron.dev/";
   function vk(id){return id==="battery-sentinel"?"visits":"visits-"+id}
   function cnt(k){return fetch(AB+"get/netra-pages/"+k).then(function(r){return r.json()}).then(function(x){return typeof x.value==="number"?x.value:(x&&x.error==="Key not found"?0:null)}).catch(function(){return null})}
-  var rows=d.projects.map(function(p){return Promise.all([cnt(vk(p.id)),gh("repos/"+p.repo+"/releases?per_page=100")]).then(function(a){
+  var rows=d.projects.map(function(p){return Promise.all([p.site?cnt(vk(p.id)):Promise.resolve(null),gh("repos/"+p.repo+"/releases?per_page=100")]).then(function(a){
    var t=null,last=null;if(a[1]){t=0;a[1].forEach(function(x){if(x.draft)return;(x.assets||[]).forEach(function(y){if(/\.apk$/i.test(y.name))t+=(y.download_count||0)});if(!last)last=x})}
    return {p:p,v:a[0],t:t,last:last}})});
   Promise.all([cnt("visits-eco"),Promise.all(rows)]).then(function(a){
