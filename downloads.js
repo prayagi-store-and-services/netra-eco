@@ -14,6 +14,8 @@ box.innerHTML="";
 box.appendChild(mk("h2","","Download "+name+" (APK)"));
 var main=mk("a","btn","Download latest APK");main.href="https://github.com/"+repo+"/releases/latest/download/app-release.apk";box.appendChild(main);
 var note=mk("p","sub","Android only. Allow installs from your browser once if Android asks. Check the SHA-256 below if you want to verify the file.");box.appendChild(note);
+var fab=mk("a","netra-fab");fab.href=main.href;fab.setAttribute("aria-label","Download "+name+" APK");fab.title="Download "+name+" APK";fab.textContent="\u2B07 APK";
+fab.style.cssText="position:fixed;right:14px;bottom:76px;z-index:9999;background:#1b8a5a;color:#fff;font:700 14px system-ui,sans-serif;padding:12px 16px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.35)";document.body.appendChild(fab);
 var list=mk("div","");list.id="netra-dl-list";list.textContent="Loading versions...";box.appendChild(list);
 function fmt(d){try{return new Date(d).toLocaleDateString(undefined,{year:"numeric",month:"short",day:"numeric"})}catch(e){return "Unavailable"}}
 function render(rel){
