@@ -83,11 +83,11 @@ fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).the
   function row(k,v,h){dl.appendChild(el("dt","",k));var dd=el("dd");if(h){var l=el("a","",v);l.href=h;l.rel="noopener";dd.appendChild(l)}else dd.textContent=v;dl.appendChild(dd);return dd}
   var rel=row("Latest release","Unavailable"),rt=row("Released","Unavailable"),sz=row("File size","Unavailable");
   var act=el("div");if(p.site){var site=el("a","btn","Open "+p.name+" website");site.href=p.site;act.appendChild(site)}
-  var code=el("a","btn alt","Code on GitHub");code.href="https://github.com/"+p.repo;act.appendChild(code);b.appendChild(act);
+  var dl0=el("a","btn","Download latest APK");dl0.href="https://github.com/"+p.repo+"/releases/latest/download/app-release.apk";act.insertBefore(dl0,act.firstChild);b.appendChild(act);
   w.appendChild(b);s.appendChild(w);box.appendChild(s);
   gh("repos/"+p.repo+"/releases/latest").then(function(x){
-   if(x&&x.tag_name){rel.textContent="";var l=el("a","",x.tag_name);l.href=x.html_url;rel.appendChild(l);rt.textContent=when(x.published_at);
-    var al=(x.assets||[]).filter(function(y){return /\.apk$/i.test(y.name)});var k=al.filter(function(y){return y.name!=="app-release.apk"})[0]||al[0];if(k){sz.textContent=(k.size/1048576).toFixed(1)+" MB";var dl2=el("a","btn","Download APK");dl2.href=k.browser_download_url;act.insertBefore(dl2,act.firstChild)}}
+   if(x&&x.tag_name){rel.textContent=x.tag_name;rt.textContent=when(x.published_at);
+    var al=(x.assets||[]).filter(function(y){return /\.apk$/i.test(y.name)});var k=al.filter(function(y){return y.name!=="app-release.apk"})[0]||al[0];if(k){sz.textContent=(k.size/1048576).toFixed(1)+" MB";dl0.href=k.browser_download_url;dl0.textContent="Download "+x.tag_name+" APK"}}
    else rel.textContent="Not released yet"})});
 
  (function(){
@@ -130,4 +130,4 @@ f.addEventListener("submit",function(e){e.preventDefault();var m=document.getEle
 <script src="roadmap.js"></script>
 <script src="eco-promo.js"></script>
 </body>
-</html>
+ </html>
