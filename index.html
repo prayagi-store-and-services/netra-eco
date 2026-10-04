@@ -51,7 +51,7 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 <main>
 <div id="apps"></div>
 <section id="stats"><h2>Live stats - all sites and apps</h2><div class="sub">Visits are an anonymous page-load counter (no cookies, no personal data). Downloads come live from GitHub Releases and include in-app updates. Anything that cannot be read says Unavailable.</div><div id="statsbox" class="sub">Loading...</div></section>
-<section id="ratings"><h2>Ratings, reviews and complaints - all apps</h2><div class="sub">Everything people send from any Netra app website or from inside an app shows up here, app by app. Only real submissions are shown.</div><div id="rall">Loading...</div></section>
+<section id="ratings"><h2>Ratings, reviews and complaints - all apps</h2><div class="sub">Everything people send from any Netra app website or from inside an app shows up here, app by app. Only real submissions are shown.</div><div class="sub" style="margin:10px 0 4px">Send a rating, suggestion or complaint. Choose which app it is for:</div><select id="fbapp" aria-label="Which app is this feedback for"></select><iframe id="fbframe" title="Ratings and feedback" style="width:100%;height:760px;border:0;margin-bottom:10px" loading="lazy"></iframe><div id="rall">Loading...</div></section>
 <section id="contact"><h2>Contact us</h2>
 <form id="cform"><label>Name</label><input name="name" required maxlength="80">
 <label>Email</label><input name="email" type="email" required maxlength="120">
@@ -104,6 +104,7 @@ fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).the
    document.getElementById("statsbox").innerHTML=h+"</tbody></table><div class='sub'>Checked "+when(new Date().toISOString())+". Each count started when that site's counter was added, it is not a lifetime figure for older visits.</div>"})
  })();
  var names={};d.projects.forEach(function(p){names[p.id]=p.name});
+ (function(){var sel=document.getElementById("fbapp"),fr=document.getElementById("fbframe");d.projects.forEach(function(p){var o=document.createElement("option");o.value=p.id;o.textContent=p.name;sel.appendChild(o)});function go(){fr.src="embed.html?app="+encodeURIComponent(sel.value)}sel.addEventListener("change",go);go()})();
  Promise.all([fsq("netra_site_ratings"),fsq("netra_site_feedback")]).then(function(a){
   var by={};d.projects.forEach(function(p){by[p.id]={r:[],f:[]}});
   a[0].forEach(function(i){var k=by[i.appId]?i.appId:"battery-sentinel";by[k].r.push(i)});
