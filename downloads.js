@@ -5,17 +5,36 @@
    No repository page is linked from here. */
 (function(){
 "use strict";
-var me=document.currentScript,repo=me&&me.getAttribute("data-repo"),name=me&&me.getAttribute("data-name")||"this app";
+var me=document.currentScript,repo=me&&me.getAttribute("data-repo"),name=me&&me.getAttribute("data-name")||"this app",mode=me&&me.getAttribute("data-mode")||"full";
 if(!repo||!/^prayagi-store-and-services\/[A-Za-z0-9._-]+$/.test(repo))return;
 function mk(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
-var box=document.getElementById("netra-downloads");
+var ALIAS="https://github.com/"+repo+"/releases/latest/download/app-release.apk";
+var main=null,fab=null,box=null;
+if(mode==="full"){
+box=document.getElementById("netra-downloads");
 if(!box){box=mk("section");box.id="netra-downloads";var m=document.querySelector("main")||document.body;m.insertBefore(box,m.children[1]||null)}
 box.innerHTML="";
 box.appendChild(mk("h2","","Download "+name+" (APK)"));
-var main=mk("a","btn","Download latest APK");main.href="https://github.com/"+repo+"/releases/latest/download/app-release.apk";box.appendChild(main);
+main=mk("a","btn","Download latest APK");main.href=ALIAS;box.appendChild(main);
 var note=mk("p","sub","Android only. Allow installs from your browser once if Android asks. Check the SHA-256 below if you want to verify the file.");box.appendChild(note);
-var fab=mk("a","netra-fab");fab.href=main.href;fab.setAttribute("aria-label","Download "+name+" APK");fab.title="Download "+name+" APK";fab.textContent="\u2B07 APK";
+}
+if(mode==="full"||mode==="fab"){
+fab=mk("a","netra-fab");fab.href=ALIAS;fab.setAttribute("aria-label","Download "+name+" APK");fab.title="Download "+name+" APK";fab.textContent="\u2B07 APK";
 fab.style.cssText="position:fixed;right:14px;bottom:76px;z-index:9999;background:#1b8a5a;color:#fff;font:700 14px system-ui,sans-serif;padding:12px 16px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.35)";document.body.appendChild(fab);
+}
+/* Point every download button of THIS app at the newest release's own named APK (for example KBC-v1.1.5.apk), read live with no cache.
+   If that cannot be read (for example GitHub rate limit), the buttons keep the always-latest link above, which still delivers the newest file under a generic name. */
+function setApk(url){
+ if(main)main.href=url;if(fab)fab.href=url;
+ var all=document.querySelectorAll("a[href]");
+ for(var i=0;i<all.length;i++){var h=all[i].getAttribute("href")||"";if(h===ALIAS)all[i].href=url}
+}
+fetch("https://api.github.com/repos/"+repo+"/releases/latest",{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(x){
+ var al=(x.assets||[]).filter(function(y){return /\.apk$/i.test(y.name)&&y.state!=="starter"});
+ var a=al.filter(function(y){return y.name!=="app-release.apk"})[0];
+ if(a&&/^https:\/\/github\.com\/prayagi-store-and-services\//.test(a.browser_download_url))setApk(a.browser_download_url)
+}).catch(function(){});
+if(mode!=="full")return;
 var list=mk("div","");list.id="netra-dl-list";list.textContent="Loading versions...";box.appendChild(list);
 function fmt(d){try{return new Date(d).toLocaleDateString(undefined,{year:"numeric",month:"short",day:"numeric"})}catch(e){return "Unavailable"}}
 function render(rel){
