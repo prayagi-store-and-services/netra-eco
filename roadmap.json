@@ -293,96 +293,6 @@
   },
   {
    "apps": [
-    "netra-player"
-   ],
-   "title": "v1.2.0: gesture controls",
-   "text": "Swipe for volume, brightness and seeking, double tap to skip.",
-   "status": "Planned",
-   "eta": "2026-10-09T20:00:00+05:30",
-   "ships": [
-    {
-     "app": "netra-player",
-     "version": "1.2.0"
-    }
-   ]
-  },
-  {
-   "apps": [
-    "netra-player"
-   ],
-   "title": "v1.3.0: subtitles",
-   "text": "Load and style subtitles.",
-   "status": "Planned",
-   "eta": "2026-10-11T20:00:00+05:30",
-   "ships": [
-    {
-     "app": "netra-player",
-     "version": "1.3.0"
-    }
-   ]
-  },
-  {
-   "apps": [
-    "netra-player"
-   ],
-   "title": "v1.4.0: play from a link with ad blocking",
-   "text": "Play from a web address, with ads that appear on pages or interrupt playback blocked. Adult and gambling content is always blocked using a known-domain list.",
-   "status": "Planned",
-   "eta": "2026-10-14T20:00:00+05:30",
-   "ships": [
-    {
-     "app": "netra-player",
-     "version": "1.4.0"
-    }
-   ]
-  },
-  {
-   "apps": [
-    "netra-player"
-   ],
-   "title": "v1.5.0: screen-off audio",
-   "text": "Screen off keeps the audio playing.",
-   "status": "Planned",
-   "eta": "2026-10-16T20:00:00+05:30",
-   "ships": [
-    {
-     "app": "netra-player",
-     "version": "1.5.0"
-    }
-   ]
-  },
-  {
-   "apps": [
-    "netra-player"
-   ],
-   "title": "v1.6.0: Stadium, 3D and Theater sound modes",
-   "text": "Sound effects, only on a device that supports stereo output.",
-   "status": "Planned",
-   "eta": "2026-10-18T20:00:00+05:30",
-   "ships": [
-    {
-     "app": "netra-player",
-     "version": "1.6.0"
-    }
-   ]
-  },
-  {
-   "apps": [
-    "netra-player"
-   ],
-   "title": "v1.7.0: more player features and complete release",
-   "text": "Remaining player features. Complete release deadline.",
-   "status": "Planned",
-   "eta": "2026-10-19T20:00:00+05:30",
-   "ships": [
-    {
-     "app": "netra-player",
-     "version": "1.7.0"
-    }
-   ]
-  },
-  {
-   "apps": [
     "prayagi-privacy"
    ],
    "title": "S1: unknown-sources alert and security-patch age warning",
@@ -473,6 +383,146 @@
    "text": "Ad blocking through the same local VPN. Adult and gambling domains are always blocked.",
    "status": "Planned",
    "eta": "2026-10-15T20:00:00+05:30"
+  },
+  {
+   "title": "Netra Player v1.1.8: State and error truth - real playback state and real error reasons",
+   "status": "Planned",
+   "eta": "2026-10-06T20:00:00+05:30",
+   "apps": [
+    "netra-player"
+   ],
+   "ships": [
+    {
+     "app": "netra-player",
+     "version": "1.1.8"
+    }
+   ]
+  },
+  {
+   "title": "Netra Player v1.1.9: Recent files list with real saved positions",
+   "status": "Planned",
+   "eta": "2026-10-07T20:00:00+05:30",
+   "apps": [
+    "netra-player"
+   ],
+   "ships": [
+    {
+     "app": "netra-player",
+     "version": "1.1.9"
+    }
+   ]
+  },
+  {
+   "title": "Netra Player v1.1.10: Gesture controls - brightness, volume, seek swipe, double tap jump",
+   "status": "Planned",
+   "eta": "2026-10-08T20:00:00+05:30",
+   "apps": [
+    "netra-player"
+   ],
+   "ships": [
+    {
+     "app": "netra-player",
+     "version": "1.1.10"
+    }
+   ]
+  },
+  {
+   "title": "Netra Player v1.1.11: Audio track and subtitle track choice (only tracks the file has)",
+   "status": "Planned",
+   "eta": "2026-10-09T20:00:00+05:30",
+   "apps": [
+    "netra-player"
+   ],
+   "ships": [
+    {
+     "app": "netra-player",
+     "version": "1.1.11"
+    }
+   ]
+  },
+  {
+   "title": "Netra Player v1.1.12: Background audio with notification controls (adds a permission and a library)",
+   "status": "Planned",
+   "eta": "2026-10-10T20:00:00+05:30",
+   "apps": [
+    "netra-player"
+   ],
+   "ships": [
+    {
+     "app": "netra-player",
+     "version": "1.1.12"
+    }
+   ]
+  },
+  {
+   "title": "Netra Player v1.1.13: Folder list and queue with the system folder picker",
+   "status": "Planned",
+   "eta": "2026-10-11T20:00:00+05:30",
+   "apps": [
+    "netra-player"
+   ],
+   "ships": [
+    {
+     "app": "netra-player",
+     "version": "1.1.13"
+    }
+   ]
+  },
+  {
+   "title": "Netra Player v1.1.14: Subtitle files (.srt) picked by you",
+   "status": "Planned",
+   "eta": "2026-10-12T20:00:00+05:30",
+   "apps": [
+    "netra-player"
+   ],
+   "ships": [
+    {
+     "app": "netra-player",
+     "version": "1.1.14"
+    }
+   ]
+  },
+  {
+   "title": "Netra Player v1.1.15: Headphone sound effect, only if the phone reports support, otherwise Unavailable",
+   "status": "Planned",
+   "eta": "2026-10-14T20:00:00+05:30",
+   "apps": [
+    "netra-player"
+   ],
+   "ships": [
+    {
+     "app": "netra-player",
+     "version": "1.1.15"
+    }
+   ]
+  },
+  {
+   "title": "Netra Player v1.1.16: Picture in picture",
+   "status": "Planned",
+   "eta": "2026-10-15T20:00:00+05:30",
+   "apps": [
+    "netra-player"
+   ],
+   "ships": [
+    {
+     "app": "netra-player",
+     "version": "1.1.16"
+    }
+   ]
+  },
+  {
+   "title": "Netra Player v1.2.0: Netra Player complete release (video and MP3 only)",
+   "status": "Planned",
+   "eta": "2026-10-16T20:00:00+05:30",
+   "apps": [
+    "netra-player"
+   ],
+   "ships": [
+    {
+     "app": "netra-player",
+     "version": "1.2.0"
+    }
+   ]
   }
  ]
 }
