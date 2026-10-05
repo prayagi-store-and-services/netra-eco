@@ -1,5 +1,5 @@
 {
- "reviewed": "4 Oct 2026",
+ "reviewed": "5 Oct 2026",
  "note": "All dates are our own estimates and can change. An item with a \"ships\" list disappears by itself once the latest published release of every listed app has reached that version (the Eco app checks this from the real release data).",
  "apps": [
   {
@@ -106,10 +106,16 @@
   },
   {
    "title": "Hub UI step 2: dashboard cards and SOS screen wording",
-   "status": "Planned",
-   "eta": "2026-10-05T09:00:00+05:30",
+   "status": "In progress",
+   "eta": "2026-10-06T20:00:00+05:30",
    "apps": [
     "netra-hub"
+   ],
+   "ships": [
+    {
+     "app": "netra-hub",
+     "version": "1.1.9"
+    }
    ]
   },
   {
@@ -382,7 +388,13 @@
    "title": "S1: unknown-sources alert and security-patch age warning",
    "text": "Warns when installs from unknown sources are allowed and when the device security patch is old. We do not patch the OS.",
    "status": "Planned",
-   "eta": "2026-10-06T20:00:00+05:30"
+   "eta": "2026-10-06T20:00:00+05:30",
+   "ships": [
+    {
+     "app": "prayagi-privacy",
+     "version": "1.2.0"
+    }
+   ]
   },
   {
    "apps": [
@@ -391,7 +403,13 @@
    "title": "S2: risky app permission check",
    "text": "Lists installed apps with risky permission combinations. App-level protection only.",
    "status": "Planned",
-   "eta": "2026-10-07T20:00:00+05:30"
+   "eta": "2026-10-07T20:00:00+05:30",
+   "ships": [
+    {
+     "app": "prayagi-privacy",
+     "version": "1.2.1"
+    }
+   ]
   },
   {
    "apps": [
@@ -400,7 +418,13 @@
    "title": "S3: accessibility-service warning",
    "text": "Shows enabled accessibility services and flags unusual ones.",
    "status": "Planned",
-   "eta": "2026-10-08T20:00:00+05:30"
+   "eta": "2026-10-08T20:00:00+05:30",
+   "ships": [
+    {
+     "app": "prayagi-privacy",
+     "version": "1.2.2"
+    }
+   ]
   },
   {
    "apps": [
@@ -409,7 +433,13 @@
    "title": "S4: clipboard snooping indicator",
    "text": "Shows what Android reports about clipboard reads. Shows Unavailable where Android gives no signal.",
    "status": "Planned",
-   "eta": "2026-10-09T20:00:00+05:30"
+   "eta": "2026-10-09T20:00:00+05:30",
+   "ships": [
+    {
+     "app": "prayagi-privacy",
+     "version": "1.2.3"
+    }
+   ]
   },
   {
    "apps": [
@@ -418,7 +448,13 @@
    "title": "S5: overlay permission check",
    "text": "Lists apps that are allowed to draw over other apps.",
    "status": "Planned",
-   "eta": "2026-10-10T20:00:00+05:30"
+   "eta": "2026-10-10T20:00:00+05:30",
+   "ships": [
+    {
+     "app": "prayagi-privacy",
+     "version": "1.2.4"
+    }
+   ]
   },
   {
    "apps": [
