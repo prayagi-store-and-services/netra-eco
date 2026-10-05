@@ -19,6 +19,7 @@ foot.parentNode.insertBefore(sec,foot);
 function size(n){return n>=1048576?(n/1048576).toFixed(1)+" MB":Math.round(n/1024)+" KB"}
 fetch("https://api.github.com/repos/"+REPO+"/releases/latest?t="+Date.now(),{cache:"no-store",headers:{Accept:"application/vnd.github+json"}}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){
  var asset=null;(j.assets||[]).forEach(function(x){if(x.name==="app-release.apk")asset=x});
+ var named=null;(j.assets||[]).forEach(function(x){if(/\.apk$/i.test(x.name)&&x.name!=="app-release.apk"&&!named)named=x});if(named&&/^https:\/\/github\.com\/prayagi-store-and-services\//.test(named.browser_download_url))a.href=named.browser_download_url;
  var when="";try{when=new Date(j.published_at).toLocaleDateString(undefined,{day:"numeric",month:"short",year:"numeric"})}catch(_){}
  info.textContent="Newest version: "+(j.tag_name||"Unavailable")+(asset?" - "+size(asset.size):"")+(when?" - released "+when:"")}).catch(function(){
  info.textContent="Newest version: Unavailable right now. The button above still downloads the latest app."});
