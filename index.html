@@ -91,6 +91,19 @@ fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).the
     var al=(x.assets||[]).filter(function(y){return /\.apk$/i.test(y.name)});var k=al.filter(function(y){return y.name!=="app-release.apk"})[0]||al[0];if(k){sz.textContent=(k.size/1048576).toFixed(1)+" MB";dl0.href=k.browser_download_url;dl0.textContent="Download "+x.tag_name+" APK"}}
    else rel.textContent="Not released yet"})});
 
+
+ (d.upcoming||[]).forEach(function(u){
+  if(!u.id||!u.name)return;
+  var a=el("a","",u.name);a.href="#up-"+u.id;nav.appendChild(a);
+  var s=el("section");s.id="up-"+u.id;var w=el("div","app");var b=el("div");
+  b.appendChild(el("div","type",u.type||""));b.appendChild(el("h2","",u.name));b.appendChild(el("div","",u.summary||""));
+  var cd=el("div","sub");var eta=u.eta?new Date(u.eta).getTime():NaN;
+  var t1=el("b","","Coming soon");var t2=el("div","",U);var t3=el("div","sub",isNaN(eta)?"No release time is set yet.":"Approximate, it may arrive a little earlier or later.");
+  cd.appendChild(t1);cd.appendChild(t2);cd.appendChild(t3);b.appendChild(cd);
+  function tick(){if(isNaN(eta)){t2.textContent=U;return}var ms=eta-Date.now();if(ms<=0){t2.textContent="Estimate passed, still being finished";return}var x=Math.floor(ms/1000);t2.textContent=Math.floor(x/86400)+"d "+("0"+Math.floor(x%86400/3600)).slice(-2)+"h "+("0"+Math.floor(x%3600/60)).slice(-2)+"m "+("0"+x%60).slice(-2)+"s"}
+  tick();setInterval(tick,1000);
+  w.appendChild(b);s.appendChild(w);box.appendChild(s)});
+
  (function(){
   var AB="https://abacus.jasoncameron.dev/";
   function vk(id){return id==="battery-sentinel"?"visits":"visits-"+id}
