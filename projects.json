@@ -51,5 +51,14 @@
       "summary": "A simple video and MP3 player for Android. Plays video and music files stored on your phone.",
       "repo": "prayagi-store-and-services/netra-player"
     }
+  ],
+  "upcoming": [
+    {
+      "id": "netra-trikaal",
+      "name": "Netra Trikaal",
+      "type": "Vedic astrology app (coming soon)",
+      "summary": "In development. Planned: Kundli, Dasha, Gochar, daily horoscope, Nakshatra, Hindi and English. Not released yet.",
+      "eta": "2026-10-09T07:15:00+05:30"
+    }
   ]
 }
