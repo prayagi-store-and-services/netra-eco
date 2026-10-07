@@ -97,11 +97,17 @@ fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).the
   var a=el("a","",u.name);a.href="#up-"+u.id;nav.appendChild(a);
   var s=el("section");s.id="up-"+u.id;var w=el("div","app");var b=el("div");
   b.appendChild(el("div","type",u.type||""));b.appendChild(el("h2","",u.name));b.appendChild(el("div","",u.summary||""));
-  var cd=el("div","sub");var eta=u.eta?new Date(u.eta).getTime():NaN;
-  var t1=el("b","","Coming soon");var t2=el("div","",U);var t3=el("div","sub",isNaN(eta)?"No release time is set yet.":"Approximate, it may arrive a little earlier or later.");
-  cd.appendChild(t1);cd.appendChild(t2);cd.appendChild(t3);b.appendChild(cd);
-  function tick(){if(isNaN(eta)){t2.textContent=U;return}var ms=eta-Date.now();if(ms<=0){t2.textContent="Estimate passed, still being finished";return}var x=Math.floor(ms/1000);t2.textContent=Math.floor(x/86400)+"d "+("0"+Math.floor(x%86400/3600)).slice(-2)+"h "+("0"+Math.floor(x%3600/60)).slice(-2)+"m "+("0"+x%60).slice(-2)+"s"}
-  tick();setInterval(tick,1000);
+  var targets=Array.isArray(u.targets)?u.targets.filter(function(t){return t&&typeof t.label==="string"&&t.label.trim()}).slice(0,4):[];
+  if(!targets.length)targets=[{label:"Coming soon",eta:u.eta}];
+  targets.forEach(function(target){
+   var cd=el("div","sub");var eta=target.eta?new Date(target.eta).getTime():NaN;
+   var t1=el("b","",target.label);var t2=el("div","",U);var t3=el("div","sub",isNaN(eta)&&!target.targetDate?"No release time is set yet.":"Approximate target, not a release guarantee.");
+   cd.appendChild(t1);cd.appendChild(t2);cd.appendChild(t3);
+   if(target.note)cd.appendChild(el("div","sub",target.note));
+   b.appendChild(cd);
+   function tick(){if(target.targetDate){var date=String(target.targetDate);if(!/^\d{4}-\d{2}-\d{2}$/.test(date)){t2.textContent=U;return}var parts=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kolkata",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());var get=function(k){return parts.find(function(p){return p.type===k}).value};var today=get("year")+"-"+get("month")+"-"+get("day");var days=Math.round((Date.parse(date+"T00:00:00Z")-Date.parse(today+"T00:00:00Z"))/86400000);if(days>0&&days<=3){var start=Date.parse(date+"T00:00:00+05:30");var min=Math.max(0,Math.floor((start-Date.now())/3600000));var max=Math.ceil((start+86400000-Date.now())/3600000);t2.textContent="Approx. "+min+"-"+max+" hours to target day";return}t2.textContent=days>0?days+" days to target":days===0?"Target day, release not confirmed":"Target passed, check release status";return}if(isNaN(eta)){t2.textContent=U;return}var ms=eta-Date.now();if(ms<=0){t2.textContent="Estimate passed, still being finished";return}var x=Math.floor(ms/1000);t2.textContent=(ms<=72*3600000?Math.floor(x/3600)+"h ":Math.floor(x/86400)+"d "+("0"+Math.floor(x%86400/3600)).slice(-2)+"h ")+("0"+Math.floor(x%3600/60)).slice(-2)+"m "+("0"+x%60).slice(-2)+"s"}
+   tick();setInterval(tick,1000);
+  });
   w.appendChild(b);s.appendChild(w);box.appendChild(s)});
 
  (function(){

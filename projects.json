@@ -58,7 +58,25 @@
       "name": "Netra Trikaal",
       "type": "Vedic astrology app (coming soon)",
       "summary": "In development. Planned: Kundli, Dasha, Gochar, daily horoscope, Nakshatra, Hindi and English. Not released yet.",
-      "eta": "2026-10-09T07:15:00+05:30"
+      "eta": "2026-10-09T21:36:00+05:30"
+    },
+    {
+      "id": "netra-trikal-assistant",
+      "name": "NETRA x TRIKAL",
+      "type": "Local-first Android assistant (coming soon)",
+      "summary": "One app, two assistants with separate sessions and memory. Not released yet.",
+      "targets": [
+        {
+          "label": "Public release target",
+          "targetDate": "2027-04-01",
+          "note": "Release depends on tested features and green checks."
+        },
+        {
+          "label": "First beta target",
+          "targetDate": "2026-10-15",
+          "note": "Approximate. Requires setup, Eco Beta access and phone testing."
+        }
+      ]
     }
   ]
 }

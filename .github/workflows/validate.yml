@@ -1,0 +1,67 @@
+name: Site validation
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check scripts, catalog and countdown boundaries
+        shell: bash
+        run: |
+          node <<'JS'
+          const fs = require('fs'), vm = require('vm'), assert = require('assert');
+          for (const file of fs.readdirSync('.').filter(f => f.endsWith('.js'))) new vm.Script(fs.readFileSync(file, 'utf8'), {filename:file});
+          const html = fs.readFileSync('index.html', 'utf8');
+          for (const match of html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)) new vm.Script(match[1]);
+          const catalog = JSON.parse(fs.readFileSync('projects.json', 'utf8'));
+          JSON.parse(fs.readFileSync('roadmap.json', 'utf8'));
+          const ids = new Set();
+          function validDate(value) {
+            assert(/^\d{4}-\d{2}-\d{2}$/.test(value));
+            const d = new Date(value + 'T00:00:00Z');
+            assert(Number.isFinite(d.getTime()) && d.toISOString().slice(0,10) === value);
+          }
+          for (const p of [...catalog.projects, ...(catalog.upcoming || [])]) {
+            assert(p.id && p.name && !ids.has(p.id)); ids.add(p.id);
+            if (p.repo) assert(p.repo.startsWith('prayagi-store-and-services/'));
+            if (p.eta) assert(Number.isFinite(Date.parse(p.eta)));
+            for (const t of p.targets || []) {
+              assert(t.label && !(t.eta && t.targetDate));
+              if (t.eta) assert(Number.isFinite(Date.parse(t.eta)));
+              if (t.targetDate) validDate(t.targetDate);
+            }
+          }
+          class E {
+            constructor(tag) { this.tag = tag; this.children = []; this.textContent = ''; }
+            appendChild(e) { this.children.push(e); return e; }
+          }
+          const start = html.indexOf(' (d.upcoming||[])');
+          const end = html.indexOf(' (function(){', start);
+          assert(start >= 0 && end > start);
+          const code = html.slice(start, end);
+          function render(target, now) {
+            const box = new E('main'), nav = new E('nav'), RealDate = Date;
+            class MockDate extends RealDate {
+              constructor(v) { super(v === undefined ? now : v); }
+              static now() { return now; }
+            }
+            vm.runInNewContext(code, {d:{upcoming:[{id:'test', name:'Test', targets:[target]}]}, box, nav, U:'Unavailable',
+              el:(t,c,v)=>{ const e=new E(t); e.textContent=v??''; return e; }, Date:MockDate, Intl, setInterval:()=>{}});
+            const values=[]; const walk=e=>{values.push(e.textContent); e.children.forEach(walk);}; walk(box); return values;
+          }
+          const now=Date.parse('2026-10-07T00:00:00+05:30');
+          assert(render({label:'X',eta:new Date(now+72*3600000).toISOString()},now).includes('72h 00m 00s'));
+          assert(render({label:'X',eta:new Date(now+72*3600000+1000).toISOString()},now).includes('3d 00h 00m 01s'));
+          assert(render({label:'X',targetDate:'2026-10-15'},now).includes('8 days to target'));
+          assert(render({label:'X',targetDate:'2026-10-15'},Date.parse('2026-10-14T00:00:00+05:30')).includes('Approx. 24-48 hours to target day'));
+          assert(render({label:'X',targetDate:'2026-10-15'},Date.parse('2026-10-15T05:00:00+05:30')).includes('Target day, release not confirmed'));
+          assert(render({label:'X',eta:'bad'},now).includes('Unavailable'));
+          console.log('Scripts, catalog and countdown checks passed');
+          JS
