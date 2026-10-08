@@ -399,8 +399,8 @@
    ]
   },
   {
-   "title": "Netra Player v1.1.9: Recent files list with real saved positions",
-   "status": "Planned",
+   "title": "Netra Player v1.1.9: Update alerts",
+   "status": "Released in v1.1.9",
    "eta": "2026-10-07T20:00:00+05:30",
    "apps": [
     "netra-player"
@@ -410,11 +410,12 @@
      "app": "netra-player",
      "version": "1.1.9"
     }
-   ]
+   ],
+   "text": "Silent update notification and verified download/install. Recent-files list is still pending."
   },
   {
-   "title": "Netra Player v1.1.10: Gesture controls - brightness, volume, seek swipe, double tap jump",
-   "status": "Planned",
+   "title": "Netra Player v1.1.10: Download progress and Downloads list",
+   "status": "Released in v1.1.10",
    "eta": "2026-10-08T20:00:00+05:30",
    "apps": [
     "netra-player"
@@ -424,7 +425,8 @@
      "app": "netra-player",
      "version": "1.1.10"
     }
-   ]
+   ],
+   "text": "Percent downloaded counts up, time left, parallel downloads, Install/Delete list. Gesture controls are still pending."
   },
   {
    "title": "Netra Player v1.1.11: Audio track and subtitle track choice (only tracks the file has)",
@@ -483,9 +485,51 @@
    ]
   },
   {
-   "title": "Netra Player v1.1.15: Headphone sound effect, only if the phone reports support, otherwise Unavailable",
+   "title": "Netra Player v1.1.17: Headphone sound effect, only if the phone reports support, otherwise Unavailable",
    "status": "Planned",
-   "eta": "2026-10-14T20:00:00+05:30",
+   "eta": "2026-10-15T20:00:00+05:30",
+   "apps": [
+    "netra-player"
+   ],
+   "ships": [
+    {
+     "app": "netra-player",
+     "version": "1.1.17"
+    }
+   ]
+  },
+  {
+   "title": "Netra Player v1.1.18: Picture in picture",
+   "status": "Planned",
+   "eta": "2026-10-16T20:00:00+05:30",
+   "apps": [
+    "netra-player"
+   ],
+   "ships": [
+    {
+     "app": "netra-player",
+     "version": "1.1.18"
+    }
+   ]
+  },
+  {
+   "title": "Netra Player v1.2.0: Netra Player complete release (video and MP3 only)",
+   "status": "Planned",
+   "eta": "2026-10-17T20:00:00+05:30",
+   "apps": [
+    "netra-player"
+   ],
+   "ships": [
+    {
+     "app": "netra-player",
+     "version": "1.2.0"
+    }
+   ]
+  },
+  {
+   "title": "Netra Player v1.1.15: Recent files list with real saved positions",
+   "status": "Planned",
+   "eta": "2026-10-13T20:00:00+05:30",
    "apps": [
     "netra-player"
    ],
@@ -497,9 +541,9 @@
    ]
   },
   {
-   "title": "Netra Player v1.1.16: Picture in picture",
+   "title": "Netra Player v1.1.16: Gesture controls: brightness, volume, seek swipe and double tap jump",
    "status": "Planned",
-   "eta": "2026-10-15T20:00:00+05:30",
+   "eta": "2026-10-14T20:00:00+05:30",
    "apps": [
     "netra-player"
    ],
@@ -507,20 +551,6 @@
     {
      "app": "netra-player",
      "version": "1.1.16"
-    }
-   ]
-  },
-  {
-   "title": "Netra Player v1.2.0: Netra Player complete release (video and MP3 only)",
-   "status": "Planned",
-   "eta": "2026-10-16T20:00:00+05:30",
-   "apps": [
-    "netra-player"
-   ],
-   "ships": [
-    {
-     "app": "netra-player",
-     "version": "1.2.0"
     }
    ]
   }
