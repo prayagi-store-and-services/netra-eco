@@ -235,14 +235,14 @@
    "apps": [
     "netra-hub"
    ],
-   "title": "H2: steps fix and daily step target (v1.2.0)",
-   "text": "Pedometer fix and an age-based daily step target, pending the owner's confirmation of the numbers.",
-   "status": "Planned (needs owner answers)",
+   "title": "H2: steps card and daily step target (released in v1.1.3 to v1.1.5)",
+   "text": "Steps today card and an age-based daily step target from published research are live. Still open: the owner's own target numbers (8000 and 7000, editable), which are not applied yet.",
+   "status": "Released in v1.1.5",
    "eta": "2026-10-08T20:00:00+05:30",
    "ships": [
     {
      "app": "netra-hub",
-     "version": "1.2.0"
+     "version": "1.1.5"
     }
    ]
   },
@@ -252,8 +252,8 @@
    ],
    "title": "H3: driving mode and family apps coordination (v1.3.0)",
    "text": "Driving mode detection that tells the other Netra apps on the same phone to stop background work. Thermal protection always stays on. SensorGuard is not stopped. On the same phone, offline.",
-   "status": "Planned (needs owner answers)",
-   "eta": "2026-10-09T20:00:00+05:30",
+   "status": "In progress",
+   "eta": "2026-10-10T20:00:00+05:30",
    "ships": [
     {
      "app": "netra-hub",
