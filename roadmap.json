@@ -1,5 +1,5 @@
 {
- "reviewed": "5 Oct 2026",
+ "reviewed": "9 Oct 2026",
  "note": "All dates are our own estimates and can change. An item with a \"ships\" list disappears by itself once the latest published release of every listed app has reached that version (the Eco app checks this from the real release data).",
  "apps": [
   {
@@ -328,43 +328,16 @@
    "title": "S3: accessibility-service warning",
    "text": "Shows enabled accessibility services and flags unusual ones.",
    "status": "Planned",
-   "eta": "2026-10-08T20:00:00+05:30",
-   "ships": [
-    {
-     "app": "prayagi-privacy",
-     "version": "1.2.2"
-    }
-   ]
-  },
-  {
-   "apps": [
-    "prayagi-privacy"
-   ],
-   "title": "S4: clipboard snooping indicator",
-   "text": "Shows what Android reports about clipboard reads. Shows Unavailable where Android gives no signal.",
-   "status": "Planned",
-   "eta": "2026-10-09T20:00:00+05:30",
-   "ships": [
-    {
-     "app": "prayagi-privacy",
-     "version": "1.2.3"
-    }
-   ]
+   "eta": "2026-10-18T20:00:00+05:30"
   },
   {
    "apps": [
     "prayagi-privacy"
    ],
    "title": "S5: overlay permission check",
-   "text": "Lists apps that are allowed to draw over other apps.",
+   "text": "Today the app list only tags apps that ASK for the draw-over-other-apps permission. This will check which apps are actually allowed to draw over other apps.",
    "status": "Planned",
-   "eta": "2026-10-10T20:00:00+05:30",
-   "ships": [
-    {
-     "app": "prayagi-privacy",
-     "version": "1.2.4"
-    }
-   ]
+   "eta": "2026-10-19T20:00:00+05:30"
   },
   {
    "apps": [
