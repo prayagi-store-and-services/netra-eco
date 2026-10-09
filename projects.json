@@ -44,6 +44,14 @@
       "icon": "https://prayagi-store-and-services.github.io/prayagi-Privacy-/icon.svg"
     },
     {
+      "id": "netra-trikaal",
+      "package": "com.prayagi.netratrikaal",
+      "name": "Netra Trikaal",
+      "type": "Vedic astrology app",
+      "summary": "Kundli, dasha, transits, a daily Today panchang card and a Rashifal picker by Moon sign. Hindi and English. Everything is calculated on your phone.",
+      "repo": "prayagi-store-and-services/netra-trikaal"
+    },
+    {
       "id": "netra-player",
       "package": "com.prayagi.netraplayer",
       "name": "Netra Player",
@@ -53,13 +61,6 @@
     }
   ],
   "upcoming": [
-    {
-      "id": "netra-trikaal",
-      "name": "Netra Trikaal",
-      "type": "Vedic astrology app (coming soon)",
-      "summary": "In development. Planned: Kundli, Dasha, Gochar, daily horoscope, Nakshatra, Hindi and English. Not released yet.",
-      "eta": "2026-10-09T21:36:00+05:30"
-    },
     {
       "id": "netra-trikal-assistant",
       "name": "NETRA x TRIKAL",
