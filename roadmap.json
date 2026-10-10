@@ -209,8 +209,8 @@
     "netra-hub"
    ],
    "title": "Disaster alerts, part 1: weather orange alerts (India)",
-   "text": "Orange-or-higher weather alerts from IMD for your area, relayed only from the official source. The website checks the alert and pushes it only to people in the affected area, so the phone does not poll and battery is saved.",
-   "status": "Planned",
+   "text": "What the app does today: it checks the NDMA SACHET public alert feed about every 30 minutes and notifies Severe or Extreme alerts whose area names match your district, locality or state (a name match, not coordinates). IMD alerts reach the app only if they appear in that feed. The earlier plan, where the website pushes orange alerts, is not what is built. In the app since Hub v1.4.x, not yet tested on a phone.",
+   "status": "In progress (in the app, not yet tested on a phone)",
    "eta": "2026-10-14T20:00:00+05:30"
   },
   {
@@ -218,8 +218,8 @@
     "netra-hub"
    ],
    "title": "Disaster alerts, part 2: earthquakes within about 200 km",
-   "text": "Earthquake alerts from official feeds only (USGS, NDMA and equivalent agencies). We relay official warnings. We cannot predict earthquakes.",
-   "status": "Planned",
+   "text": "What the app does today: a card and a check about every 30 minutes read the USGS feed for quakes of magnitude 2.5 and above within 200 km in the last 7 days, and notify about new ones. It is not an official warning, and smaller quakes in India may be missing. NDMA is not used for quakes yet. In the app since Hub v1.4.x, not yet tested on a phone.",
+   "status": "In progress (in the app, not yet tested on a phone)",
    "eta": "2026-10-18T20:00:00+05:30"
   },
   {
@@ -251,8 +251,8 @@
     "netra-hub"
    ],
    "title": "H3: driving mode and family apps coordination (v1.3.0)",
-   "text": "Driving mode detection that tells the other Netra apps on the same phone to stop background work. Thermal protection always stays on. SensorGuard is not stopped. On the same phone, offline.",
-   "status": "In progress",
+   "text": "Driving mode detection that tells the other Netra apps on the same phone to stop background work. Thermal protection always stays on. SensorGuard is not stopped. On the same phone, offline. In the app (v1.4.x), tested in CI only, not yet on a phone.",
+   "status": "Released in v1.4.2 (not yet tested on a phone)",
    "eta": "2026-10-10T20:00:00+05:30",
    "ships": [
     {
@@ -266,8 +266,8 @@
     "netra-hub"
    ],
    "title": "H4: emergency SMS, siren and parking (v1.4.0)",
-   "text": "Emergency SMS to your contacts, a siren with a Stop control, and automatic parking spot saving. Tested in simulation, not in real crashes.",
-   "status": "Planned (needs owner answers)",
+   "text": "Emergency SMS to your contacts, a siren with a Stop control, and automatic parking spot saving. In the app (v1.4.x). Tested in simulation and CI, not in real crashes and not yet on a phone.",
+   "status": "Released in v1.4.2 (not yet tested on a phone)",
    "eta": "2026-10-10T20:00:00+05:30",
    "ships": [
     {
