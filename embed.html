@@ -10,8 +10,8 @@ button{background:var(--accent);color:#04101c;border:0;border-radius:8px;padding
 <div id="rsum" class="sub">Loading...</div><div id="rlist"></div>
 <form id="fbform"><select name="kind"><option>Rating</option><option>Suggestion</option><option>Complaint</option></select>
 <select name="stars"><option value="5">5 stars</option><option value="4">4 stars</option><option value="3">3 stars</option><option value="2">2 stars</option><option value="1">1 star</option></select>
-<input name="name" placeholder="Your name (optional)" maxlength="60"><input name="device" placeholder="Your phone, e.g. Samsung Galaxy A52" maxlength="80" required><input name="place" placeholder="Where are you? City or area (typed, optional)" maxlength="80">
-<textarea name="message" rows="3" placeholder="Your message" maxlength="500"></textarea><button type="submit">Send</button><div id="fmsg" class="sub"></div></form>
+<input name="name" placeholder="Your name (optional)" maxlength="60"><input name="device" placeholder="Your phone, e.g. Samsung Galaxy A52" maxlength="60" required><input name="place" placeholder="Where are you? City or area (typed, optional)" maxlength="60">
+<textarea name="message" rows="3" placeholder="Your message" maxlength="500"></textarea><p class="sub">Your name, area and message are shown publicly on this page. A copy is also emailed to the developer through FormSubmit, a free form service. Do not write anything private.</p><button type="submit">Send</button><div id="fmsg" class="sub"></div></form>
 <script>
 (function(){
 var APP=(new URLSearchParams(location.search).get("app")||"").replace(/[^a-z0-9-]/g,"").slice(0,40);
@@ -23,9 +23,9 @@ function q(col){var body={structuredQuery:{from:[{collectionId:col}],where:{fiel
 function load(){Promise.all([q("netra_site_ratings"),q("netra_site_feedback")]).then(function(a){
  var rs=a[0],fs=a[1],box=document.getElementById("rlist");
  if(!rs.length&&!fs.length){set("rsum","No ratings or reviews yet.");box.innerHTML="";return}
- var t=0;rs.forEach(function(i){t+=i.stars});
+ var t=0;rs.forEach(function(i){t+=Math.max(0,Math.min(5,i.stars|0))});
  set("rsum",rs.length?(t/rs.length).toFixed(1)+" out of 5 from "+rs.length+" rating"+(rs.length===1?"":"s")+".":"No ratings yet.");
- box.innerHTML=rs.map(function(i){return "<div class='rv'><span class='st'>"+"\u2605".repeat(i.stars)+"\u2606".repeat(5-i.stars)+"</span> <b>"+esc(i.name||"Anonymous")+"</b><span class='dv'>"+esc(i.device)+(i.place?" - "+esc(i.place):"")+"</span>"+(i.comment?"<p>"+esc(i.comment)+"</p>":"")+"</div>"}).join("")+fs.map(function(i){return "<div class='rv'><b>"+esc(i.kind)+"</b><span class='dv'>"+esc(i.device||"")+(i.place?" - "+esc(i.place):"")+"</span><p>"+esc(i.message)+"</p></div>"}).join("")
+ box.innerHTML=rs.map(function(i){return "<div class='rv'><span class='st'>"+"\u2605".repeat(Math.max(0,Math.min(5,i.stars|0)))+"\u2606".repeat(5-Math.max(0,Math.min(5,i.stars|0)))+"</span> <b>"+esc(i.name||"Anonymous")+"</b><span class='dv'>"+esc(i.device)+(i.place?" - "+esc(i.place):"")+"</span>"+(i.comment?"<p>"+esc(i.comment)+"</p>":"")+"</div>"}).join("")+fs.map(function(i){return "<div class='rv'><b>"+esc(i.kind)+"</b><span class='dv'>"+esc(i.device||"")+(i.place?" - "+esc(i.place):"")+"</span><p>"+esc(i.message)+"</p></div>"}).join("")
 }).catch(function(){set("rsum","Ratings are unavailable right now.")})}
 if(!APP){set("rsum","Unavailable");document.getElementById("fbform").style.display="none"}else load();
 var f=document.getElementById("fbform");
