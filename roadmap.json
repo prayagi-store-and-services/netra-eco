@@ -4,19 +4,19 @@
  "apps": [
   {
    "id": "bspn",
-   "name": "Battery Sentinel Pro Netra (BSPN)"
+   "name": "Netra Battery Sentinel Pro"
   },
   {
    "id": "kbc",
-   "name": "KBC (TarkShastra)"
+   "name": "Netra KBC"
   },
   {
    "id": "netra-hub",
-   "name": "Netra Hub (Netra Human Safety)"
+   "name": "Netra Hub"
   },
   {
    "id": "prayagi-privacy",
-   "name": "Prayagi Privacy (SensorGuard)"
+   "name": "Netra Privacy Guard"
   },
   {
    "id": "netra-player",
@@ -77,7 +77,7 @@
    ]
   },
   {
-   "title": "SensorGuard 1.1.0: version in header and What's new",
+   "title": "Netra Privacy Guard 1.1.0: version in header and What's new",
    "status": "In progress",
    "eta": "2026-10-04T20:30:00+05:30",
    "apps": [
@@ -182,7 +182,7 @@
     "prayagi-privacy"
    ],
    "title": "Mic and camera switched off when the screen turns off, and where each app's data goes",
-   "text": "SensorGuard will cut microphone and camera access when the screen turns off, and will show per app where its data is going.",
+   "text": "Netra Privacy Guard will cut microphone and camera access when the screen turns off, and will show per app where its data is going.",
    "status": "Planned",
    "eta": "2026-11-01T20:00:00+05:30"
   },
@@ -200,7 +200,7 @@
     "bspn"
    ],
    "title": "Solar and inverter monitoring",
-   "text": "Solar generation, grid and battery status of your home system inside Battery Sentinel Pro Netra. The detailed spec is still being decided with the owner, so this estimate is rough.",
+   "text": "Solar generation, grid and battery status of your home system inside Netra Battery Sentinel Pro. The detailed spec is still being decided with the owner, so this estimate is rough.",
    "status": "Planning (spec pending)",
    "eta": "2026-12-15T20:00:00+05:30"
   },
@@ -251,7 +251,7 @@
     "netra-hub"
    ],
    "title": "H3: driving mode and family apps coordination (v1.3.0)",
-   "text": "Driving mode detection that tells the other Netra apps on the same phone to stop background work. Thermal protection always stays on. SensorGuard is not stopped. On the same phone, offline.",
+   "text": "Driving mode detection that tells the other Netra apps on the same phone to stop background work. Thermal protection always stays on. Netra Privacy Guard is not stopped. On the same phone, offline.",
    "status": "In progress",
    "eta": "2026-10-10T20:00:00+05:30",
    "ships": [
