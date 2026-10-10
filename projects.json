@@ -6,7 +6,7 @@
       "id": "battery-sentinel",
       "package": "com.aistudio.batterysentinel.ntra",
       "latestJson": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/latest.json",
-      "name": "Battery Sentinel Pro Netra",
+      "name": "Netra Battery Sentinel Pro",
       "type": "Battery and device health app",
       "summary": "Truthful battery, charging and hardware monitoring for Android. Shows \"Unavailable\" when Android does not give a real value.",
       "repo": "prayagi-store-and-services/-Battery-Sentinel-Pro-Netra",
@@ -16,7 +16,7 @@
     {
       "id": "kbc",
       "package": "com.aistudio.reasoningquiz.tark",
-      "name": "KBC (TarkShastra)",
+      "name": "Netra KBC",
       "type": "Game",
       "summary": "An adaptive 17-question reasoning quiz game for Android.",
       "repo": "prayagi-store-and-services/KBC",
@@ -26,7 +26,7 @@
     {
       "id": "netra-hub",
       "package": "com.aistudio.netrasensorhub.kxmpzq",
-      "name": "Netra Hub (Netra Human Safety)",
+      "name": "Netra Hub",
       "type": "Security application",
       "summary": "Unified Android safety and emergency dashboard.",
       "repo": "prayagi-store-and-services/netra-hub",
@@ -36,7 +36,7 @@
     {
       "id": "prayagi-privacy",
       "package": "com.aistudio.sensorguard.prvsec",
-      "name": "Prayagi Privacy (SensorGuard)",
+      "name": "Netra Privacy Guard",
       "type": "Privacy application",
       "summary": "A dedicated privacy app for microphone and camera transparency.",
       "repo": "prayagi-store-and-services/prayagi-Privacy-",
