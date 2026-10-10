@@ -417,7 +417,7 @@
   },
   {
    "title": "Netra Player v1.1.12: Background audio with notification controls (adds a permission and a library)",
-   "status": "Planned",
+   "status": "Released in v1.1.12",
    "eta": "2026-10-10T20:00:00+05:30",
    "apps": [
     "netra-player"
