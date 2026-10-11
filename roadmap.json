@@ -25,6 +25,10 @@
   {
    "id": "eco",
    "name": "Netra Eco"
+  },
+  {
+   "id": "netra-email",
+   "name": "Netra Email"
   }
  ],
  "items": [
@@ -525,6 +529,13 @@
      "app": "netra-player",
      "version": "1.1.16"
     }
+   ]
+  },
+  {
+   "title": "Netra Email: email app for your Gmail accounts with on-device AI (planning stage, nothing built yet, no release date)",
+   "status": "Planned",
+   "apps": [
+    "netra-email"
    ]
   }
  ]

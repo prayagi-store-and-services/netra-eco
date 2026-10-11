@@ -44,7 +44,7 @@ function run(rm,pj){
    box.appendChild(mk("div","font-size:.8rem;color:#555;margin-bottom:8px","All dates are our own estimates (IST) and can change. Reviewed "+(rm.reviewed||"Unavailable")+"."));
    items.forEach(function(i){var c=mk("div","border-top:1px solid #e3e3e3;padding:8px 0;font-size:.88rem;line-height:1.45");
     c.appendChild(mk("div","font-weight:700",i.title));c.appendChild(mk("div","color:#444","App: "+i.app+" | Version: "+i.ver+" | Status: "+i.status));
-    c.appendChild(mk("div","color:#444","ETA: "+(i.eta==null?"Unavailable":fmt(i.eta))+" | Countdown: "+(i.eta==null?"Unavailable":countdown(i.eta-Date.now()))));box.appendChild(c)});
+    c.appendChild(mk("div","color:#444",i.eta==null?"No date announced":"ETA: "+fmt(i.eta)+" | Countdown: "+countdown(i.eta-Date.now())));box.appendChild(c)});
    ov.appendChild(box);ov.onclick=function(e){if(e.target===ov)document.body.removeChild(ov)};document.addEventListener("keydown",function k(e){if(e.key==="Escape"){document.removeEventListener("keydown",k);if(ov.parentNode)document.body.removeChild(ov)}});
    document.body.appendChild(ov);x.focus()}
   bar.onclick=open;
