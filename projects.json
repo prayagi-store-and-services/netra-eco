@@ -64,8 +64,8 @@
     {
       "id": "netra-trikal-assistant",
       "name": "NETRA x TRIKAL",
-      "type": "Local-first Android assistant (coming soon)",
-      "summary": "One app, two assistants with separate sessions and memory. Not released yet.",
+      "type": "Local-first Android assistant (in development, private)",
+      "summary": "One app, two assistants with separate sessions and memory. In development in a private repository. Not released yet.",
       "targets": [
         {
           "label": "Public release target",
