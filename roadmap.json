@@ -407,7 +407,7 @@
   },
   {
    "title": "Netra Player v1.1.11: Audio track and subtitle track choice (only tracks the file has)",
-   "status": "Planned",
+   "status": "Released in v1.1.11",
    "eta": "2026-10-09T20:00:00+05:30",
    "apps": [
     "netra-player"
@@ -435,7 +435,7 @@
   },
   {
    "title": "Netra Player v1.1.13: Folder list and queue with the system folder picker",
-   "status": "Planned",
+   "status": "Released in v1.1.13 (target Oct 11 was missed; released Oct 12)",
    "eta": "2026-10-11T20:00:00+05:30",
    "apps": [
     "netra-player"
@@ -449,7 +449,7 @@
   },
   {
    "title": "Netra Player v1.1.14: Subtitle files (.srt) picked by you",
-   "status": "Planned",
+   "status": "Released in v1.1.14",
    "eta": "2026-10-12T20:00:00+05:30",
    "apps": [
     "netra-player"
