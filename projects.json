@@ -78,6 +78,18 @@
           "note": "Approximate. Requires setup, Eco Beta access and phone testing."
         }
       ]
+    },
+    {
+      "id": "netra-intruder",
+      "name": "Netra Intruder",
+      "type": "Anti-theft Android app (in development, private)",
+      "summary": "Planned to take a photo after a wrong unlock attempt and warn you if the SIM card is changed. Everything stays on your phone. In development in a private repository. Not released yet."
+    },
+    {
+      "id": "netra-email",
+      "name": "Netra Email",
+      "type": "Email app (planned, private)",
+      "summary": "A planned privacy-first email app for the Netra family. Not started yet and not released."
     }
   ]
 }
