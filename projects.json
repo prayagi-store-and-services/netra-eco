@@ -105,9 +105,9 @@
     },
     {
       "id": "netra-health-monitor",
-      "name": "Netra Health Monitor",
-      "type": "Health app (idea)",
-      "summary": "An idea for a health monitoring app. Details are still to be decided. Not started and not released."
+      "name": "Netra Fit",
+      "type": "Health and fitness app (upcoming)",
+      "summary": "A private, on-device health and fitness app: steps, activity, sleep and the data your watch shares through Health Connect, with no account. Planned, not started and not released."
     },
     {
       "id": "netra-spam-protection",
