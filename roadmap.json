@@ -1,5 +1,5 @@
 {
- "reviewed": "9 Oct 2026",
+ "reviewed": "13 Oct 2026",
  "note": "All dates are our own estimates and can change. An item with a \"ships\" list disappears by itself once the latest published release of every listed app has reached that version (the Eco app checks this from the real release data).",
  "apps": [
   {
@@ -29,6 +29,14 @@
   {
    "id": "netra-email",
    "name": "Netra Email"
+  },
+  {
+   "id": "netra-trikaal",
+   "name": "Netra Trikaal"
+  },
+  {
+   "id": "netra-intruder",
+   "name": "Netra Intruder"
   }
  ],
  "items": [
@@ -533,9 +541,74 @@
   },
   {
    "title": "Netra Email: email app for your Gmail accounts with on-device AI (planning stage, nothing built yet, no release date)",
-   "status": "Planned",
+   "status": "Planned (not started)",
    "apps": [
     "netra-email"
+   ],
+   "eta": "2026-11-10T20:00:00+05:30"
+  },
+  {
+   "title": "Interface update",
+   "status": "In progress",
+   "eta": "2026-10-13T23:30:00+05:30",
+   "apps": [
+    "netra-trikaal"
+   ]
+  },
+  {
+   "title": "Interface update",
+   "status": "Planned",
+   "eta": "2026-10-14T20:00:00+05:30",
+   "apps": [
+    "eco"
+   ]
+  },
+  {
+   "title": "Interface update",
+   "status": "Planned",
+   "eta": "2026-10-15T20:00:00+05:30",
+   "apps": [
+    "bspn"
+   ]
+  },
+  {
+   "title": "Interface update",
+   "status": "Planned",
+   "eta": "2026-10-16T20:00:00+05:30",
+   "apps": [
+    "netra-hub"
+   ]
+  },
+  {
+   "title": "Interface update",
+   "status": "Planned",
+   "eta": "2026-10-17T20:00:00+05:30",
+   "apps": [
+    "kbc"
+   ]
+  },
+  {
+   "title": "Interface update",
+   "status": "Planned",
+   "eta": "2026-10-18T20:00:00+05:30",
+   "apps": [
+    "prayagi-privacy"
+   ]
+  },
+  {
+   "title": "Interface update",
+   "status": "Planned",
+   "eta": "2026-10-19T20:00:00+05:30",
+   "apps": [
+    "netra-player"
+   ]
+  },
+  {
+   "title": "Netra Intruder: anti-theft app, photo after a wrong unlock attempt and SIM change alert (not started yet, first build is planned after the interface updates)",
+   "status": "Planned (not started)",
+   "eta": "2026-10-25T20:00:00+05:30",
+   "apps": [
+    "netra-intruder"
    ]
   }
  ]
