@@ -113,7 +113,7 @@
       "id": "netra-open-store",
       "name": "Open app store for developers",
       "type": "Store (idea)",
-      "summary": "An idea: let outside developers submit apps to Netra Eco, with an automatic Play-Protect-style safety and privacy check. Apps that fail are not shown. Early idea stage. Not started."
+      "summary": "An idea: let outside developers submit apps to Netra Eco, with an automatic Play-Protect-style safety and privacy check. Apps that fail are not shown. Later idea: approved developers may be able to promote their listed apps once an app has been on the store for 30 days (details to be decided). Early idea stage. Not started."
     },
     {
       "id": "netra-spam-protection",
