@@ -471,8 +471,7 @@
   },
   {
    "title": "Netra Player v1.1.17: Headphone sound effect, only if the phone reports support, otherwise Unavailable",
-   "status": "Planned",
-   "eta": "2026-10-15T20:00:00+05:30",
+   "status": "Planned (date being re-estimated)",
    "apps": [
     "netra-player"
    ],
@@ -485,8 +484,7 @@
   },
   {
    "title": "Netra Player v1.1.18: Picture in picture",
-   "status": "Planned",
-   "eta": "2026-10-16T20:00:00+05:30",
+   "status": "Planned (date being re-estimated)",
    "apps": [
     "netra-player"
    ],
@@ -499,8 +497,7 @@
   },
   {
    "title": "Netra Player v1.2.0: Netra Player complete release (video and MP3 only)",
-   "status": "Planned",
-   "eta": "2026-10-17T20:00:00+05:30",
+   "status": "Planned (date being re-estimated)",
    "apps": [
     "netra-player"
    ],
@@ -513,8 +510,8 @@
   },
   {
    "title": "Netra Player v1.1.15: Recent files list with real saved positions",
-   "status": "Planned",
-   "eta": "2026-10-13T20:00:00+05:30",
+   "status": "Planned (working target; releases only after tests pass)",
+   "eta": "2026-10-15T20:00:00+05:30",
    "apps": [
     "netra-player"
    ],
@@ -527,8 +524,7 @@
   },
   {
    "title": "Netra Player v1.1.16: Gesture controls: brightness, volume, seek swipe and double tap jump",
-   "status": "Planned",
-   "eta": "2026-10-14T20:00:00+05:30",
+   "status": "Planned (date being re-estimated)",
    "apps": [
     "netra-player"
    ],
@@ -609,6 +605,14 @@
    "eta": "2026-10-25T20:00:00+05:30",
    "apps": [
     "netra-intruder"
+   ]
+  },
+  {
+   "title": "Netra Player: background update download",
+   "status": "Planned (working target; releases only after tests pass)",
+   "eta": "2026-10-14T20:00:00+05:30",
+   "apps": [
+    "netra-player"
    ]
   }
  ]
