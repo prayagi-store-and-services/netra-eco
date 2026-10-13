@@ -153,8 +153,7 @@
    ],
    "title": "One voice, part 1: one speaker per topic",
    "text": "Netra apps on the same phone recognise each other (same Netra signature only) and agree on who speaks. Each topic, like battery percent or temperature, is announced by one app only, never twice. All on the phone, offline, never between different phones.",
-   "status": "Planned",
-   "eta": "2026-10-13T20:00:00+05:30"
+   "status": "Planned (date being re-estimated)"
   },
   {
    "apps": [
@@ -165,8 +164,7 @@
    ],
    "title": "One voice, part 2: apps can ask each other for status",
    "text": "An app can ask another Netra app on the same phone for information it lacks, such as battery or temperature state. Still offline and on the same phone only.",
-   "status": "Planned",
-   "eta": "2026-10-16T20:00:00+05:30"
+   "status": "Planned (date being re-estimated)"
   },
   {
    "apps": [
@@ -357,8 +355,7 @@
    ],
    "title": "S6: local VPN website blocking",
    "text": "On-device website blocking through a local VPN. No outside VPN server, nothing leaves the phone for us. Blocks known domains with a list that updates daily.",
-   "status": "Planned",
-   "eta": "2026-10-13T20:00:00+05:30"
+   "status": "Planned (date being re-estimated)"
   },
   {
    "apps": [
@@ -366,8 +363,7 @@
    ],
    "title": "S7: local VPN ad blocker",
    "text": "Ad blocking through the same local VPN. Adult and gambling domains are always blocked.",
-   "status": "Planned",
-   "eta": "2026-10-15T20:00:00+05:30"
+   "status": "Planned (date being re-estimated)"
   },
   {
    "title": "Netra Player v1.1.8: State and error truth - real playback state and real error reasons",
