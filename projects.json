@@ -92,16 +92,10 @@
       "summary": "A planned privacy-first email app for the Netra family. Not started yet and not released."
     },
     {
-      "id": "netra-dialer",
-      "name": "Netra Dialer",
-      "type": "Phone dialer app (idea)",
-      "summary": "An idea for a simple dialer in the Netra family. Not started and not released."
-    },
-    {
       "id": "netra-eco-tv",
       "name": "Netra Eco TV and KBC TV",
-      "type": "TV versions (idea)",
-      "summary": "An idea for Android TV versions of Netra Eco and KBC. Not started and not released."
+      "type": "TV versions (upcoming)",
+      "summary": "Android TV versions of Netra Eco and KBC, made for the remote and the big screen. Work is starting. Not released yet."
     },
     {
       "id": "netra-health-monitor",
@@ -114,12 +108,6 @@
       "name": "Open app store for developers",
       "type": "Store (idea)",
       "summary": "An idea: let outside developers submit apps to Netra Eco, with an automatic Play-Protect-style safety and privacy check. Apps that fail are not shown. Later idea: approved developers may be able to promote their listed apps once an app has been on the store for 30 days (details to be decided). Early idea stage. Not started."
-    },
-    {
-      "id": "netra-spam-protection",
-      "name": "Netra Spam Protection",
-      "type": "Spam protection app (idea)",
-      "summary": "An idea for a separate spam protection app. Not started and not released."
     }
   ]
 }
