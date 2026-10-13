@@ -545,8 +545,8 @@
   },
   {
    "title": "Interface update",
-   "status": "In progress",
-   "eta": "2026-10-13T23:30:00+05:30",
+   "status": "In progress (estimate 20 to 24 Oct, not a fixed date)",
+   "eta": "2026-10-24T20:00:00+05:30",
    "apps": [
     "netra-trikaal"
    ]
