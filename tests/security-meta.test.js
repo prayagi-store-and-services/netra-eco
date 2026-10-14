@@ -1,15 +1,41 @@
-const fs=require('node:fs'),crypto=require('node:crypto'),assert=require('node:assert/strict');
-for(const file of ['index.html','embed.html']){
- const source=fs.readFileSync(file,'utf8');
- const csp=source.match(/<meta http-equiv="Content-Security-Policy" content="([^"]+)">/)[1];
- assert(source.includes('<meta name="referrer" content="strict-origin-when-cross-origin">'));
- assert(csp.includes("default-src 'none'"));assert(csp.includes("object-src 'none'"));assert(csp.includes("base-uri 'none'"));
- const scripts=csp.match(/script-src ([^;]+)/)[1];assert(!scripts.includes('unsafe-inline'));assert(!scripts.includes('unsafe-eval'));assert(!scripts.includes('https:'));
- for(const m of source.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script\s*>/gi)){
-  if(!m[2].trim())continue;
-  const hash=crypto.createHash('sha256').update(m[2]).digest('base64');assert(scripts.includes("'sha256-"+hash+"'"),'Missing script hash in '+file);
+const fs = require('node:fs');
+const crypto = require('node:crypto');
+const assert = require('node:assert/strict');
+function directives(csp) {
+ const out = new Map();
+ for (const part of csp.split(';')) {
+  const [name, ...values] = part.trim().split(/\s+/);
+  if (!name) continue;
+  assert(!out.has(name), 'Duplicate CSP directive: ' + name);
+  out.set(name, new Set(values));
  }
- assert(csp.includes('https://firestore.googleapis.com'));assert(csp.includes('https://formsubmit.co'));assert(csp.includes("frame-src 'self'"));
- assert(source.indexOf('Content-Security-Policy')<source.indexOf('<script'));
- console.log('PASS exact inline hashes and required sources:',file);
+ return out;
 }
+for (const file of ['index.html', 'embed.html']) {
+ const source = fs.readFileSync(file, 'utf8');
+ const csp = source.match(/<meta http-equiv="Content-Security-Policy" content="([^"]+)">/)[1];
+ const rules = directives(csp);
+ assert(source.includes('<meta name="referrer" content="strict-origin-when-cross-origin">'));
+ for (const name of ['default-src', 'object-src', 'base-uri']) {
+  assert.deepEqual([...rules.get(name)], ["'none'"]);
+ }
+ const scripts = rules.get('script-src');
+ assert(scripts.has("'self'"));
+ assert(!scripts.has("'unsafe-inline'"));
+ assert(!scripts.has("'unsafe-eval'"));
+ assert(!scripts.has('https:'));
+ for (const match of source.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script\b[^>]*>/gi)) {
+  if (!match[2].trim()) continue;
+  const hash = crypto.createHash('sha256').update(match[2]).digest('base64');
+  assert(scripts.has("'sha256-" + hash + "'"), 'Missing script hash in ' + file);
+ }
+ const connections = rules.get('connect-src');
+ assert.deepEqual([...connections].sort(), ["'self'", 'https://api.github.com', 'https://abacus.jasoncameron.dev', 'https://firestore.googleapis.com', 'https://formsubmit.co'].sort());
+ assert.deepEqual([...rules.get('frame-src')], ["'self'"]);
+ assert(source.indexOf('Content-Security-Policy') < source.indexOf('<script'));
+ console.log('PASS exact hashes and directive tokens:', file);
+}
+// Regression: substring lookalikes are not allowed endpoint tokens.
+assert(!directives('connect-src https://formsubmit.co.evil.invalid').get('connect-src').has('https://formsubmit.co'));
+assert(!directives('connect-src https://evil.invalid/https://firestore.googleapis.com').get('connect-src').has('https://firestore.googleapis.com'));
+assert.equal([...'<script>code</script\t\n bar>'.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script\b[^>]*>/gi)].length, 1);
