@@ -505,17 +505,10 @@
       ]
     },
     {
-      "title": "Netra Player v1.1.15: Recent files list with real saved positions",
-      "status": "Planned (working target; releases only after tests pass)",
-      "eta": "2026-10-15T20:00:00+05:30",
+      "title": "Netra Player: Recent files list with real saved positions",
+      "status": "Planned (not released; no date announced)",
       "apps": [
         "netra-player"
-      ],
-      "ships": [
-        {
-          "app": "netra-player",
-          "version": "1.1.15"
-        }
       ]
     },
     {
@@ -612,8 +605,28 @@
     },
     {
       "title": "Netra Player: background update download",
-      "status": "Planned (working target; releases only after tests pass)",
-      "eta": "2026-10-14T20:00:00+05:30",
+      "status": "In progress (Oct 14 8 PM target missed; not released; no new date)",
+      "apps": [
+        "netra-player"
+      ]
+    },
+    {
+      "title": "Netra Player v1.1.15: Playback size controls - Fit, Crop and Stretch",
+      "status": "Released in v1.1.15",
+      "apps": [
+        "netra-player"
+      ],
+      "ships": [
+        {
+          "app": "netra-player",
+          "version": "1.1.15"
+        }
+      ],
+      "text": "Playback size controls released. Recent files, local library and background update worker are not included."
+    },
+    {
+      "title": "Netra Player: Optional local video and MP3 library with folder browsing",
+      "status": "In progress (PR33 draft; not released; no date announced)",
       "apps": [
         "netra-player"
       ]
