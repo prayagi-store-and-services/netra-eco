@@ -1,4 +1,4 @@
-/* Netra family sites - upcoming-updates strip. Data: roadmap.json + projects.json on the Netra Eco site (same source as the Eco app).
+/* Netra family sites - upcoming-updates strip. Data: roadmap.json + projects.json on the Netra Ecosystem site (same source as the Eco app).
    Hidden when done: status starts with "Released", or every app in an item's "ships" list already has a published release at or above that version.
    All dates are estimates (IST). Anything missing shows "Unavailable". */
 (function(){
