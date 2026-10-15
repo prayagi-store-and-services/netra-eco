@@ -1,5 +1,5 @@
 {
-  "reviewed": "14 Oct 2026",
+  "reviewed": "15 Oct 2026",
   "note": "All dates are our own estimates and can change. An item with a \"ships\" list disappears by itself once the latest published release of every listed app has reached that version (the Eco app checks this from the real release data).",
   "apps": [
     {
@@ -37,6 +37,18 @@
     {
       "id": "netra-intruder",
       "name": "Netra Intruder"
+    },
+    {
+      "id": "netra-neg",
+      "name": "Netra Neg"
+    },
+    {
+      "id": "netra-health-monitor",
+      "name": "Netra Pulse"
+    },
+    {
+      "id": "india-temples-quiz",
+      "name": "India temples and travel quiz"
     }
   ],
   "items": [
@@ -629,6 +641,35 @@
       "status": "In progress (PR33 draft; not released; no date announced)",
       "apps": [
         "netra-player"
+      ]
+    },
+    {
+      "title": "Netra Neg: private gift ledger with optional encrypted own-Drive backup. Public release target: Diwali, 8 Nov 2026 (date only; not a release confirmation).",
+      "status": "Planned (app build on hold; target depends on testing)",
+      "targetDate": "2026-11-08",
+      "apps": [
+        "netra-neg"
+      ]
+    },
+    {
+      "title": "India temples and travel quiz: learn about Indian temples and places through questions. No date announced.",
+      "status": "Planned (idea; not started)",
+      "apps": [
+        "india-temples-quiz"
+      ]
+    },
+    {
+      "title": "Netra Pulse: private health, activity, sleep and optional period tracking; only device-supported data and source-linked guidance. No confirmed release date.",
+      "status": "Planned (not started)",
+      "apps": [
+        "netra-health-monitor"
+      ]
+    },
+    {
+      "title": "Live battery current in mA: improve the existing current view with observed min/max/sample-average; hide current if Android gives no real value.",
+      "status": "Planned (PR206 in review; not released; no date announced)",
+      "apps": [
+        "bspn"
       ]
     }
   ]
