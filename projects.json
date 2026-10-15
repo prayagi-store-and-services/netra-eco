@@ -74,7 +74,7 @@
         },
         {
           "label": "First beta target",
-          "targetDate": "2026-10-15",
+          "targetDate": "2026-11-15",
           "note": "Approximate. Requires setup, Eco Beta access and phone testing."
         }
       ]
@@ -83,25 +83,53 @@
       "id": "netra-intruder",
       "name": "Netra Intruder",
       "type": "Anti-theft Android app (in development, private)",
-      "summary": "Planned to take a photo after a wrong unlock attempt and warn you if the SIM card is changed. Everything stays on your phone. In development in a private repository. Not released yet."
+      "summary": "Planned to take a photo after a wrong unlock attempt and warn you if the SIM card is changed. Everything stays on your phone. In development in a private repository. Not released yet.",
+      "targets": [
+        {
+          "label": "Public release target",
+          "targetDate": "2026-10-25",
+          "note": "Date only, not a promised launch hour. Release depends on tested features and green checks."
+        }
+      ]
     },
     {
       "id": "netra-email",
       "name": "Netra Email",
       "type": "Email app (planned, private)",
-      "summary": "A planned privacy-first email app for the Netra family. Not started yet and not released."
+      "summary": "A planned privacy-first email app for the Netra family. Not started yet and not released.",
+      "targets": [
+        {
+          "label": "Public release target",
+          "targetDate": "2026-11-10",
+          "note": "Date only, not a promised launch hour. Planning stage."
+        }
+      ]
     },
     {
       "id": "netra-eco-tv",
       "name": "Netra Ecosystem TV and KBC TV",
       "type": "TV versions (upcoming)",
-      "summary": "Android TV versions of Netra Ecosystem and KBC, made for the remote and the big screen. Work is starting. Not released yet."
+      "summary": "Android TV versions of Netra Ecosystem and KBC, made for the remote and the big screen. Work is starting. Not released yet.",
+      "targets": [
+        {
+          "label": "Public release target",
+          "targetDate": "2027-01-31",
+          "note": "Approximate. Work is starting; date can move with testing."
+        }
+      ]
     },
     {
       "id": "netra-health-monitor",
       "name": "Netra Pulse",
       "type": "Health and fitness app (upcoming)",
-      "summary": "A private, on-device health and fitness app: steps, activity, sleep and the data your watch shares through Health Connect, with no account. Planned, not started and not released."
+      "summary": "A private, on-device health and fitness app: steps, activity, sleep and the data your watch shares through Health Connect, with no account. Planned, not started and not released.",
+      "targets": [
+        {
+          "label": "Public release target",
+          "targetDate": "2026-12-27",
+          "note": "Date only, not a promised launch hour. Planned, not started."
+        }
+      ]
     },
     {
       "id": "netra-open-store",
@@ -126,7 +154,14 @@
       "id": "india-temples-quiz",
       "name": "India temples and travel quiz",
       "type": "Learning quiz (idea)",
-      "summary": "Planned questions about Indian temples and places. Idea stage, not started. No date announced."
+      "summary": "Planned questions about Indian temples and places. Idea stage, not started. No date announced.",
+      "targets": [
+        {
+          "label": "Public release target",
+          "targetDate": "2026-12-13",
+          "note": "Date only, not a promised launch hour. Idea stage, not started."
+        }
+      ]
     }
   ]
 }
