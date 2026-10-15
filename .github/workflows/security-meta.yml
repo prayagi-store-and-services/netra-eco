@@ -15,3 +15,4 @@ jobs:
           node-version: 20
       - run: node tests/security-meta.test.js
       - run: node tests/scroll-contract.test.js
+      - run: node tests/release-fallback.test.js

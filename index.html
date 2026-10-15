@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-07ZGEPZxP9Kv53P4F78RRdcPPQN3z6aHAXuyI1FGsUI=' 'sha256-lRX71ZO7yKQXAam3CZOz0JOjUZ0eL4qG3FLIn474Kl0='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://abacus.jasoncameron.dev https://firestore.googleapis.com https://formsubmit.co; frame-src 'self'; media-src 'self'; form-action 'none'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin"><script src="https://prayagi-store-and-services.github.io/netra-eco/geoblock.js"></script>
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-DpV6+JbJFYkEPUOGSa6qeGeoB7icaXmu17lGHmJsaSI=' 'sha256-lRX71ZO7yKQXAam3CZOz0JOjUZ0eL4qG3FLIn474Kl0='  ; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://abacus.jasoncameron.dev https://firestore.googleapis.com https://formsubmit.co; frame-src 'self'; media-src 'self'; form-action 'none'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin"><script src="https://prayagi-store-and-services.github.io/netra-eco/geoblock.js"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Netra Ecosystem - Netra by Prayagi Team</title>
@@ -101,14 +101,16 @@ fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).the
   var b=el("div");b.appendChild(el("div","type",p.type));b.appendChild(el("h2","",p.name));b.appendChild(el("div","",p.summary));
   var dl=el("dl");b.appendChild(dl);
   function row(k,v,h){dl.appendChild(el("dt","",k));var dd=el("dd");if(h){var l=el("a","",v);l.href=h;l.rel="noopener";dd.appendChild(l)}else dd.textContent=v;dl.appendChild(dd);return dd}
-  var rel=row("Latest release","Unavailable"),rt=row("Released","Unavailable"),sz=row("File size","Unavailable");
+  var rel=row("Latest release",""),rt=row("Released",""),sz=row("File size","");
+  [rel,rt,sz].forEach(function(dd){dd.hidden=true;dd.previousElementSibling.hidden=true});
+  function showReleaseField(dd,value){if(!value)return;dd.textContent=value;dd.hidden=false;dd.previousElementSibling.hidden=false}
   var act=el("div");if(p.site){var site=el("a","btn","Open "+p.name+" website");site.href=p.site;act.appendChild(site)}
   var dl0=el("a","btn","Download latest APK");dl0.href="https://github.com/"+p.repo+"/releases/latest/download/app-release.apk";act.insertBefore(dl0,act.firstChild);b.appendChild(act);
   w.appendChild(b);s.appendChild(w);box.appendChild(s);
   gh("repos/"+p.repo+"/releases/latest").then(function(x){
-   if(x&&x.tag_name){rel.textContent=x.tag_name;rt.textContent=when(x.published_at);
-    var al=(x.assets||[]).filter(function(y){return /\.apk$/i.test(y.name)});var k=al.filter(function(y){return y.name!=="app-release.apk"})[0]||al[0];if(k){sz.textContent=(k.size/1048576).toFixed(1)+" MB";dl0.href=k.browser_download_url;dl0.textContent="Download "+x.tag_name+" APK"}}
-   else rel.textContent="Not released yet"})});
+   if(x&&x.tag_name){showReleaseField(rel,x.tag_name);if(x.published_at)showReleaseField(rt,when(x.published_at));
+    var al=(x.assets||[]).filter(function(y){return /\.apk$/i.test(y.name)});var k=al.filter(function(y){return y.name!=="app-release.apk"})[0]||al[0];if(k){if(Number.isFinite(k.size)&&k.size>0)showReleaseField(sz,(k.size/1048576).toFixed(1)+" MB");dl0.href=k.browser_download_url;dl0.textContent="Download "+x.tag_name+" APK"}}
+})});
 
 
  (d.upcoming||[]).forEach(function(u){
@@ -139,7 +141,7 @@ fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).the
   Promise.all([cnt("visits-eco"),Promise.all(rows)]).then(function(a){
    var h="<table style='width:100%;border-collapse:collapse'><thead><tr><th align='left'>Site / app</th><th align='right'>Website visits</th><th align='right'>Downloads (all releases)</th><th align='left'>Latest release</th></tr></thead><tbody>";
    h+="<tr><td>Netra Ecosystem (this site)</td><td align='right'>"+(a[0]!=null?a[0].toLocaleString():U)+"</td><td align='right'>-</td><td>-</td></tr>";
-   a[1].forEach(function(r){h+="<tr><td>"+esc(r.p.name)+"</td><td align='right'>"+(r.v!=null?r.v.toLocaleString():U)+"</td><td align='right'>"+(r.t!=null?r.t.toLocaleString():U)+"</td><td>"+(r.last?esc(r.last.tag_name)+" - "+when(r.last.published_at):"Not released yet")+"</td></tr>"});
+   a[1].forEach(function(r){h+="<tr><td>"+esc(r.p.name)+"</td><td align='right'>"+(r.v!=null?r.v.toLocaleString():U)+"</td><td align='right'>"+(r.t!=null?r.t.toLocaleString():U)+"</td><td>"+(r.last?esc(r.last.tag_name)+" - "+when(r.last.published_at):"")+"</td></tr>"});
    document.getElementById("statsbox").innerHTML=h+"</tbody></table><div class='sub'>Checked "+when(new Date().toISOString())+". Each count started when that site's counter was added, it is not a lifetime figure for older visits.</div>"})
  })();
  var names={};d.projects.forEach(function(p){names[p.id]=p.name});
