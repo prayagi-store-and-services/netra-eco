@@ -1,5 +1,5 @@
-/* Netra family sites - "Get the Netra Eco app" block.
-   One shared file, hosted on the Netra Eco site and loaded by every Netra site, so the block and the version always match.
+/* Netra family sites - "Get the Netra Ecosystem app" block.
+   One shared file, hosted on the Netra Ecosystem site and loaded by every Netra site, so the block and the version always match.
    The version, size and date are read live from the latest GitHub release of netra-eco-app (no cache). If that cannot be read, the page says Unavailable; the download button still works because it always points to the newest release asset. */
 (function(){
 "use strict";
@@ -8,10 +8,10 @@ var APK="https://github.com/"+REPO+"/releases/latest/download/app-release.apk";
 var foot=document.querySelector("footer");if(!foot||document.getElementById("eco-app-promo"))return;
 function mk(tag,css,txt){var e=document.createElement(tag);if(css)e.style.cssText=css;if(txt!=null)e.textContent=txt;return e}
 var sec=mk("section","background:var(--card,#121c30);border:1px solid var(--accent,#F59E0B);border-radius:16px;padding:18px;margin:16px auto;max-width:860px;color:var(--text,#e8eefc)");sec.id="eco-app-promo";
-sec.appendChild(mk("h2","margin:0 0 6px;font-size:1.15rem","Get the Netra Eco app"));
-sec.appendChild(mk("p","margin:0 0 8px;font-size:.95rem","You do not need to visit the website. Install the Netra Eco app and open, download and update every Netra app directly from your phone."));
+sec.appendChild(mk("h2","margin:0 0 6px;font-size:1.15rem","Get the Netra Ecosystem app"));
+sec.appendChild(mk("p","margin:0 0 8px;font-size:.95rem","You do not need to visit the website. Install the Netra Ecosystem app and open, download and update every Netra app directly from your phone."));
 var info=mk("p","margin:0 0 10px;color:var(--mute,#9db0d0);font-size:.88rem","Checking the newest version...");sec.appendChild(info);
-var a=mk("a","display:inline-block;background:var(--accent,#F59E0B);color:#111;font-weight:700;text-decoration:none;border-radius:12px;padding:10px 18px","Download Netra Eco APK");a.href=APK;a.rel="noopener";sec.appendChild(a);
+var a=mk("a","display:inline-block;background:var(--accent,#F59E0B);color:#111;font-weight:700;text-decoration:none;border-radius:12px;padding:10px 18px","Download Netra Ecosystem APK");a.href=APK;a.rel="noopener";sec.appendChild(a);
 sec.appendChild(mk("p","margin:10px 0 0;color:var(--mute,#9db0d0);font-size:.8rem","After installing, the app tells you when any Netra app has a new version. Android asks you once to allow installs from this source."));
 foot.parentNode.insertBefore(sec,foot);
 function size(n){return n>=1048576?(n/1048576).toFixed(1)+" MB":Math.round(n/1024)+" KB"}
