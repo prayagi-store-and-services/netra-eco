@@ -1,4 +1,4 @@
-# Netra Eco
+# Netra Ecosystem
 
 Mother website for all Netra / Prayagi Team projects.
 
