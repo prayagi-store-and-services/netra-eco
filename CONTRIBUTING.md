@@ -1,4 +1,4 @@
-# Contributing to Netra Eco
+# Contributing to Netra Ecosystem
 
 ## Security checklist (all Netra apps and sites)
 
