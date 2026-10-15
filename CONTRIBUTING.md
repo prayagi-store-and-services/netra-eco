@@ -24,3 +24,8 @@ Every new product and every release is checked against these 20 points before it
 18. No source maps and no debug symbols published with a release.
 19. No personal data in logs: no names, voice text, locations, PINs or tokens. Log events, not content.
 20. Dependencies are kept current. Open security alerts are read every day and fixed or dated. Alerts are never dismissed to make a list look clean.
+
+
+## App family identity (standing rule, 15 Oct 2026)
+
+Every current and future Netra app must show `v<version> | Netra Ecosystem` on its version row. Keep the suffix short; do not use a long company footer. Keep package/repository IDs unchanged. Review the actual narrow-phone header pixels before release so version, family suffix and date do not overlap.
