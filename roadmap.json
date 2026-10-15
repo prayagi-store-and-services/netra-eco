@@ -1,5 +1,5 @@
 {
-  "reviewed": "14 Oct 2026",
+  "reviewed": "15 Oct 2026",
   "note": "All dates are our own estimates and can change. An item with a \"ships\" list disappears by itself once the latest published release of every listed app has reached that version (the Eco app checks this from the real release data).",
   "apps": [
     {
@@ -37,6 +37,10 @@
     {
       "id": "netra-intruder",
       "name": "Netra Intruder"
+    },
+    {
+      "id": "netra-gift-ledger",
+      "name": "Netra Gift Ledger (coming on Diwali)"
     }
   ],
   "items": [
@@ -630,6 +634,15 @@
       "apps": [
         "netra-player"
       ]
+    },
+    {
+      "title": "Netra Gift Ledger: coming on Diwali, 8 November 2026",
+      "status": "Planned",
+      "apps": [
+        "netra-gift-ledger"
+      ],
+      "text": "Public release date: 8 November 2026. In private development, not released. One release-date countdown; no internal milestone dates or downloads.",
+      "targetDate": "2026-11-08"
     }
   ]
 }
