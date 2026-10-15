@@ -108,6 +108,19 @@
       "name": "Open app store for developers",
       "type": "Store (idea)",
       "summary": "An idea: let outside developers submit apps to Netra Eco, with an automatic Play-Protect-style safety and privacy check. Apps that fail are not shown. Later idea: approved developers may be able to promote their listed apps once an app has been on the store for 30 days (details to be decided). Early idea stage. Not started."
+    },
+    {
+      "id": "netra-gift-ledger",
+      "name": "Netra Gift Ledger",
+      "type": "Coming on Diwali - 8 November 2026",
+      "summary": "A privacy-first Android gift ledger for gifts given and received, cash, occasions and optional photos. Optional encrypted backup in your own Google Drive. In development, not released yet. No download is available before release.",
+      "targets": [
+        {
+          "label": "Diwali release - 8 Nov 2026",
+          "targetDate": "2026-11-08",
+          "note": "Coming on Diwali. Countdown is to the release date, not a confirmed launch hour."
+        }
+      ]
     }
   ]
 }
