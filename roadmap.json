@@ -24,7 +24,7 @@
     },
     {
       "id": "eco",
-      "name": "Netra Eco"
+      "name": "Netra Ecosystem"
     },
     {
       "id": "netra-email",
@@ -131,7 +131,7 @@
       ]
     },
     {
-      "title": "Netra Eco: app icons and a What's new section per app",
+      "title": "Netra Ecosystem: app icons and a What's new section per app",
       "status": "Planned",
       "eta": "2026-10-05T14:00:00+05:30",
       "apps": [
