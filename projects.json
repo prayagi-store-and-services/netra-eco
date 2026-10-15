@@ -108,6 +108,25 @@
       "name": "Open app store for developers",
       "type": "Store (idea)",
       "summary": "An idea: let outside developers submit apps to Netra Ecosystem, with an automatic Play-Protect-style safety and privacy check. Apps that fail are not shown. Later idea: approved developers may be able to promote their listed apps once an app has been on the store for 30 days (details to be decided). Early idea stage. Not started."
+    },
+    {
+      "id": "netra-neg",
+      "name": "Netra Neg",
+      "type": "Private gift ledger (planned)",
+      "summary": "Planned gift ledger with optional encrypted backup in your own Drive. App build is on hold; not released.",
+      "targets": [
+        {
+          "label": "Public release target - Diwali",
+          "targetDate": "2026-11-08",
+          "note": "Date only, not a promised launch hour. Release depends on tested features and green checks."
+        }
+      ]
+    },
+    {
+      "id": "india-temples-quiz",
+      "name": "India temples and travel quiz",
+      "type": "Learning quiz (idea)",
+      "summary": "Planned questions about Indian temples and places. Idea stage, not started. No date announced."
     }
   ]
 }
