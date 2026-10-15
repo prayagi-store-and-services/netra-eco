@@ -54,7 +54,7 @@
   "items": [
     {
       "title": "Standard header and scrolling: header shows only name, version and date/time, everything else scrolls",
-      "status": "In progress",
+      "status": "Released (BSPN 2.x, KBC 1.1.1+, Hub 1.1.1+, Privacy Guard 1.1.0+, Player 1.1.1+)",
       "eta": "2026-10-04T23:30:00+05:30",
       "apps": [
         "netra-hub",
@@ -88,7 +88,7 @@
     },
     {
       "title": "Battery Sentinel 1.2.2: Saver restore fix and dummy switches removed",
-      "status": "In progress",
+      "status": "Released in v1.2.2",
       "eta": "2026-10-04T18:30:00+05:30",
       "apps": [
         "bspn"
@@ -102,7 +102,7 @@
     },
     {
       "title": "Netra Privacy Guard 1.1.0: version in header and What's new",
-      "status": "In progress",
+      "status": "Released in v1.1.0",
       "eta": "2026-10-04T20:30:00+05:30",
       "apps": [
         "prayagi-privacy"
@@ -116,7 +116,7 @@
     },
     {
       "title": "KBC 1.1.1: version in header and What's new",
-      "status": "Planned",
+      "status": "Released in v1.1.1",
       "eta": "2026-10-05T12:00:00+05:30",
       "apps": [
         "kbc"
@@ -144,7 +144,7 @@
     },
     {
       "title": "Netra Ecosystem: app icons and a What's new section per app",
-      "status": "Planned",
+      "status": "Released in v1.2.0",
       "eta": "2026-10-05T14:00:00+05:30",
       "apps": [
         "eco"
@@ -165,7 +165,8 @@
       ],
       "title": "One voice, part 1: one speaker per topic",
       "text": "Netra apps on the same phone recognise each other (same Netra signature only) and agree on who speaks. Each topic, like battery percent or temperature, is announced by one app only, never twice. All on the phone, offline, never between different phones.",
-      "status": "Planned (date being re-estimated)"
+      "status": "Planned",
+      "eta": "2026-11-22T20:00:00+05:30"
     },
     {
       "apps": [
@@ -176,7 +177,8 @@
       ],
       "title": "One voice, part 2: apps can ask each other for status",
       "text": "An app can ask another Netra app on the same phone for information it lacks, such as battery or temperature state. Still offline and on the same phone only.",
-      "status": "Planned (date being re-estimated)"
+      "status": "Planned",
+      "eta": "2026-12-06T20:00:00+05:30"
     },
     {
       "apps": [
@@ -196,8 +198,9 @@
       ],
       "title": "Festival open animations",
       "text": "When the app opens on a festival or national day, a short skippable animation for that occasion plays (for example the national flag on Independence Day) instead of a plain banner. Works offline.",
-      "status": "Target missed (15 Oct 20:00); not released. Revised target under review.",
-      "missedEta": "2026-10-15T20:00:00+05:30"
+      "status": "In progress (15 Oct 20:00 target missed; new release date 7 Nov)",
+      "missedEta": "2026-10-15T20:00:00+05:30",
+      "eta": "2026-11-07T20:00:00+05:30"
     },
     {
       "apps": [
@@ -232,8 +235,8 @@
       ],
       "title": "Disaster alerts, part 1: weather orange alerts (India)",
       "text": "Released fallback in Hub v1.4.12: the NDMA SACHET feed is checked about every 30 minutes, subject to Android delays. Severe or Extreme alerts match district, locality or state names, not coordinates. IMD alerts arrive only if present in that feed; this is not a verified IMD orange/red mapping. The original 5-minute server-driven push design is incomplete. Phone delivery is untested. The 14 Oct 8 PM target was missed; a new completion date is Unavailable until those gaps are verified.",
-      "status": "In progress (fallback released v1.4.12; full scope and phone test pending)",
-      "eta": null
+      "status": "In progress (fallback released v1.4.12; full scope and phone test by 19 Oct)",
+      "eta": "2026-10-19T20:00:00+05:30"
     },
     {
       "apps": [
@@ -305,7 +308,7 @@
       "title": "H5: magnetic alerts and final polish (v1.5.0)",
       "text": "Always-on magnetic alerts and the final polish. Target for the complete Netra Hub release.",
       "status": "Planned",
-      "eta": "2026-10-11T20:00:00+05:30",
+      "eta": "2026-10-26T20:00:00+05:30",
       "ships": [
         {
           "app": "netra-hub",
@@ -319,7 +322,7 @@
       ],
       "title": "S1: unknown-sources alert and security-patch age warning",
       "text": "Warns when installs from unknown sources are allowed and when the device security patch is old. We do not patch the OS.",
-      "status": "Planned",
+      "status": "Released in v1.2.0",
       "eta": "2026-10-06T20:00:00+05:30",
       "ships": [
         {
@@ -334,7 +337,7 @@
       ],
       "title": "S2: risky app permission check",
       "text": "Lists installed apps with risky permission combinations. App-level protection only.",
-      "status": "Planned",
+      "status": "Released in v1.2.1",
       "eta": "2026-10-07T20:00:00+05:30",
       "ships": [
         {
@@ -367,7 +370,8 @@
       ],
       "title": "S6: local VPN website blocking",
       "text": "On-device website blocking through a local VPN. No outside VPN server, nothing leaves the phone for us. Blocks known domains with a list that updates daily.",
-      "status": "Planned (date being re-estimated)"
+      "status": "Planned",
+      "eta": "2026-11-15T20:00:00+05:30"
     },
     {
       "apps": [
@@ -375,11 +379,12 @@
       ],
       "title": "S7: local VPN ad blocker",
       "text": "Ad blocking through the same local VPN. Adult and gambling domains are always blocked.",
-      "status": "Planned (date being re-estimated)"
+      "status": "Planned",
+      "eta": "2026-11-29T20:00:00+05:30"
     },
     {
       "title": "Netra Player v1.1.8: State and error truth - real playback state and real error reasons",
-      "status": "Planned",
+      "status": "Released in v1.1.8",
       "eta": "2026-10-06T20:00:00+05:30",
       "apps": [
         "netra-player"
@@ -479,7 +484,7 @@
     },
     {
       "title": "Netra Player v1.1.17: Headphone sound effect, only if the phone reports support, otherwise Unavailable",
-      "status": "Planned (date being re-estimated)",
+      "status": "Planned",
       "apps": [
         "netra-player"
       ],
@@ -488,11 +493,12 @@
           "app": "netra-player",
           "version": "1.1.17"
         }
-      ]
+      ],
+      "eta": "2026-11-01T20:00:00+05:30"
     },
     {
       "title": "Netra Player v1.1.18: Picture in picture",
-      "status": "Planned (date being re-estimated)",
+      "status": "Planned",
       "apps": [
         "netra-player"
       ],
@@ -501,11 +507,12 @@
           "app": "netra-player",
           "version": "1.1.18"
         }
-      ]
+      ],
+      "eta": "2026-11-08T20:00:00+05:30"
     },
     {
       "title": "Netra Player v1.2.0: Netra Player complete release (video and MP3 only)",
-      "status": "Planned (date being re-estimated)",
+      "status": "Planned",
       "apps": [
         "netra-player"
       ],
@@ -514,18 +521,20 @@
           "app": "netra-player",
           "version": "1.2.0"
         }
-      ]
+      ],
+      "eta": "2026-12-13T20:00:00+05:30"
     },
     {
       "title": "Netra Player: Recent files list with real saved positions",
-      "status": "Planned (not released; no date announced)",
+      "status": "Planned",
       "apps": [
         "netra-player"
-      ]
+      ],
+      "eta": "2026-11-15T20:00:00+05:30"
     },
     {
       "title": "Netra Player v1.1.16: Gesture controls: brightness, volume, seek swipe and double tap jump",
-      "status": "Planned (date being re-estimated)",
+      "status": "Planned",
       "apps": [
         "netra-player"
       ],
@@ -534,7 +543,8 @@
           "app": "netra-player",
           "version": "1.1.16"
         }
-      ]
+      ],
+      "eta": "2026-10-25T20:00:00+05:30"
     },
     {
       "title": "Netra Email: email app for your Gmail accounts with on-device AI (planning stage, nothing built yet, no release date)",
@@ -546,7 +556,7 @@
     },
     {
       "title": "Interface update",
-      "status": "In progress (estimate 20 to 24 Oct, not a fixed date)",
+      "status": "Planned (owner-held work; date depends on it)",
       "eta": "2026-10-24T20:00:00+05:30",
       "apps": [
         "netra-trikaal"
@@ -569,16 +579,17 @@
     },
     {
       "title": "Interface update",
-      "status": "Target missed (15 Oct 20:00); not released. Revised target under review.",
+      "status": "In progress (15 Oct 20:00 target missed; new release date 23 Oct)",
       "apps": [
         "bspn"
       ],
-      "missedEta": "2026-10-15T20:00:00+05:30"
+      "missedEta": "2026-10-15T20:00:00+05:30",
+      "eta": "2026-10-23T20:00:00+05:30"
     },
     {
       "title": "Interface update",
       "status": "Planned",
-      "eta": "2026-10-16T20:00:00+05:30",
+      "eta": "2026-10-20T20:00:00+05:30",
       "apps": [
         "netra-hub"
       ]
@@ -586,7 +597,7 @@
     {
       "title": "Interface update",
       "status": "Planned",
-      "eta": "2026-10-17T20:00:00+05:30",
+      "eta": "2026-10-21T20:00:00+05:30",
       "apps": [
         "kbc"
       ]
@@ -594,7 +605,7 @@
     {
       "title": "Interface update",
       "status": "Planned",
-      "eta": "2026-10-18T20:00:00+05:30",
+      "eta": "2026-10-22T20:00:00+05:30",
       "apps": [
         "prayagi-privacy"
       ]
@@ -602,7 +613,7 @@
     {
       "title": "Interface update",
       "status": "Planned",
-      "eta": "2026-10-19T20:00:00+05:30",
+      "eta": "2026-10-29T20:00:00+05:30",
       "apps": [
         "netra-player"
       ]
@@ -617,10 +628,11 @@
     },
     {
       "title": "Netra Player: background update download",
-      "status": "In progress (Oct 14 8 PM target missed; not released; no new date)",
+      "status": "In progress (Oct 14 8 PM target missed; new target 18 Oct)",
       "apps": [
         "netra-player"
-      ]
+      ],
+      "eta": "2026-10-18T20:00:00+05:30"
     },
     {
       "title": "Netra Player v1.1.15: Playback size controls - Fit, Crop and Stretch",
@@ -634,14 +646,16 @@
           "version": "1.1.15"
         }
       ],
-      "text": "Playback size controls released. Recent files, local library and background update worker are not included."
+      "text": "Playback size controls released. Recent files, local library and background update worker are not included.",
+      "eta": "2026-10-14T20:00:00+05:30"
     },
     {
       "title": "Netra Player: Optional local video and MP3 library with folder browsing",
-      "status": "In progress (PR33 draft; not released; no date announced)",
+      "status": "In progress (PR33 draft; target 22 Nov)",
       "apps": [
         "netra-player"
-      ]
+      ],
+      "eta": "2026-11-22T20:00:00+05:30"
     },
     {
       "title": "Netra Neg: private gift ledger with optional encrypted own-Drive backup. Public release target: Diwali, 8 Nov 2026 (date only; not a release confirmation).",
@@ -649,28 +663,38 @@
       "targetDate": "2026-11-08",
       "apps": [
         "netra-neg"
-      ]
+      ],
+      "eta": "2026-11-08T20:00:00+05:30"
     },
     {
       "title": "India temples and travel quiz: learn about Indian temples and places through questions. No date announced.",
-      "status": "Planned (idea; not started)",
+      "status": "Planned",
       "apps": [
         "india-temples-quiz"
-      ]
+      ],
+      "eta": "2026-12-13T20:00:00+05:30"
     },
     {
       "title": "Netra Pulse: private health, activity, sleep and optional period tracking; only device-supported data and source-linked guidance. No confirmed release date.",
-      "status": "Planned (not started)",
+      "status": "Planned",
       "apps": [
         "netra-health-monitor"
-      ]
+      ],
+      "eta": "2026-12-27T20:00:00+05:30"
     },
     {
       "title": "Live battery current in mA: improve the existing current view with observed min/max/sample-average; hide current if Android gives no real value.",
-      "status": "Planned (PR206 in review; not released; no date announced)",
+      "status": "Released in v2.1.19 (phone test pending)",
       "apps": [
         "bspn"
-      ]
+      ],
+      "ships": [
+        {
+          "app": "bspn",
+          "version": "2.1.19"
+        }
+      ],
+      "eta": "2026-10-15T20:00:00+05:30"
     }
   ]
 }
