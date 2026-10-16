@@ -42,17 +42,24 @@ jobs:
             constructor(tag) { this.tag = tag; this.children = []; this.textContent = ''; }
             appendChild(e) { this.children.push(e); return e; }
           }
-          const start = html.indexOf(' (d.upcoming||[])');
-          const end = html.indexOf(' (function(){', start);
-          assert(start >= 0 && end > start);
-          const code = html.slice(start, end);
+          const soonStart = html.indexOf('/*SOON-START*/'); const soonEnd = html.indexOf('/*SOON-END*/');
+          assert(soonStart >= 0 && soonEnd > soonStart);
+          const soonCode = html.slice(soonStart, soonEnd);
+          const azMatch = html.match(/function azKey\(n\)\{[^\n]*\}/);
+          assert(azMatch, 'azKey missing');
+          const az = vm.runInNewContext('(' + azMatch[0] + ')', {});
+          assert(az('Netra Intruder') === 'intruder' && az('Netra Email') === 'email');
+          assert(az('NETRA x TRIKAL') === 'trikal' && az('Netra Ecosystem') === 'ecosystem');
+          const orderSample = ['Netra Email', 'Netra Ecosystem', 'Netra Battery Sentinel Pro'].map(x => az(x));
+          assert(orderSample[0] === 'email' && orderSample[1] === 'ecosystem' && orderSample[2] === 'battery sentinel pro');
+          assert(['Netra Battery Sentinel Pro', 'Netra Ecosystem', 'Netra Email'].map(az).sort().join(',') === 'battery sentinel pro,ecosystem,email');
           function render(target, now) {
             const box = new E('main'), nav = new E('nav'), RealDate = Date;
             class MockDate extends RealDate {
               constructor(v) { super(v === undefined ? now : v); }
               static now() { return now; }
             }
-            vm.runInNewContext(code, {d:{upcoming:[{id:'test', name:'Test', targets:[target]}]}, box, nav, U:'Unavailable',
+            vm.runInNewContext(soonCode + '\nrenderSoon(d.upcoming[0]);', {d:{upcoming:[{id:'test', name:'Test', targets:[target]}]}, box, nav, U:'Unavailable',
               el:(t,c,v)=>{ const e=new E(t); e.textContent=v??''; return e; }, Date:MockDate, Intl, setInterval:()=>{}});
             const values=[]; const walk=e=>{values.push(e.textContent); e.children.forEach(walk);}; walk(box); return values;
           }

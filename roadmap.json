@@ -45,6 +45,10 @@
     {
       "id": "netra-health-monitor",
       "name": "Netra Pulse"
+    },
+    {
+      "id": "netra-travel-rider",
+      "name": "Netra Travel Rider"
     }
   ],
   "items": [
@@ -683,6 +687,14 @@
         }
       ],
       "eta": "2026-10-15T20:00:00+05:30"
+    },
+    {
+      "title": "Netra Travel Rider v1: offline push-to-talk Bluetooth intercom for riders (QR create/join with channel code, auto-play incoming voice, auto-reconnect, mute, helmet headset support, one speaker at a time, 4-6 riders, SOS alert to all, screen-off foreground service) + basic offline map (download region, own GPS position) + opt-in in-channel location sharing with last-known timestamp. Later (v1.1, early Dec): phone-to-phone map transfer, buddy direction arrow, rally point, leader/sweeper roles, breadcrumb trail, someone-left-group alert. Mesh relay and public location sharing stay undecided.",
+      "status": "In development",
+      "apps": [
+        "netra-travel-rider"
+      ],
+      "eta": "2026-11-22T20:00:00+05:30"
     }
   ]
 }

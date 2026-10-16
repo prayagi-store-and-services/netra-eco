@@ -58,6 +58,17 @@
       "type": "Video and MP3 player",
       "summary": "A simple video and MP3 player for Android. Plays video and music files stored on your phone.",
       "repo": "prayagi-store-and-services/netra-player"
+    },
+    {
+      "id": "netra-eco",
+      "package": "com.prayagi.netraeco",
+      "latestJson": "https://github.com/prayagi-store-and-services/netra-eco-app/releases/latest/download/latest.json",
+      "name": "Netra Ecosystem",
+      "type": "All Netra apps in one place",
+      "summary": "The Netra app store: find, install and update every Netra app. Free, no account.",
+      "repo": "prayagi-store-and-services/netra-eco-app",
+      "site": "https://prayagi-store-and-services.github.io/netra-eco/",
+      "icon": "https://prayagi-store-and-services.github.io/netra-eco/logo.svg"
     }
   ],
   "upcoming": [
@@ -78,6 +89,10 @@
           "eta": "2026-11-15T18:00:00+05:30",
           "note": "Approximate. Requires setup, Eco Beta access and phone testing."
         }
+      ],
+      "features": [
+        "One app, two assistants (Netra and Trikal) with separate sessions and memory",
+        "Local-first and private"
       ]
     },
     {
@@ -92,6 +107,11 @@
           "eta": "2026-10-25T21:00:00+05:30",
           "note": "Approximate. Release depends on tested features and green checks."
         }
+      ],
+      "features": [
+        "Photo after a wrong unlock attempt",
+        "Optional photo at every unlock (experimental, Android 14+)",
+        "Optional app activity log (Usage Access, on-device only)"
       ]
     },
     {
@@ -106,6 +126,9 @@
           "eta": "2026-11-10T18:00:00+05:30",
           "note": "Approximate. Planning stage."
         }
+      ],
+      "features": [
+        "Privacy-first email app for the Netra family"
       ]
     },
     {
@@ -120,6 +143,10 @@
           "eta": "2027-01-31T18:00:00+05:30",
           "note": "Approximate. Work is starting; date can move with testing."
         }
+      ],
+      "features": [
+        "Netra Ecosystem for Android TV, made for the remote and the big screen",
+        "Netra KBC for Android TV"
       ]
     },
     {
@@ -134,13 +161,23 @@
           "eta": "2026-12-27T12:00:00+05:30",
           "note": "Approximate. Planned, not started."
         }
+      ],
+      "features": [
+        "Steps, activity and sleep tracking on-device",
+        "Data your watch shares through Health Connect",
+        "No account, private on your phone"
       ]
     },
     {
       "id": "netra-open-store",
       "name": "Open app store for developers",
       "type": "Store (idea)",
-      "summary": "An idea: let outside developers submit apps to Netra Ecosystem, with an automatic Play-Protect-style safety and privacy check. Apps that fail are not shown. Later idea: approved developers may be able to promote their listed apps once an app has been on the store for 30 days (details to be decided). Early idea stage. Not started."
+      "summary": "An idea: let outside developers submit apps to Netra Ecosystem, with an automatic Play-Protect-style safety and privacy check. Apps that fail are not shown. Later idea: approved developers may be able to promote their listed apps once an app has been on the store for 30 days (details to be decided). Early idea stage. Not started.",
+      "features": [
+        "Outside developers can submit apps to Netra Ecosystem",
+        "Automatic Play-Protect-style safety and privacy check; apps that fail are not shown",
+        "Later idea: approved developers may promote a listed app after 30 days (details to be decided)"
+      ]
     },
     {
       "id": "netra-neg",
@@ -154,6 +191,36 @@
           "eta": "2026-11-08T20:00:00+05:30",
           "note": "Approximate. App build is on hold; release depends on tested features and green checks."
         }
+      ],
+      "features": [
+        "Private gift ledger",
+        "Optional encrypted backup in your own Google Drive"
+      ]
+    },
+    {
+      "id": "netra-travel-rider",
+      "name": "Netra Travel Rider",
+      "type": "Offline Bluetooth intercom for riders (in development, private)",
+      "summary": "Push-to-talk voice intercom for motorbike riders. Scan the creator's QR or enter the channel code to join one private group: incoming voice plays on its own, one button to talk, automatic reconnect. Offline map with your own position, optional in-channel location sharing, SOS alert. Works fully offline over Bluetooth and Wi-Fi Direct, no internet, no account. In development in a private repository. Not released yet.",
+      "eta": "2026-11-22T20:00:00+05:30",
+      "targets": [
+        {
+          "label": "Public release target",
+          "eta": "2026-11-22T20:00:00+05:30",
+          "note": "22 Nov is the outer limit; it may arrive earlier. Release depends on tested features and green checks."
+        }
+      ],
+      "features": [
+        "Push-to-talk intercom over Bluetooth/Wi-Fi Direct (offline)",
+        "Join by scanning the creator's QR or entering the channel code",
+        "Auto-play incoming voice, one button to talk, auto-reconnect, mute",
+        "Helmet Bluetooth headset support",
+        "One speaker at a time, 4-6 riders",
+        "Offline map: download a region, see your own position",
+        "Optional in-channel location sharing (off by default)",
+        "SOS alert to all riders",
+        "Works with screen off (foreground service)",
+        "Later (v1.1): phone-to-phone map transfer, buddy direction arrow, rally point, leader/sweeper roles, breadcrumb trail, left-group alert"
       ]
     }
   ]
