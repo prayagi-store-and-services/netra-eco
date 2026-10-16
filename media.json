@@ -1,0 +1,164 @@
+{
+  "updated": "2026-10-16",
+  "note": "Real preview media for app cards in the Netra Ecosystem app. Only real videos and screenshots are listed; an app with none simply has no gallery. This file is the single source - the app reads it live.",
+  "apps": {
+    "netra-eco": {
+      "video": {
+        "url": "https://prayagi-store-and-services.github.io/netra-eco/docs/videos/netra-ecosystem-promo.mp4",
+        "label": "Promo video"
+      },
+      "screenshots": []
+    },
+    "battery-sentinel": {
+      "video": {
+        "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/videos/battery-sentinel-pro-promo.mp4",
+        "label": "Promo video"
+      },
+      "screenshots": [
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/1-shot-home-overview.jpg",
+          "label": "Home: Overview"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/9-shot-live-charging-battery.jpg",
+          "label": "Battery: Live Charging: Charging battery"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/13-shot-live-charging-telemetry.jpg",
+          "label": "Battery: Live Charging: Charging telemetry"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/12-shot-live-charging-source-graph.jpg",
+          "label": "Battery: Live Charging: Charging source graph"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/10-shot-live-charging-session-graph.jpg",
+          "label": "Battery: Live Charging: Charging session graph"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/11-shot-live-charging-session-history.jpg",
+          "label": "Battery: Live Charging: Charging session history"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/4-shot-discharging-battery.jpg",
+          "label": "Battery: discharging and idle: Battery"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/2-shot-charger-disconnected.jpg",
+          "label": "Battery: discharging and idle: Disconnected"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/5-shot-health-live-power.jpg",
+          "label": "Battery: Health &amp; Specs: Live power"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/6-shot-health-power-sentinel.jpg",
+          "label": "Battery: Health &amp; Specs: Power sentinel"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/7-shot-health-raw-power.jpg",
+          "label": "Battery: Health &amp; Specs: Raw power"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/8-shot-health-timing-thermal.jpg",
+          "label": "Battery: Health &amp; Specs: Timing thermal"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/16-shot-monitor-geo-storage.jpg",
+          "label": "Monitoring: Geo storage"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/17-shot-monitor-hardware-sensors.jpg",
+          "label": "Monitoring: Hardware sensors"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/18-shot-monitor-storage-registry.jpg",
+          "label": "Monitoring: Storage registry"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/14-shot-monitor-capability-registry.jpg",
+          "label": "Monitoring: Capability registry"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/15-shot-monitor-event-logs.jpg",
+          "label": "Monitoring: Event logs"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/3-shot-devices-bluetooth.jpg",
+          "label": "Devices: Bluetooth"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/24-shot-settings-targets.jpg",
+          "label": "Settings: Targets"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/25-shot-settings-thresholds.jpg",
+          "label": "Settings: Thresholds"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/21-shot-settings-power-profile.jpg",
+          "label": "Settings: Power profile"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/22-shot-settings-preferences.jpg",
+          "label": "Settings: Preferences"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/26-shot-settings-voice.jpg",
+          "label": "Settings: Voice"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/27-shot-settings-widget.jpg",
+          "label": "Settings: Widget"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/20-shot-settings-pdf.jpg",
+          "label": "Settings: Pdf"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/19-shot-settings-export.jpg",
+          "label": "Settings: Export"
+        },
+        {
+          "url": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/23-shot-settings-savings-about.jpg",
+          "label": "Settings: Savings about"
+        }
+      ]
+    },
+    "netra-hub": {
+      "video": {
+        "url": "https://prayagi-store-and-services.github.io/netra-hub/videos/netra-hub-promo.mp4",
+        "label": "Promo video"
+      },
+      "screenshots": []
+    },
+    "kbc": {
+      "video": {
+        "url": "https://prayagi-store-and-services.github.io/KBC/videos/netra-kbc-promo.mp4",
+        "label": "Promo video"
+      },
+      "screenshots": []
+    },
+    "prayagi-privacy": {
+      "video": {
+        "url": "https://prayagi-store-and-services.github.io/prayagi-Privacy-/videos/netra-privacy-guard-promo.mp4",
+        "label": "Promo video"
+      },
+      "screenshots": []
+    },
+    "netra-player": {
+      "video": {
+        "url": "https://prayagi-store-and-services.github.io/netra-eco/docs/videos/netra-player-promo.mp4",
+        "label": "Promo video"
+      },
+      "screenshots": []
+    },
+    "netra-trikaal": {
+      "video": {
+        "url": "https://prayagi-store-and-services.github.io/netra-eco/docs/videos/netra-trikaal-promo.mp4",
+        "label": "Promo video"
+      },
+      "screenshots": []
+    }
+  }
+}
