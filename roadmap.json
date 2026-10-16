@@ -1,5 +1,5 @@
 {
-  "reviewed": "15 Oct 2026",
+  "reviewed": "16 Oct 2026",
   "note": "All dates are our own estimates and can change. An item with a \"ships\" list disappears by itself once the latest published release of every listed app has reached that version (the Eco app checks this from the real release data).",
   "apps": [
     {
@@ -45,10 +45,6 @@
     {
       "id": "netra-health-monitor",
       "name": "Netra Pulse"
-    },
-    {
-      "id": "india-temples-quiz",
-      "name": "India temples and travel quiz"
     }
   ],
   "items": [
@@ -619,9 +615,9 @@
       ]
     },
     {
-      "title": "Netra Intruder: anti-theft app, photo after a wrong unlock attempt and SIM change alert (not started yet, first build is planned after the interface updates)",
-      "status": "Planned (not started)",
-      "eta": "2026-10-25T20:00:00+05:30",
+      "title": "Netra Intruder: anti-theft app (in development): photo after a wrong unlock attempt, optional photo at every unlock (experimental, Android 14+), opt-in app activity log. First release.",
+      "status": "In development",
+      "eta": "2026-10-25T21:00:00+05:30",
       "apps": [
         "netra-intruder"
       ]
@@ -665,14 +661,6 @@
         "netra-neg"
       ],
       "eta": "2026-11-08T20:00:00+05:30"
-    },
-    {
-      "title": "India temples and travel quiz: learn about Indian temples and places through questions. No date announced.",
-      "status": "Planned",
-      "apps": [
-        "india-temples-quiz"
-      ],
-      "eta": "2026-12-13T20:00:00+05:30"
     },
     {
       "title": "Netra Pulse: private health, activity, sleep and optional period tracking; only device-supported data and source-linked guidance. No confirmed release date.",
