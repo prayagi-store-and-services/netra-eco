@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-vyaY0RWojahU4+bbjlBJREnqQBXY+2/9RGXDaA4am1A=' 'sha256-lRX71ZO7yKQXAam3CZOz0JOjUZ0eL4qG3FLIn474Kl0='  ; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://abacus.jasoncameron.dev https://firestore.googleapis.com https://formsubmit.co; frame-src 'self'; media-src 'self'; form-action 'none'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin"><script src="https://prayagi-store-and-services.github.io/netra-eco/geoblock.js"></script>
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-AGSQ71Fn5M8nO0fkgjk3MsHLffmSwwFSWRojGc1IJBY=' 'sha256-lRX71ZO7yKQXAam3CZOz0JOjUZ0eL4qG3FLIn474Kl0='  ; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://abacus.jasoncameron.dev https://firestore.googleapis.com https://formsubmit.co; frame-src 'self'; media-src 'self'; form-action 'none'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin"><script src="https://prayagi-store-and-services.github.io/netra-eco/geoblock.js"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Netra Ecosystem - Netra by Prayagi Team</title>
@@ -91,6 +91,10 @@ footer{border-top:1px solid var(--line)}
 <figure><video controls preload="metadata" src="docs/videos/coming-netra-pulse.mp4"></video><figcaption>Netra Pulse - coming soon</figcaption></figure>
 <figure><video controls preload="metadata" src="docs/videos/coming-netra-tv.mp4"></video><figcaption>Netra TV - coming soon</figcaption></figure>
 </div></section>
+<section id="request-app"><h2>Request a new app</h2><div class="sub">Tell us what app you want and what it should do. If it is possible, the Netra team will try to build it. You review the exact text before anything is sent. A contact detail is optional - without it we cannot reply to you. Requests go to the developer by email; they are not shown publicly. One request per day from this browser.</div>
+<form id="raform"><label>Which app do you want?</label><textarea name="request" required maxlength="1000" rows="5" placeholder="Example: an app that reminds me to drink water every hour"></textarea>
+<label>Contact (optional)</label><input name="contact" maxlength="120" placeholder="WhatsApp number or email (optional)">
+<button class="go" type="submit">Review and send</button><div id="ramsg" class="sub"></div></form></section>
 <section id="stats"><h2>Live stats - all sites and apps</h2><div class="sub">Visits are an anonymous page-load counter (no cookies, no personal data). Downloads come live from GitHub Releases and include in-app updates. Anything that cannot be read says Unavailable.</div><div id="statsbox" class="sub">Loading...</div></section>
 <section id="ratings"><h2>Ratings, reviews and complaints - all apps</h2><div class="sub">Everything people send from any Netra app website or from inside an app shows up here, app by app. Only real submissions are shown.</div><div class="sub" style="margin:10px 0 4px">Send a rating, suggestion or complaint. Choose which app it is for:</div><select id="fbapp" aria-label="Which app is this feedback for"></select><iframe id="fbframe" title="Ratings and feedback" style="width:100%;height:760px;border:0;margin-bottom:10px" loading="lazy"></iframe><div id="rall">Loading...</div></section>
 <section id="contact"><h2>Contact us</h2>
@@ -157,6 +161,7 @@ fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).the
  var allApps=(d.projects||[]).map(function(p){return {live:true,v:p}}).concat((d.upcoming||[]).filter(function(u){return u.id&&u.name}).map(function(u){return {live:false,v:u}}));
  allApps.sort(function(a,b){var ka=azKey(a.v.name),kb=azKey(b.v.name);return ka<kb?-1:ka>kb?1:0});
  allApps.forEach(function(it){if(it.live)renderLive(it.v);else renderSoon(it.v)});
+ var raNav=el("a","","Request a new app");raNav.href="#request-app";nav.appendChild(raNav);
  (function(){
   var AB="https://abacus.jasoncameron.dev/";
   function vk(id){return id==="battery-sentinel"?"visits":"visits-"+id}
@@ -191,6 +196,22 @@ f.addEventListener("submit",function(e){e.preventDefault();var m=document.getEle
  var fd=new FormData(f);fd.set("_subject","[Netra] Contact Us - "+f.name.value);fd.set("_template","table");fd.set("_captcha","false");
  fetch("https://formsubmit.co/ajax/prayagideepak@gmail.com",{method:"POST",headers:{Accept:"application/json"},body:fd}).then(function(r){return r.json()}).then(function(d){
   if(d.success==="true"||d.success===true){m.textContent="Sent. Thank you, we will contact you on WhatsApp.";f.reset()}else m.textContent="Could not send right now. Please try again later."}).catch(function(){m.textContent="Could not send right now. Please try again later."})});
+var ra=document.getElementById("raform"),ram=document.getElementById("ramsg");
+ra.addEventListener("submit",function(e){e.preventDefault();
+ var day=new Date().toISOString().slice(0,10),last=null;try{last=localStorage.getItem("ra_day")}catch(e0){}
+ if(last===day){ram.textContent="One request per day from this browser. You already sent one today.";return}
+ var req=ra.request.value.trim(),con=ra.contact.value.trim();
+ if(req.length<10){ram.textContent="Please write a little more about the app you want.";return}
+ if(ra.dataset.confirm!=="1"){
+  ram.style.whiteSpace="pre-line";
+  ram.textContent="This will be sent:\n\nYour request:\n"+req.slice(0,1000)+(con?"\n\nContact (optional):\n"+con.slice(0,120):"")+"\n\nIt goes to the Netra developer by email. Nothing else is sent. If this looks right, tap below.";
+  ra.querySelector("button").textContent="Send exactly this";ra.dataset.confirm="1";return}
+ ram.style.whiteSpace="";ram.textContent="Sending...";
+ var fd=new FormData();fd.set("request",req.slice(0,1000));if(con)fd.set("contact_optional",con.slice(0,120));fd.set("page","netra-eco");
+ fd.set("_subject","[Netra] New app request (website)");fd.set("_template","table");fd.set("_captcha","false");
+ fetch("https://formsubmit.co/ajax/prayagideepak@gmail.com",{method:"POST",headers:{Accept:"application/json"},body:fd}).then(function(r){return r.json()}).then(function(d){
+  if(d.success==="true"||d.success===true){try{localStorage.setItem("ra_day",day)}catch(e1){}ram.textContent="Sent. Thank you.";ra.reset();ra.dataset.confirm="";ra.querySelector("button").textContent="Review and send"}
+  else{ram.textContent="Could not send right now. Please try again later.";ra.dataset.confirm="";ra.querySelector("button").textContent="Review and send"}}).catch(function(){ram.textContent="Could not send right now. Please try again later.";ra.dataset.confirm="";ra.querySelector("button").textContent="Review and send"})});
 })();
 </script>
 <script src="netra-site.js"></script>
