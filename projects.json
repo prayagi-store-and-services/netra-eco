@@ -66,15 +66,16 @@
       "name": "NETRA x TRIKAL",
       "type": "Local-first Android assistant (in development, private)",
       "summary": "One app, two assistants with separate sessions and memory. In development in a private repository. Not released yet.",
+      "eta": "2026-11-15T18:00:00+05:30",
       "targets": [
         {
           "label": "Public release target",
-          "targetDate": "2027-04-01",
+          "eta": "2027-04-01T18:00:00+05:30",
           "note": "Release depends on tested features and green checks."
         },
         {
           "label": "First beta target",
-          "targetDate": "2026-11-15",
+          "eta": "2026-11-15T18:00:00+05:30",
           "note": "Approximate. Requires setup, Eco Beta access and phone testing."
         }
       ]
@@ -84,11 +85,12 @@
       "name": "Netra Intruder",
       "type": "Anti-theft Android app (in development, private)",
       "summary": "Planned to take a photo after a wrong unlock attempt and warn you if the SIM card is changed. Everything stays on your phone. In development in a private repository. Not released yet.",
+      "eta": "2026-10-25T21:00:00+05:30",
       "targets": [
         {
           "label": "Public release target",
-          "targetDate": "2026-10-25",
-          "note": "Date only, not a promised launch hour. Release depends on tested features and green checks."
+          "eta": "2026-10-25T21:00:00+05:30",
+          "note": "Approximate. Release depends on tested features and green checks."
         }
       ]
     },
@@ -97,11 +99,12 @@
       "name": "Netra Email",
       "type": "Email app (planned, private)",
       "summary": "A planned privacy-first email app for the Netra family. Not started yet and not released.",
+      "eta": "2026-11-10T18:00:00+05:30",
       "targets": [
         {
           "label": "Public release target",
-          "targetDate": "2026-11-10",
-          "note": "Date only, not a promised launch hour. Planning stage."
+          "eta": "2026-11-10T18:00:00+05:30",
+          "note": "Approximate. Planning stage."
         }
       ]
     },
@@ -110,10 +113,11 @@
       "name": "Netra Ecosystem TV and KBC TV",
       "type": "TV versions (upcoming)",
       "summary": "Android TV versions of Netra Ecosystem and KBC, made for the remote and the big screen. Work is starting. Not released yet.",
+      "eta": "2027-01-31T18:00:00+05:30",
       "targets": [
         {
           "label": "Public release target",
-          "targetDate": "2027-01-31",
+          "eta": "2027-01-31T18:00:00+05:30",
           "note": "Approximate. Work is starting; date can move with testing."
         }
       ]
@@ -123,11 +127,12 @@
       "name": "Netra Pulse",
       "type": "Health and fitness app (upcoming)",
       "summary": "A private, on-device health and fitness app: steps, activity, sleep and the data your watch shares through Health Connect, with no account. Planned, not started and not released.",
+      "eta": "2026-12-27T12:00:00+05:30",
       "targets": [
         {
           "label": "Public release target",
-          "targetDate": "2026-12-27",
-          "note": "Date only, not a promised launch hour. Planned, not started."
+          "eta": "2026-12-27T12:00:00+05:30",
+          "note": "Approximate. Planned, not started."
         }
       ]
     },
@@ -142,24 +147,12 @@
       "name": "Netra Neg",
       "type": "Private gift ledger (planned)",
       "summary": "Planned gift ledger with optional encrypted backup in your own Drive. App build is on hold; not released.",
+      "eta": "2026-11-08T20:00:00+05:30",
       "targets": [
         {
           "label": "Public release target - Diwali",
-          "targetDate": "2026-11-08",
-          "note": "Date only, not a promised launch hour. Release depends on tested features and green checks."
-        }
-      ]
-    },
-    {
-      "id": "india-temples-quiz",
-      "name": "India temples and travel quiz",
-      "type": "Learning quiz (idea)",
-      "summary": "Planned questions about Indian temples and places. Idea stage, not started. No date announced.",
-      "targets": [
-        {
-          "label": "Public release target",
-          "targetDate": "2026-12-13",
-          "note": "Date only, not a promised launch hour. Idea stage, not started."
+          "eta": "2026-11-08T20:00:00+05:30",
+          "note": "Approximate. App build is on hold; release depends on tested features and green checks."
         }
       ]
     }
