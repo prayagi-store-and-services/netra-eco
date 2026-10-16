@@ -1,9 +1,9 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 const html=fs.readFileSync('index.html','utf8');
 assert(!html.includes('Not released yet'),'absence of release data must never imply unreleased');
-const start=html.indexOf('  var rel=row('),end=html.indexOf('\n\n\n (d.upcoming',start);
+const start=html.indexOf('  var rel=row('),end=html.indexOf('/*LIVE-END*/',start);
 assert(start>0&&end>start);
-const code=html.slice(start,end).trim().slice(0,-3);
+const code=html.slice(start,end).trim();
 async function test(response){
  const fields=[];let task;
  const context={row(k,v){const dd={textContent:v,hidden:false,previousElementSibling:{hidden:false}};fields.push(dd);return dd},el(){return {appendChild(){},insertBefore(){},firstChild:null}},p:{repo:'owner/repo',site:null,name:'test'},b:{appendChild(){}},w:{appendChild(){}},s:{appendChild(){}},box:{appendChild(){}},gh(){return {then(fn){task=Promise.resolve(response).then(fn)}}},when(v){return 'date:'+v}};
