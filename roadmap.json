@@ -1,5 +1,5 @@
 {
-  "reviewed": "16 Oct 2026",
+  "reviewed": "17 Oct 2026",
   "note": "All dates are our own estimates and can change. An item with a \"ships\" list disappears by itself once the latest published release of every listed app has reached that version (the Eco app checks this from the real release data).",
   "apps": [
     {
@@ -695,6 +695,13 @@
         "netra-travel-rider"
       ],
       "eta": "2026-11-22T20:00:00+05:30"
+    },
+    {
+      "title": "Privacy Guard: foreground-only microphone while the screen is ON (Deepak's ask, 17 Oct) - the mic works only for the app actually open on screen, not for apps sitting in the background. Level 1: instant alert naming any background app that grabs the mic, with a one-tap jump to its system permission page (works for everyone, no extras). Level 2: true per-app blocking through the free Shizuku path (needs wireless debugging; re-start after every reboot). Level not chosen yet - waiting for Deepak's pick.",
+      "status": "Planning (spec pending - Deepak to pick level 1 or 2)",
+      "apps": [
+        "prayagi-privacy"
+      ]
     }
   ]
 }
