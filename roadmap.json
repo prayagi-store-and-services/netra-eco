@@ -697,8 +697,8 @@
       "eta": "2026-11-22T20:00:00+05:30"
     },
     {
-      "title": "Privacy Guard: foreground-only microphone while the screen is ON (Deepak's ask, 17 Oct) - the mic works only for the app actually open on screen, not for apps sitting in the background. Level 1: instant alert naming any background app that grabs the mic, with a one-tap jump to its system permission page (works for everyone, no extras). Level 2: true per-app blocking through the free Shizuku path (needs wireless debugging; re-start after every reboot). Level not chosen yet - waiting for Deepak's pick.",
-      "status": "Level 1 (background-mic alerts) released in Privacy Guard v1.4.13, phone test pending; Level 2 (Shizuku blocking) in development",
+      "title": "Privacy Guard: foreground-only microphone while the screen is ON (Deepak's ask, 17 Oct) - the mic works only for the app actually open on screen, not for apps sitting in the background. Level 1: instant alert naming any background app that grabs the mic, with a one-tap jump to its system permission page (works for everyone, no extras). Level 2: true per-app blocking through the free Shizuku path (needs wireless debugging; re-start after every reboot). Both levels are built; each user switches between Level 1 (alerts) and Level 2 (Shizuku blocking) in settings.",
+      "status": "Level 1 (alerts) in v1.4.13 and Level 2 (Shizuku blocking) in v1.4.14 both released, phone test pending",
       "apps": [
         "prayagi-privacy"
       ],
