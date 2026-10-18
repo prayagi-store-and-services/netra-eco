@@ -73,26 +73,14 @@
   ],
   "upcoming": [
     {
-      "id": "netra-trikal-assistant",
-      "name": "NETRA x TRIKAL",
-      "type": "Local-first Android assistant (in development, private)",
-      "summary": "One app, two assistants with separate sessions and memory. In development in a private repository. Not released yet.",
-      "eta": "2026-11-15T18:00:00+05:30",
-      "targets": [
-        {
-          "label": "Public release target",
-          "eta": "2027-04-01T18:00:00+05:30",
-          "note": "Release depends on tested features and green checks."
-        },
-        {
-          "label": "First beta target",
-          "eta": "2026-11-15T18:00:00+05:30",
-          "note": "Approximate. Requires setup, Eco Beta access and phone testing."
-        }
-      ],
+      "id": "netra-one",
+      "name": "Netra One",
+      "type": "Android voice command layer (beta, in private testing)",
+      "summary": "Voice command layer for the Netra apps, working on-device and understanding Hindi and Hinglish. A first beta is in private testing. Not released publicly yet.",
       "features": [
-        "One app, two assistants (Netra and Trikal) with separate sessions and memory",
-        "Local-first and private"
+        "Voice commands for the Netra apps, on-device",
+        "Understands Hindi and Hinglish",
+        "First beta (v0.4.0-beta.1) in private testing"
       ]
     },
     {
