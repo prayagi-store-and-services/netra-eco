@@ -12,7 +12,7 @@
     },
     {
       "id": "netra-hub",
-      "name": "Netra Hub"
+      "name": "Netra Human Safety"
     },
     {
       "id": "prayagi-privacy",
@@ -306,7 +306,7 @@
         "netra-hub"
       ],
       "title": "H5: magnetic alerts and final polish (v1.5.0)",
-      "text": "Always-on magnetic alerts and the final polish. Target for the complete Netra Hub release.",
+      "text": "Always-on magnetic alerts and the final polish. Target for the complete Netra Human Safety release.",
       "status": "Planned",
       "eta": "2026-10-26T20:00:00+05:30",
       "ships": [
