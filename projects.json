@@ -26,7 +26,7 @@
     {
       "id": "netra-hub",
       "package": "com.aistudio.netrasensorhub.kxmpzq",
-      "name": "Netra Hub",
+      "name": "Netra Human Safety",
       "type": "Security application",
       "summary": "Unified Android safety and emergency dashboard.",
       "repo": "prayagi-store-and-services/netra-hub",
