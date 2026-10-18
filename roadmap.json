@@ -1,5 +1,5 @@
 {
-  "reviewed": "17 Oct 2026",
+  "reviewed": "18 Oct 2026",
   "note": "All dates are our own estimates and can change. An item with a \"ships\" list disappears by itself once the latest published release of every listed app has reached that version (the Eco app checks this from the real release data).",
   "apps": [
     {
@@ -244,8 +244,8 @@
       ],
       "title": "Disaster alerts, part 2: earthquakes within about 200 km",
       "text": "What the app does today: a card and a check about every 30 minutes read the USGS feed for quakes of magnitude 2.5 and above within 200 km in the last 7 days, and notify about new ones. It is not an official warning, and smaller quakes in India may be missing. NDMA is not used for quakes yet. In the app since Hub v1.4.x, not yet tested on a phone.",
-      "status": "In progress (in the app, not yet tested on a phone)",
-      "eta": "2026-10-18T20:00:00+05:30"
+      "status": "Shipped in v1.4.19 (18 Oct; immediate checks on fresh location + district no-warning status + spoken official alerts added; phone test by Deepak pending)",
+      "eta": "2026-10-18T20:30:00+05:30"
     },
     {
       "apps": [
@@ -352,8 +352,8 @@
       ],
       "title": "S3: accessibility-service warning",
       "text": "Shows enabled accessibility services and flags unusual ones.",
-      "status": "Planned",
-      "eta": "2026-10-18T20:00:00+05:30"
+      "status": "Planned (18 Oct 8 PM target missed - windows went to owner-priority builds; new target 20 Oct)",
+      "eta": "2026-10-20T20:00:00+05:30"
     },
     {
       "apps": [
@@ -628,11 +628,11 @@
     },
     {
       "title": "Netra Player: background update download",
-      "status": "In progress (Oct 14 8 PM target missed; new target 18 Oct)",
+      "status": "In progress (Oct 14 and Oct 18 8 PM targets missed; work started 18 Oct evening, repo restriction lifted for this item)",
       "apps": [
         "netra-player"
       ],
-      "eta": "2026-10-18T20:00:00+05:30"
+      "eta": "2026-10-19T20:00:00+05:30"
     },
     {
       "title": "Netra Player v1.1.15: Playback size controls - Fit, Crop and Stretch",
