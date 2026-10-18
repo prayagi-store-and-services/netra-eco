@@ -628,11 +628,17 @@
     },
     {
       "title": "Netra Player: background update download",
-      "status": "In progress (Oct 14 and Oct 18 8 PM targets missed; work started 18 Oct evening, repo restriction lifted for this item)",
+      "status": "Released in v1.1.16.1 (18 Oct 9:26 PM IST; CI/emulator verified only until Deepak's phone test)",
       "apps": [
         "netra-player"
       ],
-      "eta": "2026-10-19T20:00:00+05:30"
+      "eta": "2026-10-19T20:00:00+05:30",
+      "ships": [
+        {
+          "app": "netra-player",
+          "version": "1.1.16.1"
+        }
+      ]
     },
     {
       "title": "Netra Player v1.1.15: Playback size controls - Fit, Crop and Stretch",
