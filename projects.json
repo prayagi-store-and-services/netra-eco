@@ -172,12 +172,12 @@
       "name": "Netra Neg",
       "type": "Private gift ledger (planned)",
       "summary": "Planned gift ledger with optional encrypted backup in your own Drive. App build is on hold; not released.",
-      "eta": "2026-11-08T20:00:00+05:30",
+      "eta": "2026-11-07T20:00:00+05:30",
       "targets": [
         {
-          "label": "Public release target - Diwali",
-          "eta": "2026-11-08T20:00:00+05:30",
-          "note": "Approximate. App build is on hold; release depends on tested features and green checks."
+          "label": "Public release target - one day before Diwali",
+          "eta": "2026-11-07T20:00:00+05:30",
+          "note": "Approximate. App build is on hold; release depends on tested features and green checks. Diwali is 8 Nov 2026."
         }
       ],
       "features": [
