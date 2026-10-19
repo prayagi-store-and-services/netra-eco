@@ -244,7 +244,7 @@
       ],
       "title": "Disaster alerts, part 2: earthquakes within about 200 km",
       "text": "What the app does today: a card and a check about every 30 minutes read the USGS feed for quakes of magnitude 2.5 and above within 200 km in the last 7 days, and notify about new ones. It is not an official warning, and smaller quakes in India may be missing. NDMA is not used for quakes yet. In the app since Hub v1.4.x, not yet tested on a phone.",
-      "status": "Shipped in v1.4.19 (18 Oct; immediate checks on fresh location + district no-warning status + spoken official alerts added; phone test by Deepak pending)",
+      "status": "Shipped in v1.4.19 (18 Oct; immediate checks on fresh location + district no-warning status + spoken official alerts added; phone test passed 19 Oct)",
       "eta": "2026-10-18T20:30:00+05:30"
     },
     {
@@ -628,7 +628,7 @@
     },
     {
       "title": "Netra Player: background update download",
-      "status": "Released in v1.1.16.1 (18 Oct 9:26 PM IST; CI/emulator verified only until Deepak's phone test)",
+      "status": "Released in v1.1.16.1 (18 Oct 9:26 PM IST; phone test passed 19 Oct)",
       "apps": [
         "netra-player"
       ],
@@ -704,7 +704,7 @@
     },
     {
       "title": "Privacy Guard: foreground-only microphone while the screen is ON - the mic works only for the app actually open on screen, not for apps sitting in the background. Level 1: instant alert naming any background app that grabs the mic, with a one-tap jump to its system permission page (works for everyone, no extras). A Level 2 with true per-app blocking was tried and removed the same day: it needed extra setup that most people would not manage, and a privacy feature people cannot understand can do more harm than good. Level 1 (alerts) is what ships.",
-      "status": "Released in v1.4.13 (Level 1 alerts; CI/emulator verified only until the phone test). A Shizuku-based Level 2 shipped in v1.4.14 and was removed in v1.4.16.",
+      "status": "Released in v1.4.13 (Level 1 alerts; phone test passed 19 Oct). A Shizuku-based Level 2 shipped in v1.4.14 and was removed in v1.4.16.",
       "apps": [
         "prayagi-privacy"
       ],
