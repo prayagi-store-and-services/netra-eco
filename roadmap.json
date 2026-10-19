@@ -1,5 +1,5 @@
 {
-  "reviewed": "18 Oct 2026",
+  "reviewed": "19 Oct 2026",
   "note": "All dates are our own estimates and can change. An item with a \"ships\" list disappears by itself once the latest published release of every listed app has reached that version (the Eco app checks this from the real release data).",
   "apps": [
     {
@@ -186,8 +186,8 @@
       ],
       "title": "Battery and temperature check before a game",
       "text": "Before a KBC game starts it checks battery and temperature with the other Netra apps on the phone. If the phone is too hot the game can pause so it cools down. If no answer comes in 2 seconds, the game is not blocked.",
-      "status": "Planned",
-      "eta": "2026-10-19T20:00:00+05:30"
+      "status": "Planned (19 Oct 8 PM target missed - not started; new target 22 Oct)",
+      "eta": "2026-10-22T20:00:00+05:30"
     },
     {
       "apps": [
@@ -235,8 +235,8 @@
       ],
       "title": "Disaster alerts, part 1: weather orange alerts (India)",
       "text": "Released fallback in Hub v1.4.12: the NDMA SACHET feed is checked about every 30 minutes, subject to Android delays. Severe or Extreme alerts match district, locality or state names, not coordinates. IMD alerts arrive only if present in that feed; this is not a verified IMD orange/red mapping. The original 5-minute server-driven push design is incomplete. Phone delivery is untested. The 14 Oct 8 PM target was missed; a new completion date is Unavailable until those gaps are verified.",
-      "status": "In progress (fallback released v1.4.12; full scope and phone test by 19 Oct)",
-      "eta": "2026-10-19T20:00:00+05:30"
+      "status": "In progress (fallback released v1.4.12; 19 Oct full-scope target missed - server push design and phone delivery still unverified; new target 26 Oct)",
+      "eta": "2026-10-26T20:00:00+05:30"
     },
     {
       "apps": [
@@ -361,8 +361,8 @@
       ],
       "title": "S5: overlay permission check",
       "text": "Today the app list only tags apps that ASK for the draw-over-other-apps permission. This will check which apps are actually allowed to draw over other apps.",
-      "status": "Planned",
-      "eta": "2026-10-19T20:00:00+05:30"
+      "status": "Planned (19 Oct 8 PM target missed - not started; new target 21 Oct)",
+      "eta": "2026-10-21T20:00:00+05:30"
     },
     {
       "apps": [
@@ -588,8 +588,8 @@
     },
     {
       "title": "Interface update",
-      "status": "Planned",
-      "eta": "2026-10-20T20:00:00+05:30",
+      "status": "Planned (re-dated to 21 Oct - sequenced after Netra Neg M2 and S3)",
+      "eta": "2026-10-21T20:00:00+05:30",
       "apps": [
         "netra-hub"
       ]
