@@ -24,6 +24,7 @@
       var code = byId[id];
       dl.href = "app/" + code + "/";
       dl.removeAttribute("rel");
+      dl.setAttribute("data-dl-page", code);
       var line = document.createElement("div"); line.className = "sub"; line.setAttribute("data-dl-count", code);
       dl.parentNode.appendChild(line);
       count(code, line);
@@ -33,7 +34,21 @@
     byId = {};
     (d.projects || []).forEach(function (p) { if (p && /^[a-z0-9]{2,12}$/.test(p.code || "") && p.id) byId[p.id] = p.code; });
     apply();
-    new MutationObserver(apply).observe(box, { childList: true, subtree: true });
+    new MutationObserver(function () {
+      apply();
+      /* The card's own script sets the raw release link after the release is read; keep the page link. */
+      var all = box.querySelectorAll("a[data-dl-page]");
+      for (var i = 0; i < all.length; i++) {
+        var want = "app/" + all[i].getAttribute("data-dl-page") + "/";
+        if (all[i].getAttribute("href") !== want) all[i].setAttribute("href", want);
+      }
+    }).observe(box, { childList: true, subtree: true, attributes: true, attributeFilter: ["href"] });
+    box.addEventListener("click", function (e) {
+      var a = e.target && e.target.closest ? e.target.closest("a[data-dl-page]") : null;
+      if (!a || e.button || e.metaKey || e.ctrlKey || e.shiftKey) return;
+      e.preventDefault();
+      window.location.href = "app/" + a.getAttribute("data-dl-page") + "/";
+    }, true);
     setTimeout(function () { apply(); }, 3000);
   }).catch(function () {});
 })();
