@@ -570,16 +570,18 @@
     },
     {
       "title": "Interface update",
-      "status": "Planned (re-dated to 21 Oct - sequenced after Netra Neg M2 and S3)",
-      "eta": "2026-10-21T20:00:00+05:30",
+      "status": "Planned (21 Oct 20:00 target missed - the day went to the driving-detection fix and security work; new target 25 Oct)",
+      "missedEta": "2026-10-21T20:00:00+05:30",
+      "eta": "2026-10-25T20:00:00+05:30",
       "apps": [
         "netra-hub"
       ]
     },
     {
       "title": "Interface update",
-      "status": "Planned",
-      "eta": "2026-10-21T20:00:00+05:30",
+      "status": "Planned (21 Oct 20:00 target missed - leave day, security and alerts only; new target 26 Oct)",
+      "missedEta": "2026-10-21T20:00:00+05:30",
+      "eta": "2026-10-26T20:00:00+05:30",
       "apps": [
         "kbc"
       ]
