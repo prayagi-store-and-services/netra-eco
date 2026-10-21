@@ -6,7 +6,7 @@
   "use strict";
   var box = document.getElementById("apps"); if (!box) return;
   var AB = "https://abacus.jasoncameron.dev/get/netra-pages/dl-";
-  var byId = null, done = {};
+  var byId = null, done = {}, links = [];
   function count(code, line) {
     fetch(AB + code).then(function (r) { return r.json(); }).then(function (x) {
       if (typeof x.value === "number") line.textContent = "Downloads counted on the app page: " + x.value.toLocaleString();
@@ -24,7 +24,7 @@
       var code = byId[id];
       dl.href = "app/" + code + "/";
       dl.removeAttribute("rel");
-      dl.setAttribute("data-dl-page", code);
+      links.push({ el: dl, code: code });
       var line = document.createElement("div"); line.className = "sub"; line.setAttribute("data-dl-count", code);
       dl.parentNode.appendChild(line);
       count(code, line);
@@ -37,17 +37,20 @@
     new MutationObserver(function () {
       apply();
       /* The card's own script sets the raw release link after the release is read; keep the page link. */
-      var all = box.querySelectorAll("a[data-dl-page]");
-      for (var i = 0; i < all.length; i++) {
-        var want = "app/" + all[i].getAttribute("data-dl-page") + "/";
-        if (all[i].getAttribute("href") !== want) all[i].setAttribute("href", want);
+      for (var i = 0; i < links.length; i++) {
+        var want = "app/" + links[i].code + "/";
+        if (links[i].el.getAttribute("href") !== want) links[i].el.setAttribute("href", want);
       }
     }).observe(box, { childList: true, subtree: true, attributes: true, attributeFilter: ["href"] });
     box.addEventListener("click", function (e) {
-      var a = e.target && e.target.closest ? e.target.closest("a[data-dl-page]") : null;
-      if (!a || e.button || e.metaKey || e.ctrlKey || e.shiftKey) return;
-      e.preventDefault();
-      window.location.href = "app/" + a.getAttribute("data-dl-page") + "/";
+      if (e.button || e.metaKey || e.ctrlKey || e.shiftKey) return;
+      for (var i = 0; i < links.length; i++) {
+        if (links[i].el.contains(e.target)) {
+          e.preventDefault();
+          window.location.href = "app/" + links[i].code + "/";
+          return;
+        }
+      }
     }, true);
     setTimeout(function () { apply(); }, 3000);
   }).catch(function () {});
