@@ -19,7 +19,7 @@ function card(v){
  var cap=mk("figcaption","font-size:14px;line-height:1.4");cap.appendChild(mk("div","font-weight:600",v.title));
  cap.appendChild(mk("div","opacity:.75;font-size:12px;margin-top:2px",v.date+(v.ai?" \u00B7 AI-generated, fictional characters":"")));
  var a=mk("a","display:inline-block;margin-top:6px;font-size:13px",v.source==="youtube"?"Open on YouTube":"Open on Instagram");
- a.href=v.source==="youtube"?"https://www.youtube.com/shorts/"+v.id:"https://www.instagram.com/netraecosystem/reel/"+v.id+"/";
+ a.href=(v.url&&/^https:\/\/www\.instagram\.com\/reel\/[A-Za-z0-9_-]+\/$/.test(v.url))?v.url:v.source==="youtube"?"https://www.youtube.com/shorts/"+v.id:"https://www.instagram.com/netraecosystem/reel/"+v.id+"/";
  a.target="_blank";a.rel="noopener noreferrer";cap.appendChild(a);f.appendChild(cap);return f}
 fetch("team-videos.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){
  var list=(j.videos||[]).filter(function(v){return v&&ok(v.id)&&v.title&&(v.source==="youtube"||v.source==="instagram")});
