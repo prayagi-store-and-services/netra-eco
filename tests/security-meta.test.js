@@ -31,7 +31,7 @@ for (const file of ['index.html', 'embed.html']) {
  }
  const connections = rules.get('connect-src');
  assert.deepEqual([...connections].sort(), ["'self'", 'https://api.github.com', 'https://abacus.jasoncameron.dev', 'https://firestore.googleapis.com', 'https://formsubmit.co'].sort());
- assert.deepEqual([...rules.get('frame-src')], ["'self'"]);
+ assert.deepEqual([...rules.get('frame-src')].sort(), (file === 'index.html' ? ["'self'", 'https://www.youtube-nocookie.com'] : ["'self'"]).sort());
  assert(source.indexOf('Content-Security-Policy') < source.indexOf('<script'));
  console.log('PASS exact hashes and directive tokens:', file);
 }
