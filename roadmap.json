@@ -359,15 +359,6 @@
       "apps": [
         "prayagi-privacy"
       ],
-      "title": "S5: overlay permission check",
-      "text": "Today the app list only tags apps that ASK for the draw-over-other-apps permission. This will check which apps are actually allowed to draw over other apps.",
-      "status": "Planned (19 Oct 8 PM target missed - not started; new target 21 Oct)",
-      "eta": "2026-10-21T20:00:00+05:30"
-    },
-    {
-      "apps": [
-        "prayagi-privacy"
-      ],
       "title": "S6: local VPN website blocking",
       "text": "On-device website blocking through a local VPN. No outside VPN server, nothing leaves the phone for us. Blocks known domains with a list that updates daily.",
       "status": "Planned",
