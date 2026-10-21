@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; style-src 'unsafe-inline'">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Netra Hub driving detection - tester brief</title>
+<style>body{font-family:system-ui,sans-serif;background:#0f0b1e;color:#ede7f6;max-width:820px;margin:0 auto;padding:18px;line-height:1.5}h1,h2{color:#7ee0a3}table{border-collapse:collapse;width:100%}td,th{border:1px solid #3b3366;padding:6px;font-size:14px;vertical-align:top}pre{white-space:pre-wrap;background:#171230;padding:12px;border-radius:8px;border:1px solid #3b3366}a{color:#7ee0a3}</style></head>
+<body>
+<h1>Netra Hub driving detection - Gemini tester page</h1>
+<p>Role: <b>Real-world QA and user experience</b>. This page is only for this tester. Other testers have their own page.</p>
+<p>Facts below come from the owner's ride report and a code audit on 21 Oct 2026. No real ride has been done with the fix yet, so nothing here proves it works.</p>
+<h2>What failed (owner report, 21 Oct 2026, riding a two-wheeler with helmet and earphones, speed varying)</h2>
+<ol>
+<li>Driving was not detected.</li>
+<li>No announcement said whether driving mode turned on.</li>
+<li>No detection record or log was visible in the app.</li>
+<li>The alert system (SOS and crash alert) was not easy to find.</li>
+</ol>
+
+<h2>Likely causes found in the code (Hub up to v1.4.23)</h2>
+<ul>
+<li>Driving mode only started when GPS speed reached 30 km/h, and ended after 30 seconds below it. City riding often stays under 30.</li>
+<li>Location used balanced power with updates every 10 seconds. Many phones send positions without a speed in that mode, so speed read "unavailable" and driving mode never started.</li>
+<li>The only driving state was a yes/no value in memory. Nothing was announced and nothing was logged. The card showed only while driving.</li>
+<li>One Home card said "Drive detection is not available in this version" even though speed-based detection exists.</li>
+<li>The SOS and crash alert setup was behind a small text button in the header.</li>
+</ul>
+
+<h2>Change being prepared (Hub v1.4.24, not released yet)</h2>
+<ul>
+<li>Start at 15 km/h, end after 90 seconds below.</li>
+<li>High-accuracy GPS every 5 seconds; speed worked out from two fixes when the phone gives none.</li>
+<li>Home "Driving detection" card: mode, GPS speed and its age, spoken announcement switch, TEST announcement button, driving log (time, speed, reason), and a button to the SOS and crash alert settings.</li>
+<li>Known cost: high-accuracy GPS uses more battery.</li>
+</ul>
+
+<h2>Test cases and expected results</h2>
+<table>
+<tr><th>#</th><th>Case</th><th>Expected</th></tr>
+<tr><td>1</td><td>Walk 10 minutes with the app running</td><td>Driving mode stays OFF; log has no Driving ON entry</td></tr>
+<tr><td>2</td><td>Ride above 15 km/h for 1 minute</td><td>Driving mode ON within about 10 seconds of crossing 15 km/h; spoken "Netra driving mode is on"; log entry with time, speed and reason</td></tr>
+<tr><td>3</td><td>Slow city riding between 15 and 30 km/h</td><td>Mode stays ON</td></tr>
+<tr><td>4</td><td>Stop at a signal for under 90 seconds</td><td>Mode stays ON</td></tr>
+<tr><td>5</td><td>Park and stay under 15 km/h for 90 seconds</td><td>Mode OFF; spoken "driving mode is off"; log entry</td></tr>
+<tr><td>6</td><td>Earphones connected, music playing</td><td>Announcement is audible; music pauses and resumes</td></tr>
+<tr><td>7</td><td>Phone call active</td><td>Hub should not speak into the call</td></tr>
+<tr><td>8</td><td>Press TEST announcement</td><td>Clearly labelled test line plays; log shows a TEST entry; no real driving state change</td></tr>
+<tr><td>9</td><td>App killed from recents, battery saver on, screen off during a ride</td><td>Report what happens. Expected: service keeps running; if not, the log says GPS gave no usable speed</td></tr>
+<tr><td>10</td><td>Update the app mid-day</td><td>Log history is still there after the update</td></tr>
+<tr><td>11</td><td>Open "Open SOS and crash alert settings"</td><td>SOS screen opens; contacts and crash alert state are visible</td></tr>
+<tr><td>12</td><td>Location set to "While using the app" only, or battery optimisation on</td><td>Card or log should make it clear detection may be blind; report if it does not</td></tr>
+</table>
+
+<h2>Your prompt</h2>
+<pre>You are a hands-on mobile QA lead. Facts are on this page. The rider uses a two-wheeler with a helmet and earphones, speed varies in city traffic. Do:
+1. Real-world checklist: for Realme, Samsung and Xiaomi phones, list the exact settings that can stop a background location app (battery optimisation, autostart, app lock in recents, background activity limits, location permission "Allow all the time", precise location, power saving modes, Do Not Disturb). Give the steps in plain words for each brand.
+2. Ride scenarios: write at least 15 scenarios (signal stops, traffic crawl, flyovers, tunnels, phone in pocket or mount, screen off, call during ride, music or navigation playing, Bluetooth earphones vs wired, helmet speaker volume, rain, low battery). For each: what to do, expected result, what to note.
+3. UX review: is the Driving detection card clear, is the spoken announcement audible and not annoying, is the log readable, is the SOS button easy to find?
+4. Say what cannot be proven without a real ride.
+Be specific and honest. Do not invent app features. If unsure, say "unsure".</pre>
+<h2>Report format</h2>
+<ul><li>Phone model, Android version, app version, location permission level, battery optimisation state.</li><li>For each scenario: what you did, what happened, what you expected, driving log lines copied as shown.</li><li>UX problems with a short suggested fix.</li><li>No secrets or personal data.</li></ul>
+<p><a href="driving-test.html">Back to tester index</a> | <a href="https://prayagi-store-and-services.github.io/netra-eco/">Netra Ecosystem</a></p>
+</body></html>
