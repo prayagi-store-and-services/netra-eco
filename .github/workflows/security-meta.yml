@@ -14,6 +14,7 @@ jobs:
         with:
           node-version: 20
       - run: node tests/security-meta.test.js
+      - run: node tests/site-hygiene.test.js
       - run: node tests/scroll-contract.test.js
       - run: node tests/release-fallback.test.js
       - run: node tests/app-links.test.js
