@@ -29,3 +29,7 @@ Every new product and every release is checked against these 20 points before it
 ## App family identity (standing rule, 15 Oct 2026)
 
 Every current and future Netra app must show `v<version> | Netra Ecosystem` on its version row. Keep the suffix short; do not use a long company footer. Keep package/repository IDs unchanged. Review the actual narrow-phone header pixels before release so version, family suffix and date do not overlap.
+
+## Release notes checklist (compulsory)
+
+No release ships without a filled "What's new". Every fixed bug and every new feature gets one plain-words bullet that is true and can be checked against the pull request or changelog. The default text "Improvements and bug fixes." is no longer accepted. The Netra Ecosystem website reads these bullets live from the GitHub release and shows a release without bullets as "No detailed notes were written", so a missing note stays visible.

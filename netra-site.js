@@ -114,8 +114,32 @@ function clock(){
  function t(){var d=new Date();el.textContent=d.toLocaleDateString(undefined,{weekday:"long",day:"numeric",month:"long",year:"numeric"})+" - "+d.toLocaleTimeString()}
  t();setInterval(t,1000);
 }
+function noteLines(body){
+ var out=[];String(body||"").split(/\r?\n/).forEach(function(l){
+  var m=l.match(/^\s*[-*]\s+(.*)$/);if(m&&out.length<8)out.push(m[1].replace(/\*\*/g,""))});
+ return out;
+}
+function whatsNewFamily(box){
+ fetch("projects.json",{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
+  return Promise.all((d.projects||[]).map(function(p){
+   return fetch("https://api.github.com/repos/"+p.repo+"/releases/latest").then(function(r){return r.ok?r.json():null}).catch(function(){return null}).then(function(x){return{p:p,x:x}})}));
+ }).then(function(rows){
+  box.innerHTML="";
+  rows.sort(function(a,b){var ta=a.x&&a.x.published_at||"",tb=b.x&&b.x.published_at||"";return ta<tb?1:ta>tb?-1:0});
+  rows.forEach(function(r){
+   var h=document.createElement("h3");h.textContent=r.p.name+" ";
+   if(!r.x||!r.x.tag_name){var u=document.createElement("span");u.className="sub";u.textContent="Unavailable";h.appendChild(u);box.appendChild(h);return}
+   var a=document.createElement("a");a.href=r.x.html_url;a.textContent=r.x.tag_name;h.appendChild(a);
+   var dt=document.createElement("span");dt.className="sub";try{dt.textContent="  "+new Date(r.x.published_at).toLocaleString(undefined,{year:"numeric",month:"short",day:"numeric",hour:"numeric",minute:"2-digit"})}catch(e){}h.appendChild(dt);box.appendChild(h);
+   var ul=document.createElement("ul"),lines=noteLines(r.x.body);
+   if(!lines.length){var li0=document.createElement("li");li0.textContent="No detailed notes were written for this release (it only says: "+String(r.x.body||"nothing").replace(/\s+/g," ").trim().slice(0,120)+").";ul.appendChild(li0)}
+   lines.forEach(function(t){var li=document.createElement("li");li.textContent=t;ul.appendChild(li)});
+   box.appendChild(ul)});
+ }).catch(function(){box.textContent="Could not load the update notes right now. Please try again later."});
+}
 function whatsNew(){
  var box=document.getElementById("whatsnew-list");if(!box)return;
+ if(!(window.NETRA_SITE&&window.NETRA_SITE.appId)&&document.getElementById("apps")){whatsNewFamily(box);return}
  var repo=(window.NETRA_SITE&&window.NETRA_SITE.repo)||"prayagi-store-and-services/netra-eco";
  fetch("https://api.github.com/repos/"+repo+"/releases?per_page=5").then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(rel){
   rel=rel.filter(function(x){return !x.draft&&!x.prerelease});box.innerHTML="";
