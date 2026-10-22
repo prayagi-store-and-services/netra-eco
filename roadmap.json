@@ -185,8 +185,8 @@
         "kbc"
       ],
       "title": "Battery and temperature check before a game",
-      "text": "Before a KBC game starts it checks battery and temperature with the other Netra apps on the phone. If the phone is too hot the game can pause so it cools down. If no answer comes in 2 seconds, the game is not blocked.",
-      "status": "Planned (19 Oct 8 PM target missed - not started; new target 22 Oct)",
+      "text": "Before a KBC game starts it reads this phone's own battery and temperature. If the phone is 42 C or hotter the game is held until it cools. A TEST button on the home screen shows the reading. If the temperature is unknown the game is never blocked. Local check only; asking the other Netra apps comes later.",
+      "status": "Released in KBC v1.1.35 (22 Oct); not yet phone-tested, CI/emulator only",
       "eta": "2026-10-22T20:00:00+05:30"
     },
     {
