@@ -130,16 +130,10 @@
     },
     {
       "title": "Hub UI step 2: dashboard cards and SOS screen wording",
-      "status": "In progress",
+      "status": "In progress (6 Oct 20:00 target missed; new date being estimated)",
       "eta": "2026-10-06T20:00:00+05:30",
       "apps": [
         "netra-hub"
-      ],
-      "ships": [
-        {
-          "app": "netra-hub",
-          "version": "1.1.9"
-        }
       ]
     },
     {
