@@ -1,5 +1,13 @@
-# Firestore rules draft (netra-ai-jan)
+# Firestore rules (netra-ai-jan)
 
+## Status as of 22 Oct 2026 (read this first)
+- `firestore.rules` now mirrors the rules that are PUBLISHED in the console, transcribed by hand from the owner's screenshots of 22 Oct 2026 4:40 PM IST. If the console differs, the console wins and this file must be re-copied.
+- The published rules have an older and a newer block for ratings and feedback. Firestore OR-s them, so the looser one applies. Old apps still send `place`, so do not delete the old blocks without checking every app build.
+- The blanket rule that expired on 2026-07-17 grants nothing today.
+- `firestore.rules.proposed` removes that expired rule and adds an explicit deny-all. Nothing else changes. It is NOT published. The owner pastes it into the console by hand (Rules tab, Publish) and can press Restore to go back.
+- Counters: `netra_active/<key>_000000` is used by the site counter (`counter.js`). Anyone can create it with 1 or add exactly 1. This cannot be rate limited without App Check or login, so counts are approximate.
+
+## Older notes (draft written before the published rules were seen)
 `firestore.rules` in this repo root is a DRAFT. Nothing is applied by merging this file. Merging only stores the text in the repo.
 
 ## What it does
