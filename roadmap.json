@@ -561,12 +561,19 @@
     },
     {
       "title": "Interface update",
-      "status": "In progress (15 Oct 20:00 target missed; new release date 23 Oct)",
+      "status": "Released v2.2.8 on 22 Oct, earlier than the 23 Oct target (phone test pending; 15 Oct target was missed)",
       "apps": [
         "bspn"
       ],
       "missedEta": "2026-10-15T20:00:00+05:30",
-      "eta": "2026-10-23T20:00:00+05:30"
+      "eta": "2026-10-23T20:00:00+05:30",
+      "text": "Small interface step: the app already had the standard header and TEST buttons; the Devices and Logs screens now use the same card spacing as the other screens. Tested in CI and emulator only. A larger redesign is not part of this step.",
+      "ships": [
+        {
+          "app": "bspn",
+          "version": "2.2.8"
+        }
+      ]
     },
     {
       "title": "Interface update",
@@ -588,10 +595,17 @@
     },
     {
       "title": "Interface update",
-      "status": "Planned",
+      "status": "Released v1.4.22 on 22 Oct (phone test pending)",
       "eta": "2026-10-22T20:00:00+05:30",
       "apps": [
         "prayagi-privacy"
+      ],
+      "text": "Small interface step: the Travel Checking and Site Blocking entries now sit in one Tools card with the same spacing as the other cards, plus a labelled TEST alert button. Tested in CI and emulator only, not yet on the owner phone. A larger redesign is not part of this step.",
+      "ships": [
+        {
+          "app": "prayagi-privacy",
+          "version": "1.4.22"
+        }
       ]
     },
     {
