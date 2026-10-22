@@ -7,7 +7,7 @@ var REPO="prayagi-store-and-services/netra-eco-app";
 var APK="https://github.com/"+REPO+"/releases/latest/download/app-release.apk";
 var foot=document.querySelector("footer");if(!foot||document.getElementById("eco-app-promo"))return;
 function mk(tag,css,txt){var e=document.createElement(tag);if(css)e.style.cssText=css;if(txt!=null)e.textContent=txt;return e}
-var sec=mk("section","background:var(--card,#121c30);border:1px solid var(--accent,#F59E0B);border-radius:16px;padding:18px;margin:16px auto;max-width:860px;color:var(--text,#e8eefc)");sec.id="eco-app-promo";
+var sec=mk("section","background:var(--card,#121c30);border:1px solid var(--accent,#F59E0B);border-radius:16px;padding:18px;margin:16px auto;max-width:860px;color:var(--text,#e8eefc)");sec.id="eco-app-promo";sec.setAttribute("aria-label","Get the Netra Ecosystem app");
 sec.appendChild(mk("h2","margin:0 0 6px;font-size:1.15rem","Get the Netra Ecosystem app"));
 sec.appendChild(mk("p","margin:0 0 8px;font-size:.95rem","You do not need to visit the website. Install the Netra Ecosystem app and open, download and update every Netra app directly from your phone."));
 var info=mk("p","margin:0 0 10px;color:var(--mute,#9db0d0);font-size:.88rem","Checking the newest version...");sec.appendChild(info);
@@ -43,7 +43,7 @@ if(foot.id){var originalAnchor=document.createElement("span");originalAnchor.id=
 var style=document.createElement("style");style.id="netra-scroll-contract";
 style.textContent="html{scroll-padding-top:0;scroll-padding-bottom:calc(var(--netra-foot-height,48px) + 12px)}body{padding-bottom:calc(var(--netra-foot-height,48px) + 16px)!important}body>nav>.wrap{height:auto!important;min-height:56px;flex-wrap:wrap;gap:8px;padding:8px 12px}body>nav>.wrap b{min-width:0;flex:1;overflow-wrap:normal}nav[data-netra-store-menu]{position:static!important;display:flex;flex-wrap:wrap;gap:8px;padding:12px 16px}nav[data-netra-store-menu] a{margin:0!important}.top>*{min-width:0}body>.top{position:sticky!important;top:0!important;z-index:20!important}.top~nav{position:static!important;top:auto!important}body>footer{position:fixed!important;left:0;right:0;bottom:0;z-index:20;padding:10px 14px calc(10px + env(safe-area-inset-bottom))!important;text-align:center;font:500 12px/1.4 system-ui,sans-serif;background:var(--card,#121c30);border-top:1px solid var(--line,#22314f)}body>footer a{display:inline-block;margin:0 6px}#netra-footer-notes{max-width:1100px;margin:16px auto;padding:18px 16px;color:var(--mute,#9db0d0);font-size:13px;overflow-wrap:anywhere}#netra-footer-notes .wrap{padding:0}[id]{scroll-margin-top:calc(var(--netra-head-height,64px) + 12px)}#eco-fab,.netra-fab{position:static!important;inset:auto!important;display:table!important;margin:16px auto!important;z-index:auto!important}";
 document.head.appendChild(style);
-var notes=document.createElement("section");notes.id="netra-footer-notes";
+var notes=document.createElement("section");notes.id="netra-footer-notes";notes.setAttribute("aria-label","Site information");
 var title=document.createElement("h2");title.textContent="Site information";title.style.fontSize="1rem";notes.appendChild(title);
 while(foot.firstChild)notes.appendChild(foot.firstChild);
 foot.parentNode.insertBefore(notes,foot);
