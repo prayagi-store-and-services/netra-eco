@@ -2,6 +2,20 @@
  "note": "Add every new office/team video here (newest first) via PR. All are AI-generated, fictional characters.",
  "videos": [
   {
+   "id": "T2IduBJk2YU",
+   "date": "2026-10-22",
+   "title": "Human Safety App: Aaj Ka Office Din | AI-Generated Fictional Characters",
+   "source": "youtube",
+   "ai": true
+  },
+  {
+   "id": "Okq7Yj2YtnE",
+   "date": "2026-10-22",
+   "title": "Aaj ka Din: ChatGPT & Gemini Nawabs in Office | AI-Generated Fictional Characters",
+   "source": "youtube",
+   "ai": true
+  },
+  {
    "id": "c54XN1Lmqdk",
    "date": "2026-10-21",
    "title": "Meet the Netra Ecosystem Social Media Team | AI-Generated Fictional Characters",
