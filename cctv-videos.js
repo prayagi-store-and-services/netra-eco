@@ -9,7 +9,7 @@ function card(v){
  var area=mk("div","aspect-ratio:9/16;max-height:420px;display:flex;align-items:center;justify-content:center;background:#000;border-radius:8px;overflow:hidden");
  if(v.source==="youtube"){
   var b=mk("button","padding:12px 18px;border-radius:999px;border:0;background:#2ecc71;color:#06210f;font-weight:700;cursor:pointer","\u25B6 Play here");
-  b.type="button";b.setAttribute("aria-label","Play: "+v.title);
+  b.type="button";b.setAttribute("aria-label","\u25B6 Play here: "+v.title);
   b.onclick=function(){var i=document.createElement("iframe");i.src="https://www.youtube-nocookie.com/embed/"+v.id+"?autoplay=1&rel=0";i.title=v.title;i.allow="autoplay; encrypted-media; picture-in-picture";i.setAttribute("allowfullscreen","");i.referrerPolicy="strict-origin-when-cross-origin";i.style.cssText="width:100%;height:100%;border:0";area.textContent="";area.appendChild(i)};
   area.appendChild(b);
  }else{

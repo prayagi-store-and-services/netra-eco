@@ -32,7 +32,7 @@ function run(rm,pj){
   if(!items.length)return;
   var nxt=items.filter(function(i){return i.eta!=null&&i.eta>Date.now()})[0]||items[0];
   var bar=mk("button","display:block;width:100%;background:#0b1220;color:#e8eefc;border:0;border-bottom:3px solid #F59E0B;padding:10px 14px;font:600 .9rem system-ui,sans-serif;text-align:center;cursor:pointer;min-height:44px");
-  bar.id="roadmap-ticker";bar.type="button";bar.setAttribute("aria-label","Open the list of upcoming updates");
+  bar.id="roadmap-ticker";bar.type="button";bar.title="Open the list of upcoming updates";
   function tick(){bar.textContent="Next update: "+nxt.app+" - "+nxt.title+" - "+(nxt.eta==null?"Unavailable":countdown(nxt.eta-Date.now())+" (est.)")+"  \u25B8 all "+items.length+" upcoming"}
   tick();setInterval(tick,30000);
   document.body.insertBefore(bar,document.body.firstChild);
