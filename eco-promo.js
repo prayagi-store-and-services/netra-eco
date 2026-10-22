@@ -36,7 +36,7 @@ var menu=head.querySelector("nav");
 if(menu){head.parentNode.insertBefore(menu,head.nextSibling);menu.setAttribute("data-netra-store-menu","");Array.from(head.children).filter(function(e){return e.tagName==="A"}).forEach(function(a){menu.appendChild(a)})}
 if(head.tagName==="NAV"){
  var links=Array.from(head.querySelectorAll(".wrap>a"));
- if(links.length){var storeLinks=document.createElement("div");storeLinks.style.cssText="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;padding:12px 16px";head.parentNode.insertBefore(storeLinks,head.nextSibling);links.forEach(function(a){storeLinks.appendChild(a)})}
+ if(links.length){var storeLinks=document.createElement("nav");storeLinks.setAttribute("aria-label","Sections");storeLinks.style.cssText="display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:center;padding:12px 16px";head.parentNode.insertBefore(storeLinks,head.nextSibling);links.forEach(function(a){storeLinks.appendChild(a)})}
 }
 Array.from(document.querySelectorAll("a")).forEach(function(a){if(a.textContent.indexOf("Netra Eco")>=0)a.textContent=a.textContent.replace(/Netra Eco(?!system)/g,"Netra Ecosystem")});
 if(foot.id){var originalAnchor=document.createElement("span");originalAnchor.id=foot.id;foot.removeAttribute("id");foot.parentNode.insertBefore(originalAnchor,foot)}
