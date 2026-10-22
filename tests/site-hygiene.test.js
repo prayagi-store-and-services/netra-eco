@@ -43,3 +43,10 @@ for (const f of html) {
  }
 }
 console.log('PASS site hygiene:', html.length, 'pages,', files.length, 'files');
+// 4. The shared counter must be loaded by every page that uses it, and no page calls a third-party counter.
+for (const f of ['index.html', ...files.filter(x => /^app[\\/][a-z0-9]+[\\/]index\.html$/.test(x))]) {
+ const s = fs.readFileSync(f, 'utf8');
+ assert(/<script src="(\.\.\/\.\.\/)?counter\.js"><\/script>/.test(s), 'counter.js missing in ' + f);
+}
+for (const f of files) if (/\.(html|js)$/.test(f)) assert(!/abacus\.jasoncameron\.dev/.test(fs.readFileSync(f, 'utf8')), 'third-party counter still used in ' + f);
+console.log('PASS counter checks');

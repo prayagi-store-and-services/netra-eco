@@ -1,7 +1,8 @@
 <!doctype html>
 <html lang="en">
-<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-AGSQ71Fn5M8nO0fkgjk3MsHLffmSwwFSWRojGc1IJBY=' 'sha256-lRX71ZO7yKQXAam3CZOz0JOjUZ0eL4qG3FLIn474Kl0='  ; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://abacus.jasoncameron.dev https://firestore.googleapis.com https://formsubmit.co; frame-src 'self' https://www.youtube-nocookie.com; media-src 'self'; form-action 'none'; upgrade-insecure-requests">
-<script src="framebust.js"></script><meta name="referrer" content="strict-origin-when-cross-origin"><script src="https://prayagi-store-and-services.github.io/netra-eco/geoblock.js"></script>
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-XpBpKvdBlDowpWzPpo/5NEFJuWC6mPqC9CleVKvA4KY=' 'sha256-lRX71ZO7yKQXAam3CZOz0JOjUZ0eL4qG3FLIn474Kl0='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com https://formsubmit.co; frame-src 'self' https://www.youtube-nocookie.com; media-src 'self'; form-action 'none'; upgrade-insecure-requests">
+<script src="framebust.js"></script>
+<script src="counter.js"></script><meta name="referrer" content="strict-origin-when-cross-origin"><script src="https://prayagi-store-and-services.github.io/netra-eco/geoblock.js"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Netra Ecosystem - Netra by Prayagi Team</title>
@@ -165,9 +166,8 @@ fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).the
  allApps.forEach(function(it){if(it.live)renderLive(it.v);else renderSoon(it.v)});
  var raNav=el("a","","Request a new app");raNav.href="#request-app";nav.appendChild(raNav);
  (function(){
-  var AB="https://abacus.jasoncameron.dev/";
   function vk(id){return id==="battery-sentinel"?"visits":"visits-"+id}
-  function cnt(k){return fetch(AB+"get/netra-pages/"+k).then(function(r){return r.json()}).then(function(x){return typeof x.value==="number"?x.value:(x&&x.error==="Key not found"?0:null)}).catch(function(){return null})}
+  function cnt(k){return NetraCounter.get(k)}
   var rows=d.projects.map(function(p){return Promise.all([p.site?cnt(vk(p.id)):Promise.resolve(null),gh("repos/"+p.repo+"/releases?per_page=100")]).then(function(a){
    var t=null,last=null;if(a[1]){t=0;a[1].forEach(function(x){if(x.draft)return;(x.assets||[]).forEach(function(y){if(/\.apk$/i.test(y.name))t+=(y.download_count||0)});if(!last)last=x})}
    return {p:p,v:a[0],t:t,last:last}})});
