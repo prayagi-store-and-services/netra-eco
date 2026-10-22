@@ -22,6 +22,7 @@ for (const f of html) {
  assert(!/unsafe-eval/.test(m[1]), 'unsafe-eval is not allowed: ' + f);
  assert(!/script-src[^;]*'unsafe-inline'/.test(m[1]), 'script unsafe-inline is not allowed: ' + f);
  assert(/<meta name="referrer" content="[^"]+">/.test(s), 'Missing referrer policy: ' + f);
+ assert(/<script src="(\.\.\/\.\.\/)?framebust\.js"><\/script>/.test(s), 'Missing frame protection: ' + f);
  // No inline event handlers (they would need script unsafe-inline).
  assert(!/\son(click|load|error|mouseover)\s*=/i.test(s), 'Inline event handler in ' + f);
  // External links that open a new tab must carry noopener.
