@@ -20,7 +20,7 @@ var note=mk("p","sub","Android only. Allow installs from your browser once if An
 }
 if(mode==="full"||mode==="fab"){
 fab=mk("a","netra-fab");fab.href=ALIAS;fab.setAttribute("aria-label","Download "+name+" APK");fab.title="Download "+name+" APK";fab.textContent="\u2B07 APK";
-fab.style.cssText="position:fixed;right:14px;bottom:76px;z-index:9999;background:#1b8a5a;color:#fff;font:700 14px system-ui,sans-serif;padding:12px 16px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.35)";document.body.appendChild(fab);
+fab.style.cssText="position:fixed;right:14px;bottom:76px;z-index:9999;background:#157347;color:#fff;font:700 14px system-ui,sans-serif;padding:12px 16px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.35)";(document.querySelector("main")||document.body).appendChild(fab);
 }
 /* Point every download button of THIS app at the newest release's own named APK (for example KBC-v1.1.5.apk), read live with no cache.
    If that cannot be read (for example GitHub rate limit), the buttons keep the always-latest link above, which still delivers the newest file under a generic name. */
