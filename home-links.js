@@ -1,17 +1,15 @@
 /* Netra Ecosystem home cards: send each app's Download button to its Ecosystem app page
    (/app/<code>/), where the download is counted, and show that counter on the card.
-   Counter: abacus.jasoncameron.dev, namespace netra-pages, key dl-<code>. Anonymous, read only here.
+   Counter: our own Firestore counter (counter.js), key dl-<code>. Anonymous, read only here.
    If the counter cannot be read, nothing is shown (never a made-up number). */
 (function () {
   "use strict";
   var box = document.getElementById("apps"); if (!box) return;
-  var AB = "https://abacus.jasoncameron.dev/get/netra-pages/dl-";
   var byId = null, done = {}, links = [];
   function count(code, line) {
-    fetch(AB + code).then(function (r) { return r.json(); }).then(function (x) {
-      if (typeof x.value === "number") line.textContent = "Downloads counted on the app page: " + x.value.toLocaleString();
-      else if (x && x.error === "Key not found") line.textContent = "Downloads counted on the app page: 0";
-    }).catch(function () {});
+    NetraCounter.get("dl-" + code).then(function (v) {
+      if (typeof v === "number") line.textContent = "Downloads counted on the app page: " + v.toLocaleString();
+    });
   }
   function apply() {
     if (!byId) return;
