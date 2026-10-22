@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; style-src 'unsafe-inline'">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Netra Hub parking spot - field test checklist</title>
+<style>body{font-family:system-ui,sans-serif;background:#0f0b1e;color:#ede7f6;max-width:820px;margin:0 auto;padding:18px;line-height:1.5}h1,h2{color:#7ee0a3}table{border-collapse:collapse;width:100%}td,th{border:1px solid #3b3366;padding:6px;font-size:14px;vertical-align:top}pre{white-space:pre-wrap;background:#171230;padding:12px;border-radius:8px;border:1px solid #3b3366}a{color:#7ee0a3}</style></head>
+<body>
+<h1>Netra Hub parking spot - field test checklist</h1>
+<p>Status: NOT yet verified on a phone. Hub 1.4.28 only passed unit tests and CI. This page is for the owner's real drive test. Do not trust the parking spot until these pass.</p>
+<h2>What this tests</h2>
+<p>Since 1.4.28 the spot is the middle of the GPS fixes where the phone stayed under 3 km/h for at least 10 seconds after driving, using only fixes accurate to 50 m or better. A confirmed stop is kept while you walk away. With no confirmed stop nothing is saved, the earlier spot stays, and the screen says why.</p>
+<h2>How to measure</h2>
+<ol><li>After parking, open Maps and drop a pin on the vehicle.</li><li>In Hub open SOS and crash alert settings, press Open in Maps for the saved spot.</li><li>Write the distance in metres between the two pins, the accuracy shown, and the time shown.</li></ol>
+<h2>Cases</h2>
+<table>
+<tr><th>#</th><th>Case</th><th>Expected</th><th>Pass or fail rule</th></tr>
+<tr><td>1</td><td>Drive home, park in the open, wait 20 seconds, walk 100 m away</td><td>Open Hub > SOS settings. Spot is within about 25 m of where the vehicle stands (Maps pin). Time shown is the stop time, not the walk time</td><td>Error under 25 m = pass, 25 to 50 m = fair, over 50 m = fail</td></tr>
+<tr><td>2</td><td>Same, but park in a garage or covered parking</td><td>Either a spot within 50 m, or the screen says "Not saved" with a reason. A wrong confident spot is a fail</td><td>Spot more than 50 m off with no warning = fail</td></tr>
+<tr><td>3</td><td>Stop at a red light for 60 s, then continue and park later</td><td>Spot is the final parking place, not the light</td><td>Spot at the light = fail</td></tr>
+<tr><td>4</td><td>Slow traffic crawl at 4 to 10 km/h for 2 minutes, then park</td><td>No spot saved during the crawl; final spot at the real parking place</td><td>Spot inside the crawl = fail</td></tr>
+<tr><td>5</td><td>Drive through a tunnel or basement ramp, then park outside</td><td>Spot at the parking place, or "Not saved" with a reason</td><td>Spot more than 50 m off with no warning = fail</td></tr>
+<tr><td>6</td><td>GPS (location) switched off during the drive</td><td>"Not saved" with a reason, earlier spot kept</td><td>A new spot saved from nothing = fail</td></tr>
+<tr><td>7</td><td>Airplane mode on during the drive</td><td>GPS usually still works. Result is a good spot or a clear reason</td><td>Wrong spot with no warning = fail</td></tr>
+<tr><td>8</td><td>Battery saver on, screen off for the whole drive</td><td>A good spot or a clear reason. Note which one happened</td><td>Silent wrong spot = fail</td></tr>
+<tr><td>9</td><td>Swipe the app away from recents before the drive</td><td>Report whether driving mode and the spot still work</td><td>Report only, no fixed expectation</td></tr>
+<tr><td>10</td><td>Stand at home for 10 minutes without driving</td><td>No new spot saved</td><td>Any new spot = fail</td></tr>
+</table>
+<h2>Report back</h2>
+<p>For each case write: case number, error in metres, accuracy text shown, time shown, and any "Not saved" reason. Also note the phone model and Android version.</p>
+<p><a href="driving-test.html">Driving test index</a> | <a href="https://prayagi-store-and-services.github.io/netra-eco/">Netra Ecosystem</a></p>
+</body></html>
