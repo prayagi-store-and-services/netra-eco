@@ -1,62 +1,95 @@
 rules_version = '2';
-// Netra family shared Firestore (project netra-ai-jan). DRAFT for the owner to review and publish by hand.
-// Goal: everyone can READ the public ratings/feedback/counters (the sites show them), but clients can only
-// CREATE well-formed documents. No client edits or deletes. Anything not listed is denied.
+// Netra family shared Firestore (project netra-ai-jan).
+// This file mirrors the rules PUBLISHED in the console, transcribed by hand from the owner's screenshots of
+// 22 Oct 2026 4:40 PM IST (last published version). If the console differs, the console wins: re-copy it here.
+// Overlapping blocks are OR-ed by Firestore, so the looser of each pair applies. Nothing here has been changed.
 service cloud.firestore {
   match /databases/{database}/documents {
-
-    // Public star ratings (embed.html and apps). Create only.
     match /netra_site_ratings/{id} {
       allow read: if true;
-      allow create: if request.resource.data.keys().hasAll(['appId', 'stars', 'mode', 'createdAt'])
-        && request.resource.data.keys().hasOnly(['appId', 'stars', 'mode', 'createdAt', 'name', 'place', 'comment', 'device', 'clientId', 'reported'])
-        && request.resource.data.appId is string && request.resource.data.appId.size() <= 40
-        && request.resource.data.stars is int && request.resource.data.stars >= 1 && request.resource.data.stars <= 5
-        && request.resource.data.mode in ['name', 'anonymous']
-        && (!('comment' in request.resource.data) || (request.resource.data.comment is string && request.resource.data.comment.size() <= 500))
+      allow create: if request.resource.data.keys().hasOnly(['appId','device','name','place','stars','mode','clientId','reported','comment','createdAt'])
+        && request.resource.data.keys().hasAll(['appId','device','stars','mode','clientId','reported','createdAt'])
+        && request.resource.data.appId is string && request.resource.data.appId.size() >= 1 && request.resource.data.appId.size() <= 40
+        && request.resource.data.device is string && request.resource.data.device.size() >= 1 && request.resource.data.device.size() <= 80
         && (!('name' in request.resource.data) || (request.resource.data.name is string && request.resource.data.name.size() <= 60))
-        && (!('place' in request.resource.data) || (request.resource.data.place is string && request.resource.data.place.size() <= 60))
-        && (!('device' in request.resource.data) || (request.resource.data.device is string && request.resource.data.device.size() <= 60))
-        && (!('clientId' in request.resource.data) || (request.resource.data.clientId is string && request.resource.data.clientId.size() <= 64))
-        && (!('reported' in request.resource.data) || request.resource.data.reported == false || request.resource.data.reported == null);
-      allow update, delete: if false;
+        && (!('place' in request.resource.data) || (request.resource.data.place is string && request.resource.data.place.size() <= 80))
+        && (!('comment' in request.resource.data) || (request.resource.data.comment is string && request.resource.data.comment.size() <= 500))
+        && request.resource.data.stars is int && request.resource.data.stars >= 1 && request.resource.data.stars <= 5
+        && request.resource.data.mode in ['name','anonymous']
+        && request.resource.data.clientId is string && request.resource.data.clientId.size() <= 64
+        && request.resource.data.reported == false
+        && request.resource.data.createdAt == request.time;
     }
-
-    // Public feedback. Create only.
     match /netra_site_feedback/{id} {
       allow read: if true;
-      allow create: if request.resource.data.keys().hasAll(['appId', 'kind', 'message', 'createdAt'])
-        && request.resource.data.keys().hasOnly(['appId', 'kind', 'message', 'createdAt', 'name', 'device', 'clientId'])
-        && request.resource.data.appId is string && request.resource.data.appId.size() <= 40
-        && request.resource.data.kind is string && request.resource.data.kind.size() <= 30
-        && request.resource.data.message is string && request.resource.data.message.size() >= 1 && request.resource.data.message.size() <= 1000
+      allow create: if request.resource.data.keys().hasOnly(['appId','device','name','place','kind','message','clientId','createdAt'])
+        && request.resource.data.keys().hasAll(['appId','device','kind','message','clientId','createdAt'])
+        && request.resource.data.appId is string && request.resource.data.appId.size() >= 1 && request.resource.data.appId.size() <= 40
+        && request.resource.data.device is string && request.resource.data.device.size() >= 1 && request.resource.data.device.size() <= 80
         && (!('name' in request.resource.data) || (request.resource.data.name is string && request.resource.data.name.size() <= 60))
-        && (!('device' in request.resource.data) || (request.resource.data.device is string && request.resource.data.device.size() <= 60))
-        && (!('clientId' in request.resource.data) || (request.resource.data.clientId is string && request.resource.data.clientId.size() <= 64));
+        && (!('place' in request.resource.data) || (request.resource.data.place is string && request.resource.data.place.size() <= 80))
+        && request.resource.data.kind in ['Suggestion','Complaint']
+        && request.resource.data.message is string && request.resource.data.message.size() >= 1 && request.resource.data.message.size() <= 1000
+        && request.resource.data.clientId is string && request.resource.data.clientId.size() <= 64
+        && request.resource.data.createdAt == request.time;
+    }
+    // Existing rule, unchanged (it expired on 2026-07-17, so it grants nothing today).
+    match /{document=**} {
+      allow read, write: if request.auth != null && request.time < timestamp.date(2026, 7, 17);
+    }
+
+    // Netra website ratings: public read, create only, validated fields, no edits or deletes.
+    match /netra_site_ratings/{ratingId} {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasOnly(['stars','device','comment','name','mode','uid','clientId','createdAt','reported','appId'])
+        && (!('appId' in request.resource.data) || (request.resource.data.appId is string && request.resource.data.appId.size() >= 2 && request.resource.data.appId.size() <= 40))
+        && request.resource.data.keys().hasAll(['stars','device','mode','clientId','createdAt','reported'])
+        && request.resource.data.stars is int
+        && request.resource.data.stars >= 1 && request.resource.data.stars <= 5
+        && request.resource.data.device is string
+        && request.resource.data.device.size() >= 2 && request.resource.data.device.size() <= 80
+        && (!('comment' in request.resource.data) || (request.resource.data.comment is string && request.resource.data.comment.size() <= 500))
+        && (!('name' in request.resource.data) || (request.resource.data.name is string && request.resource.data.name.size() <= 60))
+        && request.resource.data.mode in ['anonymous','google','name']
+        && request.resource.data.clientId is string && request.resource.data.clientId.size() <= 64
+        && request.resource.data.createdAt == request.time
+        && request.resource.data.reported == false
+        && (request.resource.data.mode != 'google' || (request.auth != null && request.resource.data.uid == request.auth.uid));
       allow update, delete: if false;
     }
 
-    // Owner replies: readable by all, written only from the console / admin tools (they bypass these rules).
-    match /netra_site_replies/{id} {
+    // Netra website suggestions and complaints: public read, create only, no edits or deletes.
+    match /netra_site_feedback/{itemId} {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasOnly(['kind','message','device','androidVersion','clientId','createdAt','appId'])
+        && (!('appId' in request.resource.data) || (request.resource.data.appId is string && request.resource.data.appId.size() >= 2 && request.resource.data.appId.size() <= 40))
+        && request.resource.data.keys().hasAll(['kind','message','clientId','createdAt'])
+        && request.resource.data.kind in ['Suggestion','Complaint']
+        && request.resource.data.message is string
+        && request.resource.data.message.size() >= 3 && request.resource.data.message.size() <= 1000
+        && (!('device' in request.resource.data) || (request.resource.data.device is string && request.resource.data.device.size() <= 80))
+        && (!('androidVersion' in request.resource.data) || (request.resource.data.androidVersion is string && request.resource.data.androidVersion.size() <= 30))
+        && request.resource.data.clientId is string && request.resource.data.clientId.size() <= 64
+        && request.resource.data.createdAt == request.time;
+      allow update, delete: if false;
+    }
+
+    // Replies from the Netra team: public read. Only the project owner can add them (console), never the website.
+    match /netra_site_replies/{replyId} {
       allow read: if true;
       allow write: if false;
     }
 
-    // Anonymous active-user counters: the apps add exactly +1 to "count". Nothing else.
-    match /netra_active/{id} {
+    // Netra anonymous active-user counters: public read. A counter can be created with value 1 or raised by exactly 1. No other field, no edits, no deletes.
+    match /netra_active/{docId} {
       allow read: if true;
-      allow create: if id.matches('^[a-z0-9-]+_[0-9]{6,8}$')
+      allow create: if docId.matches('[a-z0-9-]{3,40}_[0-9]{6,8}')
         && request.resource.data.keys().hasOnly(['count'])
         && request.resource.data.count == 1;
-      allow update: if id.matches('^[a-z0-9-]+_[0-9]{6,8}$')
+      allow update: if docId.matches('[a-z0-9-]{3,40}_[0-9]{6,8}')
         && request.resource.data.keys().hasOnly(['count'])
         && request.resource.data.count == resource.data.count + 1;
       allow delete: if false;
-    }
-
-    // Everything else: closed.
-    match /{document=**} {
-      allow read, write: if false;
     }
   }
 }
