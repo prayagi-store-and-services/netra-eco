@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-KrZzX89/CkISuUe3jcKewp77mjxv9zIC/qOgINb/bGM=' 'sha256-lRX71ZO7yKQXAam3CZOz0JOjUZ0eL4qG3FLIn474Kl0='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com https://formsubmit.co; frame-src 'self' https://www.youtube-nocookie.com; media-src 'self'; form-action 'none'; upgrade-insecure-requests">
+<script src="framebust.js"></script>
+<script src="counter.js"></script><meta name="referrer" content="strict-origin-when-cross-origin"><script src="https://prayagi-store-and-services.github.io/netra-eco/geoblock.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta property="og:title" content="Netra Ecosystem - Free privacy-first Android apps"><meta property="og:description" content="Netra Ecosystem: free, privacy-first Android apps by Prayagi Team. Download verified APKs directly from the official site."><meta property="og:type" content="website"><meta property="og:url" content="https://prayagi-store-and-services.github.io/netra-eco/">
+<title>Netra Ecosystem - Netra by Prayagi Team</title>
+<meta name="description" content="Netra Ecosystem - the home of all Netra by Prayagi Team apps. Developer: Deepak Kushwaha.">
+<link rel="icon" type="image/svg+xml" href="logo.svg">
+<style>
+:root{--bg:#0b1220;--card:#121c30;--card2:#17233b;--line:#22314f;--text:#e8eefc;--mute:#9db0d0;--accent:#4fd1a5;--accent2:#e8eefc}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,Segoe UI,Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5}
+a{color:var(--accent)}
+.top{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:12px 16px;background:var(--card);border-bottom:1px solid var(--line)}
+.top img{width:40px;height:40px;border-radius:10px}.top b{font-size:1.1rem}.sp{flex:1}
+#liveclock{color:var(--mute);font-size:.85rem}
+.festbar{padding:10px 16px;text-align:center;background:var(--card2);border-bottom:1px solid var(--line)}.festbar[hidden]{display:none}
+nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:14px 16px}
+nav a{color:var(--text);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.9rem}nav a:hover{border-color:var(--accent)}
+main{max-width:900px;margin:0 auto;padding:0 16px 40px}
+.hero{text-align:center;padding:28px 0 8px}.hero img{width:96px;height:96px;border-radius:22px}.hero h1{margin:10px 0 2px}.sub{color:var(--mute)}
+section{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;margin:16px 0}
+h2{margin:0 0 8px}.type{color:var(--accent);font-size:.8rem;text-transform:uppercase;letter-spacing:.06em}
+.app{display:flex;gap:14px;align-items:flex-start}.app img{width:64px;height:64px;border-radius:14px;flex:none}
+dl{display:grid;grid-template-columns:120px 1fr;gap:5px 12px;margin:10px 0 0}dt{color:var(--mute)}dd{margin:0;word-break:break-word}
+.btn{display:inline-block;background:var(--accent);color:#04101c;font-weight:700;text-decoration:none;border-radius:10px;padding:8px 14px;margin:6px 8px 0 0}
+.btn.alt{background:transparent;color:var(--text);border:1px solid var(--line)}
+form{display:grid;gap:8px}input,textarea{background:var(--card2);color:var(--text);border:1px solid var(--line);border-radius:8px;padding:9px;font:inherit}
+label{color:var(--mute);font-size:.85rem}button.go{background:var(--accent);color:#04101c;border:0;border-radius:8px;padding:10px 16px;font-weight:700;cursor:pointer}
+.rv{border-top:1px solid var(--line);padding:8px 0}.rv .dv{color:var(--mute);font-size:.8rem;margin-left:8px}.st{color:#fbbf24}
+footer{text-align:center;color:var(--mute);padding:24px 16px;font-size:.85rem}
+/* UI polish (v2): depth, spacing, motion-safe hover, focus rings, wider layout */
+body{background:radial-gradient(1200px 500px at 50% -120px,rgba(79,209,165,.13),transparent),var(--bg)}
+.top{position:sticky;top:0;z-index:5;backdrop-filter:blur(8px);box-shadow:0 2px 14px rgba(0,0,0,.25)}
+.hero{padding:36px 0 12px}.hero img{box-shadow:0 8px 28px rgba(79,209,165,.25)}.hero h1{font-size:2.1rem;letter-spacing:.01em}
+main{max-width:1000px}
+section{box-shadow:0 4px 18px rgba(0,0,0,.18);transition:transform .15s ease,border-color .15s ease}
+section:hover{border-color:var(--accent)}
+.app img{box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.btn{border-radius:12px;padding:10px 18px;box-shadow:0 3px 10px rgba(79,209,165,.25);transition:transform .12s ease}
+.btn:hover{transform:translateY(-1px)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){section,.btn{transition:none}.btn:hover{transform:none}}
+@media (max-width:560px){.hero h1{font-size:1.7rem}dl{grid-template-columns:100px 1fr}.app{flex-direction:column}}
+
+/* 11 Oct 2026 redesign layer: starry Netra Ecosystem look, same live data */
+:root{--bg:#050b1a;--card:#0c1a33;--card2:#12254a;--line:#1c3a68;--accent:#2fe0a0;--accent2:#35b8ff}
+body{background:radial-gradient(900px 500px at 20% -5%,#0d4a4a 0%,transparent 60%),radial-gradient(900px 500px at 90% 0%,#2a1a6a 0%,transparent 60%),#050b1a;background-attachment:fixed}
+.top b{font-size:1.2rem}.top b:after{content:" - All Netra Apps in One Place";font-weight:400;font-size:.72rem;color:var(--mute)}
+nav{position:sticky;top:64px;z-index:4;background:rgba(5,11,26,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav a{background:var(--card);}nav a:hover{box-shadow:0 0 0 1px var(--accent)}
+.hero{padding:44px 16px 24px;background:radial-gradient(700px 260px at 50% 40%,rgba(47,224,160,.18),transparent)}
+.hero .welcome{color:var(--mute);font-size:1.1rem}.hero h1{font-size:clamp(2.4rem,8vw,4.2rem);margin:0}.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .kick{color:var(--accent);font-weight:700;font-size:1.3rem;margin:6px 0}
+.hero .chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:18px 0 0}.hero .chips span{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 14px;font-size:.85rem}
+.btn{background:linear-gradient(90deg,#ff7a1a,#ff9a2e);color:#1a0b00;box-shadow:0 6px 24px rgba(255,122,26,.3)}.btn.alt{background:transparent;color:var(--text);border:1px solid var(--accent);box-shadow:none}
+main{max-width:1180px}
+#apps{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+#apps section{margin:0;background:linear-gradient(180deg,#0e2040,#0a1730)}#apps section:hover{transform:translateY(-2px);box-shadow:0 8px 28px rgba(53,184,255,.15)}
+#apps dl{grid-template-columns:100px 1fr}
+section h2{display:flex;align-items:center;gap:10px}
+section#stats h2:before,section#ratings h2:before,section#contact h2:before{content:"";width:5px;height:22px;border-radius:3px;background:var(--accent);flex:none}
+footer{border-top:1px solid var(--line)}
+.group-head{grid-column:1/-1;margin:28px 0 8px;padding-bottom:6px;border-bottom:2px solid var(--line)}.soon-tag{display:inline-block;background:#fff3cd;color:#6d4c00;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:700;width:fit-content}
+.vidgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;margin-top:12px}.vidgrid figure{margin:0}.vidgrid video{width:100%;aspect-ratio:16/9;border-radius:12px;border:1px solid var(--line);background:#000;display:block}.vidgrid figcaption{font-size:.85rem;color:var(--mute);margin-top:6px}
+</style>
+</head>
+<body>
+<header class="top"><img src="logo.svg" alt="Netra Ecosystem logo"><b>Netra Ecosystem</b><span class="sp"></span><span id="liveclock"></span></header>
+<section id="festbar" class="festbar" aria-label="Festival greeting" hidden></section>
+<section class="hero" aria-label="Welcome"><div class="welcome">Welcome to</div><h1>Netra <em>Ecosystem</em></h1><div class="kick" id="tagline">Ek parivaar, kai projects - Netra by Prayagi Team</div><div class="sub">Smart apps for a safer, smarter and better life. Developer: Deepak Kushwaha | Prayagraj, India</div><p style="margin:16px 0 0"><a class="btn" id="eco-dl-hero" href="https://github.com/prayagi-store-and-services/netra-eco-app/releases/latest/download/app-release.apk">Download Netra Ecosystem APK</a></p><div class="chips"><span>Netra by Prayagi Team</span><span>Made in Prayagraj</span><span>Real data only</span></div><a id="eco-fab" href="https://github.com/prayagi-store-and-services/netra-eco-app/releases/latest/download/app-release.apk" aria-label="Download Netra Ecosystem APK" title="Download Netra Ecosystem APK" style="position:fixed;right:14px;bottom:76px;z-index:9999;background:#157347;color:#fff;font:700 14px system-ui,sans-serif;padding:12px 16px;border-radius:999px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.35)">&#11015; APK</a></section>
+<nav id="nav"></nav>
+<main>
+<div id="apps"></div>
+<section id="videos"><h2>Videos</h2><div class="sub">Short, honest videos about Netra apps - real features only, no mockups. Promo videos for released apps, and coming-soon videos for apps on our roadmap. Coming-soon dates are approximate targets from the roadmap, not promises.</div>
+<h3 style="margin:14px 0 4px">Released apps</h3>
+<div class="vidgrid">
+<figure><video controls preload="metadata" src="docs/videos/netra-ecosystem-promo.mp4"></video><figcaption>Netra Ecosystem - promo</figcaption></figure>
+<figure><video controls preload="metadata" src="docs/videos/battery-sentinel-pro-promo.mp4"></video><figcaption>Battery Sentinel Pro - promo</figcaption></figure>
+<figure><video controls preload="metadata" src="docs/videos/netra-hub-promo.mp4"></video><figcaption>Netra Human Safety - promo</figcaption></figure>
+<figure><video controls preload="metadata" src="docs/videos/netra-kbc-promo.mp4"></video><figcaption>Netra KBC - promo</figcaption></figure>
+<figure><video controls preload="metadata" src="docs/videos/netra-privacy-guard-promo.mp4"></video><figcaption>Netra Privacy Guard - promo</figcaption></figure>
+<figure><video controls preload="metadata" src="docs/videos/netra-player-promo.mp4"></video><figcaption>Netra Player - promo</figcaption></figure>
+<figure><video controls preload="metadata" src="docs/videos/netra-trikaal-promo.mp4"></video><figcaption>Netra Trikaal - promo</figcaption></figure>
+</div>
+<h3 style="margin:14px 0 4px">Coming soon (approximate targets, no promises)</h3>
+<div class="vidgrid">
+<figure><video controls preload="metadata" src="docs/videos/coming-netra-intruder.mp4"></video><figcaption>Netra Intruder - coming soon</figcaption></figure>
+<figure><video controls preload="metadata" src="docs/videos/coming-netra-neg.mp4"></video><figcaption>Netra Neg - coming soon</figcaption></figure>
+<figure><video controls preload="metadata" src="docs/videos/coming-netra-email.mp4"></video><figcaption>Netra Email - coming soon</figcaption></figure>
+<figure><video controls preload="metadata" src="docs/videos/coming-netra-x-trikaal.mp4"></video><figcaption>Netra X Trikaal - coming soon</figcaption></figure>
+<figure><video controls preload="metadata" src="docs/videos/coming-netra-pulse.mp4"></video><figcaption>Netra Pulse - coming soon</figcaption></figure>
+<figure><video controls preload="metadata" src="docs/videos/coming-netra-tv.mp4"></video><figcaption>Netra TV - coming soon</figcaption></figure>
+</div></section>
+<section id="cctv"><h2>CCTV recording</h2><div class="sub">Office and team videos from the Netra Ecosystem team. Everything here is AI-generated, with fictional characters. YouTube videos load only when you press play.</div><div id="cctv-grid" class="vidgrid">Loading...</div></section>
+<section id="request-app"><h2>Request a new app</h2><div class="sub">Tell us what app you want and what it should do. If it is possible, the Netra team will try to build it. You review the exact text before anything is sent. A contact detail is optional - without it we cannot reply to you. Requests go to the developer by email; they are not shown publicly. One request per day from this browser.</div>
+<form id="raform"><label for="ra-request">Which app do you want?</label><textarea id="ra-request" name="request" required maxlength="1000" rows="5" placeholder="Example: an app that reminds me to drink water every hour"></textarea>
+<label for="ra-contact">Contact (optional)</label><input id="ra-contact" name="contact" type="text" maxlength="120" placeholder="WhatsApp number or email (optional)">
+<button class="go" type="submit">Review and send</button><div id="ramsg" class="sub"></div></form></section>
+<section id="whatsnew"><h2>What's new</h2><div class="sub">Latest release of every app, with what changed. Read live from GitHub Releases.</div><div id="whatsnew-list">Loading...</div></section>
+<section id="stats"><h2>Live stats - all sites and apps</h2><div class="sub">Visits are an anonymous page-load counter (no cookies, no personal data). Downloads come live from GitHub Releases and include in-app updates. Anything that cannot be read says Unavailable.</div><div id="statsbox" class="sub">Loading...</div></section>
+<section id="ratings"><h2>Ratings, reviews and complaints - all apps</h2><div class="sub">Everything people send from any Netra app website or from inside an app shows up here, app by app. Only real submissions are shown.</div><div class="sub" style="margin:10px 0 4px">Send a rating, suggestion or complaint. Choose which app it is for:</div><select id="fbapp" aria-label="Which app is this feedback for"></select><iframe id="fbframe" title="Ratings and feedback" style="width:100%;height:760px;border:0;margin-bottom:10px" loading="lazy"></iframe><div id="rall">Loading...</div></section>
+<section id="contact"><h2>Contact us</h2>
+<form id="cform"><label for="cf-name">Name</label><input id="cf-name" name="name" type="text" required maxlength="80">
+<label for="cf-email">Email</label><input id="cf-email" name="email" type="email" required maxlength="120">
+<label for="cf-whatsapp">WhatsApp number (required, with country code, e.g. +91 98765 43210)</label><input id="cf-whatsapp" name="whatsapp" type="tel" required pattern="\+?[0-9 \(\)\-]{10,18}" maxlength="20" inputmode="tel">
+<label for="cf-phone">Calling number (optional - leave empty if the same as WhatsApp)</label><input id="cf-phone" name="phone" type="tel" maxlength="20" inputmode="tel">
+<label for="cf-message">Message (optional)</label><textarea id="cf-message" name="message" rows="3" maxlength="800"></textarea>
+<button class="go" type="submit">Send</button><div id="cmsg" class="sub"></div></form>
+<p class="sub">We cannot verify a WhatsApp number from a website, so the number you type is used as entered. Please double check it.</p></section>
+</main>
+<footer>Netra Ecosystem - Netra by Prayagi Team. Developer: Deepak Kushwaha. Values shown are read live; if a value cannot be read it says "Unavailable". Business site: <a href="https://prayagi-store-and-services.github.io/">Prayagi Store &amp; Services</a>. <a href="https://prayagi-store-and-services.github.io/meet-the-team/">Company profile</a>. <a href="legal/">Legal &amp; data</a>.</footer>
+<script>
+window.NETRA_SITE={repo:"prayagi-store-and-services/netra-eco"};
+(function(){
+var U="Unavailable";
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!==undefined)e.textContent=x;return e}
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function gh(p){return fetch("https://api.github.com/"+p).then(function(r){return r.ok?r.json():null}).catch(function(){return null})}
+function when(s){try{return new Date(s).toLocaleString(undefined,{year:"numeric",month:"short",day:"numeric",hour:"numeric",minute:"2-digit"})}catch(e){return U}}
+function fsq(col){return fetch("https://firestore.googleapis.com/v1/projects/netra-ai-jan/databases/(default)/documents:runQuery",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({structuredQuery:{from:[{collectionId:col}],limit:300}})}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(rows){return rows.filter(function(x){return x.document}).map(function(x){var f=x.document.fields||{},o={};Object.keys(f).forEach(function(k){var v=f[k];o[k]=v.stringValue!==undefined?v.stringValue:v.integerValue!==undefined?Number(v.integerValue):v.timestampValue});return o})})}
+fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){
+ document.getElementById("tagline").textContent=d.tagline;
+ var nav=document.getElementById("nav"),box=document.getElementById("apps");
+ function azKey(n){return String(n||"").trim().toLowerCase().replace(/^netra\s*/,"").replace(/^x\s+/,"")}
+ var renderLive=function(p){
+  var a=el("a","",p.name);a.href="#"+p.id;nav.appendChild(a);
+  var s=el("section");s.id=p.id;
+  var w=el("div","app");if(p.icon){var im=el("img");im.src=p.icon;im.alt=p.name+" icon";w.appendChild(im)}
+  var b=el("div");b.appendChild(el("div","type",p.type));b.appendChild(el("h2","",p.name));b.appendChild(el("div","",p.summary));
+  var dl=el("dl");b.appendChild(dl);
+  function row(k,v,h){dl.appendChild(el("dt","",k));var dd=el("dd");if(h){var l=el("a","",v);l.href=h;l.rel="noopener";dd.appendChild(l)}else dd.textContent=v;dl.appendChild(dd);return dd}
+  var rel=row("Latest release",""),rt=row("Released",""),sz=row("File size","");
+  [rel,rt,sz].forEach(function(dd){dd.hidden=true;dd.previousElementSibling.hidden=true});
+  function showReleaseField(dd,value){if(!value)return;dd.textContent=value;dd.hidden=false;dd.previousElementSibling.hidden=false}
+  var act=el("div");if(p.site){var site=el("a","btn","Open "+p.name+" website");site.href=p.site;act.appendChild(site)}
+  var dl0=el("a","btn","Download latest APK");dl0.href="https://github.com/"+p.repo+"/releases/latest/download/app-release.apk";act.insertBefore(dl0,act.firstChild);b.appendChild(act);
+  w.appendChild(b);s.appendChild(w);box.appendChild(s);
+  gh("repos/"+p.repo+"/releases/latest").then(function(x){
+   if(x&&x.tag_name){showReleaseField(rel,x.tag_name);if(x.published_at)showReleaseField(rt,when(x.published_at));
+    var al=(x.assets||[]).filter(function(y){return /\.apk$/i.test(y.name)});var k=al.filter(function(y){return y.name!=="app-release.apk"})[0]||al[0];if(k){if(Number.isFinite(k.size)&&k.size>0)showReleaseField(sz,(k.size/1048576).toFixed(1)+" MB");dl0.href=k.browser_download_url;dl0.textContent="Download "+x.tag_name+" APK"}}
+})
+ /*LIVE-END*/};
+ /*SOON-START*/
+ var renderSoon=function(u){
+  if(!u.id||!u.name)return;
+  var a=el("a","",u.name);a.href="#up-"+u.id;nav.appendChild(a);
+  var s=el("section");s.id="up-"+u.id;var w=el("div","app");var b=el("div");
+  b.appendChild(el("div","type",u.type||""));b.appendChild(el("h2","",u.name));b.appendChild(el("div","soon-tag","Coming soon"));b.appendChild(el("div","",u.summary||""));
+  if(Array.isArray(u.features)&&u.features.length){b.appendChild(el("div","sub","Planned features (planned, may change):"));u.features.slice(0,12).forEach(function(f){if(typeof f==="string"&&f.trim())b.appendChild(el("div","sub","- "+f))});}
+  var targets=Array.isArray(u.targets)?u.targets.filter(function(t){return t&&typeof t.label==="string"&&t.label.trim()}).slice(0,4):[];
+  if(!targets.length)targets=[{label:"Coming soon",eta:u.eta}];
+  targets.forEach(function(target){
+   var cd=el("div","sub");var eta=target.eta?new Date(target.eta).getTime():NaN;
+   var t1=el("b","",target.label);var t2=el("div","",U);var t3=el("div","sub",isNaN(eta)&&!target.targetDate?"No release time is set yet.":"Approximate target, not a release guarantee.");
+   cd.appendChild(t1);cd.appendChild(t2);cd.appendChild(t3);
+   if(target.note)cd.appendChild(el("div","sub",target.note));
+   b.appendChild(cd);
+   function tick(){if(target.targetDate){var date=String(target.targetDate);if(!/^\d{4}-\d{2}-\d{2}$/.test(date)){t2.textContent=U;return}var parts=new Intl.DateTimeFormat("en-CA",{timeZone:"Asia/Kolkata",year:"numeric",month:"2-digit",day:"2-digit"}).formatToParts(new Date());var get=function(k){return parts.find(function(p){return p.type===k}).value};var today=get("year")+"-"+get("month")+"-"+get("day");var days=Math.round((Date.parse(date+"T00:00:00Z")-Date.parse(today+"T00:00:00Z"))/86400000);if(days>0&&days<=3){var start=Date.parse(date+"T00:00:00+05:30");var min=Math.max(0,Math.floor((start-Date.now())/3600000));var max=Math.ceil((start+86400000-Date.now())/3600000);t2.textContent="Approx. "+min+"-"+max+" hours to target day";return}t2.textContent=days>0?days+" days to target":days===0?"Target day, release not confirmed":"Target passed, check release status";return}if(isNaN(eta)){t2.textContent=U;return}var ms=eta-Date.now();if(ms<=0){t2.textContent="Estimate passed, still being finished";return}var x=Math.floor(ms/1000);t2.textContent=(ms<=72*3600000?Math.floor(x/3600)+"h ":Math.floor(x/86400)+"d "+("0"+Math.floor(x%86400/3600)).slice(-2)+"h ")+("0"+Math.floor(x%3600/60)).slice(-2)+"m "+("0"+x%60).slice(-2)+"s"}
+   tick();setInterval(tick,1000);
+  });
+  w.appendChild(b);s.appendChild(w);box.appendChild(s)};
+ /*SOON-END*/
+ var allApps=(d.projects||[]).map(function(p){return {live:true,v:p}}).concat((d.upcoming||[]).filter(function(u){return u.id&&u.name}).map(function(u){return {live:false,v:u}}));
+ allApps.sort(function(a,b){var ka=azKey(a.v.name),kb=azKey(b.v.name);return ka<kb?-1:ka>kb?1:0});
+ function groupHead(id,text){var g=el("h2","group-head",text);g.id=id;box.appendChild(g)}
+ groupHead("released-apps","Released / Live apps");
+ allApps.filter(function(it){return it.live}).forEach(function(it){renderLive(it.v)});
+ groupHead("coming-soon-apps","Coming Soon");
+ allApps.filter(function(it){return !it.live}).forEach(function(it){renderSoon(it.v)});
+ var raNav=el("a","","Request a new app");raNav.href="#request-app";nav.appendChild(raNav);
+ var loadStats=function(){
+  function vk(id){return id==="battery-sentinel"?"visits":"visits-"+id}
+  function cnt(k){return NetraCounter.get(k)}
+  var rows=d.projects.map(function(p){return Promise.all([p.site?cnt(vk(p.id)):Promise.resolve(null),gh("repos/"+p.repo+"/releases?per_page=100")]).then(function(a){
+   var t=null,last=null;if(a[1]){t=0;a[1].forEach(function(x){if(x.draft)return;(x.assets||[]).forEach(function(y){if(/\.apk$/i.test(y.name))t+=(y.download_count||0)});if(!last)last=x})}
+   return {p:p,v:a[0],t:t,last:last}})});
+  Promise.all([cnt("visits-eco"),Promise.all(rows)]).then(function(a){
+   var h="<div style='overflow-x:auto'><table style='width:100%;min-width:480px;border-collapse:collapse'><thead><tr><th align='left'>Site / app</th><th align='right'>Website visits</th><th align='right'>Downloads (all releases)</th><th align='left'>Latest release</th></tr></thead><tbody>";
+   h+="<tr><td>Netra Ecosystem (this site)</td><td align='right'>"+(a[0]!=null?a[0].toLocaleString():U)+"</td><td align='right'>-</td><td>-</td></tr>";
+   a[1].forEach(function(r){h+="<tr><td>"+esc(r.p.name)+"</td><td align='right'>"+(r.v!=null?r.v.toLocaleString():U)+"</td><td align='right'>"+(r.t!=null?r.t.toLocaleString():U)+"</td><td>"+(r.last?esc(r.last.tag_name)+" - "+when(r.last.published_at):"")+"</td></tr>"});
+   document.getElementById("statsbox").innerHTML=h+"</tbody></table></div><div class='sub'>Checked "+when(new Date().toISOString())+". Each count started when that site's counter was added, it is not a lifetime figure for older visits.</div>"})
+ };loadStats();
+ var names={};d.projects.forEach(function(p){names[p.id]=p.name});
+ (function(){var sel=document.getElementById("fbapp"),fr=document.getElementById("fbframe");d.projects.forEach(function(p){var o=document.createElement("option");o.value=p.id;o.textContent=p.name;sel.appendChild(o)});function go(){fr.src="embed.html?app="+encodeURIComponent(sel.value)}sel.addEventListener("change",go);go()})();
+ var loadRatings=function(){Promise.all([fsq("netra_site_ratings"),fsq("netra_site_feedback")]).then(function(a){
+  var by={};d.projects.forEach(function(p){by[p.id]={r:[],f:[]}});
+  a[0].forEach(function(i){var k=by[i.appId]?i.appId:"battery-sentinel";by[k].r.push(i)});
+  a[1].forEach(function(i){var k=by[i.appId]?i.appId:"battery-sentinel";by[k].f.push(i)});
+  var out=document.getElementById("rall");out.innerHTML="";
+  d.projects.forEach(function(p){var g=by[p.id],t=0;g.r.forEach(function(i){t+=i.stars});
+   var h=el("div");h.innerHTML="<h3>"+esc(p.name)+"</h3><div class='sub'>"+(g.r.length?(t/g.r.length).toFixed(1)+" out of 5 from "+g.r.length+" rating"+(g.r.length===1?"":"s"):"No ratings yet")+(g.f.length?" - "+g.f.length+" suggestion/complaint"+(g.f.length===1?"":"s"):"")+"</div>";
+   h.innerHTML+=g.r.slice(0,5).map(function(i){return "<div class='rv'><span class='st'>"+"\u2605".repeat(i.stars)+"\u2606".repeat(5-i.stars)+"</span> <b>"+esc(i.name||"Anonymous")+"</b><span class='dv'>"+esc(i.device)+(i.place?" - "+esc(i.place):"")+"</span>"+(i.comment?"<p>"+esc(i.comment)+"</p>":"")+"</div>"}).join("")+g.f.slice(0,5).map(function(i){return "<div class='rv'><b>"+esc(i.kind)+"</b><span class='dv'>"+esc(i.device||"")+(i.place?" - "+esc(i.place):"")+"</span><p>"+esc(i.message)+"</p></div>"}).join("");
+   out.appendChild(h)})
+ }).catch(function(){document.getElementById("rall").textContent="Ratings are unavailable right now."})};loadRatings();
+ window.NETRA_RETRY=window.NETRA_RETRY||{};window.NETRA_RETRY.statsbox=loadStats;window.NETRA_RETRY.rall=loadRatings;
+});
+var f=document.getElementById("cform");
+f.addEventListener("submit",function(e){e.preventDefault();var m=document.getElementById("cmsg");
+ var wa=f.whatsapp.value.replace(/[^0-9+]/g,"");
+ if(wa.replace(/\D/g,"").length<10){m.textContent="Please enter a valid WhatsApp number.";return}
+ m.textContent="Sending...";
+ var fd=new FormData(f);fd.set("_subject","[Netra] Contact Us - "+f.name.value);fd.set("_template","table");fd.set("_captcha","false");
+ fetch("https://formsubmit.co/ajax/prayagideepak@gmail.com",{method:"POST",headers:{Accept:"application/json"},body:fd}).then(function(r){return r.json()}).then(function(d){
+  if(d.success==="true"||d.success===true){m.textContent="Submitted. Thank you.";f.reset()}else m.textContent="Could not send right now. Please try again later."}).catch(function(){m.textContent="We could not confirm this was sent. It may have gone through, so please wait before sending it again."})});
+var ra=document.getElementById("raform"),ram=document.getElementById("ramsg");
+ra.addEventListener("submit",function(e){e.preventDefault();
+ var day=new Date().toISOString().slice(0,10),last=null;try{last=localStorage.getItem("ra_day")}catch(e0){}
+ if(last===day){ram.textContent="One request per day from this browser. You already sent one today.";return}
+ var req=ra.request.value.trim(),con=ra.contact.value.trim();
+ if(req.length<10){ram.textContent="Please write a little more about the app you want.";return}
+ if(ra.dataset.confirm!=="1"){
+  ram.style.whiteSpace="pre-line";
+  ram.textContent="This will be sent:\n\nYour request:\n"+req.slice(0,1000)+(con?"\n\nContact (optional):\n"+con.slice(0,120):"")+"\n\nIt goes to the Netra developer by email. Nothing else is sent. If this looks right, tap below.";
+  ra.querySelector("button").textContent="Send exactly this";ra.dataset.confirm="1";return}
+ ram.style.whiteSpace="";ram.textContent="Sending...";
+ var fd=new FormData();fd.set("request",req.slice(0,1000));if(con)fd.set("contact_optional",con.slice(0,120));fd.set("page","netra-eco");
+ fd.set("_subject","[Netra] New app request (website)");fd.set("_template","table");fd.set("_captcha","false");
+ fetch("https://formsubmit.co/ajax/prayagideepak@gmail.com",{method:"POST",headers:{Accept:"application/json"},body:fd}).then(function(r){return r.json()}).then(function(d){
+  if(d.success==="true"||d.success===true){try{localStorage.setItem("ra_day",day)}catch(e1){}ram.textContent="Sent. Thank you.";ra.reset();ra.dataset.confirm="";ra.querySelector("button").textContent="Review and send"}
+  else{ram.textContent="Could not send right now. Please try again later.";ra.dataset.confirm="";ra.querySelector("button").textContent="Review and send"}}).catch(function(){ram.textContent="We could not confirm this was sent. It may have gone through, so please wait before sending it again.";ra.dataset.confirm="";ra.querySelector("button").textContent="Review and send"})});
+})();
+</script>
+<script src="netra-site.js"></script>
+<script src="home-links.js"></script>
+<script src="cctv-videos.js"></script>
+<script src="roadmap.js"></script>
+<script src="eco-promo.js"></script>
+<script src="downloads.js" data-repo="prayagi-store-and-services/netra-eco-app" data-name="Netra Ecosystem" data-mode="rewrite"></script>
+<script>(function(){if(Date.now()<new Date(2026,9,11,0,0,0).getTime())return;var s=document.documentElement.style;[["--bg","#0f0b1e"],["--card","#171230"],["--card2","#211b40"],["--line","#3b3366"],["--text","#ede7f6"],["--mute","#cfc5e8"],["--accent","#ffb74d"]].forEach(function(p){s.setProperty(p[0],p[1])})})();</script>
+</body>
+</html>
