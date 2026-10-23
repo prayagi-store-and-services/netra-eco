@@ -12,7 +12,8 @@
       "repo": "prayagi-store-and-services/-Battery-Sentinel-Pro-Netra",
       "site": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/",
       "icon": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/icon.svg",
-      "code": "bspn"
+      "code": "bspn",
+      "privacy": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/privacy.html"
     },
     {
       "id": "kbc",
@@ -23,7 +24,8 @@
       "repo": "prayagi-store-and-services/KBC",
       "site": "https://prayagi-store-and-services.github.io/KBC/",
       "icon": "https://prayagi-store-and-services.github.io/KBC/icon.svg",
-      "code": "kbc"
+      "code": "kbc",
+      "privacy": "../../legal/privacy-kbc.html"
     },
     {
       "id": "netra-hub",
@@ -34,7 +36,8 @@
       "repo": "prayagi-store-and-services/netra-hub",
       "site": "https://prayagi-store-and-services.github.io/netra-hub/",
       "icon": "https://prayagi-store-and-services.github.io/netra-hub/icon.svg",
-      "code": "hub"
+      "code": "hub",
+      "privacy": "../../legal/privacy-hub.html"
     },
     {
       "id": "prayagi-privacy",
@@ -45,7 +48,8 @@
       "repo": "prayagi-store-and-services/prayagi-Privacy-",
       "site": "https://prayagi-store-and-services.github.io/prayagi-Privacy-/",
       "icon": "https://prayagi-store-and-services.github.io/prayagi-Privacy-/icon.svg",
-      "code": "privacy"
+      "code": "privacy",
+      "privacy": "../../legal/privacy-guard.html"
     },
     {
       "id": "netra-trikaal",
@@ -54,7 +58,8 @@
       "type": "Vedic astrology app",
       "summary": "Kundli, dasha, transits, a daily Today panchang card and a Rashifal picker by Moon sign. Hindi and English. Everything is calculated on your phone.",
       "repo": "prayagi-store-and-services/netra-trikaal",
-      "code": "trikaal"
+      "code": "trikaal",
+      "privacy": "../../legal/privacy-trikaal.html"
     },
     {
       "id": "netra-player",
@@ -63,7 +68,8 @@
       "type": "Video and MP3 player",
       "summary": "A simple video and MP3 player for Android. Plays video and music files stored on your phone.",
       "repo": "prayagi-store-and-services/netra-player",
-      "code": "player"
+      "code": "player",
+      "privacy": "../../legal/privacy-player.html"
     },
     {
       "id": "netra-eco",
@@ -75,7 +81,8 @@
       "repo": "prayagi-store-and-services/netra-eco-app",
       "site": "https://prayagi-store-and-services.github.io/netra-eco/",
       "icon": "https://prayagi-store-and-services.github.io/netra-eco/logo.svg",
-      "code": "eco"
+      "code": "eco",
+      "privacy": "../../legal/privacy-eco.html"
     }
   ],
   "upcoming": [
