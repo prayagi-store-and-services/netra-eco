@@ -21,9 +21,12 @@ function card(v){
  var a=mk("a","display:inline-block;margin-top:6px;font-size:13px",v.source==="youtube"?"Open on YouTube":"Open on Instagram");
  a.href=(v.url&&/^https:\/\/www\.instagram\.com\/reel\/[A-Za-z0-9_-]+\/$/.test(v.url))?v.url:v.source==="youtube"?"https://www.youtube.com/shorts/"+v.id:"https://www.instagram.com/netraecosystem/reel/"+v.id+"/";
  a.target="_blank";a.rel="noopener noreferrer";cap.appendChild(a);f.appendChild(cap);return f}
-fetch("team-videos.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){
+function load(){fetch("team-videos.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(j){
  var list=(j.videos||[]).filter(function(v){return v&&ok(v.id)&&v.title&&(v.source==="youtube"||v.source==="instagram")});
  list.sort(function(a,b){return String(b.date).localeCompare(String(a.date))});
  if(!list.length)throw 0;box.textContent="";list.forEach(function(v){box.appendChild(card(v))})
-}).catch(function(){box.textContent="Unavailable right now.";});
+}).catch(function(){box.textContent="Unavailable right now.";})}
+load();
+/* Section-only retry hook for the slow-load helper in netra-site.js: re-runs this read-only fetch, nothing else. */
+window.NETRA_RETRY=window.NETRA_RETRY||{};window.NETRA_RETRY["cctv-grid"]=load;
 })();

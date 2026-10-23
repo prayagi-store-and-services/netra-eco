@@ -158,6 +158,7 @@ function whatsNew(){
 /* ---- Live stats: visits and downloads. No personal data is collected.
    Visits: one anonymous counter increment per browser session (own Firestore counter, collection netra_active), no cookies, no IP stored by us.
    Downloads: read live from the GitHub Releases API (asset download_count, summed over every release; includes in-app updates). */
+window.NETRA_RETRY=window.NETRA_RETRY||{};window.NETRA_RETRY["whatsnew-list"]=whatsNew;
 function statKey(){var s=window.NETRA_SITE||{};return s.appId?("visits-"+s.appId):"visits-eco"}
 function visitCount(){
  var k=statKey(),seen=sessionStorage.getItem("netra_v_"+k);
@@ -198,4 +199,31 @@ var s=document.createElement("div");s.id="navratri-strip";s.textContent="Jay Mat
 s.setAttribute("role","note");
 (document.body||document.documentElement).insertBefore(s,(document.body||document.documentElement).firstChild);
 }catch(e){}
+})();
+
+/* Slow-load status. Read-only sections start with the text "Loading...". If one is still waiting after 15 seconds
+   we say so honestly (no percentages: these loads give no real progress figure) and offer a manual "Try again".
+   Try again re-runs only that section's read-only loader (registered in window.NETRA_RETRY), so nothing else on the
+   page, including a half-typed form, is touched and no form is ever sent again. The page is never reloaded. A section
+   without a registered loader shows the message with no button. */
+(function(){
+"use strict";
+var IDS=["whatsnew-list","statsbox","rall","cctv-grid"],WAIT_MS=15000;
+function check(id){
+ var e=document.getElementById(id);
+ if(!e||e.textContent.trim()!=="Loading...")return;
+ e.textContent="";
+ var p=document.createElement("span");
+ p.textContent="Still loading. This is taking longer than usual. ";
+ var b=document.createElement("button");
+ b.type="button";b.textContent="Try again";
+ b.addEventListener("click",function(){
+  var fn=window.NETRA_RETRY&&window.NETRA_RETRY[id];
+  if(typeof fn!=="function")return;
+  /* Section-only retry: read-only requests for this section, then wait another 15 seconds before saying so again. */
+  e.textContent="Loading...";fn();arm(id)});
+ e.appendChild(p);if(window.NETRA_RETRY&&typeof window.NETRA_RETRY[id]==="function")e.appendChild(b);
+}
+function arm(id){window.setTimeout(function(){check(id)},WAIT_MS)}
+if(typeof window!=="undefined"&&window.setTimeout)IDS.forEach(arm);
 })();

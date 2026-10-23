@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-K/7A0jT61SzOEm+Sw4x0/jQGmYyQyD+LloCxbolxHoI=' 'sha256-lRX71ZO7yKQXAam3CZOz0JOjUZ0eL4qG3FLIn474Kl0='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com https://formsubmit.co; frame-src 'self' https://www.youtube-nocookie.com; media-src 'self'; form-action 'none'; upgrade-insecure-requests">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-lzi+vjB/DPlATs2yuSSlwmlP3w7ZjH86yg+owUgPJhA=' 'sha256-lRX71ZO7yKQXAam3CZOz0JOjUZ0eL4qG3FLIn474Kl0='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com https://formsubmit.co; frame-src 'self' https://www.youtube-nocookie.com; media-src 'self'; form-action 'none'; upgrade-insecure-requests">
 <script src="framebust.js"></script>
 <script src="counter.js"></script><meta name="referrer" content="strict-origin-when-cross-origin"><script src="https://prayagi-store-and-services.github.io/netra-eco/geoblock.js"></script>
 <meta charset="utf-8">
@@ -104,7 +104,7 @@ footer{border-top:1px solid var(--line)}
 <section id="contact"><h2>Contact us</h2>
 <form id="cform"><label for="cf-name">Name</label><input id="cf-name" name="name" type="text" required maxlength="80">
 <label for="cf-email">Email</label><input id="cf-email" name="email" type="email" required maxlength="120">
-<label for="cf-whatsapp">WhatsApp number (required, with country code, e.g. +91 98765 43210)</label><input id="cf-whatsapp" name="whatsapp" type="tel" required pattern="\+?[0-9 ()\-]{10,18}" maxlength="20" inputmode="tel">
+<label for="cf-whatsapp">WhatsApp number (required, with country code, e.g. +91 98765 43210)</label><input id="cf-whatsapp" name="whatsapp" type="tel" required pattern="\+?[0-9 \(\)\-]{10,18}" maxlength="20" inputmode="tel">
 <label for="cf-phone">Calling number (optional - leave empty if the same as WhatsApp)</label><input id="cf-phone" name="phone" type="tel" maxlength="20" inputmode="tel">
 <label for="cf-message">Message (optional)</label><textarea id="cf-message" name="message" rows="3" maxlength="800"></textarea>
 <button class="go" type="submit">Send</button><div id="cmsg" class="sub"></div></form>
@@ -170,21 +170,21 @@ fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).the
  groupHead("coming-soon-apps","Coming Soon");
  allApps.filter(function(it){return !it.live}).forEach(function(it){renderSoon(it.v)});
  var raNav=el("a","","Request a new app");raNav.href="#request-app";nav.appendChild(raNav);
- (function(){
+ var loadStats=function(){
   function vk(id){return id==="battery-sentinel"?"visits":"visits-"+id}
   function cnt(k){return NetraCounter.get(k)}
   var rows=d.projects.map(function(p){return Promise.all([p.site?cnt(vk(p.id)):Promise.resolve(null),gh("repos/"+p.repo+"/releases?per_page=100")]).then(function(a){
    var t=null,last=null;if(a[1]){t=0;a[1].forEach(function(x){if(x.draft)return;(x.assets||[]).forEach(function(y){if(/\.apk$/i.test(y.name))t+=(y.download_count||0)});if(!last)last=x})}
    return {p:p,v:a[0],t:t,last:last}})});
   Promise.all([cnt("visits-eco"),Promise.all(rows)]).then(function(a){
-   var h="<table style='width:100%;border-collapse:collapse'><thead><tr><th align='left'>Site / app</th><th align='right'>Website visits</th><th align='right'>Downloads (all releases)</th><th align='left'>Latest release</th></tr></thead><tbody>";
+   var h="<div style='overflow-x:auto'><table style='width:100%;min-width:560px;border-collapse:collapse'><thead><tr><th align='left' style='padding:0 12px 0 0'>Site / app</th><th align='right' style='padding:0 12px'>Website visits</th><th align='right' style='padding:0 12px'>Downloads (all releases)</th><th align='left' style='padding:0 0 0 12px'>Latest release</th></tr></thead><tbody>";
    h+="<tr><td>Netra Ecosystem (this site)</td><td align='right'>"+(a[0]!=null?a[0].toLocaleString():U)+"</td><td align='right'>-</td><td>-</td></tr>";
    a[1].forEach(function(r){h+="<tr><td>"+esc(r.p.name)+"</td><td align='right'>"+(r.v!=null?r.v.toLocaleString():U)+"</td><td align='right'>"+(r.t!=null?r.t.toLocaleString():U)+"</td><td>"+(r.last?esc(r.last.tag_name)+" - "+when(r.last.published_at):"")+"</td></tr>"});
-   document.getElementById("statsbox").innerHTML=h+"</tbody></table><div class='sub'>Checked "+when(new Date().toISOString())+". Each count started when that site's counter was added, it is not a lifetime figure for older visits.</div>"})
- })();
+   document.getElementById("statsbox").innerHTML=h+"</tbody></table></div><div class='sub'>Checked "+when(new Date().toISOString())+". Each count started when that site's counter was added, it is not a lifetime figure for older visits.</div>"})
+ };loadStats();
  var names={};d.projects.forEach(function(p){names[p.id]=p.name});
  (function(){var sel=document.getElementById("fbapp"),fr=document.getElementById("fbframe");d.projects.forEach(function(p){var o=document.createElement("option");o.value=p.id;o.textContent=p.name;sel.appendChild(o)});function go(){fr.src="embed.html?app="+encodeURIComponent(sel.value)}sel.addEventListener("change",go);go()})();
- Promise.all([fsq("netra_site_ratings"),fsq("netra_site_feedback")]).then(function(a){
+ var loadRatings=function(){Promise.all([fsq("netra_site_ratings"),fsq("netra_site_feedback")]).then(function(a){
   var by={};d.projects.forEach(function(p){by[p.id]={r:[],f:[]}});
   a[0].forEach(function(i){var k=by[i.appId]?i.appId:"battery-sentinel";by[k].r.push(i)});
   a[1].forEach(function(i){var k=by[i.appId]?i.appId:"battery-sentinel";by[k].f.push(i)});
@@ -193,7 +193,8 @@ fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).the
    var h=el("div");h.innerHTML="<h3>"+esc(p.name)+"</h3><div class='sub'>"+(g.r.length?(t/g.r.length).toFixed(1)+" out of 5 from "+g.r.length+" rating"+(g.r.length===1?"":"s"):"No ratings yet")+(g.f.length?" - "+g.f.length+" suggestion/complaint"+(g.f.length===1?"":"s"):"")+"</div>";
    h.innerHTML+=g.r.slice(0,5).map(function(i){return "<div class='rv'><span class='st'>"+"\u2605".repeat(i.stars)+"\u2606".repeat(5-i.stars)+"</span> <b>"+esc(i.name||"Anonymous")+"</b><span class='dv'>"+esc(i.device)+(i.place?" - "+esc(i.place):"")+"</span>"+(i.comment?"<p>"+esc(i.comment)+"</p>":"")+"</div>"}).join("")+g.f.slice(0,5).map(function(i){return "<div class='rv'><b>"+esc(i.kind)+"</b><span class='dv'>"+esc(i.device||"")+(i.place?" - "+esc(i.place):"")+"</span><p>"+esc(i.message)+"</p></div>"}).join("");
    out.appendChild(h)})
- }).catch(function(){document.getElementById("rall").textContent="Ratings are unavailable right now."})
+ }).catch(function(){document.getElementById("rall").textContent="Ratings are unavailable right now."})};loadRatings();
+ window.NETRA_RETRY=window.NETRA_RETRY||{};window.NETRA_RETRY.statsbox=loadStats;window.NETRA_RETRY.rall=loadRatings;
 });
 var f=document.getElementById("cform");
 f.addEventListener("submit",function(e){e.preventDefault();var m=document.getElementById("cmsg");
@@ -202,7 +203,7 @@ f.addEventListener("submit",function(e){e.preventDefault();var m=document.getEle
  m.textContent="Sending...";
  var fd=new FormData(f);fd.set("_subject","[Netra] Contact Us - "+f.name.value);fd.set("_template","table");fd.set("_captcha","false");
  fetch("https://formsubmit.co/ajax/prayagideepak@gmail.com",{method:"POST",headers:{Accept:"application/json"},body:fd}).then(function(r){return r.json()}).then(function(d){
-  if(d.success==="true"||d.success===true){m.textContent="Sent. Thank you, we will contact you on WhatsApp.";f.reset()}else m.textContent="Could not send right now. Please try again later."}).catch(function(){m.textContent="Could not send right now. Please try again later."})});
+  if(d.success==="true"||d.success===true){m.textContent="Submitted. Thank you.";f.reset()}else m.textContent="Could not send right now. Please try again later."}).catch(function(){m.textContent="We could not confirm this was sent. It may have gone through, so please wait before sending it again."})});
 var ra=document.getElementById("raform"),ram=document.getElementById("ramsg");
 ra.addEventListener("submit",function(e){e.preventDefault();
  var day=new Date().toISOString().slice(0,10),last=null;try{last=localStorage.getItem("ra_day")}catch(e0){}
@@ -218,7 +219,7 @@ ra.addEventListener("submit",function(e){e.preventDefault();
  fd.set("_subject","[Netra] New app request (website)");fd.set("_template","table");fd.set("_captcha","false");
  fetch("https://formsubmit.co/ajax/prayagideepak@gmail.com",{method:"POST",headers:{Accept:"application/json"},body:fd}).then(function(r){return r.json()}).then(function(d){
   if(d.success==="true"||d.success===true){try{localStorage.setItem("ra_day",day)}catch(e1){}ram.textContent="Sent. Thank you.";ra.reset();ra.dataset.confirm="";ra.querySelector("button").textContent="Review and send"}
-  else{ram.textContent="Could not send right now. Please try again later.";ra.dataset.confirm="";ra.querySelector("button").textContent="Review and send"}}).catch(function(){ram.textContent="Could not send right now. Please try again later.";ra.dataset.confirm="";ra.querySelector("button").textContent="Review and send"})});
+  else{ram.textContent="Could not send right now. Please try again later.";ra.dataset.confirm="";ra.querySelector("button").textContent="Review and send"}}).catch(function(){ram.textContent="We could not confirm this was sent. It may have gone through, so please wait before sending it again.";ra.dataset.confirm="";ra.querySelector("button").textContent="Review and send"})});
 })();
 </script>
 <script src="netra-site.js"></script>
