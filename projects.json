@@ -113,7 +113,7 @@
       "features": [
         "Speaks Connected, Disconnected, Full charge and Low battery (15%)",
         "Android app and Windows tray app, English",
-        "iPhone: Shortcuts setup guide (iOS cannot listen in the background)"
+        "iPhone: Shortcuts setup guide (iPhone uses Shortcuts, not a native background app)"
       ]
     },
     {
