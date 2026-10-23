@@ -49,6 +49,10 @@
     {
       "id": "netra-travel-rider",
       "name": "Netra Travel Rider"
+    },
+    {
+      "id": "netra-charge",
+      "name": "Netra Charge"
     }
   ],
   "items": [
@@ -719,6 +723,21 @@
         "prayagi-privacy"
       ],
       "eta": "2026-10-17T16:00:00+05:30"
+    },
+    {
+      "title": "Netra Charge: four charging announcements (Connected, Disconnected, Full charge, Low battery) for Android and Windows, plus an iPhone Shortcuts setup guide. First release.",
+      "status": "In testing: code and automatic checks exist, no device test yet. Release only after the checks pass; the 24 Oct 22:32 time is a target, not a promise.",
+      "eta": "2026-10-24T22:32:00+05:30",
+      "apps": [
+        "netra-charge"
+      ]
+    },
+    {
+      "title": "Netra Human Safety: area alert announcement. Planned idea, not built yet. When the user turns the mode on, the app takes the area once and then speaks new official weather, earthquake and government emergency warnings for that area, without repeating the same warning. Needs a check of official sources and background delivery before any build. Not a guaranteed emergency warning system.",
+      "status": "Planned: idea added 23 Oct 2026, research first. Not released and no date announced.",
+      "apps": [
+        "netra-hub"
+      ]
     }
   ]
 }
