@@ -550,7 +550,7 @@
     },
     {
       "title": "Interface update",
-      "status": "Planned (owner-held work; date depends on it)",
+      "status": "Planned (combined release: on 13 Oct the owner chose to release the full redesign at once, not in stages). At risk: the remaining redesign work is not complete, so the 24 Oct target may not be met; a new date will be announced once the work is done.",
       "eta": "2026-10-24T20:00:00+05:30",
       "apps": [
         "netra-trikaal"
@@ -630,7 +630,7 @@
     },
     {
       "title": "Netra Intruder: anti-theft app (not started): photo after a wrong unlock attempt, optional photo at every unlock (experimental, Android 14+), opt-in app activity log. First release.",
-      "status": "Not started",
+      "status": "Not started: forecast unable to meet the 25 Oct first-release target. The 13 Oct plan was a first build in the 23-25 Oct window with release only after the owner's phone test; that cannot fit alongside the current release chain. Proposed new target 9 Nov, pending owner agreement.",
       "eta": "2026-10-25T21:00:00+05:30",
       "apps": [
         "netra-intruder"
