@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Sitemap: https://prayagi-store-and-services.github.io/netra-eco/sitemap.xml
+Sitemap: https://prayagi-store-and-services.github.io/netra-hub/sitemap.xml
+Sitemap: https://prayagi-store-and-services.github.io/KBC/sitemap.xml
+Sitemap: https://prayagi-store-and-services.github.io/prayagi-Privacy-/sitemap.xml
+Sitemap: https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/sitemap.xml
