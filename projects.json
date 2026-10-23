@@ -93,8 +93,8 @@
     {
       "id": "netra-intruder",
       "name": "Netra Intruder",
-      "type": "Anti-theft Android app (in development, private)",
-      "summary": "Planned to take a photo after a wrong unlock attempt and warn you if the SIM card is changed. Everything stays on your phone. In development in a private repository. Not released yet.",
+      "type": "Anti-theft Android app (planned, private)",
+      "summary": "Planned to take a photo after a wrong unlock attempt and warn you if the SIM card is changed. Everything stays on your phone. Approved plan, development not started yet. Not released yet.",
       "eta": "2026-10-25T21:00:00+05:30",
       "targets": [
         {

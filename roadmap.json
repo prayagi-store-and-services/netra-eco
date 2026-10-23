@@ -629,8 +629,8 @@
       ]
     },
     {
-      "title": "Netra Intruder: anti-theft app (in development): photo after a wrong unlock attempt, optional photo at every unlock (experimental, Android 14+), opt-in app activity log. First release.",
-      "status": "In development",
+      "title": "Netra Intruder: anti-theft app (not started): photo after a wrong unlock attempt, optional photo at every unlock (experimental, Android 14+), opt-in app activity log. First release.",
+      "status": "Not started",
       "eta": "2026-10-25T21:00:00+05:30",
       "apps": [
         "netra-intruder"
