@@ -1,0 +1,11 @@
+# Netra Ecosystem
+
+> Free Android apps by Prayagi Store and Services (developer: Deepak Kushwaha): Battery Sentinel Pro Netra, Netra Hub, Netra KBC, Netra Privacy Guard, Netra Player, Netra Trikaal, Netra Eco. Direct APK downloads, no account, no ads.
+
+## Pages
+- [Home](https://prayagi-store-and-services.github.io/netra-eco/): app catalogue, roadmap, download counters.
+- [App downloads](https://prayagi-store-and-services.github.io/netra-eco/app/bspn/): per-app download pages (bspn, hub, kbc, player, privacy, trikaal, eco).
+- [Legal & data](https://prayagi-store-and-services.github.io/netra-eco/legal/): per-app privacy policies and data safety declarations.
+
+## Related
+- [Prayagi Store & Services](https://prayagi-store-and-services.github.io/): the developer's business site.
