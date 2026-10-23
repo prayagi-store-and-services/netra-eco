@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com; frame-src 'none'; media-src 'none'; form-action 'none'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin"><script src="../framebust.js"></script><script src="../counter.js"></script><script src="https://prayagi-store-and-services.github.io/netra-eco/geoblock.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Data safety - Netra Ecosystem - Netra Ecosystem</title>
+<link rel="icon" type="image/svg+xml" href="../logo.svg">
+<style>body{font-family:system-ui,sans-serif;max-width:760px;margin:0 auto;padding:20px;line-height:1.55;color:#14202b}h1,h2{line-height:1.2}a{color:#0b6b3a}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ccc;padding:6px;text-align:left;font-size:.92rem;vertical-align:top}</style>
+</head>
+<body>
+<p><a href="../">&larr; Netra Ecosystem</a> &middot; <a href="./">Legal &amp; data</a></p>
+<h1>Data safety declarations</h1>
+<p>Last updated: October 23, 2026. What data each Netra app handles, in the style of an app-store data-safety form. The apps are distributed directly from this website, not through an app store; this page is our own disclosure, not a store certification.</p>
+<h2>Common to all apps</h2>
+<ul>
+<li><b>No account, no ads, no data sale.</b></li>
+<li><b>Anonymous usage counter (optional, where listed):</b> at most once per day and once per month the app increments a public counter in Google Firebase. The request carries no device ID, install ID, account, location or app data, and can be turned off in the app's Settings.</li>
+<li><b>Update checks:</b> each app checks its public GitHub releases page for new versions, sending no personal data.</li>
+<li><b>Crash reports (where listed):</b> sent automatically on the next app start after a crash; they hold only app name, phone model, Android version, app version, crash time and the stack trace (exception messages dropped), and go to the developer's email inbox through the FormSubmit service.</li>
+<li><b>Website:</b> visits and downloads are counted anonymously (an increment-only counter on our own Firebase project; no cookies, no personal data). Messages sent through the Contact Us form are delivered to the developer by email.</li>
+</ul>
+<h2>Per app</h2>
+<table>
+<tr><th>App</th><th>Kept on your phone</th><th>Sent off the phone</th><th>Anonymous counter</th><th>Sold / shared</th></tr>
+<tr id="bspn"><td><b>Battery Sentinel Pro Netra</b></td><td>Battery, charging, temperature and device status, shown to you on your phone.</td><td>Feedback and crash reports only after the app shows you exactly what will be sent and asks each time (its own policy lists the exact fields). Weather lookups send rounded coordinates to Open-Meteo. Optional, user-started AI diagnostics send battery telemetry (no personal identifiers) to Google Gemini.</td><td>Yes (Settings)</td><td>Nothing sold; feedback only with your consent each time.</td></tr>
+<tr id="hub"><td><b>Netra Hub</b></td><td>Sensor readings, SOS contacts and settings. SOS SMS goes only to contacts you add, only when you enable and trigger it.</td><td>Earthquake feature sends your coordinates to the USGS earthquake API. Automatic crash reports (limited fields, see privacy policy). Public NDMA alert feed fetch.</td><td>Yes (Settings)</td><td>Nothing sold or shared beyond the listed services.</td></tr>
+<tr id="kbc"><td><b>Netra KBC</b></td><td>Quiz progress and the profile you fill in.</td><td>Profile details you enter (name, age, state, city, education, occupation, preparation domain) are sent to Google Gemini when the dynamic-question feature generates questions. Automatic crash reports (limited fields). Question pool download from GitHub.</td><td>Yes (Settings)</td><td>Nothing sold; profile details go to Google Gemini only for question generation.</td></tr>
+<tr id="privacy"><td><b>Netra Privacy Guard</b></td><td>Microphone/camera transparency results and monitoring data. No audio is sent anywhere.</td><td>Automatic crash reports (limited fields). Blocklist download from GitHub.</td><td>Yes (Settings)</td><td>Nothing sold or shared beyond the listed services.</td></tr>
+<tr id="player"><td><b>Netra Player</b></td><td>Your media, playlists and play history.</td><td>Automatic crash reports (limited fields). Public catalogue reads from this website.</td><td>Yes (Settings)</td><td>Nothing sold or shared beyond the listed services.</td></tr>
+<tr id="trikaal"><td><b>Netra Trikaal</b></td><td>Birth details and places you enter.</td><td>Update checks only.</td><td>No (not used in this app)</td><td>Nothing sold or shared.</td></tr>
+<tr id="eco"><td><b>Netra Eco app</b></td><td>Your app choices.</td><td>Automatic crash reports (limited fields). Public catalogue reads and anonymous download counts on this website.</td><td>Yes (Settings)</td><td>Nothing sold or shared beyond the listed services.</td></tr>
+</table>
+<h2>Permissions</h2>
+<p>Each app requests only the Android permissions its features need, and the feature stops when the permission is revoked. The per-app privacy policies list the purposes:</p>
+<ul>
+<li><a href="https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/privacy.html">Battery Sentinel Pro Netra privacy policy</a></li>
+<li><a href="privacy-hub.html">Netra Hub privacy policy</a></li>
+<li><a href="privacy-kbc.html">Netra KBC privacy policy</a></li>
+<li><a href="privacy-guard.html">Netra Privacy Guard privacy policy</a></li>
+<li><a href="privacy-player.html">Netra Player privacy policy</a></li>
+<li><a href="privacy-trikaal.html">Netra Trikaal privacy policy</a></li>
+<li><a href="privacy-eco.html">Netra Eco app privacy policy</a></li>
+</ul>
+<h2>Contact and deletion</h2>
+<p>To ask about or delete something you sent, email prayagideepak@gmail.com. Changes to this declaration will be posted on this page with a new date.</p>
+<p><a href="./">Legal &amp; data</a> &middot; <a href="data-safety.html">Data safety</a></p>
+</body></html>
