@@ -303,16 +303,10 @@
       "apps": [
         "netra-hub"
       ],
-      "title": "H5: magnetic alerts and final polish (v1.5.0)",
-      "text": "Always-on magnetic alerts and the final polish. Target for the complete Netra Human Safety release.",
+      "title": "H5: magnetic alerts and final polish",
+      "text": "Not done yet. Hub v1.5.0 (23 Oct) added the saved or current area choice for automatic official alerts only. Always-on magnetic alerts and the final polish are still planned. Target for the complete Netra Human Safety release; the date is our estimate and can change.",
       "status": "Planned",
-      "eta": "2026-10-26T20:00:00+05:30",
-      "ships": [
-        {
-          "app": "netra-hub",
-          "version": "1.5.0"
-        }
-      ]
+      "eta": "2026-10-26T20:00:00+05:30"
     },
     {
       "apps": [
