@@ -8,6 +8,14 @@
 var me=document.currentScript,repo=me&&me.getAttribute("data-repo"),name=me&&me.getAttribute("data-name")||"this app",mode=me&&me.getAttribute("data-mode")||"full";
 if(!repo||!/^prayagi-store-and-services\/[A-Za-z0-9._-]+$/.test(repo))return;
 function mk(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
+/* Temporary Human Safety-only pause. A new release never lifts this guard. */
+if(repo==="prayagi-store-and-services/netra-hub"){
+ var hold=document.getElementById("netra-downloads");
+ if(!hold){hold=mk("section");hold.id="netra-downloads";(document.querySelector("main")||document.body).appendChild(hold)}
+ hold.textContent="";hold.appendChild(mk("h2","","Netra Human Safety: Download temporarily paused"));
+ hold.appendChild(mk("p","sub",'Filhaal Netra Human Safety ko install ya use na karein. Phone garam hone aur battery tezi se ghatne ki reports mili hain. Installed ho toh abhi uninstall kar dein. Jaancha hua fix verify hone tak download band rahega; sirf naya version aa jana fix ka saboot nahi hai.'));
+ return;
+}
 var ALIAS="https://github.com/"+repo+"/releases/latest/download/app-release.apk";
 var main=null,fab=null,box=null;
 if(mode==="full"){
