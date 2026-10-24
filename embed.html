@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-OrzrNnb/wH4fLv5VTWEmbHkDKrOgnx9dskdqWMGYA9o='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com https://formsubmit.co; frame-src 'self'; media-src 'self'; form-action 'none'; upgrade-insecure-requests">
+<html lang="en"><head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-mmUrsFBHp+unnnmpig19ak/fjewai8MLoa+bVcB0k4E='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com https://formsubmit.co; frame-src 'self'; media-src 'self'; form-action 'none'; upgrade-insecure-requests">
 <script src="framebust.js"></script><meta name="referrer" content="strict-origin-when-cross-origin"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Netra ratings</title>
 <style>
 :root{--bg:#0b1220;--card2:#17233b;--line:#22314f;--text:#e8eefc;--mute:#9db0d0;--accent:#4fd1a5}
@@ -12,7 +12,7 @@ button{background:var(--accent);color:#04101c;border:0;border-radius:8px;padding
 <form id="fbform"><select name="kind"><option>Rating</option><option>Suggestion</option><option>Complaint</option></select>
 <select name="stars"><option value="5">5 stars</option><option value="4">4 stars</option><option value="3">3 stars</option><option value="2">2 stars</option><option value="1">1 star</option></select>
 <input name="name" placeholder="Your name (optional)" maxlength="60"><input name="device" placeholder="Your phone, e.g. Samsung Galaxy A52" maxlength="60" required><input name="place" placeholder="Where are you? City or area (typed, optional)" maxlength="60">
-<textarea name="message" rows="3" placeholder="Your message" maxlength="500"></textarea><p class="sub">Your name, area and message are shown publicly on this page. A copy is also emailed to the developer through FormSubmit, a free form service. Do not write anything private.</p><button type="submit">Send</button><div id="fmsg" class="sub"></div></form>
+<textarea name="message" rows="3" placeholder="Your message" maxlength="500"></textarea><p class="sub" id="feedback-data-notice">Your phone model, optional name and area, rating and message are saved in the public feedback list to answer feedback and improve the app. A copy is emailed to the developer through FormSubmit. Do not include private documents, passwords or sensitive information. <a href="legal/data-safety.html" target="_blank" rel="noopener">Read how Netra uses data</a>.</p><label><input type="checkbox" id="feedback-consent" required aria-describedby="feedback-data-notice"> I agree to this public feedback and email copy. I can leave this box unchecked and not send.</label><button type="submit">Send</button><div id="fmsg" class="sub"></div></form>
 <script>
 (function(){
 var APP=(new URLSearchParams(location.search).get("app")||"").replace(/[^a-z0-9-]/g,"").slice(0,40);
@@ -31,6 +31,7 @@ function load(){Promise.all([q("netra_site_ratings"),q("netra_site_feedback")]).
 if(!APP){set("rsum","Unavailable");document.getElementById("fbform").style.display="none"}else load();
 var f=document.getElementById("fbform");
 f.addEventListener("submit",function(e){e.preventDefault();var m=document.getElementById("fmsg"),v=function(n){return f.querySelector("[name="+n+"]").value.trim()};
+ if(!document.getElementById("feedback-consent").checked){m.textContent="Please agree to the public feedback and email copy before sending.";return}
  var kind=v("kind"),msg=v("message");if(kind!=="Rating"&&!msg){m.textContent="Please write your message.";return}
  m.textContent="Sending...";
  function val(x){return typeof x==="number"?{integerValue:String(x)}:typeof x==="boolean"?{booleanValue:x}:{stringValue:String(x)}}
