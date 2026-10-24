@@ -136,11 +136,13 @@ fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).the
   [rel,rt,sz].forEach(function(dd){dd.hidden=true;dd.previousElementSibling.hidden=true});
   function showReleaseField(dd,value){if(!value)return;dd.textContent=value;dd.hidden=false;dd.previousElementSibling.hidden=false}
   var act=el("div");if(p.site){var site=el("a","btn","Open "+p.name+" website");site.href=p.site;act.appendChild(site)}
-  var dl0=el("a","btn","Download latest APK");dl0.href="https://github.com/"+p.repo+"/releases/latest/download/app-release.apk";act.insertBefore(dl0,act.firstChild);b.appendChild(act);
+  var paused=p.repo==="prayagi-store-and-services/netra-hub";
+  if(paused){b.appendChild(el("p","sub",'Filhaal Netra Human Safety ko install ya use na karein. Phone garam hone aur battery tezi se ghatne ki reports mili hain. Installed ho toh abhi uninstall kar dein. Jaancha hua fix verify hone tak download band rahega; sirf naya version aa jana fix ka saboot nahi hai.'));}
+  var dl0=el("a","btn","Download latest APK");dl0.href="https://github.com/"+p.repo+"/releases/latest/download/app-release.apk";if(paused){dl0.removeAttribute("href");dl0.setAttribute("aria-disabled","true");dl0.textContent="Download temporarily paused";}act.insertBefore(dl0,act.firstChild);b.appendChild(act);
   w.appendChild(b);s.appendChild(w);box.appendChild(s);
   gh("repos/"+p.repo+"/releases/latest").then(function(x){
    if(x&&x.tag_name){showReleaseField(rel,x.tag_name);if(x.published_at)showReleaseField(rt,when(x.published_at));
-    var al=(x.assets||[]).filter(function(y){return /\.apk$/i.test(y.name)});var k=al.filter(function(y){return y.name!=="app-release.apk"})[0]||al[0];if(k){if(Number.isFinite(k.size)&&k.size>0)showReleaseField(sz,(k.size/1048576).toFixed(1)+" MB");dl0.href=k.browser_download_url;dl0.textContent="Download "+x.tag_name+" APK"}}
+    var al=(x.assets||[]).filter(function(y){return /\.apk$/i.test(y.name)});var k=al.filter(function(y){return y.name!=="app-release.apk"})[0]||al[0];if(k){if(Number.isFinite(k.size)&&k.size>0)showReleaseField(sz,(k.size/1048576).toFixed(1)+" MB");if(!paused){dl0.href=k.browser_download_url;dl0.textContent="Download "+x.tag_name+" APK"}}}
 })
  /*LIVE-END*/};
  /*SOON-START*/
