@@ -42,7 +42,7 @@ function render(rel){
  rel.filter(function(r){return !r.draft&&!r.prerelease}).slice(0,5).forEach(function(r,i){
   var al=(r.assets||[]).filter(function(a){return /\.apk$/i.test(a.name)});
   var a=al.filter(function(x){return x.name!=="app-release.apk"})[0]||al[0];if(!a)return;shown++;
-  var row=mk("div","rv");var t=mk("b","",r.tag_name+(i===0?" (latest)":""));row.appendChild(t);
+  var row=mk("div","rv");row.style.minWidth="0";row.style.overflowWrap="anywhere";var t=mk("b","",r.tag_name+(i===0?" (latest)":""));row.appendChild(t);
   row.appendChild(mk("span","dv"," "+fmt(r.published_at)+" - "+(a.size/1048576).toFixed(1)+" MB"));
   var l=mk("a","","  Download");l.href=a.browser_download_url;row.appendChild(l);
   var sha=(a.digest||"").replace(/^sha256:/,"");row.appendChild(mk("div","dv","SHA-256: "+(/^[0-9a-f]{64}$/.test(sha)?sha:"Unavailable")));
