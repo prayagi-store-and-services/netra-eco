@@ -6,6 +6,14 @@
   var m = document.getElementById("app"); if (!m) return;
   var code = m.getAttribute("data-code"), repo = m.getAttribute("data-repo");
   if (!/^[a-z0-9]{2,12}$/.test(code) || !/^prayagi-store-and-services\/[A-Za-z0-9._-]+$/.test(repo)) return;
+  // Human Safety-only temporary hold. Do not fetch or wire a download fallback while paused.
+  if (repo === "prayagi-store-and-services/netra-hub") {
+    var pausedDownload = document.getElementById("dl");
+    if (pausedDownload) { pausedDownload.removeAttribute("href"); pausedDownload.setAttribute("aria-disabled", "true"); pausedDownload.textContent = "Download temporarily paused"; }
+    var pausedMeta = document.getElementById("meta");
+    if (pausedMeta) pausedMeta.textContent = "Download temporarily paused";
+    return;
+  }
   var weekly = document.createElement("section");
   weekly.setAttribute("aria-label", "Weekly security commitment");
   var weeklyTitle = document.createElement("h2");
