@@ -5,13 +5,15 @@ const root = path.join(__dirname, '..');
 const catalog = JSON.parse(fs.readFileSync(path.join(root, 'projects.json'), 'utf8'));
 function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
 function page(p) {
+  const paused = p.repo === "prayagi-store-and-services/netra-hub";
+  const notice = "Filhaal Netra Human Safety ko install ya use na karein. Phone garam hone aur battery tezi se ghatne ki reports mili hain. Installed ho toh abhi uninstall kar dein. Jaancha hua fix verify hone tak download band rahega; sirf naya version aa jana fix ka saboot nahi hai.";
   return `<!doctype html>
 <html lang="en">
 <head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com; frame-src 'none'; media-src 'none'; form-action 'none'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin"><script src="../../framebust.js"></script><script src="../../counter.js"></script><script src="https://prayagi-store-and-services.github.io/netra-eco/geoblock.js"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(p.name)} - Netra Ecosystem</title>
-<meta name="description" content="Download ${esc(p.name)} from the Netra Ecosystem. ${esc(p.summary)}">
+<meta name="description" content="${paused ? "Netra Human Safety downloads are temporarily paused while reported phone heat and rapid battery drain are investigated." : `Download ${esc(p.name)} from the Netra Ecosystem. ${esc(p.summary)}`}">
 <link rel="icon" type="image/svg+xml" href="../../logo.svg">
 <link rel="stylesheet" href="../app.css">
 </head>
@@ -21,7 +23,8 @@ function page(p) {
 <h1>${esc(p.name)}</h1>
 <p class="type">${esc(p.type || '')}</p>
 <p>${esc(p.summary)}</p>
-<p><a id="dl" class="btn" href="https://github.com/${esc(p.repo)}/releases/latest/download/app-release.apk">Download APK</a></p>
+${paused ? `<aside role="note" style="border:2px solid #fbbf24;border-radius:12px;padding:16px;overflow-wrap:anywhere"><p>${esc(notice)}</p></aside>
+<p><button id="dl" class="btn" type="button" disabled>Download temporarily paused</button></p>` : `<p><a id="dl" class="btn" href="https://github.com/${esc(p.repo)}/releases/latest/download/app-release.apk">Download APK</a></p>`}
 <p id="open" hidden><a class="btn btn2" href="intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=${esc(p.package)};S.browser_fallback_url=${encodeURIComponent('https://prayagi-store-and-services.github.io/netra-eco/app/' + p.code + '/')};end">Open app (if installed)</a></p>
 <p id="meta" class="sub">Loading the latest version...</p>
 <p id="count" class="sub"></p>
