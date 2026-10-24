@@ -6,6 +6,17 @@
   var m = document.getElementById("app"); if (!m) return;
   var code = m.getAttribute("data-code"), repo = m.getAttribute("data-repo");
   if (!/^[a-z0-9]{2,12}$/.test(code) || !/^prayagi-store-and-services\/[A-Za-z0-9._-]+$/.test(repo)) return;
+  var weekly = document.createElement("section");
+  weekly.setAttribute("aria-label", "Weekly security commitment");
+  var weeklyTitle = document.createElement("h2");
+  weeklyTitle.textContent = "Weekly security commitment";
+  var weeklyPromise = document.createElement("p");
+  weeklyPromise.textContent = "Netra Ecosystem will provide a weekly security patch on Saturday or Sunday.";
+  var weeklyStatus = document.createElement("p");
+  weeklyStatus.className = "sub";
+  weeklyStatus.textContent = "This is a release commitment, not a claim that every app has already received this week's patch.";
+  weekly.append(weeklyTitle, weeklyPromise, weeklyStatus);
+  m.appendChild(weekly);
   var KEY = "dl-" + code;
   var dl = document.getElementById("dl"), meta = document.getElementById("meta"), cnt = document.getElementById("count");
   var url = dl.href;
