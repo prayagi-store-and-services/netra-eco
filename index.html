@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-lzi+vjB/DPlATs2yuSSlwmlP3w7ZjH86yg+owUgPJhA=' 'sha256-lRX71ZO7yKQXAam3CZOz0JOjUZ0eL4qG3FLIn474Kl0='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com https://formsubmit.co; frame-src 'self' https://www.youtube-nocookie.com; media-src 'self'; form-action 'none'; upgrade-insecure-requests">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-3cIKTJyhZGTP/CKWKKQpp48IDejAWKMNRtXfJ3mW4vA=' 'sha256-lRX71ZO7yKQXAam3CZOz0JOjUZ0eL4qG3FLIn474Kl0='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com https://formsubmit.co; frame-src 'self' https://www.youtube-nocookie.com; media-src 'self'; form-action 'none'; upgrade-insecure-requests">
 <script src="framebust.js"></script>
 <script src="counter.js"></script><meta name="referrer" content="strict-origin-when-cross-origin"><script src="https://prayagi-store-and-services.github.io/netra-eco/geoblock.js"></script>
 <meta charset="utf-8">
@@ -108,7 +108,7 @@ footer{border-top:1px solid var(--line)}
 <label for="cf-whatsapp">WhatsApp number (required, with country code, e.g. +91 98765 43210)</label><input id="cf-whatsapp" name="whatsapp" type="tel" required pattern="\+?[0-9 \(\)\-]{10,18}" maxlength="20" inputmode="tel">
 <label for="cf-phone">Calling number (optional - leave empty if the same as WhatsApp)</label><input id="cf-phone" name="phone" type="tel" maxlength="20" inputmode="tel">
 <label for="cf-message">Message (optional)</label><textarea id="cf-message" name="message" rows="3" maxlength="800"></textarea>
-<button class="go" type="submit">Send</button><div id="cmsg" class="sub"></div></form>
+<p class="sub" id="contact-data-notice">Your name, email, WhatsApp number, any calling number and message you enter are sent to the developer through FormSubmit to answer your enquiry. They are not added to the public feedback list. Do not include passwords or private documents. <a href="legal/data-safety.html">Read how Netra uses data</a>.</p><label><input type="checkbox" id="contact-consent" required aria-describedby="contact-data-notice"> I agree to send these details for a reply. I can leave this box unchecked and not send.</label><button class="go" type="submit">Send</button><div id="cmsg" class="sub"></div></form>
 <p class="sub">We cannot verify a WhatsApp number from a website, so the number you type is used as entered. Please double check it.</p></section>
 </main>
 <footer>Netra Ecosystem - Netra by Prayagi Team. Developer: Deepak Kushwaha. Values shown are read live; if a value cannot be read it says "Unavailable". Business site: <a href="https://prayagi-store-and-services.github.io/">Prayagi Store &amp; Services</a>. <a href="https://prayagi-store-and-services.github.io/meet-the-team/">Company profile</a>. <a href="legal/">Legal &amp; data</a>. Netra on social: <a href="https://www.youtube.com/@NetraEcosystem" rel="noopener noreferrer">YouTube</a>, <a href="https://www.instagram.com/netraecosystem/" rel="noopener noreferrer">Instagram</a>, <a href="https://www.facebook.com/netraecosystem" rel="noopener noreferrer">Facebook</a>, <a href="https://x.com/netraecosystem" rel="noopener noreferrer">X</a>.</footer>
@@ -199,6 +199,7 @@ fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).the
 });
 var f=document.getElementById("cform");
 f.addEventListener("submit",function(e){e.preventDefault();var m=document.getElementById("cmsg");
+ if(!document.getElementById("contact-consent").checked){m.textContent="Please agree to send your contact details before sending.";return}
  var wa=f.whatsapp.value.replace(/[^0-9+]/g,"");
  if(wa.replace(/\D/g,"").length<10){m.textContent="Please enter a valid WhatsApp number.";return}
  m.textContent="Sending...";
