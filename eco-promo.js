@@ -53,3 +53,17 @@ function measure(){var r=document.documentElement.style;r.setProperty("--netra-h
 measure();if(window.ResizeObserver){var observer=new ResizeObserver(measure);observer.observe(head);observer.observe(foot)}
 window.addEventListener("resize",measure,{passive:true});
 })();
+
+/* Weekly release commitment for the standalone app websites. No network calls or completion claim. */
+(function(){
+"use strict";
+var sites=["/-Battery-Sentinel-Pro-Netra/","/netra-hub/","/KBC/"];
+if(sites.indexOf(location.pathname)<0||document.getElementById("weekly-security"))return;
+var foot=document.querySelector("footer");if(!foot)return;
+var sec=document.createElement("section");sec.id="weekly-security";sec.setAttribute("aria-label","Weekly security commitment");
+sec.style.cssText="box-sizing:border-box;max-width:1100px;margin:16px auto;padding:18px 16px;border:1px solid var(--line,#22314f);border-radius:16px;background:var(--card,#121c30);color:var(--text,#e8eefc);overflow-wrap:anywhere";
+var h=document.createElement("h2");h.textContent="Weekly security commitment";h.style.cssText="font-size:1.25rem;margin:0 0 12px";sec.appendChild(h);
+var p=document.createElement("p");p.textContent="Netra Ecosystem will provide a weekly security patch on Saturday or Sunday.";sec.appendChild(p);
+var note=document.createElement("p");note.textContent="This is a release commitment, not a claim that every app has already received this week's patch.";note.style.cssText="font-size:.9rem;color:var(--mute,#9db0d0)";sec.appendChild(note);
+foot.parentNode.insertBefore(sec,foot);
+})();
