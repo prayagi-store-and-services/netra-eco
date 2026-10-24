@@ -28,7 +28,7 @@ ${paused ? `<aside role="note" style="border:2px solid #fbbf24;border-radius:12p
 <p id="open" hidden><a class="btn btn2" href="intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=${esc(p.package)};S.browser_fallback_url=${encodeURIComponent('https://prayagi-store-and-services.github.io/netra-eco/app/' + p.code + '/')};end">Open app (if installed)</a></p>
 <p id="meta" class="sub">Loading the latest version...</p>
 <p id="count" class="sub"></p>
-<p class="sub">Android only. On an Android phone the Open app button launches the app if it is installed; if Android cannot find it, you stay on this page to download it. A browser cannot always tell whether an app is installed. Allow installs from your browser once if Android asks. Downloads started from this page are counted anonymously (no cookies, no personal data).</p>
+${paused ? "" : `<p class="sub">Android only. On an Android phone the Open app button launches the app if it is installed; if Android cannot find it, you stay on this page to download it. A browser cannot always tell whether an app is installed. Allow installs from your browser once if Android asks. Downloads started from this page are counted anonymously (no cookies, no personal data).</p>`}
 ${p.site ? `<p><a href="${esc(p.site)}">About ${esc(p.name)}</a></p>` : ''}
 ${p.privacy ? `<p class="sub">Legal: <a href="${esc(p.privacy)}">Privacy policy</a> &middot; <a href="../../legal/data-safety.html#${esc(p.code)}">Data safety</a> &middot; <a href="../../legal/">All legal documents</a></p>` : ''}
 </main>
