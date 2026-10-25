@@ -4,8 +4,11 @@
 (function () {
   "use strict";
   var m = document.getElementById("app"); if (!m) return;
-  var code = m.getAttribute("data-code"), repo = m.getAttribute("data-repo");
-  if (!/^[a-z0-9]{2,12}$/.test(code) || !/^prayagi-store-and-services\/[A-Za-z0-9._-]+$/.test(repo)) return;
+  var code = m.getAttribute("data-code"), repo = m.getAttribute("data-repo") || "";
+  var dlOverride = m.getAttribute("data-download") || "", latestUrl = m.getAttribute("data-latest") || "";
+  if (!/^[a-z0-9]{2,12}$/.test(code)) return;
+  if (repo && !/^prayagi-store-and-services\/[A-Za-z0-9._-]+$/.test(repo)) return;
+  if (!repo && !dlOverride) return;
   // Human Safety-only temporary hold. Do not fetch or wire a download fallback while paused.
   if (repo === "prayagi-store-and-services/netra-hub") {
     var pausedDownload = document.getElementById("dl");
@@ -35,6 +38,16 @@
       cnt.textContent = typeof v === "number" ? "Downloads counted on this page: " + v.toLocaleString() : "";
     });
   }
+  if (!repo && latestUrl) {
+    fetch(latestUrl, { cache: "no-store" }).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (x) {
+      var parts = [];
+      if (x && typeof x.tag === "string" && x.tag) parts.push(x.tag);
+      if (x && Number.isFinite(x.size) && x.size > 0) parts.push((x.size / 1048576).toFixed(1) + " MB");
+      var sha = x && typeof x.sha256 === "string" ? x.sha256 : "";
+      parts.push("SHA-256: " + (/^[0-9a-f]{64}$/.test(sha) ? sha : "Unavailable"));
+      meta.textContent = parts.length ? parts.join(" - ") : "Version details Unavailable right now. The button still downloads the latest APK.";
+    }).catch(function () { meta.textContent = "Version details Unavailable right now. The button still downloads the latest APK."; });
+  } else
   fetch("https://api.github.com/repos/" + repo + "/releases/latest", { cache: "no-store" }).then(function (r) { if (!r.ok) throw 0; return r.json(); }).then(function (x) {
     var al = (x.assets || []).filter(function (a) { return /\.apk$/i.test(a.name); });
     var a = al.filter(function (y) { return y.name !== "app-release.apk"; })[0] || al[0];
