@@ -720,7 +720,7 @@
     },
     {
       "title": "Netra Charge: four charging announcements (Connected, Disconnected, Full charge, Low battery) for Android and Windows, plus an iPhone Shortcuts setup guide. First release.",
-      "status": "In testing: code and automatic checks exist, no device test yet. Release only after the checks pass; the 24 Oct 22:32 time is a target, not a promise.",
+      "status": "Released 25 Oct 2026: Android v0.1.0 on the Netra Eco website.",
       "eta": "2026-10-24T22:32:00+05:30",
       "apps": [
         "netra-charge"
