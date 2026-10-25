@@ -1,0 +1,9 @@
+{
+  "tag": "v0.1.0",
+  "versionName": "0.1.0",
+  "versionCode": 1,
+  "apkFile": "app-release.apk",
+  "sha256": "1119987250ea79e3d2d0c6b8895dd77d25c7078ec9dfd449b0028ee7400204ae",
+  "size": 656862,
+  "notes": "English Connected, Disconnected, Full charge and Low battery announcements. Saved Android low-battery threshold: default 15%, adjustable 5-50% in 5% steps. Normal Android announcements require the screen off and no active media. Blocked events are skipped, not replayed later; the app does not pause, duck or mute media. No periodic battery-percentage announcement. CI unit/platform and native UI tests passed. Physical installation, spoken-audio and OEM media behavior have not yet been verified."
+}
