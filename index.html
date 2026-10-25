@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-lFJL/wObJ3l3v1GGkYTmrilMp0iTUbWHaDJjRqPLuKQ=' 'sha256-lRX71ZO7yKQXAam3CZOz0JOjUZ0eL4qG3FLIn474Kl0='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com https://formsubmit.co; frame-src 'self' https://www.youtube-nocookie.com; media-src 'self'; form-action 'none'; upgrade-insecure-requests">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-XDbH21Oj6GlkI8FSdb095TeaGxQ4Li8b5SOkrLFQi+I=' 'sha256-lRX71ZO7yKQXAam3CZOz0JOjUZ0eL4qG3FLIn474Kl0='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com https://formsubmit.co; frame-src 'self' https://www.youtube-nocookie.com; media-src 'self'; form-action 'none'; upgrade-insecure-requests">
 <script src="framebust.js"></script>
 <script src="counter.js"></script><meta name="referrer" content="strict-origin-when-cross-origin"><script src="https://prayagi-store-and-services.github.io/netra-eco/geoblock.js"></script>
 <meta charset="utf-8">
@@ -138,9 +138,11 @@ fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).the
   var act=el("div");if(p.site){var site=el("a","btn","Open "+p.name+" website");site.href=p.site;act.appendChild(site)}
   var paused=p.repo==="prayagi-store-and-services/netra-hub";
   if(paused){b.appendChild(el("p","sub",'Filhaal Netra Human Safety ko install ya use na karein. Phone garam hone aur battery tezi se ghatne ki reports mili hain. Installed ho toh abhi uninstall kar dein. Jaancha hua fix verify hone tak download band rahega; sirf naya version aa jana fix ka saboot nahi hai.'));}
-  var dl0=el("a","btn","Download latest APK");dl0.href="https://github.com/"+p.repo+"/releases/latest/download/app-release.apk";if(paused){dl0.removeAttribute("href");dl0.setAttribute("aria-disabled","true");dl0.textContent="Download temporarily paused";}act.insertBefore(dl0,act.firstChild);b.appendChild(act);
+  var dl0=el("a","btn","Download latest APK");dl0.href=p.download||("https://github.com/"+p.repo+"/releases/latest/download/app-release.apk");if(paused){dl0.removeAttribute("href");dl0.setAttribute("aria-disabled","true");dl0.textContent="Download temporarily paused";}act.insertBefore(dl0,act.firstChild);b.appendChild(act);
   w.appendChild(b);s.appendChild(w);box.appendChild(s);
-  gh("repos/"+p.repo+"/releases/latest").then(function(x){
+  if(!p.repo&&p.latestJson){fetch(p.latestJson,{cache:"no-store"}).then(function(r){return r.ok?r.json():null}).catch(function(){return null}).then(function(x){
+   if(x&&x.tag){showReleaseField(rel,x.tag);if(Number.isFinite(x.size)&&x.size>0)showReleaseField(sz,(x.size/1048576).toFixed(1)+" MB");dl0.textContent="Download "+x.tag+" APK"}})}
+  else if(p.repo)gh("repos/"+p.repo+"/releases/latest").then(function(x){
    if(x&&x.tag_name){showReleaseField(rel,x.tag_name);if(x.published_at)showReleaseField(rt,when(x.published_at));
     var al=(x.assets||[]).filter(function(y){return /\.apk$/i.test(y.name)});var k=al.filter(function(y){return y.name!=="app-release.apk"})[0]||al[0];if(k){if(Number.isFinite(k.size)&&k.size>0)showReleaseField(sz,(k.size/1048576).toFixed(1)+" MB");if(!paused){dl0.href=k.browser_download_url;dl0.textContent="Download "+x.tag_name+" APK"}}}
 })
@@ -176,7 +178,7 @@ fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).the
  var loadStats=function(){
   function vk(id){return id==="battery-sentinel"?"visits":"visits-"+id}
   function cnt(k){return NetraCounter.get(k)}
-  var rows=d.projects.map(function(p){return Promise.all([p.site?cnt(vk(p.id)):Promise.resolve(null),gh("repos/"+p.repo+"/releases?per_page=100")]).then(function(a){
+  var rows=d.projects.map(function(p){return Promise.all([p.site?cnt(vk(p.id)):Promise.resolve(null),p.repo?gh("repos/"+p.repo+"/releases?per_page=100"):Promise.resolve(null)]).then(function(a){
    var t=null,last=null;if(a[1]){t=0;a[1].forEach(function(x){if(x.draft)return;(x.assets||[]).forEach(function(y){if(/\.apk$/i.test(y.name))t+=(y.download_count||0)});if(!last)last=x})}
    return {p:p,v:a[0],t:t,last:last}})});
   Promise.all([cnt("visits-eco"),Promise.all(rows)]).then(function(a){

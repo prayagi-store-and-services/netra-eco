@@ -18,13 +18,13 @@ function page(p) {
 <link rel="stylesheet" href="../app.css">
 </head>
 <body>
-<main id="app" data-code="${esc(p.code)}" data-repo="${esc(p.repo)}" data-name="${esc(p.name)}" data-icon="${esc(p.icon || '')}">
+<main id="app" data-code="${esc(p.code)}" data-repo="${esc(p.repo || '')}" data-name="${esc(p.name)}" data-icon="${esc(p.icon || '')}"${p.download ? ` data-download="${esc(p.download)}"` : ''}${p.download && p.latestJson ? ` data-latest="${esc(p.latestJson)}"` : ''}>
 <p class="back"><a href="../../">Netra Ecosystem</a></p>
 <h1>${esc(p.name)}</h1>
 <p class="type">${esc(p.type || '')}</p>
 <p>${esc(p.summary)}</p>
 ${paused ? `<aside role="note" style="border:2px solid #fbbf24;border-radius:12px;padding:16px;overflow-wrap:anywhere"><p>${esc(notice)}</p></aside>
-<p><button id="dl" class="btn" type="button" disabled>Download temporarily paused</button></p>` : `<p><a id="dl" class="btn" href="https://github.com/${esc(p.repo)}/releases/latest/download/app-release.apk">Download APK</a></p>`}
+<p><button id="dl" class="btn" type="button" disabled>Download temporarily paused</button></p>` : `<p><a id="dl" class="btn" href="${p.download ? esc(p.download) : `https://github.com/${esc(p.repo)}/releases/latest/download/app-release.apk`}">Download APK</a></p>`}
 <p id="open" hidden><a class="btn btn2" href="intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=${esc(p.package)};S.browser_fallback_url=${encodeURIComponent('https://prayagi-store-and-services.github.io/netra-eco/app/' + p.code + '/')};end">Open app (if installed)</a></p>
 <p id="meta" class="sub">Loading the latest version...</p>
 <p id="count" class="sub"></p>

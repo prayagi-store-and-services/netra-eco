@@ -10,7 +10,7 @@
 <body>
 <p><a href="../">&larr; Netra Ecosystem</a> &middot; <a href="./">Legal &amp; data</a></p>
 <h1>Data safety declarations</h1>
-<p>Last updated: October 24, 2026. What data each Netra app handles, in the style of an app-store data-safety form. The apps are distributed directly from this website, not through an app store; this page is our own disclosure, not a store certification.</p>
+<p>Last updated: October 25, 2026. What data each Netra app handles, in the style of an app-store data-safety form. The apps are distributed directly from this website, not through an app store; this page is our own disclosure, not a store certification.</p>
 <h2>Common to all apps</h2>
 <ul>
 <li><b>No account, no ads, no data sale.</b></li>
@@ -25,6 +25,7 @@
 <table>
 <tr><th>App</th><th>Kept on your phone</th><th>Sent off the phone</th><th>Anonymous counter</th><th>Sold / shared</th></tr>
 <tr id="bspn"><td><b>Battery Sentinel Pro Netra</b></td><td>Battery, charging, temperature and device status, shown to you on your phone.</td><td>Feedback and crash reports only after the app shows you exactly what will be sent and asks each time (its own policy lists the exact fields). Weather lookups send rounded coordinates to Open-Meteo. Optional, user-started AI diagnostics send battery telemetry (no personal identifiers) to Google Gemini.</td><td>Yes (Settings)</td><td>Nothing sold; feedback only with your consent each time.</td></tr>
+<tr id="charge"><td><b>Netra Charge</b></td><td>The low-battery threshold you choose (15% by default). Battery and charger state, screen-on and media-playback status are processed in memory on the phone to decide when to speak; they are not stored by the app. Android app backup is disabled in the manifest (allowBackup=false).</td><td>Nothing by the app itself: it does not request the internet permission and contains no network, analytics or upload code - no update checks, no counters, no crash reports. Spoken announcements are produced by the Android text-to-speech engine installed on your phone, which is not part of the app.</td><td>No (not used in this app)</td><td>Nothing sold or shared.</td></tr>
 <tr id="hub"><td><b>Netra Hub</b></td><td>Sensor readings, SOS contacts and settings. SOS SMS goes only to contacts you add, only when you enable and trigger it.</td><td>Earthquake feature sends your coordinates to the USGS earthquake API. Crash reports only when you review and send them yourself (limited fields, see privacy policy). Public NDMA alert feed fetch.</td><td>Yes (Settings)</td><td>Nothing sold or shared beyond the listed services.</td></tr>
 <tr id="kbc"><td><b>Netra KBC</b></td><td>Quiz progress and the profile you fill in.</td><td>Crash reports only when you review and send them yourself (limited fields). Question pool download from GitHub. A dynamic-question feature designed to send profile details to Google Gemini exists in the code but is not active in the current release (no API key configured), so profile details stay on the phone.</td><td>Yes (Settings)</td><td>Nothing sold or shared beyond the listed services.</td></tr>
 <tr id="privacy"><td><b>Netra Privacy Guard</b></td><td>Microphone/camera transparency results and monitoring data. No audio is sent anywhere.</td><td>Crash reports only when you review and send them yourself (limited fields). Blocklist download from GitHub.</td><td>Yes (Settings)</td><td>Nothing sold or shared beyond the listed services.</td></tr>
@@ -38,6 +39,7 @@
 <li><a href="https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/privacy.html">Battery Sentinel Pro Netra privacy policy</a></li>
 <li><a href="privacy-hub.html">Netra Hub privacy policy</a></li>
 <li><a href="privacy-kbc.html">Netra KBC privacy policy</a></li>
+<li><a href="privacy-charge.html">Netra Charge privacy policy</a></li>
 <li><a href="privacy-guard.html">Netra Privacy Guard privacy policy</a></li>
 <li><a href="privacy-player.html">Netra Player privacy policy</a></li>
 <li><a href="privacy-trikaal.html">Netra Trikaal privacy policy</a></li>

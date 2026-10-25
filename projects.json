@@ -83,6 +83,17 @@
       "icon": "https://prayagi-store-and-services.github.io/netra-eco/logo.svg",
       "code": "eco",
       "privacy": "../../legal/privacy-eco.html"
+    },
+    {
+      "id": "netra-charge",
+      "package": "com.netracharge.app",
+      "name": "Netra Charge",
+      "type": "Battery and charger voice announcements",
+      "summary": "A very small free app that speaks four things: Connected, Disconnected, Full charge and Low battery (15% by default, adjustable). For Android, with a Shortcuts setup guide for iPhone.",
+      "code": "charge",
+      "download": "https://prayagi-store-and-services.github.io/netra-eco/downloads/netra-charge/app-release.apk",
+      "latestJson": "https://prayagi-store-and-services.github.io/netra-eco/downloads/netra-charge/latest.json",
+      "privacy": "../../legal/privacy-charge.html"
     }
   ],
   "upcoming": [
@@ -95,25 +106,6 @@
         "Voice commands for the Netra apps, on-device",
         "Understands Hindi and Hinglish",
         "First beta (v0.4.0-beta.1) in private testing"
-      ]
-    },
-    {
-      "id": "netra-charge",
-      "name": "Netra Charge",
-      "type": "Charging voice announcements (in testing, private)",
-      "summary": "A very small free app that speaks four things: Connected, Disconnected, Full charge and Low battery. For Android and Windows, with a Shortcuts setup guide for iPhone. In testing, not released yet.",
-      "eta": "2026-10-24T22:32:00+05:30",
-      "targets": [
-        {
-          "label": "Public release target",
-          "eta": "2026-10-24T22:32:00+05:30",
-          "note": "Approximate. Release depends on tested features and green checks."
-        }
-      ],
-      "features": [
-        "Speaks Connected, Disconnected, Full charge and Low battery (15%)",
-        "Android app and Windows tray app, English",
-        "iPhone: Shortcuts setup guide (iPhone uses Shortcuts, not a native background app)"
       ]
     },
     {
