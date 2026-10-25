@@ -122,6 +122,8 @@ function noteLines(body){
 function whatsNewFamily(box){
  fetch("projects.json",{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
   return Promise.all((d.projects||[]).map(function(p){
+   if(!p.repo&&p.latestJson)return fetch(p.latestJson,{cache:"no-store"}).then(function(r){return r.ok?r.json():null}).catch(function(){return null}).then(function(x){return{p:p,x:x&&x.tag?{tag_name:x.tag,published_at:null,html_url:"app/"+p.code+"/",body:x.notes||""}:null}});
+   if(!p.repo)return Promise.resolve({p:p,x:null});
    return fetch("https://api.github.com/repos/"+p.repo+"/releases/latest").then(function(r){return r.ok?r.json():null}).catch(function(){return null}).then(function(x){return{p:p,x:x}})}));
  }).then(function(rows){
   box.innerHTML="";
