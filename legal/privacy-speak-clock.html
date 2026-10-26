@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com; frame-src 'none'; media-src 'none'; form-action 'none'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin"><script src="framebust.js"></script><script src="../counter.js"></script><script src="https://prayagi-store-and-services.github.io/netra-eco/geoblock.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Privacy notice - Netra Speak Clock - Netra Ecosystem</title>
+<link rel="icon" type="image/svg+xml" href="../logo.svg">
+<style>body{font-family:system-ui,sans-serif;max-width:760px;margin:0 auto;padding:20px;line-height:1.55;color:#14202b}h1,h2{line-height:1.2}a{color:#0b6b3a}code{overflow-wrap:anywhere}table{border-collapse:collapse;width:100%}td,th{border:1px solid #ccc;padding:6px;text-align:left;font-size:.92rem;vertical-align:top}</style>
+</head>
+<body>
+<p><a href="../">&larr; Netra Ecosystem</a> &middot; <a href="./">Legal &amp; data</a></p>
+<h1>Privacy notice - Netra Speak Clock</h1>
+<p>Draft reviewed: October 26, 2026. Not effective for a released app yet.</p>
+<p><strong>Unreleased candidate:</strong> This app-specific notice describes Netra Speak Clock v1.0, package <code>com.aistudio.speakclock.qvnzpt</code>, under review. It is not a release announcement or a completed privacy, security or battery audit. Final release behavior and permissions must match this notice before publication as an effective policy.</p>
+<h2>What the app does</h2>
+<p>Netra Speak Clock announces the current time using an installed Android text-to-speech engine. It schedules clock-aligned announcements and checks screen, quiet-hours, call and audio conditions before speaking. It does not require an account.</p>
+<h2>Information on your device</h2>
+<p>The app stores settings in its private local storage. These include the enabled state, interval, quiet hours, language, selected voice, speech rate and pitch, night volume, and the next scheduled boundary.</p>
+<p>It stores up to 20 local diagnostic entries. Each can include a timestamp, formatted time, playback or skipped-announcement result, battery reading or Unavailable, screen state, and a short eligibility or playback reason. A separate latest-outcome field summarizes the most recent entry.</p>
+<p>To avoid repeating an announcement, it stores up to 128 consumed local clock-boundary keys and an internal settings-generation value. A consumed key records a local clock boundary, not a recording of speech.</p>
+<p>The app does not upload these settings or logs. It does not contain analytics, advertising, an account sign-in or an in-app cloud service. The current app manifest does not request Internet access.</p>
+<h2>Permissions and device checks</h2>
+<p>- Alarms &amp; reminders: schedules precise future time announcements. If access is unavailable, automatic announcements pause rather than use an imprecise fallback.
+- Boot completed: restores future schedules after device restart. It does not announce past times.
+- Phone state: on devices with telephony, checks whether a detected call is active so the app can skip or stop speech. It does not read call content, call recordings, contacts or phone numbers, and does not store call details. Automatic audio fails closed when the required call-state access is missing. Multi-SIM, VoIP and manufacturer-specific call behavior are not guaranteed.
+- Notifications and media-playback foreground service: show a short-lived notification while preparing or playing an announcement.
+- Wake lock: briefly keeps the processor available during an utterance, with a bounded timeout. There is no continuously running clock service.</p>
+<p>The app checks screen state and audio state and requests temporary audio focus. Other apps may choose how to respond to audio focus. It does not control their playback buttons. It does not request microphone, location, contacts or notification-listener access.</p>
+<h2>Text-to-speech providers</h2>
+<p>The app accepts installed voices that the provider marks as not requiring a network connection. The time text is handed to the system-configured Android TTS engine using your chosen offline voice. That engine is a separate app or system component and may have its own permissions and privacy policy. This app cannot guarantee the behavior of every provider. Review your device&#x27;s TTS engine and offline voice settings.</p>
+<h2>Retention and deletion</h2>
+<p>Diagnostic entries are capped at 20; consumed boundary keys are capped at 128. You can clear diagnostic logs in the app, which also clears the latest-outcome field. Clearing logs does not clear duplicate-suppression keys, which helps avoid replaying an already consumed boundary. Settings and those keys remain until app data is cleared or the app is uninstalled. Device backups and app-data transfer are excluded by the app&#x27;s configuration. Android and device-maker behavior can vary.</p>
+<h2>Sharing</h2>
+<p>The app does not sell or transmit your local app data. If you choose to contact support or send a screenshot or diagnostic details yourself, that separate communication may contain information you choose to share. Do not include passwords or signing keys.</p>
+<h2>Android permissions in the reviewed candidate</h2>
+<p>The candidate declares <code>SCHEDULE_EXACT_ALARM</code>, <code>RECEIVE_BOOT_COMPLETED</code>, <code>WAKE_LOCK</code>, <code>READ_PHONE_STATE</code>, <code>POST_NOTIFICATIONS</code>, <code>FOREGROUND_SERVICE</code> and <code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code>. AndroidX also declares an app-specific signature permission to protect internal receiver delivery. None grants microphone recording or internet access.</p>
+<h2>Website activity is separate</h2>
+<p>This notice describes the app, not the Netra Ecosystem website. Website visits and feedback have their own data handling, described in <a href="data-safety.html">Data safety</a>. Visiting this website is not evidence that the app transmits your settings or diagnostic logs.</p>
+<h2>Contact and changes</h2>
+<p>For a question, use <a href="../#ratings">Netra Ecosystem feedback</a> and identify Netra Speak Clock. Feedback is public. Do not post private diagnostic details, passwords or personal documents. This website cannot remotely read or erase app data on your phone. Use the local deletion controls described above.</p>
+<p>A release policy will show its effective date. Material changes will be described here.</p>
+<p><a href="./">Legal &amp; data</a> &middot; <a href="data-safety.html">Data safety</a></p>
+</body></html>
