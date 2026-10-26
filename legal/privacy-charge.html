@@ -10,15 +10,23 @@
 <body>
 <p><a href="../">&larr; Netra Ecosystem</a> &middot; <a href="./">Legal &amp; data</a></p>
 <h1>Privacy policy - Netra Charge</h1>
-<p>Last updated: October 25, 2026. Developer contact: prayagideepak@gmail.com.</p>
-<h2>The app, in short</h2>
+<p>Last updated: October 26, 2026. Contact: <a href="../#ratings">Netra Ecosystem feedback</a>.</p>
+<p><strong>Version scope:</strong> The sections below headed "Existing app" describe the Netra Charge app with package <code>com.netracharge.app</code>. A separate, unreleased replacement is being reviewed. Its different local-history and restart behavior is listed under "Unreleased replacement". This notice is not a release announcement or a completed privacy audit of that replacement.</p>
+<h2>Existing app: in short</h2>
 <p>Netra Charge speaks four battery and charger announcements: Connected, Disconnected, Full charge and Low battery. The low-battery threshold you choose (15% by default) is stored privately on your phone. The app does not create an account, does not show ads, and does not sell your data.</p>
-<h2>What the app reads on your phone</h2>
+<h2>Existing app: what it reads on your phone</h2>
 <p>To decide when to speak, the app reads the battery and charger state, whether the screen is on, and whether media is playing. These are processed in memory on the phone at that moment; the app does not store them and does not upload them.</p>
-<h2>Permissions</h2>
+<h2>Existing app: permissions</h2>
 <p>Foreground service (special use), so the charging announcer can keep running in the background, and Notifications, so the announcer can show its status. The app does not request the internet, location, contacts, microphone or phone-call permissions.</p>
-<h2>Network use</h2>
+<h2>Existing app: network use</h2>
 <p>The app does not request the internet permission and its code contains no network, analytics or upload calls: no update checks, no usage counters, no crash reports, no account. This app also does not use the anonymous usage counter described on the Data safety page.</p>
+<h2>Unreleased replacement: local history and settings</h2>
+<p>The replacement under review uses package <code>com.aistudio.netracharge.nxpt</code>. It reads battery and charger state, screen state and media-playing state to decide whether to request an announcement. It stores a local charging-event history in its private Room database, <code>netra_charge.db</code>. Each record contains an internal record ID, time, event type (connected, disconnected, full charge or low battery), battery percentage, charging state, plug type, whether speech was requested, and a skip reason such as screen on, media playing or disabled. A speech-request record does not prove the TTS engine finished speaking.</p>
+<p>The history screen shows the latest 100 records; that display limit does not delete older records. The current source has no automatic expiry. Use the History screen's Clear History button and confirm Clear All to delete the stored history. Android's Clear storage or uninstall also removes the app's local data. These deletion routes have been checked in source, not yet verified in an installed replacement build.</p>
+<p>The replacement also stores monitoring, announcement, low-battery-threshold and start-on-boot choices privately on the phone. Screen and media state are not recorded as a continuous activity log, but the reason for skipping an announcement can reveal screen-on or media-playing state at that event.</p>
+<h2>Unreleased replacement: permissions and restart behavior</h2>
+<p>Its source manifest declares foreground service (special use), notification and receive-boot-completed permissions, with Android app backup disabled. A receiver handles phone restart and app-package replacement. It attempts to start monitoring only when both monitoring and start-on-boot settings are enabled. Both settings default to enabled in the current source. Android and phone-maker restrictions can still prevent background restart; automatic recovery is not guaranteed.</p>
+<p>The replacement source manifest does not declare internet, location, contacts, microphone or phone-call permissions. The final merged permissions, dependencies and upload behavior still require release-artifact review before this replacement can be described as privacy-verified. Local-history disclosure here is not evidence that the replacement has been released or passed that review.</p>
 <h2>Spoken announcements</h2>
 <p>The announcement words are spoken by the Android text-to-speech (TTS) engine installed on your phone. That engine is not part of Netra Charge. Which voices are available, and whether a voice works offline, depends on your phone's TTS engine and its voice data, which are outside the app's control.</p>
 <h2>Android backup</h2>
@@ -26,6 +34,6 @@
 <h2>Website downloads</h2>
 <p>The Netra Ecosystem website counts visits and downloads with its own anonymous increment-only counter, as described in the website section of the <a href="data-safety.html">Data safety</a> page. This is website activity, separate from the app itself.</p>
 <h2>Contact</h2>
-<p>To ask about, correct or delete something, email prayagideepak@gmail.com. Changes to this policy will be posted on this page with a new date.</p>
+<p>For a question or complaint, use <a href="../#ratings">Netra Ecosystem feedback</a> and choose Netra Charge. Feedback is shown publicly: do not post private charging records, passwords or personal documents there. This website cannot remotely read or erase the replacement's on-device history; use the local deletion controls described above. Changes to this policy will be posted on this page with a new date.</p>
 <p><a href="./">Legal &amp; data</a> &middot; <a href="data-safety.html">Data safety</a></p>
 </body></html>
