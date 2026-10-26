@@ -9,12 +9,20 @@
   if (!/^[a-z0-9]{2,12}$/.test(code)) return;
   if (repo && !/^prayagi-store-and-services\/[A-Za-z0-9._-]+$/.test(repo)) return;
   if (!repo && !dlOverride) return;
-  // Human Safety-only temporary hold. Do not fetch or wire a download fallback while paused.
+  // Human Safety has no latest/history fallback. Fail closed until this exact asset verifies.
   if (repo === "prayagi-store-and-services/netra-hub") {
-    var pausedDownload = document.getElementById("dl");
-    if (pausedDownload) { pausedDownload.removeAttribute("href"); pausedDownload.setAttribute("aria-disabled", "true"); pausedDownload.textContent = "Download temporarily paused"; }
-    var pausedMeta = document.getElementById("meta");
-    if (pausedMeta) pausedMeta.textContent = "Download temporarily paused";
+    var hubDl=document.getElementById("dl"),hubMeta=document.getElementById("meta");
+    hubDl.removeAttribute("href");hubDl.setAttribute("aria-disabled","true");hubDl.textContent="Download temporarily paused";
+    hubMeta.textContent="Checking v1.5.2 release. Download stays paused if verification fails.";
+    function validHubRelease(x){
+ if(!x||x.tag_name!=="v1.5.2"||x.draft||x.prerelease||!x.published_at||isNaN(Date.parse(x.published_at)))return null;
+ return (x.assets||[]).filter(function(a){return a.name==="app-release.apk"&&a.state==="uploaded"&&a.size===4439086&&a.digest==="sha256:0f07aa1681888893b4e27ad194783d0ab41afc0d05787de14cd0f189e85f4245"&&a.browser_download_url==="https://github.com/prayagi-store-and-services/netra-hub/releases/download/v1.5.2/app-release.apk"})[0]||null;
+}
+    fetch("https://api.github.com/repos/"+repo+"/releases/tags/v1.5.2",{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(x){
+      var a=validHubRelease(x);if(!a)throw 0;
+      hubDl.href=a.browser_download_url;hubDl.removeAttribute("aria-disabled");hubDl.textContent="Download v1.5.2 APK";
+      hubMeta.textContent="v1.5.2 - 4.2 MB - SHA-256: "+a.digest.slice(7);
+    }).catch(function(){hubMeta.textContent="Release status unavailable. Download stays paused; older builds are not offered."});
     return;
   }
   var weekly = document.createElement("section");
