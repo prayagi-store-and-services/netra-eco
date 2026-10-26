@@ -8,12 +8,22 @@
 var me=document.currentScript,repo=me&&me.getAttribute("data-repo"),name=me&&me.getAttribute("data-name")||"this app",mode=me&&me.getAttribute("data-mode")||"full";
 if(!repo||!/^prayagi-store-and-services\/[A-Za-z0-9._-]+$/.test(repo))return;
 function mk(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e}
-/* Temporary Human Safety-only pause. A new release never lifts this guard. */
+/* Human Safety uses an exact, approved release only. Never fall through to latest or historic APK links. */
 if(repo==="prayagi-store-and-services/netra-hub"){
  var hold=document.getElementById("netra-downloads");
  if(!hold){hold=mk("section");hold.id="netra-downloads";(document.querySelector("main")||document.body).appendChild(hold)}
- hold.textContent="";hold.appendChild(mk("h2","","Netra Human Safety: Download temporarily paused"));
- hold.appendChild(mk("p","sub",'Filhaal Netra Human Safety ko install ya use na karein. Phone garam hone aur battery tezi se ghatne ki reports mili hain. Installed ho toh abhi uninstall kar dein. Jaancha hua fix verify hone tak download band rahega; sirf naya version aa jana fix ka saboot nahi hai.'));
+ hold.textContent="";
+ var title=mk("h2","","Netra Human Safety: Release checks in progress");hold.appendChild(title);
+ var status=mk("p","sub","Download remains paused until the approved v1.5.2 release is available. v1.5.1 and older builds remain held history.");hold.appendChild(status);
+ fetch("https://api.github.com/repos/"+repo+"/releases/tags/v1.5.2",{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(x){
+  if(x.tag_name!=="v1.5.2"||x.draft||x.prerelease||!x.published_at||isNaN(Date.parse(x.published_at)))throw 0;
+  var a=(x.assets||[]).filter(function(y){return y.name==="app-release.apk"&&y.state==="uploaded"&&y.size===4439086&&y.digest==="sha256:0f07aa1681888893b4e27ad194783d0ab41afc0d05787de14cd0f189e85f4245"&&y.browser_download_url==="https://github.com/prayagi-store-and-services/netra-hub/releases/download/v1.5.2/app-release.apk"})[0];
+  if(!a)throw 0;
+  title.textContent="Netra Human Safety v1.5.2";
+  status.textContent="App-local updater removed. Owner reported heating and battery behavior resolved on the tested build; this is not a measured battery/thermal guarantee. Older held builds are not offered.";
+  var link=mk("a","btn","Download v1.5.2 APK");link.href=a.browser_download_url;hold.appendChild(link);
+  hold.appendChild(mk("p","sub","SHA-256: "+a.digest.slice(7)));
+ }).catch(function(){title.textContent="Netra Human Safety: Release status unavailable";status.textContent="Download stays paused. The approved v1.5.2 release could not be verified. v1.5.1 and older builds remain held history."});
  return;
 }
 var ALIAS="https://github.com/"+repo+"/releases/latest/download/app-release.apk";
