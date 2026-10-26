@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-XDbH21Oj6GlkI8FSdb095TeaGxQ4Li8b5SOkrLFQi+I=' 'sha256-lRX71ZO7yKQXAam3CZOz0JOjUZ0eL4qG3FLIn474Kl0='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com https://formsubmit.co; frame-src 'self' https://www.youtube-nocookie.com; media-src 'self'; form-action 'none'; upgrade-insecure-requests">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-g5PEWCezz/bzigtK8vDOZ8J5U7AO/rhwHBItCwuQqmE=' 'sha256-lRX71ZO7yKQXAam3CZOz0JOjUZ0eL4qG3FLIn474Kl0='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com https://formsubmit.co; frame-src 'self' https://www.youtube-nocookie.com; media-src 'self'; form-action 'none'; upgrade-insecure-requests">
 <script src="framebust.js"></script>
 <script src="counter.js"></script><meta name="referrer" content="strict-origin-when-cross-origin"><script src="https://prayagi-store-and-services.github.io/netra-eco/geoblock.js"></script>
 <meta charset="utf-8">
@@ -124,6 +124,10 @@ function fsq(col){return fetch("https://firestore.googleapis.com/v1/projects/net
 fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).then(function(d){
  document.getElementById("tagline").textContent=d.tagline;
  var nav=document.getElementById("nav"),box=document.getElementById("apps");
+ function validHubRelease(x){
+ if(!x||x.tag_name!=="v1.5.2"||x.draft||x.prerelease||!x.published_at||isNaN(Date.parse(x.published_at)))return null;
+ return (x.assets||[]).filter(function(a){return a.name==="app-release.apk"&&a.state==="uploaded"&&a.size===4439086&&a.digest==="sha256:0f07aa1681888893b4e27ad194783d0ab41afc0d05787de14cd0f189e85f4245"&&a.browser_download_url==="https://github.com/prayagi-store-and-services/netra-hub/releases/download/v1.5.2/app-release.apk"})[0]||null;
+}
  function azKey(n){return String(n||"").trim().toLowerCase().replace(/^netra\s*/,"").replace(/^x\s+/,"")}
  var renderLive=function(p){
   var a=el("a","",p.name);a.href="#"+p.id;nav.appendChild(a);
@@ -136,15 +140,21 @@ fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).the
   [rel,rt,sz].forEach(function(dd){dd.hidden=true;dd.previousElementSibling.hidden=true});
   function showReleaseField(dd,value){if(!value)return;dd.textContent=value;dd.hidden=false;dd.previousElementSibling.hidden=false}
   var act=el("div");if(p.site){var site=el("a","btn","Open "+p.name+" website");site.href=p.site;act.appendChild(site)}
-  var paused=p.repo==="prayagi-store-and-services/netra-hub";
-  if(paused){b.appendChild(el("p","sub",'Filhaal Netra Human Safety ko install ya use na karein. Phone garam hone aur battery tezi se ghatne ki reports mili hain. Installed ho toh abhi uninstall kar dein. Jaancha hua fix verify hone tak download band rahega; sirf naya version aa jana fix ka saboot nahi hai.'));}
-  var dl0=el("a","btn","Download latest APK");dl0.href=p.download||("https://github.com/"+p.repo+"/releases/latest/download/app-release.apk");if(paused){dl0.removeAttribute("href");dl0.setAttribute("aria-disabled","true");dl0.textContent="Download temporarily paused";}act.insertBefore(dl0,act.firstChild);b.appendChild(act);
+  var hub=p.repo==="prayagi-store-and-services/netra-hub";
+  if(hub){b.appendChild(el("p","sub",'v1.5.2 removes the app-local updater. Owner reported heating/battery resolved on the tested build; this is not a measured battery/thermal guarantee. Updates are handled through Netra Ecosystem only. Older builds are not offered.'));}
+  var dl0=el("a","btn","Download latest APK");dl0.href=p.download||("https://github.com/"+p.repo+"/releases/latest/download/app-release.apk");if(hub){dl0.removeAttribute("href");dl0.setAttribute("aria-disabled","true");dl0.textContent="Download temporarily paused";}act.insertBefore(dl0,act.firstChild);b.appendChild(act);
   w.appendChild(b);s.appendChild(w);box.appendChild(s);
   if(!p.repo&&p.latestJson){fetch(p.latestJson,{cache:"no-store"}).then(function(r){return r.ok?r.json():null}).catch(function(){return null}).then(function(x){
    if(x&&x.tag){showReleaseField(rel,x.tag);if(Number.isFinite(x.size)&&x.size>0)showReleaseField(sz,(x.size/1048576).toFixed(1)+" MB");dl0.textContent="Download "+x.tag+" APK"}})}
+  else if(hub){
+   gh("repos/"+p.repo+"/releases/tags/v1.5.2").then(function(x){var a=validHubRelease(x);if(!a)return;
+    showReleaseField(rel,x.tag_name);showReleaseField(rt,when(x.published_at));showReleaseField(sz,(a.size/1048576).toFixed(1)+" MB");
+    dl0.href=a.browser_download_url;dl0.removeAttribute("aria-disabled");dl0.textContent="Download v1.5.2 APK";
+   }).catch(function(){});
+  }
   else if(p.repo)gh("repos/"+p.repo+"/releases/latest").then(function(x){
    if(x&&x.tag_name){showReleaseField(rel,x.tag_name);if(x.published_at)showReleaseField(rt,when(x.published_at));
-    var al=(x.assets||[]).filter(function(y){return /\.apk$/i.test(y.name)});var k=al.filter(function(y){return y.name!=="app-release.apk"})[0]||al[0];if(k){if(Number.isFinite(k.size)&&k.size>0)showReleaseField(sz,(k.size/1048576).toFixed(1)+" MB");if(!paused){dl0.href=k.browser_download_url;dl0.textContent="Download "+x.tag_name+" APK"}}}
+    var al=(x.assets||[]).filter(function(y){return /\.apk$/i.test(y.name)});var k=al.filter(function(y){return y.name!=="app-release.apk"})[0]||al[0];if(k){if(Number.isFinite(k.size)&&k.size>0)showReleaseField(sz,(k.size/1048576).toFixed(1)+" MB");if(!hub){dl0.href=k.browser_download_url;dl0.textContent="Download "+x.tag_name+" APK"}}}
 })
  /*LIVE-END*/};
  /*SOON-START*/
