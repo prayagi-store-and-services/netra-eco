@@ -115,9 +115,15 @@ function clock(){
  t();setInterval(t,1000);
 }
 function noteLines(body){
- var out=[];String(body||"").split(/\r?\n/).forEach(function(l){
-  var m=l.match(/^\s*[-*]\s+(.*)$/);if(m&&out.length<8)out.push(m[1].replace(/\*\*/g,""))});
- return out;
+ return String(body||"").split(/\r?\n/).map(function(l){
+  return l.replace(/^\s*[-*]\s+/,"").replace(/\*\*/g,"").trim();
+ }).filter(function(l){return l.length>0});
+}
+function appendNotes(box,body){
+ var ul=document.createElement("ul"),lines=noteLines(body);
+ if(!lines.length)lines=["No release notes were provided."];
+ lines.forEach(function(t){var li=document.createElement("li");li.textContent=t;ul.appendChild(li)});
+ box.appendChild(ul);
 }
 function whatsNewFamily(box){
  fetch("projects.json",{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(d){
@@ -133,10 +139,7 @@ function whatsNewFamily(box){
    if(!r.x||!r.x.tag_name){var u=document.createElement("span");u.className="sub";u.textContent="Unavailable";h.appendChild(u);box.appendChild(h);return}
    var a=document.createElement("a");a.href=r.x.html_url;a.textContent=r.x.tag_name;h.appendChild(a);
    var dt=document.createElement("span");dt.className="sub";try{dt.textContent="  "+new Date(r.x.published_at).toLocaleString(undefined,{year:"numeric",month:"short",day:"numeric",hour:"numeric",minute:"2-digit"})}catch(e){}h.appendChild(dt);box.appendChild(h);
-   var ul=document.createElement("ul"),lines=noteLines(r.x.body);
-   if(!lines.length){var li0=document.createElement("li");li0.textContent="No detailed notes were written for this release (it only says: "+String(r.x.body||"nothing").replace(/\s+/g," ").trim().slice(0,120)+").";ul.appendChild(li0)}
-   lines.forEach(function(t){var li=document.createElement("li");li.textContent=t;ul.appendChild(li)});
-   box.appendChild(ul)});
+   appendNotes(box,r.x.body)});
  }).catch(function(){box.textContent="Could not load the update notes right now. Please try again later."});
 }
 function whatsNew(){
@@ -149,11 +152,7 @@ function whatsNew(){
   rel.slice(0,3).forEach(function(x){
    var h=document.createElement("h3"),a=document.createElement("a");a.href=x.html_url;a.textContent=x.tag_name;h.appendChild(a);
    var dt=document.createElement("span");dt.className="sub";try{dt.textContent="  "+new Date(x.published_at).toLocaleString(undefined,{year:"numeric",month:"short",day:"numeric",hour:"numeric",minute:"2-digit"})}catch(e){}h.appendChild(dt);box.appendChild(h);
-   var ul=document.createElement("ul"),n=0;
-   String(x.body||"").split(/\r?\n/).forEach(function(l){
-    var m=l.match(/^\s*[-*]\s+(.*)$/);if(m&&n<8){var li=document.createElement("li");li.textContent=m[1].replace(/\*\*/g,"");ul.appendChild(li);n++}});
-   if(!n){var li=document.createElement("li");li.textContent="See the release page for the notes.";ul.appendChild(li)}
-   box.appendChild(ul)});
+   appendNotes(box,x.body)});
  }).catch(function(){box.innerHTML="";var a=document.createElement("span");a.textContent="Could not load the update notes right now. Please try again later.";box.appendChild(a)});
 }
 
