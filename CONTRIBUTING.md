@@ -32,4 +32,4 @@ Every current and future Netra app must show `v<version> | Netra Ecosystem` on i
 
 ## Release notes checklist (compulsory)
 
-No release ships without a filled "What's new". Every fixed bug and every new feature gets one plain-words bullet that is true and can be checked against the pull request or changelog. The default text "Improvements and bug fixes." is no longer accepted. The Netra Ecosystem website reads these bullets live from the GitHub release and shows a release without bullets as "No detailed notes were written", so a missing note stays visible.
+No release ships without a filled "What's new". Every fixed bug and every new feature gets one plain-words bullet that is true and can be checked against the pull request or changelog. The default text "Improvements and bug fixes." is no longer accepted. The Netra Ecosystem website reads the full notes live from the GitHub release, including paragraph notes. Only an empty note is shown as "No release notes were provided."
