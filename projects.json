@@ -8,7 +8,7 @@
       "latestJson": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/latest.json",
       "name": "Netra Battery Sentinel Pro",
       "type": "Battery and device health app",
-      "summary": "Truthful battery, charging and hardware monitoring for Android. Shows \"Unavailable\" when Android does not give a real value.",
+      "summary": "Battery monitoring, protection and power saving for Android. Shows temperature, charging and health, warns when the phone gets hot, and helps you save battery. Works within what Android allows, with no guarantee of a set temperature or battery life. Shows \"Unavailable\" when Android does not give a real value.",
       "repo": "prayagi-store-and-services/-Battery-Sentinel-Pro-Netra",
       "site": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/",
       "icon": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/icon.svg",
