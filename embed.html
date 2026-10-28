@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"><head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-DAzLWPI6OlP/eORH+7HJeJW81jiy8rcO3lrQx4gaVXY='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com https://formsubmit.co; frame-src 'self'; media-src 'self'; form-action 'none'; upgrade-insecure-requests">
+<html lang="en"><head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-NrWLIWb/ONDYsy6T9yJ/Kn50X7tzFf+xwMkVFRBTGws='; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com https://formsubmit.co; frame-src 'self'; media-src 'self'; form-action 'none'; upgrade-insecure-requests">
 <script src="framebust.js"></script><meta name="referrer" content="strict-origin-when-cross-origin"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Netra ratings</title>
 <style>
 :root{--bg:#0b1220;--card2:#17233b;--line:#22314f;--text:#e8eefc;--mute:#9db0d0;--accent:#4fd1a5}
@@ -8,7 +8,7 @@
 button{background:var(--accent);color:#04101c;border:0;border-radius:8px;padding:9px 16px;font-weight:700;cursor:pointer}
 .rv{border-top:1px solid var(--line);padding:8px 0}.rv .dv{color:var(--mute);font-size:.8rem;margin-left:8px}.st{color:#fbbf24}
 </style></head><body>
-<h1>Ratings and reviews</h1><p class="sub">Independent community feedback for this app. Not Google Play ratings or verified purchases. No reward is offered for a rating.</p><div id="rsum" class="sub" role="status">Loading...</div><div id="rating-bars" aria-label="Rating distribution"></div><div id="rlist"></div>
+<h1 id="app-heading">Ratings and reviews</h1><p class="sub">Independent community feedback for this app. Not Google Play ratings or verified purchases. No reward is offered for a rating.</p><div id="rsum" class="sub" role="status">Loading...</div><div id="rating-bars" aria-label="Rating distribution"></div><div id="rlist"></div>
 <form id="fbform"><label>Entry type<select name="kind"><option>Rating</option><option>Suggestion</option><option>Complaint</option></select></label>
 <label>Your rating<select name="stars" required><option value="" selected disabled>Choose 1 to 5 stars</option><option value="5">5 stars</option><option value="4">4 stars</option><option value="3">3 stars</option><option value="2">2 stars</option><option value="1">1 star</option></select></label>
 <input aria-label="Your name, optional" name="name" placeholder="Your name (optional)" maxlength="60"><input aria-label="Phone model" name="device" placeholder="Your phone, e.g. Samsung Galaxy A52" maxlength="60" required><input aria-label="City or area, optional" name="place" placeholder="Where are you? City or area (typed, optional)" maxlength="60">
@@ -29,6 +29,8 @@ function load(){Promise.all([q("netra_site_ratings"),q("netra_site_feedback")]).
  set("rsum",rs.length?(t/rs.length).toFixed(1)+" out of 5 from "+rs.length+" loaded rating"+(rs.length===1?"":"s")+" (up to 100 records).":"No ratings yet.");
  box.innerHTML=rs.map(function(i){return "<div class='rv'><span class='st'>"+"\u2605".repeat(Math.max(0,Math.min(5,i.stars|0)))+"\u2606".repeat(5-Math.max(0,Math.min(5,i.stars|0)))+"</span> <b>"+esc(i.name||"Anonymous")+"</b><span class='dv'>"+esc(i.device)+(i.place?" - "+esc(i.place):"")+"</span>"+(i.comment?"<p>"+esc(i.comment)+"</p>":"")+"</div>"}).join("")+fs.map(function(i){return "<div class='rv'><b>"+esc(i.kind)+"</b><span class='dv'>"+esc(i.device||"")+(i.place?" - "+esc(i.place):"")+"</span><p>"+esc(i.message)+"</p></div>"}).join("")
 }).catch(function(){set("rsum","Ratings are unavailable right now. No score can be shown.")})}
+var appNames={"battery-sentinel":"Battery Sentinel Pro Netra","kbc":"Netra KBC","netra-hub":"Netra Hub","prayagi-privacy":"Prayagi Privacy","netra-trikaal":"Netra Trikaal","netra-player":"Netra Player","netra-eco":"Netra Eco","netra-charge":"Netra Charge"};
+if(appNames[APP])set("app-heading",appNames[APP]+" ratings and reviews");
 var allowedApps=["battery-sentinel","kbc","netra-hub","prayagi-privacy","netra-trikaal","netra-player","netra-eco","netra-charge"];
 if(allowedApps.indexOf(APP)<0){set("rsum","Unavailable");document.getElementById("fbform").style.display="none"}else load();
 var f=document.getElementById("fbform");
@@ -48,8 +50,8 @@ f.addEventListener("submit",function(e){e.preventDefault();if(f.dataset.sending=
  pub=pub.catch(function(){return "fail"});
  pub.then(function(pr){var fd=new FormData(f);fd.set("app",APP);fd.set("_subject","[Netra] "+kind+" - "+APP);fd.set("_template","table");fd.set("_captcha","false");
   return fetch("https://formsubmit.co/ajax/prayagideepak@gmail.com",{method:"POST",headers:{Accept:"application/json"},body:fd}).then(function(r){return r.json()}).then(function(d){return d.success==="true"||d.success===true}).catch(function(){return false}).then(function(mail){
-   if(pr==="ok"){m.textContent=mail?"Sent. Thank you!":"Saved and shown above. The email copy to the developer did not go through.";f.reset();load()}
-   else if(mail){m.textContent="Sent to the developer by email. It could not be saved to the public list right now.";f.reset()}
+   if(pr==="ok"){m.textContent=mail?"Sent. Thank you!":"Saved and shown above. The email copy to the developer did not go through.";f.reset();f.querySelector("[name=stars]").disabled=false;load()}
+   else if(mail){m.textContent="Sent to the developer by email. It could not be saved to the public list right now.";f.reset();f.querySelector("[name=stars]").disabled=false}
    else m.textContent="Could not send: the public list refused the save and the email service is not accepting messages yet. Nothing was stored. Please try again later.";f.dataset.sending="false";f.querySelector("button[type=submit]").disabled=false})})
 })
 })();
