@@ -73,3 +73,6 @@
   });
   showCount();
 })();
+
+/* Community and support loads only our own static script, no social SDK. */
+(function(){var s=document.createElement('script');s.src='../../community.js';s.defer=true;document.head.appendChild(s)})();
