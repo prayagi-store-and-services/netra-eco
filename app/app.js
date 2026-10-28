@@ -13,15 +13,15 @@
   if (repo === "prayagi-store-and-services/netra-hub") {
     var hubDl=document.getElementById("dl"),hubMeta=document.getElementById("meta");
     hubDl.removeAttribute("href");hubDl.setAttribute("aria-disabled","true");hubDl.textContent="Download temporarily paused";
-    hubMeta.textContent="Checking v1.5.3 release. Download stays paused if verification fails.";
+    hubMeta.textContent="Checking v1.5.4 release. Download stays paused if verification fails.";
     function validHubRelease(x){
- if(!x||x.tag_name!=="v1.5.3"||x.draft||x.prerelease||!x.published_at||isNaN(Date.parse(x.published_at)))return null;
- return (x.assets||[]).filter(function(a){return a.name==="app-release.apk"&&a.state==="uploaded"&&a.size===4439166&&a.digest==="sha256:1c03d2f0aeaac3ac1c5a7471b945b2c20b02def80e125ae84d64a405d273aab5"&&a.browser_download_url==="https://github.com/prayagi-store-and-services/netra-hub/releases/download/v1.5.3/app-release.apk"})[0]||null;
+ if(!x||x.tag_name!=="v1.5.4"||x.draft||x.prerelease||!x.published_at||isNaN(Date.parse(x.published_at)))return null;
+ return (x.assets||[]).filter(function(a){return a.name==="app-release.apk"&&a.state==="uploaded"&&a.size===4439198&&a.digest==="sha256:11cc7c34eca4f022aeace806399f90e7f0b176c4ff15927578b90df06feab90a"&&a.browser_download_url==="https://github.com/prayagi-store-and-services/netra-hub/releases/download/v1.5.4/app-release.apk"})[0]||null;
 }
-    fetch("https://api.github.com/repos/"+repo+"/releases/tags/v1.5.3",{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(x){
+    fetch("https://api.github.com/repos/"+repo+"/releases/tags/v1.5.4",{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(x){
       var a=validHubRelease(x);if(!a)throw 0;
-      hubDl.href=a.browser_download_url;hubDl.removeAttribute("aria-disabled");hubDl.textContent="Download v1.5.3 APK";
-      hubMeta.textContent="v1.5.3 - 4.2 MB - SHA-256: "+a.digest.slice(7);
+      hubDl.href=a.browser_download_url;hubDl.removeAttribute("aria-disabled");hubDl.textContent="Download v1.5.4 APK";
+      hubMeta.textContent="v1.5.4 - 4.2 MB - SHA-256: "+a.digest.slice(7);
     }).catch(function(){hubMeta.textContent="Release status unavailable. Download stays paused; older builds are not offered."});
     return;
   }
