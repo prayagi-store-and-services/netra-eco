@@ -19,3 +19,4 @@ jobs:
       - run: node tests/release-fallback.test.js
       - run: node tests/app-links.test.js
       - run: node tests/slow-load.test.js
+      - run: node tests/community.test.js
