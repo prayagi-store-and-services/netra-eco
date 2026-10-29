@@ -6,14 +6,14 @@ const catalog = JSON.parse(fs.readFileSync(path.join(root, 'projects.json'), 'ut
 function esc(s) { return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
 function page(p) {
   const hub = p.repo === "prayagi-store-and-services/netra-hub";
-  const notice = "v1.5.3 adds a metadata-only newer-version notice and opens the exact Hub page in compatible Netra Ecosystem or the Eco website. Hub does not download or install APKs. No new measured battery or thermal guarantee is claimed. Updates are handled through Netra Ecosystem only. Older builds are not offered.";
+  const notice = "v1.5.5 adds official IMD subdivision / NDMA CAP reports matched on the phone. Green reports stay silent; verified Yellow, Orange and Red IMD warnings can notify and speak. Checks are about 30 minutes, subject to Android delays, not every forecast or district nowcast. Beta/testing, not an emergency-service replacement; physical-phone delivery unverified. Hub does not download or install APKs. Updates are handled through Netra Ecosystem only. Older builds are not offered.";
   return `<!doctype html>
 <html lang="en">
 <head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com; frame-src 'none'; media-src 'none'; form-action 'none'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin"><script src="../../framebust.js"></script><script src="../../counter.js"></script><script src="https://prayagi-store-and-services.github.io/netra-eco/geoblock.js"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(p.name)} - Netra Ecosystem</title>
-<meta name="description" content="${hub ? "Netra Human Safety v1.5.3. Exact release verification before download; updates through Netra Ecosystem only." : `Download ${esc(p.name)} from the Netra Ecosystem. ${esc(p.summary)}`}">
+<meta name="description" content="${hub ? "Netra Human Safety v1.5.5. Exact release verification before download; updates through Netra Ecosystem only." : `Download ${esc(p.name)} from the Netra Ecosystem. ${esc(p.summary)}`}">
 <link rel="icon" type="image/svg+xml" href="../../logo.svg">
 <link rel="stylesheet" href="../app.css">
 </head>
