@@ -10,7 +10,7 @@
 <body>
 <p><a href="../">&larr; Netra Ecosystem</a> &middot; <a href="./">Legal &amp; data</a></p>
 <h1>Privacy policy - Netra Hub</h1>
-<p>Last updated: October 23, 2026. Developer contact: prayagideepak@gmail.com.</p>
+<p>Last updated: October 29, 2026. Developer contact: prayagideepak@gmail.com.</p>
 <h2>The app, in short</h2>
 <p>Netra Hub shows your phone's sensors and device status and runs alert features you switch on. What the app reads stays on your phone except the items listed below. <p>The app does not create an account, does not show ads, and does not sell your data.</p></p>
 <h2>Permissions and what they are for</h2>
@@ -24,13 +24,13 @@
 <h2>What leaves the phone</h2>
 <ul>
 <li><b>Earthquake feature:</b> when used, the app sends your current location coordinates to the USGS earthquake API (earthquake.usgs.gov) to find recent quakes near you.</li>
-<li><b>Public alert feed:</b> the app downloads the public NDMA disaster-alert feed (sachet.ndma.gov.in). No personal data is sent.</li>
+<li><b>Official warning reports:</b> the app downloads the public NDMA SACHET feed (sachet.ndma.gov.in) and IMD subdivision-warning dataset (reactjs.imd.gov.in). Public polygons are matched to the current location on your phone. No coordinates are uploaded to IMD or NDMA. Source websites can receive normal connection metadata such as your IP address. Reports expire locally; checks are about 30 minutes, subject to Android delays.</li>
 <li><b>Maps:</b> map links open Google Maps in your browser or maps app.</li>
 </ul>
 <h2>Anonymous usage counter (optional)</h2>
 <p>At most once per day (and once per month) the app adds +1 to a public counter in Google Firebase so the team can see how many phones used the app. The request carries no device ID, install ID, account, location or app data - only "increment this counter by 1". It is on by default and can be turned off in the app's Settings.</p>
 <h2>Crash reports (your choice)</h2>
-<p>If the app crashes, a short report is saved on the phone. It is <b>not sent by itself</b>. To share it, open the app's Crash report card: you see the exact text first, and it is sent only when you tap Send. The report holds only: app name, phone model, Android version, app version, the time of the crash, and the crash stack trace (code locations; exception messages are dropped). It has no name, email, location, files or device IDs. It goes to the developer's email inbox through the FormSubmit service and is used only to fix bugs. To ask for a report to be deleted, email prayagideepak@gmail.com.</p>
+<p>If the app crashes, a short report is saved on the phone. It is <b>not sent by itself</b>. To share it, open the app's Crash report card: you see the exact text first, and it is sent only when you tap Send. The report holds only: app name, phone model, Android version, app version, the time of the crash, and the crash stack trace (code locations; exception messages are dropped). It has no name, email, location, files or device IDs. It goes to the developer's email inbox over HTTPS to the third-party FormSubmit service (formsubmit.co), then to the developer inbox, and is used only to fix bugs. HTTPS protects the connection; FormSubmit can read the report to deliver it. This is not end-to-end encryption. FormSubmit and email providers can receive connection metadata and process the report under their own policies. To ask for a report to be deleted, email prayagideepak@gmail.com.</p>
 <h2>Update checks</h2>
 <p>The app checks its public GitHub releases page for new versions. This sends no personal data.</p>
 <h2>Contact</h2>
