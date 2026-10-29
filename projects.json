@@ -32,7 +32,7 @@
       "package": "com.aistudio.netrasensorhub.kxmpzq",
       "name": "Netra Human Safety",
       "type": "Security application",
-      "summary": "Unified Android safety and emergency dashboard.",
+      "summary": "Android safety dashboard with sensor tools, SOS, earthquake information and official IMD subdivision / NDMA CAP reports matched on the phone. Green reports stay silent; verified Yellow, Orange and Red IMD warnings can notify and speak. Checks are about 30 minutes, subject to Android delays, not every forecast or district nowcast. Beta/testing, not an emergency-service replacement; physical-phone delivery unverified. Updates through Netra Ecosystem only.",
       "repo": "prayagi-store-and-services/netra-hub",
       "site": "https://prayagi-store-and-services.github.io/netra-hub/",
       "icon": "https://prayagi-store-and-services.github.io/netra-hub/icon.svg",
