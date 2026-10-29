@@ -235,6 +235,23 @@
         "Works with screen off (foreground service)",
         "Later (v1.1): phone-to-phone map transfer, buddy direction arrow, rally point, leader/sweeper roles, breadcrumb trail, left-group alert"
       ]
+    },
+    {
+      "id": "netra-dialer",
+      "name": "Netra Dialer",
+      "type": "Android dialer and verified business calling platform (planned, private)",
+      "summary": "New Netra Dialer project from the 27 October 2026 master plan, separate from the earlier dropped dialer idea. Planned privacy-first personal and business calling, spam protection, supported recording, contacts/call-log backup and a verified-business Voice AI assistant. Feasibility and architecture documented; Android bootstrap in progress. No working dialer or public APK yet. Device, consent and provider limits apply; no release date is set.",
+      "features": [
+        "Planned default dialer: incoming/outgoing calls, contacts, recent calls, T9 search, favorites, speed dial and dual-SIM support where available",
+        "Planned offline spam protection, allow/block lists, caller identification from authorized sources and approximately 24-hour spam-data sync; Android may delay sync",
+        "Planned Hindi/English caller-name or number announcements with quiet hours, headset and Bluetooth settings",
+        "Planned automatic/manual call recording only where supported and permitted; recordings stay on the phone, default auto-delete after 7 days can be disabled; optional transcription and summaries",
+        "Planned Google sign-in and encrypted Google Drive backup/restore for contacts and call log only, never recordings",
+        "Planned separate Personal and Business modes; GSTIN/Udyam identity and applicant-authorization checks, locked official business name and authorized phone numbers",
+        "Planned verified-business Voice AI: Hindi/English, approved business information, answering schedules, inquiries, call summaries, callbacks and human escalation; on-device AI only where supported",
+        "Planned outgoing verified business caller ID only through compatible authorized providers; recipient display is not guaranteed",
+        "Planned local-first privacy controls, diagnostics and bounded, battery-aware work; calling, recording, AI, backup and provider integrations are not operational yet; no measured battery-performance claim"
+      ]
     }
   ]
 }

@@ -24,6 +24,21 @@ jobs:
           for (const match of html.matchAll(/<script(?:\s[^>]*)?>([\s\S]*?)<\/script>/g)) new vm.Script(match[1]);
           const catalog = JSON.parse(fs.readFileSync('projects.json', 'utf8'));
           JSON.parse(fs.readFileSync('roadmap.json', 'utf8'));
+          // Revived by the owner on 27 Oct: private plans belong in Future, never downloads.
+          const dialers = catalog.upcoming.filter(p => p.id === 'netra-dialer');
+          assert.strictEqual(dialers.length, 1, 'Netra Dialer must remain in Future');
+          const dialer = dialers[0];
+          assert.strictEqual(dialer.name, 'Netra Dialer');
+          assert(dialer.type.includes('planned, private'));
+          assert(dialer.summary.includes('27 October 2026 master plan'));
+          for (const feature of ['dual-SIM','24-hour','announcements','7 days','contacts and call log only','GSTIN/Udyam','Voice AI','recipient display is not guaranteed']) {
+            assert(dialer.features.some(text => text.includes(feature)), 'New Dialer scope: ' + feature);
+          }
+          assert(dialer.summary.includes('No working dialer or public APK yet.'));
+          assert(!catalog.projects.some(p => p.id === 'netra-dialer'), 'Dialer is not released');
+          for (const key of ['repo','site','package','download','latestJson','eta','targets']) {
+            assert(!Object.hasOwn(dialer, key), 'No private link, download or invented date: ' + key);
+          }
           const ids = new Set();
           function validDate(value) {
             assert(/^\d{4}-\d{2}-\d{2}$/.test(value));
