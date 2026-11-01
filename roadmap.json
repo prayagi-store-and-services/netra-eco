@@ -205,9 +205,10 @@
         "prayagi-privacy"
       ],
       "title": "Mic and camera switched off when the screen turns off, and where each app's data goes",
-      "text": "Netra Privacy Guard will cut microphone and camera access when the screen turns off, and will show per app where its data is going.",
-      "status": "Planned",
-      "eta": "2026-11-01T20:00:00+05:30"
+      "text": "Netra Privacy Guard cuts microphone and camera access when the screen turns off - this part already ships since v1.0.x. The remaining part is new: per app, which domains it contacted and the country of the destination IP, seen through the on-device DNS filter. DNS-visibility only (not full traffic or byte counts); the country is destination-IP geography, not proof of where data is stored. Needs Android 10+ for per-app naming; everything stays on the phone.",
+      "status": "In progress (1 Nov 20:00 target missed; new release date 5 Nov)",
+      "eta": "2026-11-05T20:00:00+05:30",
+      "missedEta": "2026-11-01T20:00:00+05:30"
     },
     {
       "apps": [
