@@ -49,6 +49,8 @@ a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{
 body{background:radial-gradient(900px 500px at 20% -5%,#0d4a4a 0%,transparent 60%),radial-gradient(900px 500px at 90% 0%,#2a1a6a 0%,transparent 60%),#050b1a;background-attachment:fixed}
 .top b{font-size:1.2rem}.top b:after{content:" - All Netra Apps in One Place";font-weight:400;font-size:.72rem;color:var(--mute)}
 nav{position:sticky;top:64px;z-index:4;background:rgba(5,11,26,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+/* Phones: the chip nav is taller than the viewport, so sticking it pinned the whole screen and the page looked frozen (reported 1 Nov 2026). Let it scroll away on narrow screens, and shrink the floating APK button so it covers less content. */
+@media (max-width:720px){nav{position:static}#eco-fab{padding:8px 12px !important;font-size:12px !important;bottom:64px !important}}
 nav a{background:var(--card);}nav a:hover{box-shadow:0 0 0 1px var(--accent)}
 .hero{padding:44px 16px 24px;background:radial-gradient(700px 260px at 50% 40%,rgba(47,224,160,.18),transparent)}
 .hero .welcome{color:var(--mute);font-size:1.1rem}.hero h1{font-size:clamp(2.4rem,8vw,4.2rem);margin:0}.hero h1 em{font-style:normal;color:var(--accent)}
