@@ -597,11 +597,18 @@
     },
     {
       "title": "Interface update",
-      "status": "Planned (21 Oct 20:00 target missed - leave day, security and alerts only; new target 26 Oct)",
+      "status": "Released v1.1.42 on 1 Nov (21 and 26 Oct targets missed; CI/emulator-tested only, no phone or tablet test yet)",
       "missedEta": "2026-10-21T20:00:00+05:30",
       "eta": "2026-10-26T20:00:00+05:30",
       "apps": [
         "kbc"
+      ],
+      "text": "Phone/tablet adaptive sizing: every screen caps and centres content on wide displays (600/840 dp classes) and main headings and buttons scale up for smart-class distance viewing; phone layouts are unchanged. Also removed a hardcoded \"3 days active\" streak line on Home that was not backed by any tracking. A larger redesign is not part of this step.",
+      "ships": [
+        {
+          "app": "kbc",
+          "version": "1.1.42"
+        }
       ]
     },
     {
