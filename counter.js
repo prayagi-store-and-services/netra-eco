@@ -25,4 +25,16 @@
         .then(function (r) { return r.ok; }).catch(function () { return false; });
     }
   };
+  /* Privacy-aware page statistics via GoatCounter (netra-eco.goatcounter.com): page path, title and
+     referrer only; no cookies, no IP storage, no personal data. Sent as an image request so the page
+     never waits on it. Skipped when the browser asks not to be tracked. */
+  try {
+    if (String(navigator.doNotTrack) !== "1") {
+      var q = "?p=" + encodeURIComponent(location.pathname) +
+              "&t=" + encodeURIComponent(document.title) +
+              "&r=" + encodeURIComponent(document.referrer || "") +
+              "&rnd=" + Math.random().toString(36).slice(2);
+      (new Image()).src = "https://netra-eco.goatcounter.com/count" + q;
+    }
+  } catch (e) { /* statistics never block the page */ }
 })();
