@@ -22,7 +22,7 @@
       var a=validHubRelease(x);if(!a)throw 0;
       hubDl.href=a.browser_download_url;hubDl.removeAttribute("aria-disabled");hubDl.textContent="Download v1.5.7 APK";
       hubMeta.textContent="v1.5.7 - 4.2 MB - SHA-256: "+a.digest.slice(7);
-    }).catch(function(){hubMeta.textContent="Release status unavailable. Download stays paused; older builds are not offered."});
+    }).catch(function(){hubDl.style.display="none";hubMeta.style.display="none";}); // Owner rule (3 Nov): unverifiable release hides the download UI instead of showing Unavailable.
     return;
   }
   var weekly = document.createElement("section");
