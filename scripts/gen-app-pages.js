@@ -9,7 +9,7 @@ function page(p) {
   const notice = "v1.5.5 adds official IMD subdivision / NDMA CAP reports matched on the phone. Green reports stay silent; verified Yellow, Orange and Red IMD warnings can notify and speak. Checks are about 30 minutes, subject to Android delays, not every forecast or district nowcast. Beta/testing, not an emergency-service replacement; physical-phone delivery unverified. Hub does not download or install APKs. Updates are handled through Netra Ecosystem only. Older builds are not offered.";
   return `<!doctype html>
 <html lang="en">
-<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com; frame-src 'none'; media-src 'none'; form-action 'none'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin"><script src="../../framebust.js"></script><script src="../../counter.js"></script><script src="https://prayagi-store-and-services.github.io/netra-eco/geoblock.js"></script>
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' https://www.googletagmanager.com https://www.clarity.ms https://scripts.clarity.ms; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com https://*.google-analytics.com https://clarity.ms https://*.clarity.ms; frame-src 'none'; media-src 'none'; form-action 'none'; upgrade-insecure-requests"><meta name="referrer" content="strict-origin-when-cross-origin"><script src="../../framebust.js"></script><script src="../../counter.js"></script><script src="https://prayagi-store-and-services.github.io/netra-eco/geoblock.js"></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>${esc(p.name)} - Netra Ecosystem</title>
@@ -33,7 +33,7 @@ ${hub ? "" : `<p class="sub">Android only. On an Android phone the Open app butt
 ${p.site ? `<p><a href="${esc(p.site)}">About ${esc(p.name)}</a></p>` : ''}
 ${p.privacy ? `<p class="sub">Legal: <a href="${esc(p.privacy)}">Privacy policy</a> &middot; <a href="../../legal/data-safety.html#${esc(p.code)}">Data safety</a> &middot; <a href="../../legal/">All legal documents</a></p>` : ''}
 </main>
-<script src="../app.js"></script>
+<script src="../app.js"></script><script src="../../analytics.js" defer></script>
 </body>
 </html>
 `;
