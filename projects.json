@@ -202,14 +202,14 @@
     {
       "id": "netra-neg",
       "name": "Netra Neg",
-      "type": "Private gift ledger (planned)",
-      "summary": "Planned gift ledger with optional encrypted backup in your own Drive. App build is on hold; not released.",
+      "type": "Private gift ledger (beta; public release pending)",
+      "summary": "v0.3.0 beta includes the local ledger and encrypted own-Drive backup/restore. Active acceptance testing: real-device sign-in and reinstall/restore remain unverified. Public launch target 7 Nov 2026, 8 PM IST; not a release confirmation. Photos are not included in backup.",
       "eta": "2026-11-07T20:00:00+05:30",
       "targets": [
         {
           "label": "Public release target - 7 Nov 2026, 8 PM IST (one day before Diwali)",
           "eta": "2026-11-07T20:00:00+05:30",
-          "note": "App build is on hold; release depends on tested features and green checks. Diwali is 8 Nov 2026."
+          "note": "Active acceptance work. Public launch depends on real-device sign-in/restore validation and green release gates. No app-wide hold."
         }
       ],
       "features": [
