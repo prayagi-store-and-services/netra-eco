@@ -7,7 +7,7 @@ for (const p of cat.projects) {
   const html = fs.readFileSync('app/' + p.code + '/index.html', 'utf8');
   assert(html.includes('data-code="' + p.code + '"'));
   assert(!/<script>[^<]/.test(html), 'no inline script');
-  assert(html.includes("connect-src 'self' https://api.github.com https://firestore.googleapis.com;"));
+  assert(html.includes("connect-src 'self' https://api.github.com https://firestore.googleapis.com https://*.google-analytics.com https://clarity.ms https://*.clarity.ms;"));
 }
 const js = fs.readFileSync('app/app.js', 'utf8');
 new (require('node:vm').Script)(js);
