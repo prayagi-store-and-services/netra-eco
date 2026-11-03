@@ -1,9 +1,9 @@
 {
-  "tag": "v0.1.0",
-  "versionName": "0.1.0",
-  "versionCode": 1,
+  "tag": "v0.2.0",
+  "versionName": "0.2.0",
+  "versionCode": 3,
   "apkFile": "app-release.apk",
-  "sha256": "1119987250ea79e3d2d0c6b8895dd77d25c7078ec9dfd449b0028ee7400204ae",
-  "size": 656862,
-  "notes": "English Connected, Disconnected, Full charge and Low battery announcements. Saved Android low-battery threshold: default 15%, adjustable 5-50% in 5% steps. Normal Android announcements require the screen off and no active media. Blocked events are skipped, not replayed later; the app does not pause, duck or mute media. No periodic battery-percentage announcement. CI unit/platform and native UI tests passed. Physical installation, spoken-audio and OEM media behavior have not yet been verified."
+  "sha256": "b256ae0de52e8f84f9967d0b6c60b5ca9d9504e3b2255fb6e22f5aca7ef77a82",
+  "size": 676518,
+  "notes": "New family-standard screen: pinned green header with app name and version, scrollable cards starting right under the header, and a pinned footer bar. One-time welcome card explains the four spoken alerts; completing it is stored on the phone. Larger full-width Turn on/off button and large steppers. Behavior unchanged: English Connected, Disconnected, Full charge and Low battery announcements; low-battery threshold default 15%, adjustable 5-50% in 5% steps; announcements only when turned on, with the screen off and no active media. CI unit/platform and native UI tests passed. Physical installation, spoken-audio and OEM media behavior have not yet been verified."
 }
