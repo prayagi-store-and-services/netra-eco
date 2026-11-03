@@ -14,14 +14,14 @@ if(repo==="prayagi-store-and-services/netra-hub"){
  if(!hold){hold=mk("section");hold.id="netra-downloads";(document.querySelector("main")||document.body).appendChild(hold)}
  hold.textContent="";
  var title=mk("h2","","Netra Human Safety");hold.appendChild(title);
- var status=mk("p","sub","Checking the approved v1.5.7 release. Older held builds are not offered.");hold.appendChild(status);
- fetch("https://api.github.com/repos/"+repo+"/releases/tags/v1.5.7",{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(x){
-  if(x.tag_name!=="v1.5.7"||x.draft||x.prerelease||!x.published_at||isNaN(Date.parse(x.published_at)))throw 0;
-  var a=(x.assets||[]).filter(function(y){return y.name==="app-release.apk"&&y.state==="uploaded"&&y.size===4455670&&y.digest==="sha256:d071396fde628eb2b2900d3d437c7f85fc49e9d73657e09767bd874afd4c2de4"&&y.browser_download_url==="https://github.com/prayagi-store-and-services/netra-hub/releases/download/v1.5.7/app-release.apk"})[0];
+ var status=mk("p","sub","Checking the approved v1.5.8 release. Older held builds are not offered.");hold.appendChild(status);
+ fetch("https://api.github.com/repos/"+repo+"/releases/tags/v1.5.8",{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(function(x){
+  if(x.tag_name!=="v1.5.8"||x.draft||x.prerelease||!x.published_at||isNaN(Date.parse(x.published_at)))throw 0;
+  var a=(x.assets||[]).filter(function(y){return y.name==="app-release.apk"&&y.state==="uploaded"&&y.size===4455670&&y.digest==="sha256:1353f45452b34a3ba26509969f27caf4b067af340ca8708e12a2637295bcc665"&&y.browser_download_url==="https://github.com/prayagi-store-and-services/netra-hub/releases/download/v1.5.8/app-release.apk"})[0];
   if(!a)throw 0;
-  title.textContent="Netra Human Safety v1.5.7";
+  title.textContent="Netra Human Safety v1.5.8";
   status.textContent="App-local updater removed. Owner reported heating and battery behavior resolved on the tested build; this is not a measured battery/thermal guarantee. Older held builds are not offered.";
-  var link=mk("a","btn","Download v1.5.7 APK");link.href=a.browser_download_url;hold.appendChild(link);
+  var link=mk("a","btn","Download v1.5.8 APK");link.href=a.browser_download_url;hold.appendChild(link);
   hold.appendChild(mk("p","sub","SHA-256: "+a.digest.slice(7)));
  }).catch(function(){hold.style.display="none";}); // Owner rule (3 Nov): unverifiable release hides the section instead of showing Unavailable.
  return;
