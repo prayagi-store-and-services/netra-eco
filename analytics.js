@@ -8,7 +8,7 @@
 
   /* ---- configuration (same values on every Netra site) ---- */
   var GA4_MEASUREMENT_ID = "G-G0LT31839L";
-  var CLARITY_PROJECT_ID = "xxxxxxxxxx";   /* TODO: real Clarity id before merge */
+  var CLARITY_PROJECT_ID = "z7sg7c01gf";
 
   var KEY = "netra_analytics_consent";
 
