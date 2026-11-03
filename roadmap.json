@@ -1,5 +1,5 @@
 {
-  "reviewed": "22 Oct 2026",
+  "reviewed": "3 Nov 2026",
   "note": "All dates are our own estimates and can change. An item with a \"ships\" list disappears by itself once the latest published release of every listed app has reached that version (the Eco app checks this from the real release data).",
   "apps": [
     {
@@ -490,16 +490,10 @@
       "eta": "2026-11-01T20:00:00+05:30"
     },
     {
-      "title": "Netra Player v1.1.18: Picture in picture",
-      "status": "Planned",
+      "title": "Netra Player: Picture in picture (not established by v1.1.18)",
+      "status": "Active pending verification. v1.1.18 released update notices, not proof of Picture in picture. Original 8 Nov estimate retained, not a delivery confirmation.",
       "apps": [
         "netra-player"
-      ],
-      "ships": [
-        {
-          "app": "netra-player",
-          "version": "1.1.18"
-        }
       ],
       "eta": "2026-11-08T20:00:00+05:30"
     },
@@ -549,7 +543,7 @@
     },
     {
       "title": "Interface update",
-      "status": "Planned (combined release: on 13 Oct the owner chose to release the full redesign at once, not in stages). At risk: the remaining redesign work is not complete, so the 24 Oct target may not be met; a new date will be announced once the work is done.",
+      "status": "Active again by 3 Nov 18:34 instruction. The old 24 Oct target was missed; combined redesign is unfinished. New date unconfirmed; draft is not a release.",
       "eta": "2026-10-24T20:00:00+05:30",
       "apps": [
         "netra-trikaal"
@@ -681,7 +675,7 @@
     },
     {
       "title": "Netra Neg: private gift ledger with optional encrypted own-Drive backup. Public release target: 7 Nov 2026, one day before Diwali (8 Nov) - date only, not a release confirmation.",
-      "status": "Planned (app build on hold; target depends on testing)",
+      "status": "Active: v0.3.0 beta published 3 Nov. Device sign-in, reinstall and restore acceptance remain unverified; public target 7 Nov 20:00 IST. Photos not included in backup. No app-wide hold.",
       "targetDate": "2026-11-07",
       "apps": [
         "netra-neg"
