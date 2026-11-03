@@ -13,7 +13,8 @@
       "site": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/",
       "icon": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/icon.svg",
       "code": "bspn",
-      "privacy": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/privacy.html"
+      "privacy": "https://prayagi-store-and-services.github.io/-Battery-Sentinel-Pro-Netra/privacy.html",
+      "minAndroid": "7.0"
     },
     {
       "id": "kbc",
@@ -25,7 +26,8 @@
       "site": "https://prayagi-store-and-services.github.io/KBC/",
       "icon": "https://prayagi-store-and-services.github.io/KBC/icon.svg",
       "code": "kbc",
-      "privacy": "../../legal/privacy-kbc.html"
+      "privacy": "../../legal/privacy-kbc.html",
+      "minAndroid": "7.0"
     },
     {
       "id": "netra-hub",
@@ -37,7 +39,8 @@
       "site": "https://prayagi-store-and-services.github.io/netra-hub/",
       "icon": "https://prayagi-store-and-services.github.io/netra-hub/icon.svg",
       "code": "hub",
-      "privacy": "../../legal/privacy-hub.html"
+      "privacy": "../../legal/privacy-hub.html",
+      "minAndroid": "7.0"
     },
     {
       "id": "prayagi-privacy",
@@ -49,7 +52,8 @@
       "site": "https://prayagi-store-and-services.github.io/prayagi-Privacy-/",
       "icon": "https://prayagi-store-and-services.github.io/prayagi-Privacy-/icon.svg",
       "code": "privacy",
-      "privacy": "../../legal/privacy-guard.html"
+      "privacy": "../../legal/privacy-guard.html",
+      "minAndroid": "7.0"
     },
     {
       "id": "netra-trikaal",
@@ -59,7 +63,8 @@
       "summary": "On-device kundli, dasha, transits, a daily panchang card and rashifal from your saved birth profile. Hindi and English. Traditional interpretations, not scientific certainty or medical, legal or financial advice. Updates open the exact Trikaal page in Netra Ecosystem; Trikaal does not download APKs.",
       "repo": "prayagi-store-and-services/netra-trikaal",
       "code": "trikaal",
-      "privacy": "../../legal/privacy-trikaal.html"
+      "privacy": "../../legal/privacy-trikaal.html",
+      "minAndroid": "8.0"
     },
     {
       "id": "netra-player",
@@ -69,7 +74,8 @@
       "summary": "A simple video and MP3 player for Android. Plays video and music files stored on your phone.",
       "repo": "prayagi-store-and-services/netra-player",
       "code": "player",
-      "privacy": "../../legal/privacy-player.html"
+      "privacy": "../../legal/privacy-player.html",
+      "minAndroid": "8.0"
     },
     {
       "id": "netra-eco",
@@ -82,7 +88,8 @@
       "site": "https://prayagi-store-and-services.github.io/netra-eco/",
       "icon": "https://prayagi-store-and-services.github.io/netra-eco/logo.svg",
       "code": "eco",
-      "privacy": "../../legal/privacy-eco.html"
+      "privacy": "../../legal/privacy-eco.html",
+      "minAndroid": "8.0"
     },
     {
       "id": "netra-charge",
