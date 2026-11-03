@@ -33,7 +33,7 @@ ${hub ? "" : `<p class="sub">Android only. On an Android phone the Open app butt
 ${p.site ? `<p><a href="${esc(p.site)}">About ${esc(p.name)}</a></p>` : ''}
 ${p.privacy ? `<p class="sub">Legal: <a href="${esc(p.privacy)}">Privacy policy</a> &middot; <a href="../../legal/data-safety.html#${esc(p.code)}">Data safety</a> &middot; <a href="../../legal/">All legal documents</a></p>` : ''}
 </main>
-<script src="../app.js"></script><script src="../../analytics.js" defer></script>
+<script src="../app.js"></script><script src="../../analytics.js?v=20261103-privacyfix" defer></script>
 </body>
 </html>
 `;
