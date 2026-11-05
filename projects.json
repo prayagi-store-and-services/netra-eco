@@ -83,7 +83,7 @@
       "latestJson": "https://github.com/prayagi-store-and-services/netra-eco-app/releases/latest/download/latest.json",
       "name": "Netra Ecosystem",
       "type": "All Netra apps in one place",
-      "summary": "Browse released and planned Netra apps, read descriptions and release notes, view screenshot-only app previews, and download, install or update released apps with Android approval. No in-app videos or autoplay from v1.2.46. Website videos remain. Free, no account.",
+      "summary": "Browse Netra apps in compact rows and dedicated app details. Known installed apps with verified newer releases appear in Updates; Update all queues checked downloads, then Android confirms each install. Package checks stay on the phone. Unknown data stays Unknown; no invented ratings or all-app inventory scan.",
       "repo": "prayagi-store-and-services/netra-eco-app",
       "site": "https://prayagi-store-and-services.github.io/netra-eco/",
       "icon": "https://prayagi-store-and-services.github.io/netra-eco/logo.svg",
