@@ -77,6 +77,22 @@
     {
       "id": "netra-browser",
       "name": "Netra Browser"
+    },
+    {
+      "id": "netra-speak-clock",
+      "name": "Netra Speak Clock"
+    },
+    {
+      "id": "mahadev-glass-theme",
+      "name": "Mahadev Glass Theme"
+    },
+    {
+      "id": "netra-job",
+      "name": "Netra Job"
+    },
+    {
+      "id": "netra-control",
+      "name": "Netra Control"
     }
   ],
   "items": [
@@ -818,6 +834,71 @@
       "targetDate": "2026-11-13",
       "apps": [
         "netra-browser"
+      ]
+    },
+    {
+      "title": "Netra Speak Clock: unreleased project; no new confirmed release date",
+      "text": "Separate time-announcement Android app in development, not released. Clock-aligned time-only TTS, screen-off operation, quiet hours and media/call rules. Build, unit tests and lint have passed in a candidate, but CI remains red on artifact quota; phone/Doze/audio reliability, production signing and privacy acceptance remain unverified. Earlier targets were missed; no new verified release time.",
+      "status": "Planned, not released",
+      "apps": [
+        "netra-speak-clock"
+      ]
+    },
+    {
+      "title": "Mahadev Glass Theme: unreleased project; no new confirmed release date",
+      "text": "Android theme project, not released as a production app. Blue-glass Mahadev wallpapers and Smart Launcher-compatible icons/widgets are planned; a private debug test APK exists, but source recovery, device acceptance and production release gates remain pending. No claim to change Android system settings or control panels. Earlier public target was missed; no new confirmed release date.",
+      "status": "Planned, not released",
+      "apps": [
+        "mahadev-glass-theme"
+      ]
+    },
+    {
+      "title": "Netra Job: unreleased project; no new confirmed release date",
+      "text": "Planned job-search assistance app, not released. Scope comes from a proposed AI job-search workflow; account integration, permitted automation, privacy, source reliability and working implementation need review. No verified application automation or confirmed release date.",
+      "status": "Planned, not released",
+      "apps": [
+        "netra-job"
+      ]
+    },
+    {
+      "title": "Netra Control: unreleased project; no new confirmed release date",
+      "text": "Planned owner-only administration panel for Netra apps and sites, not released. Proposed roadmap/configuration editing, change review and audit log need security and access-control review. Proposed infrastructure is not a confirmed deployment. No confirmed delivery date.",
+      "status": "Planned, not released",
+      "apps": [
+        "netra-control"
+      ]
+    },
+    {
+      "title": "Eco + Battery Pro: preview-first colour themes",
+      "text": "Approved scope is Eco and Battery Pro first. Preview approval is still required before UI implementation. Keep safety green/orange/red fixed, use readable contrast, store choices on-device. No shared rollout or release date confirmed.",
+      "status": "Planned, not released",
+      "apps": [
+        "eco",
+        "bspn"
+      ]
+    },
+    {
+      "title": "Eco: send-to-device Phase 1 local protocol prototype",
+      "text": "Phase 1 only approved: local pairing/protocol prototype and security tests, with no live Firebase configuration. No working remote install, live queue or end-to-end encryption is claimed. Signed/encrypted command, expiry and revocation design needs testing; Android first-install confirmation cannot be skipped. No delivery date.",
+      "status": "Planned, not released",
+      "apps": [
+        "eco"
+      ]
+    },
+    {
+      "title": "Eco: approved home and app-detail redesign",
+      "text": "Home and detail previews for website and Android approved via Q90. Implementation, draft PRs, green CI, privacy and actual UI acceptance remain pending. Website Install choices must distinguish APK download from opening Eco Store; no remote-install claim. No confirmed release date.",
+      "status": "Planned, not released",
+      "apps": [
+        "eco"
+      ]
+    },
+    {
+      "title": "Netra Charge 0.3: event rules, settings and device acceptance",
+      "text": "Unreleased candidate work: event-specific charging rules, sleep/silent controls, volume and call behavior. Native preview and unit tests exist, but real phone playback, screen-off behavior, privacy, green CI and production release remain required. Current release is not replaced by this planned entry. No confirmed release date.",
+      "status": "Planned, not released",
+      "apps": [
+        "netra-charge"
       ]
     }
   ]

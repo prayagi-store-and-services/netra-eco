@@ -343,6 +343,30 @@
           "note": "Not released. No download is offered; release depends on tested features and green privacy/security gates."
         }
       ]
+    },
+    {
+      "id": "netra-speak-clock",
+      "name": "Netra Speak Clock",
+      "type": "App project (planned, not released)",
+      "summary": "Separate time-announcement Android app in development, not released. Clock-aligned time-only TTS, screen-off operation, quiet hours and media/call rules. Build, unit tests and lint have passed in a candidate, but CI remains red on artifact quota; phone/Doze/audio reliability, production signing and privacy acceptance remain unverified. Earlier targets were missed; no new verified release time."
+    },
+    {
+      "id": "mahadev-glass-theme",
+      "name": "Mahadev Glass Theme",
+      "type": "App project (planned, not released)",
+      "summary": "Android theme project, not released as a production app. Blue-glass Mahadev wallpapers and Smart Launcher-compatible icons/widgets are planned; a private debug test APK exists, but source recovery, device acceptance and production release gates remain pending. No claim to change Android system settings or control panels. Earlier public target was missed; no new confirmed release date."
+    },
+    {
+      "id": "netra-job",
+      "name": "Netra Job",
+      "type": "App project (planned, not released)",
+      "summary": "Planned job-search assistance app, not released. Scope comes from a proposed AI job-search workflow; account integration, permitted automation, privacy, source reliability and working implementation need review. No verified application automation or confirmed release date."
+    },
+    {
+      "id": "netra-control",
+      "name": "Netra Control",
+      "type": "App project (planned, not released)",
+      "summary": "Planned owner-only administration panel for Netra apps and sites, not released. Proposed roadmap/configuration editing, change review and audit log need security and access-control review. Proposed infrastructure is not a confirmed deployment. No confirmed delivery date."
     }
   ]
 }
