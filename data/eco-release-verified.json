@@ -1,16 +1,16 @@
 {
-  "tag": "v1.3.0",
-  "versionName": "1.3.0",
-  "versionCode": 66,
+  "tag": "v1.3.1",
+  "versionName": "1.3.1",
+  "versionCode": 67,
   "minSdk": 26,
-  "sha256": "ddc6595fbd60a4b5ef5797e638940225cc2d1bedd9c3641f109c23d63e8a083f",
+  "sha256": "75f0caee8d2ff17e5f5d1157f028148ba97135d6c8ab26babab6f52ce5515aba",
   "size": 7407716,
-  "notes": "Compact store browsing and app details; correct Install, Update and Open states; explicit update queue with Android installation approval; original-colour social logos in swipeable header/footer rows; only verified today-IST public-post counts. Unknown device state is never treated as not installed. No fake ratings or download counts. Existing preview-and-Send forms use HTTPS via FormSubmit, not end-to-end encryption, as disclosed. No remote web installation or conditional silent updates in this release.",
+  "notes": "Removed the embedded NETRA TRIKAAL chart-calculation card from Eco home. Trikaal remains a normal store entry with its app details. The standalone Trikaal app and saved data are unchanged. No new permissions, telemetry, remote install, or silent-update feature. Android still confirms installations.",
   "schema": 1,
   "repo": "prayagi-store-and-services/netra-eco-app",
   "package": "com.prayagi.netraeco",
-  "verifiedAt": "2026-11-05T07:33:42Z",
-  "publishedAt": "2026-11-05T07:33:39Z",
-  "source": "https://github.com/prayagi-store-and-services/netra-eco-app/releases/tag/v1.3.0",
-  "apk": "https://github.com/prayagi-store-and-services/netra-eco-app/releases/download/v1.3.0/app-release.apk"
+  "verifiedAt": "2026-11-05T08:21:45Z",
+  "publishedAt": "2026-11-05T08:21:44Z",
+  "source": "https://github.com/prayagi-store-and-services/netra-eco-app/releases/tag/v1.3.1",
+  "apk": "https://github.com/prayagi-store-and-services/netra-eco-app/releases/download/v1.3.1/app-release.apk"
 }
