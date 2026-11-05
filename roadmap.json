@@ -734,6 +734,13 @@
       "apps": [
         "netra-hub"
       ]
+    },
+    {
+      "title": "Design end-to-end encryption for private report/file submissions: key custody, recovery and recipient review before implementation. Existing explicit preview+Send HTTPS forms remain a disclosed exception; no E2E claim.",
+      "status": "Planned - design and approval pending; no release date set",
+      "apps": [
+        "eco"
+      ]
     }
   ]
 }
