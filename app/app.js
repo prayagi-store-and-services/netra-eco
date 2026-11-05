@@ -70,7 +70,7 @@
       var x=NetraVerifiedRelease(raw,Date.now());if(!x)return;
       url=x.apk;dl.href=url;dl.textContent="Download "+x.tag+" APK";
       meta.textContent="Last verified release: "+x.tag+" - "+(x.size/1048576).toFixed(1)+" MB - SHA-256: "+x.sha256+". Verified "+x.verifiedAt+". Newest version check unavailable.";
-      var timer=setTimeout(function(){url="https://github.com/"+repo+"/releases/latest/download/app-release.apk";dl.href=url;dl.textContent="Download APK";meta.textContent="Version details Unavailable right now. The button still downloads the latest APK.";},Math.max(1,Date.parse(x.verifiedAt)+86400000-Date.now()));
+      var timer=setTimeout(function(){url="https://github.com/prayagi-store-and-services/netra-eco-app/releases/latest/download/app-release.apk";dl.href="https://github.com/prayagi-store-and-services/netra-eco-app/releases/latest/download/app-release.apk";dl.textContent="Download APK";meta.textContent="Version details Unavailable right now. The button still downloads the latest APK.";},Math.max(1,Date.parse(x.verifiedAt)+86400000-Date.now()));
     }).catch(function(){});
   });
   dl.addEventListener("click", function (e) {
