@@ -26,14 +26,14 @@ function page(p) {
 ${hub ? `<aside role="note" style="border:2px solid #fbbf24;border-radius:12px;padding:16px;overflow-wrap:anywhere"><p>${esc(notice)}</p></aside>
 <p><a id="dl" class="btn" aria-disabled="true">Download temporarily paused</a></p>` : `<p><a id="dl" class="btn" href="${p.download ? esc(p.download) : `https://github.com/${esc(p.repo)}/releases/latest/download/app-release.apk`}">Download APK</a></p>`}
 <p id="open" hidden><a class="btn btn2" href="intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=${esc(p.package)};S.browser_fallback_url=${encodeURIComponent('https://prayagi-store-and-services.github.io/netra-eco/app/' + p.code + '/')};end">Open app (if installed)</a></p>
-<p id="meta" class="sub"${hub ? ' style="overflow-wrap:anywhere"' : ''}>Loading the latest version...</p>
+<p id="meta" class="sub"${hub || p.code === 'eco' ? ' style="overflow-wrap:anywhere"' : ''}>Loading the latest version...</p>
 <p id="count" class="sub"></p>
 ${p.minAndroid ? `<p class="sub">Requires Android ${esc(p.minAndroid)} or newer. You can see your Android version under Settings &gt; About phone before downloading. The download is only an APK file: whether your phone can run it, and the decision to install it, remain your responsibility.</p>` : ""}
 ${hub ? "" : `<p class="sub">Android only. On an Android phone the Open app button launches the app if it is installed; if Android cannot find it, you stay on this page to download it. A browser cannot always tell whether an app is installed. Allow installs from your browser once if Android asks. Downloads started from this page are counted anonymously (no cookies, no personal data).</p>`}
 ${p.site ? `<p><a href="${esc(p.site)}">About ${esc(p.name)}</a></p>` : ''}
 ${p.privacy ? `<p class="sub">Legal: <a href="${esc(p.privacy)}">Privacy policy</a> &middot; <a href="../../legal/data-safety.html#${esc(p.code)}">Data safety</a> &middot; <a href="../../legal/">All legal documents</a></p>` : ''}
 </main>
-<script src="../app.js"></script><script src="../../analytics.js?v=20261103-privacyfix" defer></script>
+${p.code === 'eco' ? '<script src="../release-record.js"></script>' : ''}<script src="../app.js"></script><script src="../../analytics.js?v=20261103-privacyfix" defer></script>
 </body>
 </html>
 `;
