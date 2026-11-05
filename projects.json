@@ -291,6 +291,58 @@
       "features": [
         "Phase 1 only; no verified public build yet"
       ]
+    },
+    {
+      "id": "netra-geocam",
+      "name": "Netra GeoCam",
+      "type": "Android app (in development, not released)",
+      "summary": "Offline-first camera app. Private photo-only candidate in development, not released. v1 scope approved: photos with a permanent location/time/device stamp and a direction indicator when reliable. Video, face-focus and enhancement are deferred. Real camera/GPS/direction/gallery acceptance and production signing remain pending. Scheduled with Netra Photo for 7 Nov; a deadline is not a release confirmation.",
+      "targets": [
+        {
+          "label": "Owner deadline: 2026-11-07 (time not set)",
+          "targetDate": "2026-11-07",
+          "note": "Not released. No download is offered; release depends on tested features and green privacy/security gates."
+        }
+      ]
+    },
+    {
+      "id": "netra-photo",
+      "name": "Netra Photo",
+      "type": "App project (planned, not released)",
+      "summary": "Planned on-device photo gallery with GeoCam integration. Preview and build approved; no released or verified working build. People recognition is opt-in; Hindi/English search, GeoCam albums, Places and encrypted own-Drive or PC backup are design goals pending feasibility and privacy review. Owner requests release together with GeoCam on 7 Nov.",
+      "targets": [
+        {
+          "label": "Owner deadline: 2026-11-07 (time not set)",
+          "targetDate": "2026-11-07",
+          "note": "Not released. No download is offered; release depends on tested features and green privacy/security gates."
+        }
+      ]
+    },
+    {
+      "id": "netra-news",
+      "name": "NETRA NEWS",
+      "type": "App project (planned, not released)",
+      "summary": "Planned news app and website, not released. Local and state v1 with named verified sources and original links; broader coverage only where verified sources are available. Foreground-first; only opted-in weather/earthquake alerts may use background work. Hosting setup, source-use permissions, privacy, build and release gates remain pending. No guaranteed live or emergency coverage.",
+      "targets": [
+        {
+          "label": "Owner deadline: app + website together: 2026-11-15 (time not set)",
+          "targetDate": "2026-11-15",
+          "note": "Not released. No download is offered; release depends on tested features and green privacy/security gates."
+        }
+      ]
+    },
+    {
+      "id": "netra-browser",
+      "name": "Netra Browser",
+      "type": "App project (planned, not released)",
+      "summary": "Planned Android WebView browser, not released. Tabs, bookmarks, deletable local history and downloads; no account or cloud sync. Private mode is later work. Working build, native/device security and download acceptance not verified. 13 Nov is an earlier team beta estimate, not a confirmed release.",
+      "targets": [
+        {
+          "label": "Earlier beta estimate, not owner-confirmed delivery: 2026-11-13 (time not set)",
+          "targetDate": "2026-11-13",
+          "note": "Not released. No download is offered; release depends on tested features and green privacy/security gates."
+        }
+      ]
     }
   ]
 }
