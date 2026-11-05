@@ -1,5 +1,5 @@
 {
-  "reviewed": "3 Nov 2026",
+  "reviewed": "5 Nov 2026",
   "note": "All dates are our own estimates and can change. An item with a \"ships\" list disappears by itself once the latest published release of every listed app has reached that version (the Eco app checks this from the real release data).",
   "apps": [
     {
@@ -53,6 +53,14 @@
     {
       "id": "netra-charge",
       "name": "Netra Charge"
+    },
+    {
+      "id": "netra-sentinel-lite",
+      "name": "Netra Sentinel Lite"
+    },
+    {
+      "id": "netra-law",
+      "name": "Netra Law"
     }
   ],
   "items": [
@@ -740,6 +748,24 @@
       "status": "Planned - design and approval pending; no release date set",
       "apps": [
         "eco"
+      ]
+    },
+    {
+      "title": "Netra Sentinel Lite: revised owner deadline 2026-11-10 (time not set)",
+      "text": "Separate lightweight battery announcement app. Planned, not released. Owner moved the deadline from 8 Nov to 10 Nov 2026 on 5 Nov. This is separate from Netra Charge; no APK or device acceptance is verified.",
+      "status": "Pending; not released. Previous target 8 Nov superseded by owner instruction on 5 Nov.",
+      "targetDate": "2026-11-10",
+      "apps": [
+        "netra-sentinel-lite"
+      ]
+    },
+    {
+      "title": "Netra Law: revised owner deadline 2026-11-12 (time not set)",
+      "text": "Indian law app, Phase 1 foundation in preparation. Not released. Owner moved the deadline from 9 Nov to 12 Nov 2026 on 5 Nov. Build, privacy, signed release and device checks remain required.",
+      "status": "Pending; not released. Previous target 9 Nov superseded by owner instruction on 5 Nov.",
+      "targetDate": "2026-11-12",
+      "apps": [
+        "netra-law"
       ]
     }
   ]

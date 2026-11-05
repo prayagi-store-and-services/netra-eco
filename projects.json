@@ -259,6 +259,38 @@
         "Planned outgoing verified business caller ID only through compatible authorized providers; recipient display is not guaranteed",
         "Planned local-first privacy controls, diagnostics and bounded, battery-aware work; calling, recording, AI, backup and provider integrations are not operational yet; no measured battery-performance claim"
       ]
+    },
+    {
+      "id": "netra-sentinel-lite",
+      "name": "Netra Sentinel Lite",
+      "type": "Android app (planned, not released)",
+      "summary": "Separate lightweight battery announcement app. Planned, not released. Owner moved the deadline from 8 Nov to 10 Nov 2026 on 5 Nov. This is separate from Netra Charge; no APK or device acceptance is verified.",
+      "targets": [
+        {
+          "label": "Owner deadline: 2026-11-10 (time not set)",
+          "targetDate": "2026-11-10",
+          "note": "Revised 5 Nov 2026. A target is not a release confirmation; tests and release gates still apply."
+        }
+      ],
+      "features": [
+        "Separate app; not a release of Netra Charge"
+      ]
+    },
+    {
+      "id": "netra-law",
+      "name": "Netra Law",
+      "type": "Android app (planned, not released)",
+      "summary": "Indian law app, Phase 1 foundation in preparation. Not released. Owner moved the deadline from 9 Nov to 12 Nov 2026 on 5 Nov. Build, privacy, signed release and device checks remain required.",
+      "targets": [
+        {
+          "label": "Owner deadline: 2026-11-12 (time not set)",
+          "targetDate": "2026-11-12",
+          "note": "Revised 5 Nov 2026. A target is not a release confirmation; tests and release gates still apply."
+        }
+      ],
+      "features": [
+        "Phase 1 only; no verified public build yet"
+      ]
     }
   ]
 }
