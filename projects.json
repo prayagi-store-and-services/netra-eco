@@ -322,7 +322,7 @@
       "id": "netra-news",
       "name": "NETRA NEWS",
       "type": "App project (planned, not released)",
-      "summary": "Planned news app and website, not released. Local and state v1 with named verified sources and original links; broader coverage only where verified sources are available. Foreground-first; only opted-in weather/earthquake alerts may use background work. Hosting setup, source-use permissions, privacy, build and release gates remain pending. No guaranteed live or emergency coverage.",
+      "summary": "Planned news app and website, not released. Local and state v1 with named verified sources and original links; broader coverage only where verified sources are available. Foreground-first; only opted-in weather/earthquake alerts may use background work. Hosting setup, source-use permissions, privacy, build and release gates remain pending. No guaranteed live or emergency coverage. Owner deadline: app and website together by 15 Nov 2026; time not set.",
       "targets": [
         {
           "label": "Owner deadline: app + website together: 2026-11-15 (time not set)",
@@ -335,7 +335,7 @@
       "id": "netra-browser",
       "name": "Netra Browser",
       "type": "App project (planned, not released)",
-      "summary": "Planned Android WebView browser, not released. Tabs, bookmarks, deletable local history and downloads; no account or cloud sync. Private mode is later work. Working build, native/device security and download acceptance not verified. 13 Nov is an earlier team beta estimate, not a confirmed release.",
+      "summary": "Planned Android WebView browser, not released. Tabs, bookmarks, deletable local history and downloads; no account or cloud sync. Private mode is later work. Working build, native/device security and download acceptance not verified. 13 Nov is an earlier team beta estimate, not a confirmed release. Earlier beta estimate: 13 Nov 2026; time not set.",
       "targets": [
         {
           "label": "Earlier beta estimate, not owner-confirmed delivery: 2026-11-13 (time not set)",
