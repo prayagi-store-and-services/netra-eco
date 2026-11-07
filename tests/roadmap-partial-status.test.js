@@ -20,3 +20,14 @@ assert(/owner.deferred/i.test(neg.title));
 assert(/not a readiness promise/.test(neg.status));
 assert(/time not set/.test(neg.status));
 assert(require('fs').readFileSync('roadmap.js', 'utf8').includes('Target date: '));
+
+const catalogNeg = require('../projects.json').upcoming.find(x => x.id === 'netra-neg');
+assert.strictEqual(catalogNeg.targetDate, neg.targetDate);
+assert(!catalogNeg.eta);
+assert.strictEqual(catalogNeg.missedEta, neg.missedEta);
+assert(/Owner-deferred/.test(catalogNeg.summary));
+assert(/time not set/.test(catalogNeg.summary));
+assert(/not a readiness promise/.test(catalogNeg.summary));
+assert.strictEqual(catalogNeg.targets.length, 1);
+assert.strictEqual(catalogNeg.targets[0].targetDate, neg.targetDate);
+assert(!catalogNeg.targets[0].eta);

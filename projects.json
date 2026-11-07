@@ -203,19 +203,20 @@
       "id": "netra-neg",
       "name": "Netra Neg",
       "type": "Private gift ledger (beta; public release pending)",
-      "summary": "v0.3.0 beta includes the local ledger and encrypted own-Drive backup/restore. Active acceptance testing: real-device sign-in and reinstall/restore remain unverified. Public launch target 7 Nov 2026, 8 PM IST; not a release confirmation. Photos are not included in backup.",
-      "eta": "2026-11-07T20:00:00+05:30",
+      "summary": "v0.3.0 beta includes the local ledger and encrypted own-Drive backup/restore. Active acceptance testing: real-device sign-in and reinstall/restore remain unverified. Owner-deferred target: 8 Nov 2026, time not set; not a readiness promise. Previous target: 7 Nov 20:00 IST, not confirmed delivered. Photos are not included in backup.",
       "targets": [
         {
-          "label": "Public release target - 7 Nov 2026, 8 PM IST (one day before Diwali)",
-          "eta": "2026-11-07T20:00:00+05:30",
-          "note": "Active acceptance work. Public launch depends on real-device sign-in/restore validation and green release gates. No app-wide hold."
+          "label": "Owner-deferred target: 8 Nov 2026 (time not set; not a readiness promise)",
+          "targetDate": "2026-11-08",
+          "note": "Previous target: 7 Nov 20:00 IST, not confirmed delivered. Real-device sign-in and reinstall/restore acceptance remain unverified; green release gates still apply. No app-wide hold."
         }
       ],
       "features": [
         "Private gift ledger",
         "Optional encrypted backup in your own Google Drive"
-      ]
+      ],
+      "targetDate": "2026-11-08",
+      "missedEta": "2026-11-07T20:00:00+05:30"
     },
     {
       "id": "netra-travel-rider",
