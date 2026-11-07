@@ -714,13 +714,14 @@
       "eta": "2026-11-22T20:00:00+05:30"
     },
     {
-      "title": "Netra Neg: private gift ledger with optional encrypted own-Drive backup. Public release target: 7 Nov 2026, one day before Diwali (8 Nov) - date only, not a release confirmation.",
-      "status": "Active: v0.3.0 beta published 3 Nov. Device sign-in, reinstall and restore acceptance remain unverified; public target 7 Nov 20:00 IST. Photos not included in backup. No app-wide hold.",
-      "targetDate": "2026-11-07",
+      "title": "Netra Neg: private gift ledger with optional encrypted own-Drive backup. Owner-deferred target: 8 Nov 2026 - date only, not a readiness promise.",
+      "status": "Active: v0.3.0 beta published 3 Nov. Device sign-in, reinstall and restore acceptance remain unverified; owner deferred the target to 8 Nov (time not set), not a readiness promise. Previous target: 7 Nov 20:00 IST, not confirmed delivered. Photos not included in backup. No app-wide hold.",
+      "targetDate": "2026-11-08",
       "apps": [
         "netra-neg"
       ],
-      "eta": "2026-11-07T20:00:00+05:30"
+      "missedEta": "2026-11-07T20:00:00+05:30",
+      "eta": null
     },
     {
       "title": "Netra Pulse: private health, activity, sleep and optional period tracking; only device-supported data and source-linked guidance. No confirmed release date.",

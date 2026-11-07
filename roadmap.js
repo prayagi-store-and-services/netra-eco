@@ -27,7 +27,7 @@ function run(rm,pj){
    var sh=it.ships||[];if(!sh.length)return true;
    return !sh.every(function(s){var h=latest[rid(s.app)];return h&&atLeast(h,s.version)===true})}).map(function(it){
    var t=Date.parse(it.eta);var v=(it.ships||[]).map(function(s){return s.version}).filter(Boolean);
-   return {title:it.title,eta:isNaN(t)?null:t,app:(it.apps||[]).map(function(a){return names[a]||a}).join(", ")||"Unavailable",ver:v.length?v.join(" / "):"Unavailable",status:it.status||"Unavailable"}});
+   return {title:it.title,targetDate:it.targetDate,eta:isNaN(t)?null:t,app:(it.apps||[]).map(function(a){return names[a]||a}).join(", ")||"Unavailable",ver:v.length?v.join(" / "):"Unavailable",status:it.status||"Unavailable"}});
   items.sort(function(a,b){return (a.eta==null)-(b.eta==null)||(a.eta-b.eta)});
   if(!items.length)return;
   var nxt=items.filter(function(i){return i.eta!=null&&i.eta>Date.now()})[0]||items[0];
@@ -44,7 +44,7 @@ function run(rm,pj){
    box.appendChild(mk("div","font-size:.8rem;color:#555;margin-bottom:8px","All dates are our own estimates (IST) and can change. Reviewed "+(rm.reviewed||"Unavailable")+"."));
    items.forEach(function(i){var c=mk("div","border-top:1px solid #e3e3e3;padding:8px 0;font-size:.88rem;line-height:1.45");
     c.appendChild(mk("div","font-weight:700",i.title));c.appendChild(mk("div","color:#444","App: "+i.app+" | Version: "+i.ver+" | Status: "+i.status));
-    c.appendChild(mk("div","color:#444",i.eta==null?"No date announced":"ETA: "+fmt(i.eta)+" | Countdown: "+countdown(i.eta-Date.now())));box.appendChild(c)});
+    c.appendChild(mk("div","color:#444",i.eta==null?(i.targetDate?"Target date: "+i.targetDate+" (time not set; not a readiness promise)":"No date announced"):"ETA: "+fmt(i.eta)+" | Countdown: "+countdown(i.eta-Date.now())));box.appendChild(c)});
    ov.appendChild(box);ov.onclick=function(e){if(e.target===ov)document.body.removeChild(ov)};document.addEventListener("keydown",function k(e){if(e.key==="Escape"){document.removeEventListener("keydown",k);if(ov.parentNode)document.body.removeChild(ov)}});
    document.body.appendChild(ov);x.focus()}
   bar.onclick=open;
