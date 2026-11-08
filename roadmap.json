@@ -517,7 +517,7 @@
     },
     {
       "title": "Netra Player v1.1.17: Headphone sound effect, only if the phone reports support, otherwise Unavailable",
-      "status": "Planned",
+      "status": "Released in v1.1.17",
       "apps": [
         "netra-player"
       ],
