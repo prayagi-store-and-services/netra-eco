@@ -345,7 +345,7 @@
         "netra-hub"
       ],
       "title": "H5: magnetic alerts and final polish",
-      "text": "Magnetic alerts: the always-on magnetic anomaly engine ships in the live v1.5.8 (adaptive baseline, charging suppression, about 3 seconds persistence, notification and optional voice alert, behind the default-off safety monitoring switch). It was never announced or verified on a physical phone. The final polish for the complete Netra Human Safety release is still planned.",
+      "text": "Magnetic alerts: the magnetic anomaly engine ships in the live v1.5.8 (adaptive baseline, charging suppression, alert after three consecutive checks of the 2-second safety cycle, notification plus voice announcement). Caveats: never announced or verified on a physical phone; the per-sensor notify/voice switches in Settings are not yet consulted by the alert dispatcher, so delivery follows the main safety-monitoring switch (default on), night mode and phone-call checks. The final polish for the complete Netra Human Safety release is still planned.",
       "status": "Partial; magnetic alert engine ships in v1.5.8 (not device-verified, never announced), final polish pending.",
       "eta": "2026-10-26T20:00:00+05:30"
     },
