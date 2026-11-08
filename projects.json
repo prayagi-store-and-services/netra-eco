@@ -94,7 +94,7 @@
     {
       "id": "netra-charge",
       "package": "com.netracharge.app",
-      "name": "Netra Charge",
+      "name": "Netra Sentinel Lite",
       "type": "Battery and charger voice announcements",
       "summary": "A very small free app that speaks four things: Connected, Disconnected, Full charge and Low battery (15% by default, adjustable). For Android, with a Shortcuts setup guide for iPhone.",
       "code": "charge",
