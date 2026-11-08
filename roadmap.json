@@ -254,9 +254,9 @@
       "apps": [
         "kbc"
       ],
-      "title": "No repeated questions and camera indicator for fair play",
-      "text": "KBC will not repeat a question you already saw, and will show a clear camera-in-use indicator for the anti-cheat check.",
-      "status": "Planned",
+      "title": "No repeated questions; unused camera/mic permission removed",
+      "text": "KBC does not repeat a question you already saw. On the owner's 1 Nov decision the camera/mic permission demand was removed instead of adding an indicator: KBC never uses the camera or microphone, so no camera-in-use indicator is needed.",
+      "status": "Released in v1.1.41",
       "eta": "2026-11-01T20:00:00+05:30"
     },
     {
