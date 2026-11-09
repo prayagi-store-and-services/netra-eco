@@ -33,3 +33,7 @@ Every current and future Netra app must show `v<version> | Netra Ecosystem` on i
 ## Release notes checklist (compulsory)
 
 No release ships without a filled "What's new". Every fixed bug and every new feature gets one plain-words bullet that is true and can be checked against the pull request or changelog. The default text "Improvements and bug fixes." is no longer accepted. The Netra Ecosystem website reads the full notes live from the GitHub release, including paragraph notes. Only an empty note is shown as "No release notes were provided."
+
+## Bug/regression protocol: git bisect (owner rule, 9 Nov 2026)
+
+For any bug or regression with a known-good past state, use `git bisect` to find the exact culprit commit before fixing. Record the culprit commit hash in the fix report/PR body. Bisect checkouts are local and read-only in effect: reset (`git bisect reset`) after the run. If bisect is not possible (no known-good state, unbuildable history), say so explicitly in the report instead of skipping silently.
