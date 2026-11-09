@@ -9,6 +9,23 @@
   if (!/^[a-z0-9]{2,12}$/.test(code)) return;
   if (repo && !/^prayagi-store-and-services\/[A-Za-z0-9._-]+$/.test(repo)) return;
   if (!repo && !dlOverride) return;
+  // Device compatibility gate (owner command 9 Nov 19:31): like Play, an incompatible device gets no install option.
+  // Honest limits: Chrome freezes the UA at "Android 10" (110+), so a real "Android 5/6" string only comes from
+  // genuinely old browsers/WebViews; Android 7.0+ devices and frozen UAs pass, and the OS enforces minSdk 24 at install.
+  // Desktop browsers keep the download: a PC is not an install target, the APK is for moving to an Android device.
+  var gateDl=document.getElementById("dl"), gateMeta=document.getElementById("meta");
+  var gateMsg=(function(){
+    var ua=navigator.userAgent||"";
+    if(/iPhone|iPad|iPod/i.test(ua))return "This app is not available for your device. Netra apps are Android APKs; iPhone and iPad are not supported.";
+    var um=ua.match(/Android (\d+)(?:\.(\d+))?/i);
+    if(um&&parseInt(um[1],10)<7)return "This app is not available for your device. It needs Android 7.0 or later; this device reports Android "+um[1]+(um[2]?"."+um[2]:"")+".";
+    return null;
+  })();
+  if(gateMsg){
+    if(gateDl){gateDl.removeAttribute("href");gateDl.setAttribute("aria-disabled","true");gateDl.textContent="Not available for your device";gateDl.style.pointerEvents="none";gateDl.style.opacity="0.6";}
+    if(gateMeta)gateMeta.textContent=gateMsg;
+    return;
+  }
   // Human Safety has no latest/history fallback. Fail closed until this exact asset verifies.
   if (repo === "prayagi-store-and-services/netra-hub") {
     var hubDl=document.getElementById("dl"),hubMeta=document.getElementById("meta");
