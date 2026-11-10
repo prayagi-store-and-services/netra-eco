@@ -10,19 +10,19 @@
 <body>
 <p><a href="../">&larr; Netra Ecosystem</a> &middot; <a href="./">Legal &amp; data</a></p>
 <h1>Privacy policy - Netra Player</h1>
-<p>Last updated: October 23, 2026. Developer contact: prayagideepak@gmail.com.</p>
+<p>Last updated: November 10, 2026. Developer contact: prayagideepak@gmail.com.</p>
 <h2>The app, in short</h2>
 <p>Netra Player plays video and audio files from your phone. Your media, playlists and play history stay on your phone; the app does not upload your files anywhere. <p>The app does not create an account, does not show ads, and does not sell your data.</p></p>
 <h2>Permissions</h2>
-<p>Foreground media-playback service and notifications so playback can continue with the screen off and show controls; network and install-permission for the items below.</p>
+<p>Foreground media-playback service and notifications so playback can continue with the screen off and show controls; network for public metadata, optional counters and reports. Player does not request package-install permission or download/install APKs. App downloads and updates are handled by Netra Ecosystem or its website.</p>
 <h2>What leaves the phone</h2>
 <p>The app reads public app-catalogue files from this website to show ecosystem information. No personal data is sent with those reads.</p>
 <h2>Anonymous usage counter (optional)</h2>
-<p>At most once per day (and once per month) the app adds +1 to a public counter in Google Firebase so the team can see how many phones used the app. The request carries no device ID, install ID, account, location or app data - only "increment this counter by 1". It is on by default and can be turned off in the app's Settings.</p>
+<p>At most once per day (and once per month) the app adds +1 to a public counter in Google Firebase so the team can see how many phones used the app. The request carries no device ID, install ID, account, location or app data - only "increment this counter by 1". In Player v1.1.21 and later it is off until you explicitly enable it in Settings after reading the data and destination. Older releases enabled it by default; their setting is not treated as explicit consent after upgrading. You can turn it off again at any time. The service receives the network request, including its source IP in transit; no claim is made about the service's own logs.</p>
 <h2>Crash reports (your choice)</h2>
 <p>If the app crashes, a short report is saved on the phone. It is <b>not sent by itself</b>. To share it, open the app's Crash report card: you see the exact text first, and it is sent only when you tap Send. The report holds only: app name, phone model, Android version, app version, the time of the crash, and the crash stack trace (code locations; exception messages are dropped). It has no name, email, location, files or device IDs. It goes to the developer's email inbox through the FormSubmit service and is used only to fix bugs. To ask for a report to be deleted, email prayagideepak@gmail.com.</p>
 <h2>Update checks</h2>
-<p>The app checks its public GitHub releases page for new versions. This sends no personal data.</p>
+<p>The app reads public version metadata from GitHub for new versions. It does not upload media or identifiers in the request body. Network services receive the request, including its source IP in transit. Choosing Update opens this app's page in Netra Ecosystem or on the Eco website; Player does not download or install an APK.</p>
 <h2>Contact</h2>
 <p>To ask about, correct or delete something, email prayagideepak@gmail.com. Changes to this policy will be posted on this page with a new date.</p>
 <p><a href="./">Legal &amp; data</a> &middot; <a href="data-safety.html">Data safety</a></p>
