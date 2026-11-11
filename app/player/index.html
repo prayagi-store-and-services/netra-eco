@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Netra Player - Netra Ecosystem</title>
-<meta name="description" content="Download Netra Player from the Netra Ecosystem. A simple video and MP3 player for Android. Plays video and music files stored on your phone.">
+<meta name="description" content="Download Netra Player from the Netra Ecosystem. Plays supported local video and audio files chosen on this phone. Optional usage reporting needs explicit opt-in; crash reports are previewed and sent only after a tap through FormSubmit HTTPS, not file-level E2EE. Updates through Netra Ecosystem; no package-install permission.">
 <link rel="icon" type="image/svg+xml" href="../../logo.svg">
 <link rel="stylesheet" href="../app.css">
 </head>
@@ -12,12 +12,14 @@
 <main id="app" data-code="player" data-repo="prayagi-store-and-services/netra-player" data-name="Netra Player" data-icon="">
 <p class="back"><a href="../../">Netra Ecosystem</a></p>
 <h1>Netra Player</h1>
-<p class="type">Video and MP3 player</p>
-<p>A simple video and MP3 player for Android. Plays video and music files stored on your phone.</p>
+<p class="type">Local video and audio player</p>
+<p>Plays supported local video and audio files chosen on this phone. Optional usage reporting needs explicit opt-in; crash reports are previewed and sent only after a tap through FormSubmit HTTPS, not file-level E2EE. Updates through Netra Ecosystem; no package-install permission.</p>
 <p><a id="dl" class="btn" href="https://github.com/prayagi-store-and-services/netra-player/releases/latest/download/app-release.apk">Download APK</a></p>
 <p id="open" hidden><a class="btn btn2" href="intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=com.prayagi.netraplayer;S.browser_fallback_url=https%3A%2F%2Fprayagi-store-and-services.github.io%2Fnetra-eco%2Fapp%2Fplayer%2F;end">Open app (if installed)</a></p>
 <p id="meta" class="sub">Loading the latest version...</p>
 <p id="count" class="sub"></p>
+<section aria-labelledby="release-notes"><h2 id="release-notes">Release information</h2><p>v1.1.21: optional usage reporting requires explicit opt-in. Track-dialog lifecycle, audio-only labels, About and release metadata were checked with automated tests and rendered emulator screens.</p>
+<p>Crash reports show their text and destination before a user-tap send through FormSubmit HTTPS. File-level end-to-end encryption is not implemented. Physical-phone, TV, Bluetooth and battery acceptance have not been verified.</p></section>
 <p class="sub">Requires Android 8.0 or newer. You can see your Android version under Settings &gt; About phone before downloading. The download is only an APK file: whether your phone can run it, and the decision to install it, remain your responsibility.</p>
 <p class="sub">Android only. On an Android phone the Open app button launches the app if it is installed; if Android cannot find it, you stay on this page to download it. A browser cannot always tell whether an app is installed. Allow installs from your browser once if Android asks. Downloads started from this page are counted anonymously (no cookies, no personal data).</p>
 
