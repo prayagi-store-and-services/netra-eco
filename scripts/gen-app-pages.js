@@ -27,8 +27,8 @@ ${hub ? `<aside role="note" style="border:2px solid #fbbf24;border-radius:12px;p
 <p><a id="dl" class="btn" aria-disabled="true">Download temporarily paused</a></p>` : `<p><a id="dl" class="btn" href="${p.download ? esc(p.download) : `https://github.com/${esc(p.repo)}/releases/latest/download/app-release.apk`}">Download APK</a></p>`}
 <p id="open" hidden><a class="btn btn2" href="intent://#Intent;action=android.intent.action.MAIN;category=android.intent.category.LAUNCHER;package=${esc(p.package)};S.browser_fallback_url=${encodeURIComponent('https://prayagi-store-and-services.github.io/netra-eco/app/' + p.code + '/')};end">Open app (if installed)</a></p>
 <p id="meta" class="sub"${hub || p.code === 'eco' ? ' style="overflow-wrap:anywhere"' : ''}>Loading the latest version...</p>
-<p id="count" class="sub"></p>
-${Array.isArray(p.releaseInfo) ? `<section aria-labelledby="release-notes"><h2 id="release-notes">Release information</h2>${p.releaseInfo.map(line => `<p>${esc(line)}</p>`).join("\n")}</section>` : ""}
+<p id="count" class="sub"></p>${Array.isArray(p.releaseInfo) ? `
+<section aria-labelledby="release-notes"><h2 id="release-notes">Release information</h2>${p.releaseInfo.map(line => `<p>${esc(line)}</p>`).join("\n")}</section>` : ""}
 ${p.minAndroid ? `<p class="sub">Requires Android ${esc(p.minAndroid)} or newer. You can see your Android version under Settings &gt; About phone before downloading. The download is only an APK file: whether your phone can run it, and the decision to install it, remain your responsibility.</p>` : ""}
 ${hub ? "" : `<p class="sub">Android only. On an Android phone the Open app button launches the app if it is installed; if Android cannot find it, you stay on this page to download it. A browser cannot always tell whether an app is installed. Allow installs from your browser once if Android asks. Downloads started from this page are counted anonymously (no cookies, no personal data).</p>`}
 ${p.site ? `<p><a href="${esc(p.site)}">About ${esc(p.name)}</a></p>` : ''}
