@@ -70,12 +70,16 @@
       "id": "netra-player",
       "package": "com.prayagi.netraplayer",
       "name": "Netra Player",
-      "type": "Video and MP3 player",
-      "summary": "A simple video and MP3 player for Android. Plays video and music files stored on your phone.",
+      "type": "Local video and audio player",
+      "summary": "Plays supported local video and audio files chosen on this phone. Optional usage reporting needs explicit opt-in; crash reports are previewed and sent only after a tap through FormSubmit HTTPS, not file-level E2EE. Updates through Netra Ecosystem; no package-install permission.",
       "repo": "prayagi-store-and-services/netra-player",
       "code": "player",
       "privacy": "../../legal/privacy-player.html",
-      "minAndroid": "8.0"
+      "minAndroid": "8.0",
+      "releaseInfo": [
+        "v1.1.21: optional usage reporting requires explicit opt-in. Track-dialog lifecycle, audio-only labels, About and release metadata were checked with automated tests and rendered emulator screens.",
+        "Crash reports show their text and destination before a user-tap send through FormSubmit HTTPS. File-level end-to-end encryption is not implemented. Physical-phone, TV, Bluetooth and battery acceptance have not been verified."
+      ]
     },
     {
       "id": "netra-eco",
@@ -89,7 +93,11 @@
       "icon": "https://prayagi-store-and-services.github.io/netra-eco/logo.svg",
       "code": "eco",
       "privacy": "../../legal/privacy-eco.html",
-      "minAndroid": "8.0"
+      "minAndroid": "8.0",
+      "releaseInfo": [
+        "v1.3.2 adds a dedicated Games tab. Current-catalog games and unreleased plans are kept separate. Planned Ludo (including Snakes & Ladders), Chess, Sudoku, Tic Tac Toe (confirmation pending) and an original match-3 game have no download or install action until released.",
+        "No new permission, dependency or network endpoint. Existing crash reports use a user-previewed HTTPS send through FormSubmit, not file-level end-to-end encryption. Physical-phone acceptance is not verified."
+      ]
     },
     {
       "id": "netra-charge",
