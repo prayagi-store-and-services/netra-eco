@@ -41,3 +41,8 @@ assert(fs.readFileSync('app/guardian/index.html', 'utf8').includes(guardian.down
 
 assert.equal(guardianRelease.publishedAt, '2026-11-18T14:10:14Z');
 assert(fs.readFileSync('netra-site.js', 'utf8').includes('published_at:x.publishedAt||null'));
+
+assert.equal(guardian.repo, 'prayagideepak-collab/Netra-Battery-Guardian');
+assert(html.includes('if((!p.repo||p.id==="netra-battery-guardian")&&p.latestJson)'));
+assert(fs.readFileSync('app/guardian/index.html','utf8').includes('data-repo=""'));
+assert(fs.readFileSync('netra-site.js','utf8').includes('if((!p.repo||p.id==="netra-battery-guardian")&&p.latestJson)'));
