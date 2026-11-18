@@ -38,3 +38,6 @@ assert.equal(guardianRelease.sha256, 'f115e902aa9e191c4367519f274c26bf6adaf0692f
 assert.equal(guardianRelease.download, guardian.download);
 assert(fs.readFileSync('sitemap.xml', 'utf8').includes(base + 'app/guardian/'));
 assert(fs.readFileSync('app/guardian/index.html', 'utf8').includes(guardian.download));
+
+assert.equal(guardianRelease.publishedAt, '2026-11-18T14:10:14Z');
+assert(fs.readFileSync('netra-site.js', 'utf8').includes('published_at:x.publishedAt||null'));
