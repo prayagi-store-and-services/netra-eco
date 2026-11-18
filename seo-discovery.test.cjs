@@ -46,3 +46,13 @@ assert.equal(guardian.repo, 'prayagideepak-collab/Netra-Battery-Guardian');
 assert(html.includes('if((!p.repo||p.id==="netra-battery-guardian")&&p.latestJson)'));
 assert(fs.readFileSync('app/guardian/index.html','utf8').includes('data-repo=""'));
 assert(fs.readFileSync('netra-site.js','utf8').includes('if((!p.repo||p.id==="netra-battery-guardian")&&p.latestJson)'));
+
+// Owner Q52: released catalog only, with roadmap/countdown still available.
+const catalogRender = html.slice(html.indexOf('var allApps='), html.indexOf('var raNav='));
+assert(catalogRender.includes('(d.projects||[])'));
+assert(!catalogRender.includes('d.upcoming'));
+assert(!catalogRender.includes('renderSoon('));
+assert(!catalogRender.includes('coming-soon-apps'));
+assert(!html.includes('src="docs/videos/coming-'));
+assert(html.includes('<script src="roadmap.js"></script>'));
+assert(html.includes('Future plans are separate from current apps'));
