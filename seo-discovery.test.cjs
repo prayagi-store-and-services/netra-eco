@@ -25,3 +25,7 @@ for (const p of projects) {
   assert(fs.existsSync(`app/${p.code}/index.html`), `Broken local app target: ${p.code}`);
 }
 console.log(`PASS primary canonical, visible brand microdata and ${projects.length} static app links`);
+
+// The compact layout moves footer children, not the footer element itself.
+assert(html.includes('<footer><span id="netra-social-profiles">'));
+assert(html.includes('itemref="netra-social-profiles"'));
