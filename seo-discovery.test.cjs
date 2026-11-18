@@ -25,3 +25,16 @@ for (const p of projects) {
   assert(fs.existsSync(`app/${p.code}/index.html`), `Broken local app target: ${p.code}`);
 }
 console.log(`PASS primary canonical, visible brand microdata and ${projects.length} static app links`);
+
+// Guardian-only release listing must stay pinned to the verified first release.
+const guardian = projects.find(p => p.id === 'netra-battery-guardian');
+assert(guardian && guardian.code === 'guardian');
+assert.equal(guardian.package, 'com.aistudio.netrabattery.kxmzqr');
+assert.equal(guardian.download, 'https://github.com/prayagideepak-collab/Netra-Battery-Guardian/releases/download/v1.0.0/Guardian-v1.0.0.apk');
+const guardianRelease = JSON.parse(fs.readFileSync('guardian-release.json', 'utf8'));
+assert.equal(guardianRelease.tag, 'v1.0.0');
+assert.equal(guardianRelease.size, 13300013);
+assert.equal(guardianRelease.sha256, 'f115e902aa9e191c4367519f274c26bf6adaf0692f12c57493af151f1e6f467f');
+assert.equal(guardianRelease.download, guardian.download);
+assert(fs.readFileSync('sitemap.xml', 'utf8').includes(base + 'app/guardian/'));
+assert(fs.readFileSync('app/guardian/index.html', 'utf8').includes(guardian.download));
