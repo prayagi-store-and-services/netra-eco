@@ -115,15 +115,15 @@
       "package": "com.aistudio.netrabattery.kxmzqr",
       "name": "Netra Battery Guardian",
       "type": "Battery and temperature monitoring",
-      "summary": "Local battery and temperature monitoring, history, user-selected report export and a home-screen widget. Missing measurements show Unavailable. No guaranteed cooling, battery-life gain or Android OS security patches.",
+      "summary": "Local battery and temperature observations, history, private report export and two home-screen widgets. Unsupported numeric data stays blank. No invented capacity, battery-health scores, Doze savings or storage categories. No guaranteed cooling, battery-life gain or Android OS security patches.",
       "code": "guardian",
-      "download": "https://github.com/prayagideepak-collab/Netra-Battery-Guardian/releases/download/v1.0.0/Guardian-v1.0.0.apk",
+      "download": "https://github.com/prayagideepak-collab/Netra-Battery-Guardian/releases/download/v1.0.1/Guardian-v1.0.1.apk",
       "latestJson": "https://prayagi-store-and-services.github.io/netra-eco/guardian-release.json",
-      "site": "https://github.com/prayagideepak-collab/Netra-Battery-Guardian/releases/tag/v1.0.0",
+      "site": "https://github.com/prayagideepak-collab/Netra-Battery-Guardian/releases/tag/v1.0.1",
       "minAndroid": "7.0",
       "releaseInfo": [
-        "v1.0.0: first standalone Guardian release. Home-screen widget, Hindi and English labels, media-aware voice gate and approximate observed-session estimates. Optional cooling brightness consent starts OFF.",
-        "Physical-phone widget resizing, voice routing and document-picker acceptance are not yet verified. The signing certificate may differ from an earlier development build; Android may require uninstalling that build, which can remove local data. No cross-app history import is claimed."
+        "v1.0.1: device-data corrections. Signed sensor current/power; counter-derived approximate capacity only with real inputs; Android-reported thermal alerts; measured cache and unattributed storage. Two widgets retained: detailed 4x3 and compact 3x1.",
+        "91 automated tests passed with native fixture previews. Physical-phone upgrade, widget resizing, voice routing and document-picker acceptance are NOT RUN. The signing certificate may differ from an earlier development build; Android may require uninstalling that build, which can remove local data. No cross-app history import is claimed."
       ],
       "repo": "prayagideepak-collab/Netra-Battery-Guardian"
     }

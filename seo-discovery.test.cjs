@@ -26,20 +26,20 @@ for (const p of projects) {
 }
 console.log(`PASS primary canonical, visible brand microdata and ${projects.length} static app links`);
 
-// Guardian-only release listing must stay pinned to the verified first release.
+// Guardian-only release listing must stay pinned to the verified1.0.1 release.
 const guardian = projects.find(p => p.id === 'netra-battery-guardian');
 assert(guardian && guardian.code === 'guardian');
 assert.equal(guardian.package, 'com.aistudio.netrabattery.kxmzqr');
-assert.equal(guardian.download, 'https://github.com/prayagideepak-collab/Netra-Battery-Guardian/releases/download/v1.0.0/Guardian-v1.0.0.apk');
+assert.equal(guardian.download, 'https://github.com/prayagideepak-collab/Netra-Battery-Guardian/releases/download/v1.0.1/Guardian-v1.0.1.apk');
 const guardianRelease = JSON.parse(fs.readFileSync('guardian-release.json', 'utf8'));
-assert.equal(guardianRelease.tag, 'v1.0.0');
-assert.equal(guardianRelease.size, 13300013);
-assert.equal(guardianRelease.sha256, 'f115e902aa9e191c4367519f274c26bf6adaf0692f12c57493af151f1e6f467f');
+assert.equal(guardianRelease.tag, 'v1.0.1');
+assert.equal(guardianRelease.size, 13403473);
+assert.equal(guardianRelease.sha256, 'b1b6c4ba5c9fcbc9fa286b81bb5f299caba9c431a77cf3c375db94e21c0ccecc');
 assert.equal(guardianRelease.download, guardian.download);
 assert(fs.readFileSync('sitemap.xml', 'utf8').includes(base + 'app/guardian/'));
 assert(fs.readFileSync('app/guardian/index.html', 'utf8').includes(guardian.download));
 
-assert.equal(guardianRelease.publishedAt, '2026-11-18T14:10:14Z');
+assert.equal(guardianRelease.publishedAt, '2026-11-18T16:45:48Z');
 assert(fs.readFileSync('netra-site.js', 'utf8').includes('published_at:x.publishedAt||null'));
 
 assert.equal(guardian.repo, 'prayagideepak-collab/Netra-Battery-Guardian');
