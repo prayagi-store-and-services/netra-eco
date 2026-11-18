@@ -12,6 +12,8 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v7
+      - name: Check canonical, brand identity and crawlable app links
+        run: node seo-discovery.test.cjs
       - name: Test complete release notes rendering
         run: node tests/release-notes.test.js
       - name: Verify partial roadmap entries have no unverified ETA
