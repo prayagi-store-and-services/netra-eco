@@ -109,6 +109,22 @@
       "download": "https://prayagi-store-and-services.github.io/netra-eco/downloads/netra-charge/app-release.apk",
       "latestJson": "https://prayagi-store-and-services.github.io/netra-eco/downloads/netra-charge/latest.json",
       "privacy": "../../legal/privacy-charge.html"
+    },
+    {
+      "id": "netra-battery-guardian",
+      "package": "com.aistudio.netrabattery.kxmzqr",
+      "name": "Netra Battery Guardian",
+      "type": "Battery and temperature monitoring",
+      "summary": "Local battery and temperature monitoring, history, user-selected report export and a home-screen widget. Missing measurements show Unavailable. No guaranteed cooling, battery-life gain or Android OS security patches.",
+      "code": "guardian",
+      "download": "https://github.com/prayagideepak-collab/Netra-Battery-Guardian/releases/download/v1.0.0/Guardian-v1.0.0.apk",
+      "latestJson": "https://prayagi-store-and-services.github.io/netra-eco/guardian-release.json",
+      "site": "https://github.com/prayagideepak-collab/Netra-Battery-Guardian/releases/tag/v1.0.0",
+      "minAndroid": "7.0",
+      "releaseInfo": [
+        "v1.0.0: first standalone Guardian release. Home-screen widget, Hindi and English labels, media-aware voice gate and approximate observed-session estimates. Optional cooling brightness consent starts OFF.",
+        "Physical-phone widget resizing, voice routing and document-picker acceptance are not yet verified. The signing certificate may differ from an earlier development build; Android may require uninstalling that build, which can remove local data. No cross-app history import is claimed."
+      ]
     }
   ],
   "upcoming": [
