@@ -29,3 +29,5 @@ Release details and availability can change. Consult each app page and its linke
 - [Telegram](https://t.me/Netraecosystem)
 - [Reddit](https://www.reddit.com/user/NetraEcosystem/)
 - [Hacker News](https://news.ycombinator.com/user?id=netraecosystem)
+
+- Netra Battery Guardian: https://prayagi-store-and-services.github.io/netra-eco/app/guardian/
