@@ -1,9 +1,9 @@
 {
-  "tag": "v1.0.0",
-  "size": 13300013,
-  "sha256": "f115e902aa9e191c4367519f274c26bf6adaf0692f12c57493af151f1e6f467f",
-  "notes": "Standalone Guardian v1.0.0. Android 7.0 or newer. Missing measurements show Unavailable.",
-  "releaseUrl": "https://github.com/prayagideepak-collab/Netra-Battery-Guardian/releases/tag/v1.0.0",
-  "download": "https://github.com/prayagideepak-collab/Netra-Battery-Guardian/releases/download/v1.0.0/Guardian-v1.0.0.apk",
-  "publishedAt": "2026-11-18T14:10:14Z"
+  "tag": "v1.0.1",
+  "size": 13403473,
+  "sha256": "b1b6c4ba5c9fcbc9fa286b81bb5f299caba9c431a77cf3c375db94e21c0ccecc",
+  "notes": "Guardian v1.0.1. Observed device data only; unsupported numeric readings blank. Two widgets retained. Physical-phone acceptance NOT RUN.",
+  "releaseUrl": "https://github.com/prayagideepak-collab/Netra-Battery-Guardian/releases/tag/v1.0.1",
+  "download": "https://github.com/prayagideepak-collab/Netra-Battery-Guardian/releases/download/v1.0.1/Guardian-v1.0.1.apk",
+  "publishedAt": "2026-11-18T16:45:48Z"
 }
