@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-bTBThJ0XhqNwRGbdeTPqTc67yc5+3KA0ft+/yaLO+cU=' 'sha256-lRX71ZO7yKQXAam3CZOz0JOjUZ0eL4qG3FLIn474Kl0=' https://www.googletagmanager.com https://www.clarity.ms https://scripts.clarity.ms; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com https://formsubmit.co https://*.google-analytics.com https://clarity.ms https://*.clarity.ms; frame-src 'self' https://www.youtube-nocookie.com; media-src 'self'; form-action 'none'; upgrade-insecure-requests">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-Fy0rkB71rp/kAx5mrxpWlv/Aqe2KU6Wt5jX/fm22MfI=' 'sha256-lRX71ZO7yKQXAam3CZOz0JOjUZ0eL4qG3FLIn474Kl0=' https://www.googletagmanager.com https://www.clarity.ms https://scripts.clarity.ms; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com https://formsubmit.co https://*.google-analytics.com https://clarity.ms https://*.clarity.ms; frame-src 'self' https://www.youtube-nocookie.com; media-src 'self'; form-action 'none'; upgrade-insecure-requests">
 <script src="framebust.js"></script>
 <script src="counter.js"></script><meta name="referrer" content="strict-origin-when-cross-origin"><script src="https://prayagi-store-and-services.github.io/netra-eco/geoblock.js"></script>
 <meta charset="utf-8">
@@ -135,7 +135,7 @@ section{padding:14px;margin:12px 0}
 
 <section id="weekly-security"><h2>Weekly security commitment</h2><p>Netra Ecosystem will provide a weekly security patch on Saturday or Sunday.</p><p class="sub">This is a release commitment, not a claim that every app has already received this week's patch.</p></section>
 <div id="apps"></div>
-<section id="videos"><h2>Videos</h2><div class="sub">Short, honest videos about Netra apps - real features only, no mockups. Promo videos for released apps, and coming-soon videos for apps on our roadmap. Coming-soon dates are approximate targets from the roadmap, not promises.</div>
+<section id="videos"><h2>Videos</h2><div class="sub">Short, honest videos about Netra apps - real features only, no mockups. Promo videos for released apps. Planned work and approximate targets remain in the separate roadmap, not in this app catalog.</div>
 <h3 style="margin:14px 0 4px">Released apps</h3>
 <div class="vidgrid">
 <figure><video controls preload="metadata" src="docs/videos/netra-ecosystem-promo.mp4"></video><figcaption>Netra Ecosystem - promo</figcaption></figure>
@@ -146,15 +146,7 @@ section{padding:14px;margin:12px 0}
 <figure><video controls preload="metadata" src="docs/videos/netra-player-promo.mp4"></video><figcaption>Netra Player - promo</figcaption></figure>
 <figure><video controls preload="metadata" src="docs/videos/netra-trikaal-promo.mp4"></video><figcaption>Netra Trikaal - promo</figcaption></figure>
 </div>
-<h3 style="margin:14px 0 4px">Coming soon (approximate targets, no promises)</h3>
-<div class="vidgrid">
-<figure><video controls preload="metadata" src="docs/videos/coming-netra-intruder.mp4"></video><figcaption>Netra Intruder - coming soon</figcaption></figure>
-<figure><video controls preload="metadata" src="docs/videos/coming-netra-neg.mp4"></video><figcaption>Netra Neg - coming soon</figcaption></figure>
-<figure><video controls preload="metadata" src="docs/videos/coming-netra-email.mp4"></video><figcaption>Netra Email - coming soon</figcaption></figure>
-<figure><video controls preload="metadata" src="docs/videos/coming-netra-x-trikaal.mp4"></video><figcaption>Netra X Trikaal - coming soon</figcaption></figure>
-<figure><video controls preload="metadata" src="docs/videos/coming-netra-pulse.mp4"></video><figcaption>Netra Pulse - coming soon</figcaption></figure>
-<figure><video controls preload="metadata" src="docs/videos/coming-netra-tv.mp4"></video><figcaption>Netra TV - coming soon</figcaption></figure>
-</div></section>
+</section>
 <section id="cctv"><h2>CCTV recording</h2><div class="sub">Office and team videos from the Netra Ecosystem team. Everything here is AI-generated, with fictional characters. YouTube videos load only when you press play.</div><div id="cctv-grid" class="vidgrid">Loading...</div></section>
 <section id="request-app"><h2>Request a new app</h2><div class="sub">Tell us what app you want and what it should do. If it is possible, the Netra team will try to build it. You review the exact text before anything is sent. A contact detail is optional - without it we cannot reply to you. Requests go to the developer by email; they are not shown publicly. One request per day from this browser.</div>
 <form id="raform"><label for="ra-request">Which app do you want?</label><textarea id="ra-request" name="request" required maxlength="1000" rows="5" placeholder="Example: an app that reminds me to drink water every hour"></textarea>
@@ -239,13 +231,12 @@ fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).the
   });
   w.appendChild(b);s.appendChild(w);box.appendChild(s)};
  /*SOON-END*/
- var allApps=(d.projects||[]).map(function(p){return {live:true,v:p}}).concat((d.upcoming||[]).filter(function(u){return u.id&&u.name}).map(function(u){return {live:false,v:u}}));
+ var allApps=(d.projects||[]).map(function(p){return {live:true,v:p}});
  allApps.sort(function(a,b){var ka=azKey(a.v.name),kb=azKey(b.v.name);return ka<kb?-1:ka>kb?1:0});
  function groupHead(id,text){var g=el("h2","group-head",text);g.id=id;box.appendChild(g)}
  groupHead("released-apps","Released / Live apps");
  allApps.filter(function(it){return it.live}).forEach(function(it){renderLive(it.v)});
- groupHead("coming-soon-apps","Coming Soon");
- allApps.filter(function(it){return !it.live}).forEach(function(it){renderSoon(it.v)});
+ // The homepage catalog shows released apps only. Planning records remain in the roadmap.
  var raNav=el("a","","Request a new app");raNav.href="#request-app";nav.appendChild(raNav);
  var loadStats=function(){
   function vk(id){return id==="battery-sentinel"?"visits":"visits-"+id}
