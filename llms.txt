@@ -1,11 +1,31 @@
 # Netra Ecosystem
 
-> Free Android apps by Prayagi Store and Services (developer: Deepak Kushwaha): Battery Sentinel Pro Netra, Netra Hub, Netra KBC, Netra Privacy Guard, Netra Player, Netra Trikaal, Netra Eco. Direct APK downloads, no account, no ads.
+> Netra Ecosystem, also called Netra Eco, is the home of Netra Android apps. Use the official app pages for requirements, download information and privacy policies. Planned features are not released features.
 
-## Pages
-- [Home](https://prayagi-store-and-services.github.io/netra-eco/): app catalogue, roadmap, download counters.
-- [App downloads](https://prayagi-store-and-services.github.io/netra-eco/app/bspn/): per-app download pages (bspn, hub, kbc, player, privacy, trikaal, eco).
-- [Legal & data](https://prayagi-store-and-services.github.io/netra-eco/legal/): per-app privacy policies and data safety declarations.
+## Official website
+- [Netra Ecosystem](https://prayagi-store-and-services.github.io/netra-eco/): app directory, current catalogue, release information and separate future plans. GitHub Pages is the primary website.
 
-## Related
-- [Prayagi Store & Services](https://prayagi-store-and-services.github.io/): the developer's business site.
+## App details
+- [Netra Battery Sentinel Pro](https://prayagi-store-and-services.github.io/netra-eco/app/bspn/)
+- [Netra Charge](https://prayagi-store-and-services.github.io/netra-eco/app/charge/)
+- [Netra Ecosystem](https://prayagi-store-and-services.github.io/netra-eco/app/eco/)
+- [Netra Human Safety](https://prayagi-store-and-services.github.io/netra-eco/app/hub/)
+- [Netra KBC](https://prayagi-store-and-services.github.io/netra-eco/app/kbc/)
+- [Netra Player](https://prayagi-store-and-services.github.io/netra-eco/app/player/)
+- [Netra Privacy Guard](https://prayagi-store-and-services.github.io/netra-eco/app/privacy/)
+- [Netra Trikaal](https://prayagi-store-and-services.github.io/netra-eco/app/trikaal/)
+
+## Privacy and data
+- [Legal and data](https://prayagi-store-and-services.github.io/netra-eco/legal/): app privacy policies and data safety information.
+
+## Reading this directory
+Release details and availability can change. Consult each app page and its linked release record for current status. Missing live values are Unavailable. This file is a navigation aid, not a guarantee of search indexing, AI citations, app availability or product capabilities.
+
+## Official social profiles
+- [Instagram](https://www.instagram.com/netraecosystem/)
+- [Facebook](https://www.facebook.com/netraecosystem)
+- [X](https://x.com/netraecosystem)
+- [YouTube](https://www.youtube.com/@NetraEcosystem)
+- [Telegram](https://t.me/Netraecosystem)
+- [Reddit](https://www.reddit.com/user/NetraEcosystem/)
+- [Hacker News](https://news.ycombinator.com/user?id=netraecosystem)
