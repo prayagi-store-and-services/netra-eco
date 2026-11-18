@@ -18,7 +18,7 @@ function page(p) {
 <link rel="stylesheet" href="../app.css">
 </head>
 <body>
-<main id="app" data-code="${esc(p.code)}" data-repo="${esc(p.repo || '')}" data-name="${esc(p.name)}" data-icon="${esc(p.icon || '')}"${p.download ? ` data-download="${esc(p.download)}"` : ''}${p.download && p.latestJson ? ` data-latest="${esc(p.latestJson)}"` : ''}>
+<main id="app" data-code="${esc(p.code)}" data-repo="${esc(p.id === 'netra-battery-guardian' ? '' : (p.repo || ''))}" data-name="${esc(p.name)}" data-icon="${esc(p.icon || '')}"${p.download ? ` data-download="${esc(p.download)}"` : ''}${p.download && p.latestJson ? ` data-latest="${esc(p.latestJson)}"` : ''}>
 <p class="back"><a href="../../">Netra Ecosystem</a></p>
 <h1>${esc(p.name)}</h1>
 <p class="type">${esc(p.type || '')}</p>

@@ -124,7 +124,8 @@
       "releaseInfo": [
         "v1.0.0: first standalone Guardian release. Home-screen widget, Hindi and English labels, media-aware voice gate and approximate observed-session estimates. Optional cooling brightness consent starts OFF.",
         "Physical-phone widget resizing, voice routing and document-picker acceptance are not yet verified. The signing certificate may differ from an earlier development build; Android may require uninstalling that build, which can remove local data. No cross-app history import is claimed."
-      ]
+      ],
+      "repo": "prayagideepak-collab/Netra-Battery-Guardian"
     }
   ],
   "upcoming": [

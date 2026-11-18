@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-82snWfVDmW9ZzNrwg+LoDGO9A8SY5ivQihRU0M36erE=' 'sha256-lRX71ZO7yKQXAam3CZOz0JOjUZ0eL4qG3FLIn474Kl0=' https://www.googletagmanager.com https://www.clarity.ms https://scripts.clarity.ms; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com https://formsubmit.co https://*.google-analytics.com https://clarity.ms https://*.clarity.ms; frame-src 'self' https://www.youtube-nocookie.com; media-src 'self'; form-action 'none'; upgrade-insecure-requests">
+<head><meta http-equiv="Content-Security-Policy" content="default-src 'none'; base-uri 'none'; object-src 'none'; script-src 'self' 'sha256-bTBThJ0XhqNwRGbdeTPqTc67yc5+3KA0ft+/yaLO+cU=' 'sha256-lRX71ZO7yKQXAam3CZOz0JOjUZ0eL4qG3FLIn474Kl0=' https://www.googletagmanager.com https://www.clarity.ms https://scripts.clarity.ms; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self'; connect-src 'self' https://api.github.com https://firestore.googleapis.com https://formsubmit.co https://*.google-analytics.com https://clarity.ms https://*.clarity.ms; frame-src 'self' https://www.youtube-nocookie.com; media-src 'self'; form-action 'none'; upgrade-insecure-requests">
 <script src="framebust.js"></script>
 <script src="counter.js"></script><meta name="referrer" content="strict-origin-when-cross-origin"><script src="https://prayagi-store-and-services.github.io/netra-eco/geoblock.js"></script>
 <meta charset="utf-8">
@@ -206,7 +206,7 @@ fetch("projects.json",{cache:"no-store"}).then(function(r){return r.json()}).the
   if(hub){b.appendChild(el("p","sub",'v1.5.5: official IMD subdivision / NDMA CAP reports, with Yellow/Orange/Red warning notifications and optional speech. About 30-minute Android-delayed checks, not every forecast or district nowcast. Beta/testing; not an emergency-service replacement. Physical-phone delivery unverified. Updates through Netra Ecosystem only. Older builds are not offered.'));}
   var dl0=el("a","btn","Download latest APK");dl0.href=p.download||("https://github.com/"+p.repo+"/releases/latest/download/app-release.apk");if(hub){dl0.removeAttribute("href");dl0.setAttribute("aria-disabled","true");dl0.textContent="Download temporarily paused";}act.insertBefore(dl0,act.firstChild);b.appendChild(act);
   w.appendChild(b);s.appendChild(w);box.appendChild(s);
-  if(!p.repo&&p.latestJson){fetch(p.latestJson,{cache:"no-store"}).then(function(r){return r.ok?r.json():null}).catch(function(){return null}).then(function(x){
+  if((!p.repo||p.id==="netra-battery-guardian")&&p.latestJson){fetch(p.latestJson,{cache:"no-store"}).then(function(r){return r.ok?r.json():null}).catch(function(){return null}).then(function(x){
    if(x&&x.tag){showReleaseField(rel,x.tag);if(Number.isFinite(x.size)&&x.size>0)showReleaseField(sz,(x.size/1048576).toFixed(1)+" MB");dl0.textContent="Download "+x.tag+" APK"}})}
   else if(hub){
    gh("repos/"+p.repo+"/releases/tags/v1.5.5").then(function(x){var a=validHubRelease(x);if(!a)return;
