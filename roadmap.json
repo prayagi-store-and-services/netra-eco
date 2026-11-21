@@ -27,72 +27,16 @@
       "name": "Netra Ecosystem"
     },
     {
-      "id": "netra-email",
-      "name": "Netra Email"
-    },
-    {
       "id": "netra-trikaal",
       "name": "Netra Trikaal"
-    },
-    {
-      "id": "netra-intruder",
-      "name": "Netra Intruder"
-    },
-    {
-      "id": "netra-neg",
-      "name": "Netra Neg"
-    },
-    {
-      "id": "netra-health-monitor",
-      "name": "Netra Pulse"
-    },
-    {
-      "id": "netra-travel-rider",
-      "name": "Netra Travel Rider"
     },
     {
       "id": "netra-charge",
       "name": "Netra Charge"
     },
     {
-      "id": "netra-sentinel-lite",
-      "name": "Netra Sentinel Lite"
-    },
-    {
-      "id": "netra-law",
-      "name": "Netra Law"
-    },
-    {
-      "id": "netra-geocam",
-      "name": "Netra GeoCam"
-    },
-    {
-      "id": "netra-photo",
-      "name": "Netra Photo"
-    },
-    {
-      "id": "netra-news",
-      "name": "NETRA NEWS"
-    },
-    {
-      "id": "netra-browser",
-      "name": "Netra Browser"
-    },
-    {
       "id": "netra-speak-clock",
       "name": "Netra Speak Clock"
-    },
-    {
-      "id": "mahadev-glass-theme",
-      "name": "Mahadev Glass Theme"
-    },
-    {
-      "id": "netra-job",
-      "name": "Netra Job"
-    },
-    {
-      "id": "netra-control",
-      "name": "Netra Control"
     }
   ],
   "items": [
@@ -574,14 +518,6 @@
       "eta": "2026-10-25T20:00:00+05:30"
     },
     {
-      "title": "Netra Email: email app for your Gmail accounts with on-device AI (planning stage, nothing built yet, no release date)",
-      "status": "Planned (not started)",
-      "apps": [
-        "netra-email"
-      ],
-      "eta": "2026-11-10T20:00:00+05:30"
-    },
-    {
       "title": "Interface update",
       "status": "Active again by 3 Nov 18:34 instruction. The old 24 Oct target was missed; combined redesign is unfinished. New date unconfirmed; draft is not a release.",
       "eta": "2026-10-24T20:00:00+05:30",
@@ -669,14 +605,6 @@
       ]
     },
     {
-      "title": "Netra Intruder: anti-theft app (not started): photo after a wrong unlock attempt, optional photo at every unlock (experimental, Android 14+), opt-in app activity log. First release.",
-      "status": "Not started: forecast unable to meet the 25 Oct first-release target. The 13 Oct plan was a first build in the 23-25 Oct window with release only after the owner's phone test; that cannot fit alongside the current release chain. Proposed new target 9 Nov, pending owner agreement.",
-      "eta": "2026-10-25T21:00:00+05:30",
-      "apps": [
-        "netra-intruder"
-      ]
-    },
-    {
       "title": "Netra Player: background update download",
       "status": "Released in v1.1.16.1 (18 Oct 9:26 PM IST; phone test passed 19 Oct)",
       "apps": [
@@ -714,24 +642,6 @@
       "eta": "2026-11-22T20:00:00+05:30"
     },
     {
-      "title": "Netra Neg: private gift ledger with optional encrypted own-Drive backup. Owner-deferred target: 8 Nov 2026 - date only, not a readiness promise.",
-      "status": "Active: v0.3.0 beta published 3 Nov. Device sign-in, reinstall and restore acceptance remain unverified; owner deferred the target to 8 Nov (time not set), not a readiness promise. Previous target: 7 Nov 20:00 IST, not confirmed delivered. Photos not included in backup. No app-wide hold.",
-      "targetDate": "2026-11-08",
-      "apps": [
-        "netra-neg"
-      ],
-      "missedEta": "2026-11-07T20:00:00+05:30",
-      "eta": null
-    },
-    {
-      "title": "Netra Pulse: private health, activity, sleep and optional period tracking; only device-supported data and source-linked guidance. No confirmed release date.",
-      "status": "Planned",
-      "apps": [
-        "netra-health-monitor"
-      ],
-      "eta": "2026-12-27T20:00:00+05:30"
-    },
-    {
       "title": "Live battery current in mA: improve the existing current view with observed min/max/sample-average; hide current if Android gives no real value.",
       "status": "Released in v2.1.19 (phone test pending)",
       "apps": [
@@ -744,14 +654,6 @@
         }
       ],
       "eta": "2026-10-15T20:00:00+05:30"
-    },
-    {
-      "title": "Netra Travel Rider v1: offline push-to-talk Bluetooth intercom for riders (QR create/join with channel code, auto-play incoming voice, auto-reconnect, mute, helmet headset support, one speaker at a time, 4-6 riders, SOS alert to all, screen-off foreground service) + basic offline map (download region, own GPS position) + opt-in in-channel location sharing with last-known timestamp. Later (v1.1, early Dec): phone-to-phone map transfer, buddy direction arrow, rally point, leader/sweeper roles, breadcrumb trail, someone-left-group alert. Mesh relay and public location sharing stay undecided.",
-      "status": "In development",
-      "apps": [
-        "netra-travel-rider"
-      ],
-      "eta": "2026-11-22T20:00:00+05:30"
     },
     {
       "title": "Privacy Guard: foreground-only microphone while the screen is ON - the mic works only for the app actually open on screen, not for apps sitting in the background. Level 1: instant alert naming any background app that grabs the mic, with a one-tap jump to its system permission page (works for everyone, no extras). A Level 2 with true per-app blocking was tried and removed the same day: it needed extra setup that most people would not manage, and a privacy feature people cannot understand can do more harm than good. Level 1 (alerts) is what ships.",
@@ -784,89 +686,11 @@
       ]
     },
     {
-      "title": "Netra Sentinel Lite: revised owner deadline 2026-11-10 (time not set)",
-      "text": "Separate lightweight battery announcement app. Planned, not released. Owner moved the deadline from 8 Nov to 10 Nov 2026 on 5 Nov. This is separate from Netra Charge; no APK or device acceptance is verified.",
-      "status": "Pending; not released. Previous target 8 Nov superseded by owner instruction on 5 Nov.",
-      "targetDate": "2026-11-10",
-      "apps": [
-        "netra-sentinel-lite"
-      ]
-    },
-    {
-      "title": "Netra Law: revised owner deadline 2026-11-12 (time not set)",
-      "text": "Indian law app, Phase 1 foundation in preparation. Not released. Owner moved the deadline from 9 Nov to 12 Nov 2026 on 5 Nov. Build, privacy, signed release and device checks remain required.",
-      "status": "Pending; not released. Previous target 9 Nov superseded by owner instruction on 5 Nov.",
-      "targetDate": "2026-11-12",
-      "apps": [
-        "netra-law"
-      ]
-    },
-    {
-      "title": "Netra GeoCam: owner deadline 2026-11-07 (time not set)",
-      "text": "Offline-first camera app. Private photo-only candidate in development, not released. v1 scope approved: photos with a permanent location/time/device stamp and a direction indicator when reliable. Video, face-focus and enhancement are deferred. Real camera/GPS/direction/gallery acceptance and production signing remain pending. Scheduled with Netra Photo for 7 Nov; a deadline is not a release confirmation.",
-      "status": "In development, not released",
-      "targetDate": "2026-11-07",
-      "apps": [
-        "netra-geocam"
-      ]
-    },
-    {
-      "title": "Netra Photo: owner deadline 2026-11-07 (time not set)",
-      "text": "Planned on-device photo gallery with GeoCam integration. Preview and build approved; no released or verified working build. People recognition is opt-in; Hindi/English search, GeoCam albums, Places and encrypted own-Drive or PC backup are design goals pending feasibility and privacy review. Owner requests release together with GeoCam on 7 Nov.",
-      "status": "Planned, not released",
-      "targetDate": "2026-11-07",
-      "apps": [
-        "netra-photo"
-      ]
-    },
-    {
-      "title": "NETRA NEWS: owner deadline: app + website together 2026-11-15 (time not set)",
-      "text": "Planned news app and website, not released. Local and state v1 with named verified sources and original links; broader coverage only where verified sources are available. Foreground-first; only opted-in weather/earthquake alerts may use background work. Hosting setup, source-use permissions, privacy, build and release gates remain pending. No guaranteed live or emergency coverage.",
-      "status": "Planned, not released",
-      "targetDate": "2026-11-15",
-      "apps": [
-        "netra-news"
-      ]
-    },
-    {
-      "title": "Netra Browser: earlier beta estimate, not owner-confirmed delivery 2026-11-13 (time not set)",
-      "text": "Planned Android WebView browser, not released. Tabs, bookmarks, deletable local history and downloads; no account or cloud sync. Private mode is later work. Working build, native/device security and download acceptance not verified. 13 Nov is an earlier team beta estimate, not a confirmed release.",
-      "status": "Planned, not released",
-      "targetDate": "2026-11-13",
-      "apps": [
-        "netra-browser"
-      ]
-    },
-    {
       "title": "Netra Speak Clock: unreleased project; no new confirmed release date",
       "text": "Separate time-announcement Android app in development, not released. Clock-aligned time-only TTS, screen-off operation, quiet hours and media/call rules. Build, unit tests and lint have passed in a candidate, but CI remains red on artifact quota; phone/Doze/audio reliability, production signing and privacy acceptance remain unverified. Earlier targets were missed; no new verified release time.",
       "status": "Planned, not released",
       "apps": [
         "netra-speak-clock"
-      ]
-    },
-    {
-      "title": "Mahadev Glass Theme: unreleased project; no new confirmed release date",
-      "text": "Android theme project, not released as a production app. Blue-glass Mahadev wallpapers and Smart Launcher-compatible icons/widgets are planned; a private debug test APK exists, but source recovery, device acceptance and production release gates remain pending. No claim to change Android system settings or control panels. Earlier public target was missed; no new confirmed release date.",
-      "status": "Planned, not released",
-      "apps": [
-        "mahadev-glass-theme"
-      ]
-    },
-    {
-      "title": "Netra Job: unreleased project; no new confirmed release date",
-      "text": "Planned job-search assistance app, not released. Scope comes from a proposed AI job-search workflow; account integration, permitted automation, privacy, source reliability and working implementation need review. No verified application automation or confirmed release date.",
-      "status": "Planned, not released",
-      "apps": [
-        "netra-job"
-      ]
-    },
-    {
-      "title": "Netra Control: unreleased project; no new confirmed release date",
-      "text": "Planned owner-only administration panel for Netra apps and sites, not released. Proposed roadmap/configuration editing, change review and audit log need security and access-control review. Proposed infrastructure is not a confirmed deployment. No confirmed delivery date.",
-      "status": "Planned, not released",
-      "apps": [
-        "netra-control"
       ]
     },
     {
